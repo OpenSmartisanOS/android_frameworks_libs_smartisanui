@@ -38,4 +38,42 @@
         <attr name="shadowButtonStyle" />
         <attr name="shadowColors" />
     </declare-styleable>
+
+    <attr name="title" format="string" />
+    <attr name="summary" format="string" />
+    <attr name="icon" format="reference" />
+    <attr name="customMidView" format="reference" />
+    <attr name="customRightView" format="reference" />
+    <attr name="isPressable" format="boolean" />
+    <attr name="backgroundStyle">
+        <enum name="single" value="1" />
+        <enum name="top" value="2" />
+        <enum name="middle" value="3" />
+        <enum name="bottom" value="4" />
+    </attr>
+    <attr name="selectedIcon" format="reference" />
+    <attr name="isChecked" format="boolean" />
+    <attr name="subTitle" format="string" />
+    <attr name="show_arrow" format="boolean" />
+    <declare-styleable name="SmartisanListContentItem">
+        <attr name="title" />
+        <attr name="summary" />
+        <attr name="icon" />
+        <attr name="shadow_enabled" />
+        <attr name="shadow_project" />
+        <attr name="customMidView" />
+        <attr name="customRightView" />
+        <attr name="isPressable" />
+        <attr name="backgroundStyle" />
+    </declare-styleable>
+    <declare-styleable name="SmartisanListContentItemText">
+        <attr name="subTitle" />
+        <attr name="show_arrow" />
+    </declare-styleable>
+    <declare-styleable name="SmartisanListContentItemSwitch">
+        <attr name="isChecked" />
+    </declare-styleable>
+    <declare-styleable name="SmartisanListContentItemCheck">
+        <attr name="selectedIcon" />
+    </declare-styleable>
 </resources>

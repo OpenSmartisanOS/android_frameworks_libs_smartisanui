@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_gravity="center_vertical" android:orientation="vertical" android:paddingTop="@dimen/smartisan_rom_mid_container_top_bottom_padding" android:paddingBottom="@dimen/smartisan_rom_mid_container_top_bottom_padding" android:duplicateParentState="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textSize="@dimen/smartisan_rom_primary_text_size" android:id="@id/smartisan_rom_item_title" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/smartisan_rom_ListContentItemPrimaryText" />
+    <TextView android:textSize="@dimen/smartisan_rom_tertiary_text_size" android:id="@id/smartisan_rom_item_summary" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/smartisan_rom_mid_container_summary_margin" style="@style/smartisan_rom_ListContentItemSecondaryText" />
+</LinearLayout>

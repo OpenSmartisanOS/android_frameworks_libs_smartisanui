@@ -13,4 +13,15 @@
     <dimen name="smartisan_shadow_button_common_max_size">20dp</dimen>
     <dimen name="smartisan_shadow_button_bg_shadow_left_gap">8dp</dimen>
     <dimen name="smartisan_shadow_button_bg_shadow_top_gap">14dp</dimen>
+    <dimen name="smartisan_rom_list_item_min_height">60dp</dimen>
+    <dimen name="smartisan_rom_right_container_margin">6dp</dimen>
+    <dimen name="smartisan_rom_left_icon_area_width">60dp</dimen>
+    <dimen name="smartisan_rom_mid_container_top_bottom_padding">6dp</dimen>
+    <dimen name="smartisan_rom_flexible_space">18dp</dimen>
+    <dimen name="smartisan_rom_settings_item_sub_title_size">13.5sp</dimen>
+    <dimen name="smartisan_rom_item_text_mid_width_limit">200dp</dimen>
+    <dimen name="smartisan_rom_tertiary_text_size">13.5sp</dimen>
+    <dimen name="smartisan_rom_mid_container_summary_margin">2dp</dimen>
+    <dimen name="smartisan_rom_primary_text_size">17sp</dimen>
+    <dimen name="smartisan_rom_list_right_text_right_padding">12dp</dimen>
 </resources>

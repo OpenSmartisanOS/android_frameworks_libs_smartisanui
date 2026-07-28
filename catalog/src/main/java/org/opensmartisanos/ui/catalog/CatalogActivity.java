@@ -15,6 +15,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.opensmartisanos.ui.widget.SmartisanButton;
+import org.opensmartisanos.ui.widget.SmartisanListContentItem;
+import org.opensmartisanos.ui.widget.SmartisanListContentItemCheck;
+import org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch;
+import org.opensmartisanos.ui.widget.SmartisanListContentItemText;
 import org.opensmartisanos.ui.widget.SmartisanShadowButton;
 import org.opensmartisanos.ui.widget.SmartisanSwitch;
 
@@ -55,6 +59,9 @@ public final class CatalogActivity extends Activity {
         addSwitchRow(content, false, false);
         addSwitchRow(content, true, false);
         addSwitchRow(content, false, true);
+
+        addSection(content, R.string.smartisan_catalog_list_item);
+        addListItems(content);
 
         setContentView(scroll);
     }
@@ -171,6 +178,44 @@ public final class CatalogActivity extends Activity {
         smartisanSwitch.setEnabled(!disabled);
         row.addView(smartisanSwitch);
         addRow(parent, row);
+    }
+
+    private void addListItems(LinearLayout parent) {
+        SmartisanListContentItemText single = new SmartisanListContentItemText(this);
+        single.setTitle(R.string.smartisan_catalog_wifi);
+        single.setSummary(R.string.smartisan_catalog_wifi_summary);
+        single.setSubtitle(R.string.smartisan_catalog_connected);
+        single.setBackgroundStyle(SmartisanListContentItem.BG_STYLE_SINGLE);
+        single.setClickable(true);
+        addListItem(parent, single, 10);
+
+        SmartisanListContentItemText top = new SmartisanListContentItemText(this);
+        top.setTitle(R.string.smartisan_catalog_notifications);
+        top.setSubtitle(R.string.smartisan_catalog_enabled);
+        top.setBackgroundStyle(SmartisanListContentItem.BG_STYLE_TOP);
+        top.setClickable(true);
+        addListItem(parent, top, 0);
+
+        SmartisanListContentItemSwitch middle = new SmartisanListContentItemSwitch(this);
+        middle.setTitle(R.string.smartisan_catalog_mobile_data);
+        middle.setSummary(R.string.smartisan_catalog_mobile_data_summary);
+        middle.setChecked(true);
+        middle.setBackgroundStyle(SmartisanListContentItem.BG_STYLE_MIDDLE);
+        addListItem(parent, middle, 0);
+
+        SmartisanListContentItemCheck bottom = new SmartisanListContentItemCheck(this);
+        bottom.setTitle(R.string.smartisan_catalog_selected_item);
+        bottom.setChecked(true);
+        bottom.setBackgroundStyle(SmartisanListContentItem.BG_STYLE_BOTTOM);
+        bottom.setClickable(true);
+        addListItem(parent, bottom, 10);
+    }
+
+    private void addListItem(LinearLayout parent, View item, int bottomMargin) {
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.bottomMargin = dp(bottomMargin);
+        parent.addView(item, params);
     }
 
     private void addRow(LinearLayout parent, View row) {

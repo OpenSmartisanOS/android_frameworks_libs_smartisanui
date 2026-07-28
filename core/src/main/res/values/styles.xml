@@ -30,4 +30,17 @@
     <style name="Widget.SmartisanUi.ShadowButton.Shrink" parent="Widget.SmartisanUi.ShadowButton.Long">
         <item name="shadowButtonStyle">shrinkLongButton</item>
     </style>
+
+    <style name="smartisan_rom_ListContentItemPrimaryText">
+        <item name="android:textColor">@color/smartisan_rom_setting_item_text_colorlist</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="smartisan_rom_ListContentItemSecondaryText">
+        <item name="android:textColor">@color/smartisan_rom_setting_item_summary_text_colorlist</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:maxLines">1</item>
+    </style>
 </resources>

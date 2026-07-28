@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@id/smartisan_rom_item_info_btn" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/smartisan_rom_popup_info_btn" android:contentDescription="@string/smartisan_rom_description" />

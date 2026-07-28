@@ -15,4 +15,13 @@
     <string name="smartisan_catalog_shrink">短长按钮</string>
     <string name="smartisan_catalog_checked">已开启</string>
     <string name="smartisan_catalog_unchecked">已关闭</string>
+    <string name="smartisan_catalog_list_item">SmartisanListContentItem</string>
+    <string name="smartisan_catalog_wifi">无线网络</string>
+    <string name="smartisan_catalog_wifi_summary">选择并连接可用网络</string>
+    <string name="smartisan_catalog_connected">已连接</string>
+    <string name="smartisan_catalog_notifications">通知中心</string>
+    <string name="smartisan_catalog_enabled">已启用</string>
+    <string name="smartisan_catalog_mobile_data">移动数据</string>
+    <string name="smartisan_catalog_mobile_data_summary">使用蜂窝网络连接互联网</string>
+    <string name="smartisan_catalog_selected_item">当前选择</string>
 </resources>

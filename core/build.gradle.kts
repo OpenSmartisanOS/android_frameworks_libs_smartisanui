@@ -25,6 +25,11 @@ android {
             withSourcesJar()
         }
     }
+
+    lint {
+        // The extracted ROM expand slots intentionally rely on horizontal's default value.
+        disable += "Orientation"
+    }
 }
 
 publishing {

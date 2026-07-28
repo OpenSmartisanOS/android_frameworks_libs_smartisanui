@@ -1,0 +1,10 @@
+{
+  "license": "Apache-2.0",
+  "decoder": "apktool 3.0.3",
+  "framework_res_apk_sha256": "9dd895fdcba12cf1983a014bab794a93200e7846c1bf6c9233c0c6d6830d0c31",
+  "resources": [
+    {"source":"drawable-xxhdpi/btn_star_off_pressed_holo_light.png","destination":"drawable-xxhdpi/smartisan_rom_btn_star_off_pressed_holo_light.png","sha256":"5702bd5d4cdda4d7bd6a9cea04ec870bf2465534718a5d15773d059439e7b1b9"},
+    {"source":"drawable-xxhdpi/btn_star_on_disabled_focused_holo_dark.png","destination":"drawable-xxhdpi/smartisan_rom_btn_star_on_disabled_focused_holo_dark.png","sha256":"e9e67f51b79e53ddcb5fdf13b6f0fe7185acee6e9124869eb50e15dda070eb0a"},
+    {"source":"drawable-xxhdpi/btn_star_on_disabled_focused_holo_light.png","destination":"drawable-xxhdpi/smartisan_rom_btn_star_on_disabled_focused_holo_light.png","sha256":"e8b4853fb4374dee9df11583e362766c582164ac2e5ac9318646f5121997db2a"}
+  ]
+}

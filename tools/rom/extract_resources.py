@@ -12,6 +12,11 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ANDROID_NS = "http://schemas.android.com/apk/res/android"
+PRIVATE_FRAMEWORK_DRAWABLES = {
+    "@android:drawable/btn_star_off_pressed_holo_light",
+    "@android:drawable/btn_star_on_disabled_focused_holo_dark",
+    "@android:drawable/btn_star_on_disabled_focused_holo_light",
+}
 
 
 def digest(path: Path) -> str:
@@ -29,13 +34,21 @@ def safe_child(root: Path, relative: str) -> Path:
     return candidate
 
 
-def transformed_xml(source: Path, target: Path) -> None:
+def transformed_xml(source: Path, target: Path, all_references: bool = False) -> None:
     ET.register_namespace("android", ANDROID_NS)
     tree = ET.parse(source)
     for element in tree.iter():
         for key, value in tuple(element.attrib.items()):
             if value.startswith("@drawable/"):
                 element.set(key, value.replace("@drawable/", "@drawable/smartisan_rom_", 1))
+            elif value in PRIVATE_FRAMEWORK_DRAWABLES:
+                element.set(key, value.replace("@android:drawable/", "@drawable/smartisan_rom_", 1))
+            elif all_references and value.startswith("@") and not value.startswith("@android:"):
+                marker, separator, name = value.partition("/")
+                if separator and marker in {"@color", "@dimen", "@id", "@layout", "@string", "@style"}:
+                    element.set(key, f"{marker}/smartisan_rom_{name}")
+        if all_references and element.tag == "smartisanos.widget.SwitchEx":
+            element.tag = "org.opensmartisanos.ui.widget.SmartisanSwitch"
     ET.indent(tree, space="    ")
     tree.write(target, encoding="utf-8", xml_declaration=True)
 
@@ -44,6 +57,8 @@ def materialize(source: Path, target: Path, transform: str | None) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
     if transform == "prefix_drawable_references":
         transformed_xml(source, target)
+    elif transform == "prefix_resource_references":
+        transformed_xml(source, target, all_references=True)
     elif transform is None:
         shutil.copyfile(source, target)
     else:
