@@ -13,6 +13,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.ArrayAdapter;
+
+import org.opensmartisanos.ui.app.SmartisanMenuDialog;
+import org.opensmartisanos.ui.app.SmartisanProgressDialog;
 
 import org.opensmartisanos.ui.widget.SmartisanButton;
 import org.opensmartisanos.ui.widget.SmartisanListContentItem;
@@ -24,6 +28,15 @@ import org.opensmartisanos.ui.widget.SmartisanSettingItemCheck;
 import org.opensmartisanos.ui.widget.SmartisanSettingItemSwitch;
 import org.opensmartisanos.ui.widget.SmartisanSettingItemText;
 import org.opensmartisanos.ui.widget.SmartisanSwitch;
+import org.opensmartisanos.ui.widget.SmartisanDialogTitleBar;
+import org.opensmartisanos.ui.widget.SmartisanEmptyView;
+import org.opensmartisanos.ui.widget.SmartisanListPopupMenu;
+import org.opensmartisanos.ui.widget.SmartisanSearchBar;
+import org.opensmartisanos.ui.widget.SmartisanSegmentedControl;
+import org.opensmartisanos.ui.widget.SmartisanTipsBar;
+import org.opensmartisanos.ui.widget.SmartisanTitleBar;
+
+import java.util.Arrays;
 
 public final class CatalogActivity extends Activity {
     private final java.util.List<SmartisanSwitch> switchSamples = new java.util.ArrayList<>();
@@ -64,6 +77,24 @@ public final class CatalogActivity extends Activity {
 
         addSection(content, R.string.smartisan_catalog_setting_item);
         addSettingItems(content);
+
+        addSection(content, R.string.smartisan_catalog_title_bar);
+        addTitleBars(content);
+
+        addSection(content, R.string.smartisan_catalog_search_bar);
+        addSearchBars(content);
+
+        addSection(content, R.string.smartisan_catalog_dialogs);
+        addDialogs(content);
+
+        addSection(content, R.string.smartisan_catalog_popup);
+        addPopup(content);
+
+        addSection(content, R.string.smartisan_catalog_tips_empty);
+        addTipsAndEmpty(content);
+
+        addSection(content, R.string.smartisan_catalog_segmented);
+        addSegmentedControls(content);
 
         setContentView(scroll);
     }
@@ -359,6 +390,119 @@ public final class CatalogActivity extends Activity {
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.bottomMargin = dp(bottomMargin);
         parent.addView(item, params);
+    }
+
+    private void addTitleBars(LinearLayout parent) {
+        SmartisanTitleBar titleBar = new SmartisanTitleBar(this);
+        titleBar.setCenterText(R.string.smartisan_catalog_page_title);
+        titleBar.addLeftImageView(SmartisanTitleBar.BACK_ICON_RES);
+        titleBar.addRightButton(SmartisanButton.STYLE_HIGHLIGHT_BLUE,
+                R.string.smartisan_catalog_confirm);
+        addRow(parent, titleBar);
+
+        SmartisanDialogTitleBar dialogTitle = new SmartisanDialogTitleBar(this);
+        dialogTitle.setTitle(R.string.smartisan_catalog_page_title);
+        dialogTitle.addCancelImage(true);
+        dialogTitle.addCompleteImage(false);
+        dialogTitle.setLeftButtonVisibility(View.VISIBLE);
+        addRow(parent, dialogTitle);
+    }
+
+    private void addSearchBars(LinearLayout parent) {
+        SmartisanSearchBar standard = new SmartisanSearchBar(this);
+        standard.setHint(getText(R.string.smartisan_catalog_search_hint));
+        standard.addRightImageView(org.opensmartisanos.ui.R.drawable.smartisan_rom_sorting_icon_selector);
+        addRow(parent, standard);
+
+        SmartisanSearchBar filter = new SmartisanSearchBar(this);
+        filter.setHint(getText(R.string.smartisan_catalog_search_hint));
+        filter.setSecondaryFilterText(R.string.smartisan_catalog_filter);
+        filter.setSecondaryFilterVisibility(View.VISIBLE);
+        filter.setWithAnimation(false);
+        filter.onClickSearchEditor(false);
+        addRow(parent, filter);
+    }
+
+    private void addDialogs(LinearLayout parent) {
+        LinearLayout row = newRow();
+        SmartisanButton menu = button(SmartisanButton.STYLE_NORMAL,
+                R.string.smartisan_catalog_menu_dialog);
+        menu.setOnClickListener(v -> {
+            SmartisanMenuDialog dialog = new SmartisanMenuDialog(this);
+            dialog.setTitle(R.string.smartisan_catalog_page_title);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                    android.R.layout.simple_list_item_1,
+                    Arrays.asList(getString(R.string.smartisan_catalog_item_one),
+                            getString(R.string.smartisan_catalog_item_two),
+                            getString(R.string.smartisan_catalog_item_three)));
+            dialog.setAdapter(adapter, (parentView, item, position, id) -> dialog.dismiss());
+            dialog.setNegativeButton(R.string.smartisan_catalog_cancel, v2 -> dialog.dismiss());
+            dialog.setPositiveButton(R.string.smartisan_catalog_confirm, v2 -> { });
+            dialog.show();
+        });
+        SmartisanButton progress = button(SmartisanButton.STYLE_HIGHLIGHT_BLUE,
+                R.string.smartisan_catalog_progress_dialog);
+        progress.setOnClickListener(v -> {
+            SmartisanProgressDialog dialog = SmartisanProgressDialog.show(this,
+                    getText(R.string.smartisan_catalog_loading),
+                    getText(R.string.smartisan_catalog_loading_message));
+            dialog.setCanceledOnTouchOutside(true);
+        });
+        row.addView(menu);
+        row.addView(progress, spacedWrapParams());
+        addRow(parent, row);
+    }
+
+    private void addPopup(LinearLayout parent) {
+        SmartisanButton anchor = button(SmartisanButton.STYLE_NORMAL,
+                R.string.smartisan_catalog_popup_open);
+        anchor.setOnClickListener(v -> {
+            SmartisanListPopupMenu popup = new SmartisanListPopupMenu(this, dp(240));
+            popup.setAnchorView(v);
+            popup.setMenuListTitleVisible(true);
+            popup.setMenuListTitle(getText(R.string.smartisan_catalog_page_title));
+            popup.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+                    Arrays.asList(getString(R.string.smartisan_catalog_item_one),
+                            getString(R.string.smartisan_catalog_item_two),
+                            getString(R.string.smartisan_catalog_item_three))));
+            popup.setOnItemClickListener((parentView, item, position, id) -> popup.dismiss());
+            popup.setBottomActionBarVisible(true);
+            popup.setBottomText(getText(R.string.smartisan_catalog_filter));
+            popup.show(SmartisanListPopupMenu.ARROW_TOP, 0, 0, dp(100), 0);
+        });
+        addRow(parent, anchor);
+    }
+
+    private void addTipsAndEmpty(LinearLayout parent) {
+        SmartisanTipsBar shortTip = new SmartisanTipsBar(this);
+        shortTip.setText(R.string.smartisan_catalog_tips_short);
+        addRow(parent, shortTip);
+        SmartisanTipsBar longTip = new SmartisanTipsBar(this);
+        longTip.setText(R.string.smartisan_catalog_tips_long);
+        addRow(parent, longTip);
+
+        SmartisanEmptyView empty = new SmartisanEmptyView(this);
+        empty.setEmptyStyle(SmartisanEmptyView.STYLE_WITH_ACTION);
+        empty.setPrimaryHint(getText(R.string.smartisan_catalog_empty_primary));
+        empty.setSecondaryHint(getText(R.string.smartisan_catalog_empty_secondary));
+        empty.setActionText(getText(R.string.smartisan_catalog_retry));
+        addRow(parent, empty);
+    }
+
+    private void addSegmentedControls(LinearLayout parent) {
+        SmartisanSegmentedControl joined = new SmartisanSegmentedControl(this);
+        joined.setItems(Arrays.asList(getString(R.string.smartisan_catalog_item_one),
+                getString(R.string.smartisan_catalog_item_two),
+                getString(R.string.smartisan_catalog_item_three)));
+        joined.setSelectedIndex(0);
+        joined.setItemEnabled(2, false);
+        addRow(parent, joined);
+
+        SmartisanSegmentedControl separated = new SmartisanSegmentedControl(this);
+        separated.setItems(Arrays.asList(getString(R.string.smartisan_catalog_item_one),
+                getString(R.string.smartisan_catalog_item_two)), true);
+        separated.setSelectedIndex(1);
+        addRow(parent, separated);
     }
 
     private void addRow(LinearLayout parent, View row) {
