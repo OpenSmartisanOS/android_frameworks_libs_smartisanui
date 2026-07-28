@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="smartisan_catalog_name">Smartisan UI Catalog</string>
+    <string name="smartisan_catalog_heading">Smartisan UI public component catalog</string>
+    <string name="smartisan_catalog_show_dialog">Show dialog</string>
+    <string name="smartisan_catalog_dialog_title">Dialog</string>
+    <string name="smartisan_catalog_dialog_message">Public Android SDK compatibility check</string>
+</resources>

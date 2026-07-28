@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-package org.opensmartisanos.ui;
+package org.opensmartisanos.ui.system;
 
-/** Entry point and version information for SmartisanUiLib. */
-public final class SmartisanUi {
-    public static final int API_VERSION = 1;
+import org.opensmartisanos.ui.SmartisanUi;
 
-    private SmartisanUi() {}
+/** Entry point for platform-only Smartisan UI integrations. */
+public final class SmartisanUiSystem {
+    public static int getCoreApiVersion() {
+        return SmartisanUi.API_VERSION;
+    }
+
+    private SmartisanUiSystem() {}
 }

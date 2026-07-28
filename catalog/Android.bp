@@ -1,0 +1,9 @@
+android_app {
+    name: "SmartisanUiCatalog",
+    manifest: "src/main/AndroidManifest.xml",
+    srcs: ["src/main/java/**/*.java"],
+    resource_dirs: ["src/main/res"],
+    static_libs: ["SmartisanUiCore"],
+    sdk_version: "current",
+    min_sdk_version: "23",
+}

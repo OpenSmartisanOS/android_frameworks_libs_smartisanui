@@ -1,0 +1,8 @@
+android_library {
+    name: "SmartisanUiCore",
+    manifest: "src/main/AndroidManifest.xml",
+    srcs: ["src/main/java/**/*.java"],
+    resource_dirs: ["src/main/res"],
+    sdk_version: "current",
+    min_sdk_version: "23",
+}

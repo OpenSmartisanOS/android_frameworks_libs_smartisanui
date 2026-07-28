@@ -1,0 +1,8 @@
+android_library {
+    name: "SmartisanUiSystem",
+    manifest: "src/main/AndroidManifest.xml",
+    srcs: ["src/main/java/**/*.java"],
+    resource_dirs: ["src/main/res"],
+    static_libs: ["SmartisanUiCore"],
+    platform_apis: true,
+}
