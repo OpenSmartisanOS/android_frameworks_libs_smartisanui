@@ -876,6 +876,85 @@
       "source": "drawable-xxhdpi/blank_option_btn_disabled.png",
       "destination": "drawable-xxhdpi/smartisan_rom_blank_option_btn_disabled.png",
       "sha256": "e330fe39373817ab8cccf937e7bd9975bed82c3a673d00973d290bbd062b0032"
+    },
+    {
+      "source": "layout/popup_menu_layout_for_top.xml",
+      "destination": "layout/smartisan_rom_popup_menu_layout_for_top.xml",
+      "sha256": "6fca3ae5f379308710a1659193761f1aebf533c0b010c161f96906a3d032d4ac",
+      "transform": "prefix_resource_references"
+    },
+    {
+      "source": "layout/popup_menu_layout_for_bottom.xml",
+      "destination": "layout/smartisan_rom_popup_menu_layout_for_bottom.xml",
+      "sha256": "65ed635501d6badba86d74dd168b160136567cf3d46293048c97a73e9126f3c3",
+      "transform": "prefix_resource_references"
+    },
+    {
+      "source": "layout/popup_menu_layout_for_left.xml",
+      "destination": "layout/smartisan_rom_popup_menu_layout_for_left.xml",
+      "sha256": "ced98a763f05e999c11b76012fc164716ad3e3ce598337e6c7dc9b05493ffc77",
+      "transform": "prefix_resource_references"
+    },
+    {
+      "source": "layout/popup_menu_layout_for_right.xml",
+      "destination": "layout/smartisan_rom_popup_menu_layout_for_right.xml",
+      "sha256": "020f002f9fbe5b179b9921b51472ede7984a864efeac13cccb54f28f2f1aa514",
+      "transform": "prefix_resource_references"
+    },
+    {
+      "source": "layout/menu_popupwindow_layout.xml",
+      "destination": "layout/smartisan_rom_menu_popupwindow_layout.xml",
+      "sha256": "9a5a392456d05739b4b73fbcd429575a2ce506f455fbd202613a51cc3360aeb6",
+      "transform": "prefix_resource_references"
+    },
+    {
+      "source": "drawable/list_divider_drawable.xml",
+      "destination": "drawable/smartisan_rom_list_divider_drawable.xml",
+      "sha256": "91f49c15ed9bc20c36402fc78150d39510df1e9aa2a729a10a050565a04c9932",
+      "transform": "prefix_resource_references"
+    },
+    {
+      "source": "drawable/menu_pop_icon_bg_selector.xml",
+      "destination": "drawable/smartisan_rom_menu_pop_icon_bg_selector.xml",
+      "sha256": "2674290f1c589dfc484fb0d4ca458775be647454841dee391c1d87579089a5a6",
+      "transform": "prefix_drawable_references"
+    },
+    {
+      "source": "drawable/pop_menu_btn_selector.xml",
+      "destination": "drawable/smartisan_rom_pop_menu_btn_selector.xml",
+      "sha256": "885a1fc1f24b785d361e92dfb693cd7114d05782242f47c5cbd4e02080fd03dc",
+      "transform": "prefix_drawable_references"
+    },
+    {
+      "source": "drawable/menu_list_selector.xml",
+      "destination": "drawable/smartisan_rom_menu_list_selector.xml",
+      "sha256": "1b6606277cd13b91afc3ce01749e2d806e356b8714575fe0d948ce690ab036d1",
+      "transform": "prefix_drawable_references"
+    },
+    {
+      "source": "drawable-xxhdpi/menu_pop_icon_bg_normal.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_pop_icon_bg_normal.9.png",
+      "sha256": "2114360d67ca5c0447e92f251203e8563f2cf013d5a19ad107492d1525fc2855"
+    },
+    {
+      "source": "drawable-xxhdpi/menu_pop_icon_bg_disabled.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_pop_icon_bg_disabled.9.png",
+      "sha256": "faaa44da1873e731bb4f66e139dbcfc079b7434bd1e3e504c868e6c3f656e7e4"
+    },
+    {
+      "source": "drawable-xxhdpi/menu_pop_icon_bg_pressed.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_pop_icon_bg_pressed.9.png",
+      "sha256": "68c0cf8e41592913cdb78b9e601a2a3c0ebd67c974d413cd5587d35fd32b58e9"
+    },
+    {
+      "source": "drawable-xxhdpi/pop_option_btn_normal.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_pop_option_btn_normal.9.png",
+      "sha256": "9cf137369b6bd437848e920728be6fcc86d7a18e305535f91368c60a9629c453"
+    },
+    {
+      "source": "drawable-xxhdpi/pop_option_btn_pressed.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_pop_option_btn_pressed.9.png",
+      "sha256": "05016bc91e9677c0a99d4b97cb75186c4b3ac4218ca83773fd14ffd4cbc83270"
     }
   ]
 }

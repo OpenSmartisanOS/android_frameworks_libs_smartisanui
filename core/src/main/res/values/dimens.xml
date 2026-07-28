@@ -33,4 +33,17 @@
     <dimen name="smartisan_rom_title_bar_shadow_height">14dp</dimen>
     <dimen name="smartisan_rom_bottom_bar_shadow_height">11dp</dimen>
     <dimen name="smartisan_rom_bar_divider_height">0.6700001dp</dimen>
+    <dimen name="smartisan_rom_list_divider_height">2px</dimen>
+    <dimen name="smartisan_rom_menu_panel_bg_arrow_height">5.299988dp</dimen>
+    <dimen name="smartisan_rom_menu_panel_bg_arrow_width">14.699982dp</dimen>
+    <dimen name="smartisan_rom_menu_panel_bg_min_distance">6dp</dimen>
+    <dimen name="smartisan_rom_menu_panel_bg_round_corner_radius">7.6999817dp</dimen>
+    <dimen name="smartisan_rom_popup_bg_left_right_shadow_width">31.299988dp</dimen>
+    <dimen name="smartisan_rom_popup_bg_top_bottom_shadow_height">45.69998dp</dimen>
+    <dimen name="smartisan_rom_popup_list_menu_default_width">220dp</dimen>
+    <dimen name="smartisan_rom_popup_list_menu_item_height">44dp</dimen>
+    <dimen name="smartisan_rom_popup_list_menu_long_press_width">180dp</dimen>
+    <dimen name="smartisan_rom_popup_list_menu_padding_vertical">8dp</dimen>
+    <dimen name="smartisan_rom_popup_list_menu_title_height">30dp</dimen>
+    <dimen name="smartisan_rom_popup_list_title_left_margin">12dp</dimen>
 </resources>

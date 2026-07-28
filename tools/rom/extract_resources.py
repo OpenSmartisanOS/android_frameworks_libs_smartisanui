@@ -12,6 +12,8 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ANDROID_NS = "http://schemas.android.com/apk/res/android"
+SMARTISAN_NS = "http://schemas.android.com/apk/res/smartisanos"
+AUTO_NS = "http://schemas.android.com/apk/res-auto"
 PRIVATE_FRAMEWORK_DRAWABLES = {
     "@android:drawable/btn_star_off_pressed_holo_light",
     "@android:drawable/btn_star_on_disabled_focused_holo_dark",
@@ -36,9 +38,18 @@ def safe_child(root: Path, relative: str) -> Path:
 
 def transformed_xml(source: Path, target: Path, all_references: bool = False) -> None:
     ET.register_namespace("android", ANDROID_NS)
+    ET.register_namespace("app", AUTO_NS)
     tree = ET.parse(source)
     for element in tree.iter():
+        if all_references and element.tag == "smartisanos.widget.RoundedRectLinearLayout":
+            element.tag = "org.opensmartisanos.ui.internal.RomRoundedRectLinearLayout"
+        elif all_references and element.tag == "smartisanos.widget.DividerListView":
+            element.tag = "org.opensmartisanos.ui.internal.RomDividerListView"
         for key, value in tuple(element.attrib.items()):
+            if all_references and key.startswith(f"{{{SMARTISAN_NS}}}"):
+                del element.attrib[key]
+                key = key.replace(f"{{{SMARTISAN_NS}}}", f"{{{AUTO_NS}}}", 1)
+                element.set(key, value)
             if value.startswith("@drawable/"):
                 element.set(key, value.replace("@drawable/", "@drawable/smartisan_rom_", 1))
             elif value in PRIVATE_FRAMEWORK_DRAWABLES:

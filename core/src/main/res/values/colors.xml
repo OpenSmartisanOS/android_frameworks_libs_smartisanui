@@ -14,4 +14,9 @@
     <color name="smartisan_rom_setting_item_text_color_highlight">#ffffff</color>
     <color name="smartisan_rom_setting_item_summary_text_color">#80000000</color>
     <color name="smartisan_rom_title_bar_text">#99000000</color>
+    <color name="smartisan_rom_list_divider_color">#14000000</color>
+    <color name="smartisan_rom_pop_win_bg_color">#fafafa</color>
+    <color name="smartisan_rom_title_bar_button_text">#99000000</color>
+    <drawable name="smartisan_rom_menu_list_item_normal">#ffffff</drawable>
+    <drawable name="smartisan_rom_menu_list_item_pressed">#f5f5f5</drawable>
 </resources>

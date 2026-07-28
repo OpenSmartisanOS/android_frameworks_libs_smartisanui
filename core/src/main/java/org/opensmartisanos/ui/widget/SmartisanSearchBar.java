@@ -115,17 +115,22 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
         secondaryFilter.setVisibility(GONE);
         ImageView divider = new ImageView(context);
         divider.setImageResource(R.drawable.smartisan_rom_search_bar_secondary_filter_divider);
-        secondaryFilter.addView(divider, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT));
+        LinearLayout.LayoutParams dividerParams = new LinearLayout.LayoutParams(
+                LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
+        dividerParams.rightMargin = dp(11);
+        secondaryFilter.addView(divider, dividerParams);
         secondaryFilterText = new TextView(context);
         secondaryFilterText.setTextSize(13.5f);
         secondaryFilterText.setTextColor(0xffa3a3a3);
         secondaryFilterText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.smartisan_rom_search_bar_secondary_filter_btn, 0);
         secondaryFilterText.setCompoundDrawablePadding(dp(7));
+        secondaryFilterText.setPadding(0, 0, dp(4), 0);
         LinearLayout.LayoutParams filterTextParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        filterTextParams.leftMargin = dp(11);
         secondaryFilter.addView(secondaryFilterText, filterTextParams);
-        LayoutParams filterParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
+        LayoutParams filterParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         filterParams.addRule(ALIGN_PARENT_END);
+        filterParams.addRule(CENTER_VERTICAL);
+        filterParams.rightMargin = dp(6);
         editLayout.addView(secondaryFilter, filterParams);
 
         editor = new SmartisanSearchEditText(context);

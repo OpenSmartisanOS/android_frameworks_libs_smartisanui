@@ -8,6 +8,10 @@
 
     <style name="Widget.SmartisanUi.ShadowButton" parent="@android:style/Widget.Material.Button" />
 
+    <style name="smartisan_rom_PopupMenuStyle">
+        <item name="android:background">@drawable/smartisan_rom_pop_up_menu_bg</item>
+    </style>
+
     <style name="Widget.SmartisanUi.ShadowButton.Small" parent="Widget.SmartisanUi.ShadowButton">
         <item name="android:textSize">@dimen/smartisan_button_text_size</item>
         <item name="android:textStyle">bold</item>

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="smartisan_rom_place_holder" type="id" />
+    <item name="smartisan_rom_menu_title_container" type="id" />
+    <item name="smartisan_rom_menu_title" type="id" />
+    <item name="smartisan_rom_menu_list" type="id" />
+    <item name="smartisan_rom_menu_list_bottom_divider" type="id" />
+    <item name="smartisan_rom_bottom_action_bar" type="id" />
+    <item name="smartisan_rom_right_icon" type="id" />
+    <item name="smartisan_rom_left_btn" type="id" />
+    <item name="smartisan_rom_right_btn" type="id" />
+    <item name="smartisan_rom_action_text" type="id" />
     <item name="smartisan_rom_subtitle" type="id" />
     <item name="smartisan_rom_arrow" type="id" />
     <item name="smartisan_rom_switchex" type="id" />

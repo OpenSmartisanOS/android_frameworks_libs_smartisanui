@@ -461,7 +461,7 @@ public final class CatalogActivity extends Activity {
         SmartisanButton anchor = button(SmartisanButton.STYLE_NORMAL,
                 R.string.smartisan_catalog_popup_open);
         anchor.setOnClickListener(v -> {
-            SmartisanListPopupMenu popup = new SmartisanListPopupMenu(this, dp(240));
+            SmartisanListPopupMenu popup = new SmartisanListPopupMenu(this);
             popup.setAnchorView(v);
             popup.setMenuListTitleVisible(true);
             popup.setMenuListTitle(getText(R.string.smartisan_catalog_page_title));
@@ -472,7 +472,7 @@ public final class CatalogActivity extends Activity {
             popup.setOnItemClickListener((parentView, item, position, id) -> popup.dismiss());
             popup.setBottomActionBarVisible(true);
             popup.setBottomText(getText(R.string.smartisan_catalog_filter));
-            popup.show(SmartisanListPopupMenu.ARROW_TOP, 0, 0, dp(100), 0);
+            popup.showCenter(v.getHeight(), 0);
         });
         addRow(parent, anchor);
     }

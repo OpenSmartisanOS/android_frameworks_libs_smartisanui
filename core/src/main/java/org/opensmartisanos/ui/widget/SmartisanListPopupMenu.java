@@ -2,107 +2,169 @@
 package org.opensmartisanos.ui.widget;
 
 import android.content.Context;
-import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.opensmartisanos.ui.R;
 
 public class SmartisanListPopupMenu extends SmartisanPopupMenu {
-    private final LinearLayout panel;
-    private final TextView titleView;
+    private final LinearLayout titleContainer;
     private final ListView listView;
-    private final LinearLayout actionBar;
+    private final TextView titleView;
+    private final View bottomActionBar;
+    private final View bottomDivider;
     private final ImageView leftAction;
     private final ImageView rightAction;
     private final Button leftButton;
     private final Button rightButton;
     private final TextView actionText;
-    private boolean showingDividers = true;
-    private boolean showPadding = true;
+    private final int listVerticalPadding;
 
-    public SmartisanListPopupMenu(Context context) { this(context, 0); }
-    public SmartisanListPopupMenu(Context context, int width) {
+    private ListAdapter adapter;
+    private AdapterView.OnItemClickListener itemClickListener;
+    private AdapterView.OnItemSelectedListener itemSelectedListener;
+    private View.OnClickListener leftClickListener;
+    private View.OnClickListener rightClickListener;
+    private boolean showBottomActionBar;
+    private boolean showMenuListTitle;
+    private boolean showingDividers = true;
+    private boolean showPadding;
+
+    public SmartisanListPopupMenu(Context context) {
         super(context);
-        panel = new LinearLayout(context); panel.setOrientation(LinearLayout.VERTICAL);
-        panel.setBackgroundResource(R.drawable.smartisan_rom_pop_up_menu_bg);
-        int padding = dp(12); panel.setPadding(padding, padding, padding, padding);
-        titleView = new TextView(context); titleView.setTextSize(12f); titleView.setTextColor(0x4c000000);
-        titleView.setTypeface(titleView.getTypeface(), android.graphics.Typeface.BOLD); titleView.setGravity(Gravity.CENTER_VERTICAL);
-        titleView.setVisibility(View.GONE); panel.addView(titleView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(36)));
-        listView = new ListView(context); listView.setDivider(null);
-        panel.addView(listView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        actionBar = new LinearLayout(context); actionBar.setGravity(Gravity.CENTER_VERTICAL); actionBar.setVisibility(View.GONE);
-        leftAction = actionIcon(); rightAction = actionIcon(); leftButton = actionButton(); rightButton = actionButton();
-        actionText = new TextView(context); actionText.setTextSize(10f); actionText.setTextColor(0x4c000000); actionText.setGravity(Gravity.CENTER);
-        actionBar.addView(leftAction, new LinearLayout.LayoutParams(dp(36), dp(28)));
-        actionBar.addView(leftButton, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dp(36)));
-        actionBar.addView(actionText, new LinearLayout.LayoutParams(0, dp(36), 1f));
-        actionBar.addView(rightButton, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dp(36)));
-        actionBar.addView(rightAction, new LinearLayout.LayoutParams(dp(36), dp(28)));
-        panel.addView(actionBar, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(48)));
-        FrameLayout shadow = new FrameLayout(context);
-        shadow.setBackgroundResource(R.drawable.smartisan_rom_popup_menu_bg_shadow);
-        shadow.setPadding(dp(8), dp(8), dp(8), dp(8));
-        shadow.addView(panel, new FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        menuPanelView = shadow;
-        if (width > 0) setContentAreaWidth(width); else setContentAreaWidth(dp(240));
+        contentAreaWidth = context.getResources().getDimensionPixelSize(
+                R.dimen.smartisan_rom_popup_list_menu_default_width);
+        menuPanelView = LayoutInflater.from(context).inflate(
+                R.layout.smartisan_rom_menu_popupwindow_layout, null);
+        titleContainer = menuPanelView.findViewById(R.id.smartisan_rom_menu_title_container);
+        listView = menuPanelView.findViewById(R.id.smartisan_rom_menu_list);
+        titleView = menuPanelView.findViewById(R.id.smartisan_rom_menu_title);
+        bottomActionBar = menuPanelView.findViewById(R.id.smartisan_rom_bottom_action_bar);
+        bottomDivider = menuPanelView.findViewById(R.id.smartisan_rom_menu_list_bottom_divider);
+        leftAction = menuPanelView.findViewById(R.id.smartisan_rom_left_icon);
+        rightAction = menuPanelView.findViewById(R.id.smartisan_rom_right_icon);
+        leftButton = menuPanelView.findViewById(R.id.smartisan_rom_left_btn);
+        rightButton = menuPanelView.findViewById(R.id.smartisan_rom_right_btn);
+        actionText = menuPanelView.findViewById(R.id.smartisan_rom_action_text);
+        listVerticalPadding = context.getResources().getDimensionPixelOffset(
+                R.dimen.smartisan_rom_popup_list_menu_padding_vertical);
     }
 
-    private ImageView actionIcon() { ImageView view = new ImageView(context); view.setScaleType(ImageView.ScaleType.CENTER); return view; }
-    private Button actionButton() { Button button = new Button(context); button.setTextSize(10f); button.setVisibility(View.GONE); return button; }
+    /** Width follows the ROM API and includes the left and right shadow areas. */
+    public SmartisanListPopupMenu(Context context, int width) {
+        this(context);
+        contentAreaWidth = width - bgLeftRightShadowWidth * 2;
+        if (contentAreaWidth <= 0) throw new IllegalArgumentException("width is smaller than popup shadows");
+    }
+
     @Override protected void prepareShow() {
-        int width = getPopupWindowWidth() - dp(40);
-        int height = listView.getPaddingTop() + listView.getPaddingBottom();
-        ListAdapter adapter = listView.getAdapter();
-        View recycled = null;
-        if (adapter != null) {
-            for (int i = 0; i < adapter.getCount(); i++) {
-                recycled = adapter.getView(i, recycled, listView);
-                recycled.measure(View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY),
-                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-                height += recycled.getMeasuredHeight();
-            }
-        }
+        bottomActionBar.setVisibility(showBottomActionBar ? View.VISIBLE : View.GONE);
+        bottomDivider.setVisibility(showBottomActionBar ? View.VISIBLE : View.GONE);
+        titleContainer.setVisibility(showMenuListTitle ? View.VISIBLE : View.GONE);
+        View left = leftButton.getVisibility() == View.VISIBLE ? leftButton : leftAction;
+        View right = rightButton.getVisibility() == View.VISIBLE ? rightButton : rightAction;
+        left.setOnClickListener(leftClickListener);
+        right.setOnClickListener(rightClickListener);
+        buildList();
+
+        // PopupWindow measures weighted children against available height. Give the ROM's 0dp
+        // list track its intrinsic height first so the same XML also works in ordinary AAR apps.
         ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = Math.min(height, dp(360));
+        params.height = getListViewHeight();
         listView.setLayoutParams(params);
     }
-    public void setAdapter(ListAdapter adapter) { listView.setAdapter(adapter); }
-    public void setOnItemClickListener(AdapterView.OnItemClickListener listener) { listView.setOnItemClickListener(listener); }
-    public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener listener) { listView.setOnItemSelectedListener(listener); }
-    public void setBottomActionBarVisible(boolean visible) { actionBar.setVisibility(visible ? View.VISIBLE : View.GONE); }
-    public void setLeftButtonText(CharSequence text) { leftButton.setText(text); setTextOrIconViewVisibility(true, true); }
-    public void setLeftImageViewResource(int resource) { leftAction.setImageResource(resource); setTextOrIconViewVisibility(true, false); }
-    public void setLeftButtonOnClickListener(View.OnClickListener listener) { leftButton.setOnClickListener(listener); leftAction.setOnClickListener(listener); }
-    public void setRightButtonText(CharSequence text) { rightButton.setText(text); setTextOrIconViewVisibility(false, true); }
-    public void setRightImageViewResource(int resource) { rightAction.setImageResource(resource); setTextOrIconViewVisibility(false, false); }
-    public void setRightButtonOnClickListener(View.OnClickListener listener) { rightButton.setOnClickListener(listener); rightAction.setOnClickListener(listener); }
-    public void setLeftButtonVisible(boolean visible) { leftButton.setVisibility(visible ? View.VISIBLE : View.GONE); leftAction.setVisibility(visible ? View.VISIBLE : View.GONE); }
-    public void setRightButtonVisible(boolean visible) { rightButton.setVisibility(visible ? View.VISIBLE : View.GONE); rightAction.setVisibility(visible ? View.VISIBLE : View.GONE); }
-    public void setBottomText(CharSequence text) { actionText.setText(text); }
-    public void setMenuListTitleVisible(boolean visible) { titleView.setVisibility(visible ? View.VISIBLE : View.GONE); }
-    public void setMenuListTitle(CharSequence text) { titleView.setText(text); }
-    public int getListViewHeight() { return listView.getHeight(); }
-    public int getBottomActionBarHeight() { return actionBar.getVisibility() == View.VISIBLE ? actionBar.getHeight() : 0; }
-    public int getMenuListTitleHeight() { return titleView.getVisibility() == View.VISIBLE ? titleView.getHeight() : 0; }
-    public void setTextOrIconViewVisibility(boolean left, boolean useText) {
-        (left ? leftButton : rightButton).setVisibility(useText ? View.VISIBLE : View.GONE);
-        (left ? leftAction : rightAction).setVisibility(useText ? View.GONE : View.VISIBLE);
+
+    private void buildList() {
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(itemClickListener);
+        listView.setOnItemSelectedListener(itemSelectedListener);
+        listView.setFocusable(true);
+        listView.setDivider(showingDividers
+                ? context.getDrawable(R.drawable.smartisan_rom_list_divider_drawable) : null);
+        listView.setSelector(R.drawable.smartisan_rom_menu_list_selector);
+        int horizontalLeft = listView.getPaddingLeft();
+        int horizontalRight = listView.getPaddingRight();
+        int vertical = showPadding ? listVerticalPadding : 0;
+        listView.setPadding(horizontalLeft, vertical, horizontalRight, vertical);
+        listView.setClipToPadding(!showPadding);
+        listView.setFocusableInTouchMode(true);
     }
+
+    public void setAdapter(ListAdapter adapter) {
+        this.adapter = adapter;
+        listView.setAdapter(adapter);
+    }
+    public void setOnItemClickListener(AdapterView.OnItemClickListener listener) { itemClickListener = listener; }
+    public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener listener) { itemSelectedListener = listener; }
+    public void setBottomActionBarVisible(boolean visible) { showBottomActionBar = visible; }
+    public void setLeftButtonText(CharSequence text) { leftButton.setText(text); }
+    public void setLeftImageViewRes(int resource) { leftAction.setImageResource(resource); }
+    public void setLeftImageViewResource(int resource) { setLeftImageViewRes(resource); }
+    public void setLeftButtonOnClickListener(View.OnClickListener listener) { leftClickListener = listener; }
+    public void setRightButtonText(CharSequence text) { rightButton.setText(text); }
+    public void setRightImageViewRes(int resource) { rightAction.setImageResource(resource); }
+    public void setRightImageViewResource(int resource) { setRightImageViewRes(resource); }
+    public void setRightButtonOnClickListener(View.OnClickListener listener) { rightClickListener = listener; }
+    public void setLeftButtonVisible(boolean visible) { leftAction.setVisibility(visible ? View.VISIBLE : View.GONE); }
+    public void setRightButtonVisible(boolean visible) { rightAction.setVisibility(visible ? View.VISIBLE : View.GONE); }
+    public void setBottomText(CharSequence text) { actionText.setText(text); }
+    public void setMenuListTitleVisible(boolean visible) { showMenuListTitle = visible; }
+    public void setMenuListTitle(CharSequence text) { titleView.setText(text); }
+
+    public int getListViewHeight() {
+        if (adapter == null) return showPadding ? listVerticalPadding * 2 : 0;
+        int height = 0;
+        for (int i = 0; i < adapter.getCount(); i++) {
+            View item = adapter.getView(i, null, listView);
+            item.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+            height += item.getMeasuredHeight();
+            if (showingDividers) height += listView.getDividerHeight();
+        }
+        return height + (showPadding ? listVerticalPadding * 2 : 0);
+    }
+
+    public int getBottomActionBarHeight() {
+        if (bottomActionBar.getVisibility() == View.GONE) return 0;
+        bottomActionBar.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        return bottomActionBar.getMeasuredHeight();
+    }
+
+    public int getMenuListTitleHeight() {
+        return titleView.getVisibility() == View.GONE ? 0
+                : context.getResources().getDimensionPixelSize(
+                        R.dimen.smartisan_rom_popup_list_menu_title_height);
+    }
+
+    public void setTextOrIconViewVisibility(boolean left, boolean useText) {
+        View button = left ? leftButton : rightButton;
+        View icon = left ? leftAction : rightAction;
+        int rule = left ? RelativeLayout.RIGHT_OF : RelativeLayout.LEFT_OF;
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) actionText.getLayoutParams();
+        if (useText) {
+            button.setVisibility(View.VISIBLE);
+            icon.setVisibility(View.GONE);
+            params.addRule(rule, button.getId());
+        } else {
+            icon.setVisibility(View.VISIBLE);
+            button.setVisibility(View.GONE);
+            params.addRule(rule, icon.getId());
+        }
+        actionText.setLayoutParams(params);
+    }
+
     public boolean isShowingDividers() { return showingDividers; }
-    public void setShowingDividers(boolean show) { showingDividers = show; listView.setDividerHeight(show ? 1 : 0); }
+    public void setShowingDividers(boolean show) { showingDividers = show; }
     public boolean isShowPadding() { return showPadding; }
-    public void setShowPadding(boolean show) { showPadding = show; int p = show ? dp(12) : 0; panel.setPadding(p, p, p, p); }
+    public void setShowPadding(boolean show) { showPadding = show; }
     public ImageView getLeftActionView() { return leftAction; }
     public ImageView getRightActionView() { return rightAction; }
     public Button getLeftButton() { return leftButton; }
