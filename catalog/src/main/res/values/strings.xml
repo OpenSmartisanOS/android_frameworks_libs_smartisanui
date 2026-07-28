@@ -24,4 +24,20 @@
     <string name="smartisan_catalog_mobile_data">移动数据</string>
     <string name="smartisan_catalog_mobile_data_summary">使用蜂窝网络连接互联网</string>
     <string name="smartisan_catalog_selected_item">当前选择</string>
+    <string name="smartisan_catalog_white">白色</string>
+    <string name="smartisan_catalog_gray">灰色</string>
+    <string name="smartisan_catalog_dark_switch">深色 Switch</string>
+    <string name="smartisan_catalog_light_switch">浅色 Switch</string>
+    <string name="smartisan_catalog_unselected_item">未选择</string>
+    <string name="smartisan_catalog_no_arrow">无箭头文本项</string>
+    <string name="smartisan_catalog_value">右侧值</string>
+    <string name="smartisan_catalog_disabled_switch">禁用开关项</string>
+    <string name="smartisan_catalog_setting_item">SmartisanSettingItem</string>
+    <string name="smartisan_catalog_account">欢喜云服务</string>
+    <string name="smartisan_catalog_account_summary">同步联系人、便签和相册</string>
+    <string name="smartisan_catalog_signed_in">已登录</string>
+    <string name="smartisan_catalog_backup">自动备份</string>
+    <string name="smartisan_catalog_backup_summary">连接无线网络时自动备份</string>
+    <string name="smartisan_catalog_sync">同步设置</string>
+    <string name="smartisan_catalog_sync_summary">同步系统设置到云端</string>
 </resources>
