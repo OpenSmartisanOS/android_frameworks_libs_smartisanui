@@ -48,6 +48,7 @@
     <string name="smartisan_catalog_segmented">SmartisanSegmentedControl</string>
     <string name="smartisan_catalog_page_title">通用组件</string>
     <string name="smartisan_catalog_search_hint">搜索联系人</string>
+    <string name="smartisan_catalog_search_long_query">这是一段较长的搜索关键词</string>
     <string name="smartisan_catalog_filter">筛选</string>
     <string name="smartisan_catalog_menu_dialog">打开菜单弹窗</string>
     <string name="smartisan_catalog_progress_dialog">打开进度弹窗</string>

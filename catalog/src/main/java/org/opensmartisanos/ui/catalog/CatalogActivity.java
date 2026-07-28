@@ -418,9 +418,13 @@ public final class CatalogActivity extends Activity {
         filter.setHint(getText(R.string.smartisan_catalog_search_hint));
         filter.setSecondaryFilterText(R.string.smartisan_catalog_filter);
         filter.setSecondaryFilterVisibility(View.VISIBLE);
-        filter.setWithAnimation(false);
-        filter.onClickSearchEditor(false);
         addRow(parent, filter);
+
+        SmartisanSearchBar active = new SmartisanSearchBar(this);
+        active.setWithAnimation(false);
+        active.onClickSearchEditor(false);
+        active.setQuery(getText(R.string.smartisan_catalog_search_long_query));
+        addRow(parent, active);
     }
 
     private void addDialogs(LinearLayout parent) {

@@ -48,6 +48,7 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
     private boolean withAnimation = true;
     private boolean searchEnabled = true;
     private boolean imageScaleEnabled = true;
+    private boolean secondaryFilterEnabled;
     private AnimationListener animationListener;
     private OnCancelClickListener cancelClickListener;
     private OnEditorClickListener editorClickListener;
@@ -129,17 +130,21 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
 
         editor = new SmartisanSearchEditText(context);
         editor.setSingleLine(true);
-        editor.setTextSize(16f);
+        editor.setTextSize(15f);
         editor.setTextColor(0xcc000000);
         editor.setHintTextColor(0x66000000);
         editor.setBackground(null);
+        editor.setGravity(Gravity.CENTER_VERTICAL);
+        editor.setPadding(0, 0, 0, 0);
+        editor.setIncludeFontPadding(true);
         editor.setImeOptions(android.view.inputmethod.EditorInfo.IME_ACTION_DONE);
         editor.setCursorVisible(false);
         editor.setFocusable(false);
         editor.setFocusableInTouchMode(false);
-        LayoutParams editorParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        LayoutParams editorParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         editorParams.addRule(END_OF, leftIcon.getId());
-        editorParams.addRule(START_OF, secondaryFilter.getId());
+        editorParams.addRule(START_OF, clearView.getId());
+        editorParams.addRule(CENTER_VERTICAL);
         editorParams.leftMargin = dp(6);
         editLayout.addView(editor, editorParams);
 
@@ -209,6 +214,7 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
     private void startAnimation(boolean toSearchMode, boolean requestedAnimation) {
         if (playingAnimation || searchMode == toSearchMode) return;
         searchMode = toSearchMode;
+        if (toSearchMode) applySecondaryFilterState();
         boolean animate = requestedAnimation && withAnimation && isLaidOut();
         if (!animate) { applyMode(); return; }
         playingAnimation = true;
@@ -239,6 +245,17 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
         params.addRule(START_OF, searchMode ? cancelView.getId() : rightContainer.getId());
         if (!searchMode && rightContainer.getChildCount() == 0) params.rightMargin = dp(6);
         editLayout.setLayoutParams(params);
+        applySecondaryFilterState();
+    }
+
+    private void applySecondaryFilterState() {
+        boolean showFilter = secondaryFilterEnabled && !searchMode;
+        secondaryFilter.setVisibility(secondaryFilterEnabled
+                ? (showFilter ? VISIBLE : INVISIBLE) : GONE);
+        LayoutParams params = (LayoutParams) editor.getLayoutParams();
+        params.removeRule(START_OF);
+        params.addRule(START_OF, showFilter ? secondaryFilter.getId() : clearView.getId());
+        editor.setLayoutParams(params);
     }
 
     public void addShadow() { shadowView.setVisibility(VISIBLE); }
@@ -259,7 +276,10 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
     public void setSearchLeftIcon(Drawable icon) { leftIcon.setImageDrawable(icon); }
     public void setSearchLeftIcon(int resource) { leftIcon.setImageResource(resource); }
     public void setCancelViewVisibility(int visibility) { cancelView.setVisibility(visibility); }
-    public void setSecondaryFilterVisibility(int visibility) { secondaryFilter.setVisibility(visibility); }
+    public void setSecondaryFilterVisibility(int visibility) {
+        secondaryFilterEnabled = visibility == VISIBLE;
+        applySecondaryFilterState();
+    }
     public void setSecondaryFilterText(CharSequence text) { secondaryFilterText.setText(text); }
     public void setSecondaryFilterText(int resource) { secondaryFilterText.setText(resource); }
     public void setSearchEnabled(boolean enabled) { searchEnabled = enabled; setEnabled(enabled); }
