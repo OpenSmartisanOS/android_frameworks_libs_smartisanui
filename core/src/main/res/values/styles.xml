@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.SmartisanUi" parent="@android:style/Theme.Material.Light.NoActionBar">
-        <item name="android:colorAccent">@color/smartisan_color_on_surface</item>
-        <item name="android:windowBackground">@color/smartisan_color_surface</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@color/smartisan_catalog_background</item>
+    </style>
+
+    <style name="Widget.SmartisanUi.ShadowButton" parent="@android:style/Widget.Material.Button" />
+
+    <style name="Widget.SmartisanUi.ShadowButton.Small" parent="Widget.SmartisanUi.ShadowButton">
+        <item name="android:textSize">@dimen/smartisan_button_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="shadowButtonStyle">smallButton</item>
+    </style>
+    <style name="Widget.SmartisanUi.ShadowButton.Long">
+        <item name="android:textSize">@dimen/smartisan_shadow_button_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/smartisan_button_highlight_text_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">-2</item>
+        <item name="android:shadowRadius">0.1</item>
+        <item name="shadowButtonStyle">longButton</item>
+        <item name="shadowColors">@color/smartisan_button_text_shadow_color</item>
+    </style>
+    <style name="Widget.SmartisanUi.ShadowButton.Shrink" parent="Widget.SmartisanUi.ShadowButton.Long">
+        <item name="shadowButtonStyle">shrinkLongButton</item>
     </style>
 </resources>

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Placeholder tokens. Replace values only after reference measurement. -->
-    <dimen name="smartisan_spacing_unit">4dp</dimen>
-    <dimen name="smartisan_control_corner_radius">4dp</dimen>
+    <!-- Values copied from framework-smartisanos-res.apk, R2 build 8.5.3. -->
+    <dimen name="smartisan_button_fixed_width">60dp</dimen>
+    <dimen name="smartisan_button_fixed_height">48dp</dimen>
+    <dimen name="smartisan_button_icon_area_width">40dp</dimen>
+    <dimen name="smartisan_button_icon_area_height">48dp</dimen>
+    <dimen name="smartisan_button_limit_min_width">66dp</dimen>
+    <dimen name="smartisan_button_limit_max_width">101.69998dp</dimen>
+    <dimen name="smartisan_button_text_size">13.5sp</dimen>
+    <dimen name="smartisan_shadow_button_text_size">17sp</dimen>
+    <dimen name="smartisan_shadow_button_text_max_width">300dp</dimen>
+    <dimen name="smartisan_shadow_button_common_max_size">20dp</dimen>
+    <dimen name="smartisan_shadow_button_bg_shadow_left_gap">8dp</dimen>
+    <dimen name="smartisan_shadow_button_bg_shadow_top_gap">14dp</dimen>
 </resources>

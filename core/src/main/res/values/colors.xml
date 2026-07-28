@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Placeholder tokens. Replace values only after reference measurement. -->
-    <color name="smartisan_color_surface">#FFF5F5F5</color>
-    <color name="smartisan_color_on_surface">#FF333333</color>
-    <color name="smartisan_color_divider">#1F000000</color>
+    <!-- Values copied from framework-smartisanos-res.apk, R2 build 8.5.3. -->
+    <color name="smartisan_button_normal_text_color">#666666</color>
+    <color name="smartisan_button_normal_enable_shadow_color">#4cffffff</color>
+    <color name="smartisan_button_highlight_enable_shadow_color">#26000000</color>
+    <color name="smartisan_button_disabled_text_color">#4d666666</color>
+    <color name="smartisan_button_highlight_disabled_text_color">#4dffffff</color>
+    <color name="smartisan_button_highlight_text_color">#ffffff</color>
+    <color name="smartisan_button_text_shadow_color">#26000000</color>
+    <color name="smartisan_catalog_background">#f2f2f2</color>
 </resources>

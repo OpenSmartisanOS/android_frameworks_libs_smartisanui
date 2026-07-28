@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="buttonStyle" format="integer">
+        <enum name="normal" value="0" />
+        <enum name="back" value="1" />
+        <enum name="setting" value="2" />
+        <enum name="delete" value="3" />
+        <enum name="highlightBlue" value="4" />
+        <enum name="highlightRed" value="5" />
+        <enum name="normalWithIcon" value="6" />
+        <enum name="areaOnlyIcon" value="7" />
+        <enum name="search" value="8" />
+        <enum name="customBackground" value="9" />
+        <enum name="mix" value="10" />
+    </attr>
+    <attr name="buttonSrc" format="reference" />
+    <declare-styleable name="SmartisanButton">
+        <attr name="buttonStyle" />
+        <attr name="buttonSrc" />
+    </declare-styleable>
+
+    <attr name="shadow_enabled" format="boolean" />
+    <attr name="shadow_project" format="boolean" />
+    <attr name="backgroundShadow" format="reference" />
+    <attr name="shadowButtonStyle" format="integer">
+        <enum name="smallButton" value="1" />
+        <enum name="longButton" value="2" />
+        <enum name="shrinkLongButton" value="3" />
+    </attr>
+    <attr name="shadowColors" format="color|reference" />
+    <declare-styleable name="SmartisanShadowButton">
+        <attr name="android:shadowDx" />
+        <attr name="android:shadowDy" />
+        <attr name="android:shadowRadius" />
+        <attr name="shadow_enabled" />
+        <attr name="shadow_project" />
+        <attr name="backgroundShadow" />
+        <attr name="shadowButtonStyle" />
+        <attr name="shadowColors" />
+    </declare-styleable>
+</resources>
