@@ -24,6 +24,13 @@ slider, circle/download progress, snackbar, and button group.
 Date/time/number pickers, calendars, BHM, sector menu, search business flows, candidates, app lock,
 tab switcher, TNT, and unmodified platform widgets are intentionally excluded.
 
+## First-layer status
+
+The first layer is complete. Core contains the title bars, buttons, switch, grouped rows, setting
+rows, phone search bar, menu and progress dialogs, anchored list popup, tips, empty state, and
+segmented control. The Catalog exposes interactive variants of every family, and the release AAR
+is verified from a separate `minSdk 23` Android application.
+
 ## Porting rule
 
 Java is a faithful source port from `smartisanos.jar`: retain rendering, state, measurement, and

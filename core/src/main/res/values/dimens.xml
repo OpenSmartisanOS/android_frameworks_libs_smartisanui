@@ -24,4 +24,13 @@
     <dimen name="smartisan_rom_mid_container_summary_margin">2dp</dimen>
     <dimen name="smartisan_rom_primary_text_size">17sp</dimen>
     <dimen name="smartisan_rom_list_right_text_right_padding">12dp</dimen>
+    <dimen name="smartisan_rom_bar_margin_edge">6dp</dimen>
+    <dimen name="smartisan_rom_title_bar_margin_view">12dp</dimen>
+    <dimen name="smartisan_rom_standard_icon_size">36dp</dimen>
+    <dimen name="smartisan_rom_title_bar_height">48dp</dimen>
+    <dimen name="smartisan_rom_title_bar_center_limit">114dp</dimen>
+    <dimen name="smartisan_rom_title_bar_title_size">18px</dimen>
+    <dimen name="smartisan_rom_title_bar_shadow_height">14dp</dimen>
+    <dimen name="smartisan_rom_bottom_bar_shadow_height">11dp</dimen>
+    <dimen name="smartisan_rom_bar_divider_height">0.6700001dp</dimen>
 </resources>

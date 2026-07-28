@@ -1,11 +1,11 @@
 # Smartisan UI
 
-Shared Smartisan-inspired UI components and design tokens for OpenSmartisanOS.
+Shared Smartisan UI components ported from the Smartisan OS 8.5.3 R2 ROM for OpenSmartisanOS.
 
-The library is intended to provide a single visual and behavioral foundation for
-OpenSmartisanOS system applications. It will contain reusable themes, controls,
-dialogs, preferences, drawables, and motion specifications derived from measured
-reference behavior.
+The library provides a single visual and behavioral foundation for OpenSmartisanOS
+system and third-party applications. Core controls retain the ROM rendering,
+measurement, state and interaction behavior; extracted resources are hash-pinned
+under `core/provenance`.
 
 ## Modules
 

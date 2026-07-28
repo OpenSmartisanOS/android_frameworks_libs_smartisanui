@@ -13,4 +13,5 @@
     <color name="smartisan_rom_setting_item_text_color_disabled">#bababa</color>
     <color name="smartisan_rom_setting_item_text_color_highlight">#ffffff</color>
     <color name="smartisan_rom_setting_item_summary_text_color">#80000000</color>
+    <color name="smartisan_rom_title_bar_text">#99000000</color>
 </resources>

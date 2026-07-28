@@ -76,4 +76,10 @@
     <declare-styleable name="SmartisanListContentItemCheck">
         <attr name="selectedIcon" />
     </declare-styleable>
+    <attr name="titleBarCenterText" format="string|reference" />
+    <attr name="titleBarBottomType" format="boolean" />
+    <declare-styleable name="SmartisanTitleBar">
+        <attr name="titleBarCenterText" />
+        <attr name="titleBarBottomType" />
+    </declare-styleable>
 </resources>

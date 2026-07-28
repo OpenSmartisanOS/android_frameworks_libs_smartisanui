@@ -1,0 +1,20 @@
+{
+  "rom": "Smartisan OS 8.5.3 R2",
+  "decompiler": "jadx",
+  "classes": [
+    {"source":"smartisanos.widget.TitleBar","public":"org.opensmartisanos.ui.widget.SmartisanTitleBar","sha256":"4f3a4ae9ca9d54e3cf35f678596e30987109af96d9d47e189c663685a0348420"},
+    {"source":"smartisanos.widget.MenuDialogTitleBar","public":"org.opensmartisanos.ui.widget.SmartisanDialogTitleBar","sha256":"425e0159681ee174e270d15796e36e51d73138bfd544349c4d01bdee964b991c"},
+    {"source":"smartisanos.widget.BarsHelper","internal":"org.opensmartisanos.ui.internal.SmartisanBarsHelper","sha256":"c3b88f22c44d7e5b0a1ba23081fd5e9734940b98d2250dff1a73a0137a1a6841"},
+    {"source":"smartisanos.widget.SearchBar","public":"org.opensmartisanos.ui.widget.SmartisanSearchBar","sha256":"64ddfbebc5137ac059669b92a6bd05630c057f8134ee61c55621a3ef87343163"},
+    {"source":"smartisanos.widget.SearchBarEditText","public":"org.opensmartisanos.ui.widget.SmartisanSearchEditText","sha256":"16eab91468aa74aaaa4b7c58084054ec34f63d902ac77798cb86f6f157fe6b0b"},
+    {"source":"smartisanos.app.MenuDialog","public":"org.opensmartisanos.ui.app.SmartisanMenuDialog","sha256":"27c9dd2165283038c7c10f2b57e575dd57617c04a1b6b22fc45404b174994926"},
+    {"source":"smartisanos.app.MenuDialogListAdapter","internal":"SmartisanMenuDialog.TextAdapter","sha256":"3c41c178ed2a1af6b9f70c9ea318057cdee800c5f139e145ac1b4ce1da248f1c"},
+    {"source":"smartisanos.app.MenuDialogMultiAdapter","internal":"SmartisanMenuDialog.TextAdapter","sha256":"408ebbe89cbfb040848bce5a553249ac659a54651a19fa57e82e838040372a71"},
+    {"source":"smartisanos.app.SmartisanProgressDialog","public":"org.opensmartisanos.ui.app.SmartisanProgressDialog","sha256":"ff57228b63f2336c4c00938b8a41bbed0e07fb3a392d421733324ec77f74042b"},
+    {"source":"smartisanos.widget.support.SmartisanPopupMenu","public":"org.opensmartisanos.ui.widget.SmartisanPopupMenu","sha256":"34e689c983f63f895aae7cc4f091b8207689a242555e3734d8e1a664c1bf93e0"},
+    {"source":"smartisanos.widget.support.SmartisanListPopupMenu","public":"org.opensmartisanos.ui.widget.SmartisanListPopupMenu","sha256":"e49a473dd9be30199575effce9092c8e98d9d977c2b69a07990791d6dcb41326"},
+    {"source":"smartisanos.widget.TipsView","public":"org.opensmartisanos.ui.widget.SmartisanTipsBar","sha256":"07111ae3d276f1cfeb4cbd4916a1024745f0beb32537dcb8935dc733fd3f46a0"},
+    {"source":"smartisanos.widget.SmartisanBlankView","public":"org.opensmartisanos.ui.widget.SmartisanEmptyView","sha256":"337e7d1ca6da3d4a904d11156fddd35043ca0b3c92df8a9c9c8977fb69d7bee6"},
+    {"source":"smartisanos.widget.ButtonTabGroup","public":"org.opensmartisanos.ui.widget.SmartisanSegmentedControl","sha256":"b4ea43cc6a0fcb63dd991a56c160e5644f47e52e610debf8bd9fc7f8f6baca8a"}
+  ]
+}
