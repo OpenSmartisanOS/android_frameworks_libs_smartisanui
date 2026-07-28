@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Placeholder tokens. Replace values only after reference measurement. -->
+    <dimen name="smartisan_spacing_unit">4dp</dimen>
+    <dimen name="smartisan_control_corner_radius">4dp</dimen>
+</resources>

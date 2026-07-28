@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Placeholder tokens. Replace values only after reference measurement. -->
+    <color name="smartisan_color_surface">#FFF5F5F5</color>
+    <color name="smartisan_color_on_surface">#FF333333</color>
+    <color name="smartisan_color_divider">#1F000000</color>
+</resources>

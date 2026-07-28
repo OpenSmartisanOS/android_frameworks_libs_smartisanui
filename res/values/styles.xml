@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SmartisanUi" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:colorAccent">@color/smartisan_color_on_surface</item>
+        <item name="android:windowBackground">@color/smartisan_color_surface</item>
+    </style>
+</resources>
