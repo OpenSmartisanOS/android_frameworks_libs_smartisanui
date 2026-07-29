@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowInsets;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -162,6 +164,23 @@ public final class CatalogActivity extends Activity {
     root.setOrientation(LinearLayout.VERTICAL);
     root.setBackgroundColor(
         getResources().getColor(org.opensmartisanos.ui.R.color.smartisan_catalog_background));
+    Window window = getWindow();
+    window.setStatusBarColor(Color.WHITE);
+    window.setNavigationBarColor(
+        getResources().getColor(org.opensmartisanos.ui.R.color.smartisan_catalog_background));
+    if (android.os.Build.VERSION.SDK_INT >= 26) {
+      window.getDecorView().setSystemUiVisibility(
+          View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+    } else if (android.os.Build.VERSION.SDK_INT >= 23) {
+      window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    }
+    root.setOnApplyWindowInsetsListener(
+        (view, insets) -> {
+          view.setPadding(view.getPaddingLeft(), insets.getSystemWindowInsetTop(),
+              view.getPaddingRight(), insets.getSystemWindowInsetBottom());
+          return insets;
+        });
+    root.post(() -> root.requestApplyInsets());
     return root;
   }
 
