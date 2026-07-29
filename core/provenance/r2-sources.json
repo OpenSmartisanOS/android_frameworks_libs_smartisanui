@@ -22,6 +22,12 @@
     {"source":"smartisanos.widget.editor.SimpleEditor","public":"org.opensmartisanos.ui.widget.SmartisanSimpleEditor","sha256":"b84171b0b9985a7868d5253ccee69ca581581655d6aa3c39964026d114698e10"},
     {"source":"smartisanos.widget.editor.LabelEditor","public":"org.opensmartisanos.ui.widget.SmartisanLabelEditor","sha256":"363bf2d40e3a2c700e98a0fdd1b963c8887500f5da70cce305393753d5389872"},
     {"source":"smartisanos.widget.editor.EditorLeftLabelWidget","internal":"org.opensmartisanos.ui.internal.SmartisanEditorLeftLabelWidget","sha256":"6f0b5a92b79f5e8c3b2342a0fc054e164a4877d1028c127d4bd7bd84dd388ea6"},
-    {"source":"smartisanos.widget.editor.EditorRightIconWidget","internal":"org.opensmartisanos.ui.internal.SmartisanEditorRightIconWidget","sha256":"4011dfa91443c1f38f364d7aec3aa2a8c4901d9ee44a575399fc1059e7a0a61a"}
+    {"source":"smartisanos.widget.editor.EditorRightIconWidget","internal":"org.opensmartisanos.ui.internal.SmartisanEditorRightIconWidget","sha256":"4011dfa91443c1f38f364d7aec3aa2a8c4901d9ee44a575399fc1059e7a0a61a"},
+    {"source":"smartisanos.widget.BottomBar","public":"org.opensmartisanos.ui.widget.SmartisanBottomBar","sha256":"75e8acbde4e65202703ddf43a10a26899acb64fae0b88222cbe9784757c05e70"},
+    {"source":"smartisanos.widget.BottomBarItemView","public":"org.opensmartisanos.ui.widget.SmartisanBottomBarItemView","sha256":"5bce9ca3692af04735ea0731c2b1fb760a9656e2c94077993d114c97fac745d1"},
+    {"source":"smartisanos.widget.SmartisanBottomBar","public":"org.opensmartisanos.ui.widget.SmartisanIconBottomBar","sha256":"42f1ad9a8d07ac373277ca3ae6f34c49bc7f8da0f9b6566af967aeb4c3731fad"},
+    {"source":"smartisanos.widget.MixBottomBar","public":"org.opensmartisanos.ui.widget.SmartisanMixBottomBar","sha256":"5feeb2cbd2b75d221c8062348651382af5b6fefd22311aed4d3b83ef924d8325"},
+    {"source":"smartisanos.widget.ButtonGroup","public":"org.opensmartisanos.ui.widget.SmartisanButtonGroup","sha256":"c2f27e97e8ecd4ae580578a1a17616ae26d52aa3f339cdc590f401973c3144e8"},
+    {"source":"smartisanos.widget.ActionButtonGroup","public":"org.opensmartisanos.ui.widget.SmartisanActionButtonGroup","sha256":"81ead1cc569502a886b48dd222f7164b77a24d11a098121a8eff786aa8d14350"}
   ]
 }

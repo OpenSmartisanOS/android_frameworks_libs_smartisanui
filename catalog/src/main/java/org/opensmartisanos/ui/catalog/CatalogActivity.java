@@ -19,6 +19,11 @@ import org.opensmartisanos.ui.app.SmartisanMenuDialog;
 import org.opensmartisanos.ui.app.SmartisanProgressDialog;
 
 import org.opensmartisanos.ui.widget.SmartisanButton;
+import org.opensmartisanos.ui.widget.SmartisanBottomBar;
+import org.opensmartisanos.ui.widget.SmartisanButtonGroup;
+import org.opensmartisanos.ui.widget.SmartisanActionButtonGroup;
+import org.opensmartisanos.ui.widget.SmartisanIconBottomBar;
+import org.opensmartisanos.ui.widget.SmartisanMixBottomBar;
 import org.opensmartisanos.ui.widget.SmartisanListContentItem;
 import org.opensmartisanos.ui.widget.SmartisanListContentItemCheck;
 import org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch;
@@ -90,6 +95,12 @@ public final class CatalogActivity extends Activity {
 
         addSection(content, R.string.smartisan_catalog_editors);
         addEditors(content);
+
+        addSection(content, R.string.smartisan_catalog_bottom_bars);
+        addBottomBars(content);
+
+        addSection(content, R.string.smartisan_catalog_button_groups);
+        addButtonGroups(content);
 
         addSection(content, R.string.smartisan_catalog_dialogs);
         addDialogs(content);
@@ -443,7 +454,6 @@ public final class CatalogActivity extends Activity {
         quickDelete.setBackgroundResource(
                 org.opensmartisanos.ui.R.drawable.smartisan_rom_editor_bg_single);
         quickDelete.setPadding(dp(12), 0, dp(6), 0);
-        quickDelete.requestFocus();
         LinearLayout.LayoutParams quickParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, dp(44));
         quickParams.bottomMargin = dp(10);
@@ -486,6 +496,56 @@ public final class CatalogActivity extends Activity {
         editor.setLeftLabel(label);
         editor.getEditor().setHint(hint);
         return editor;
+    }
+
+    private void addBottomBars(LinearLayout parent) {
+        SmartisanBottomBar tabs = new SmartisanBottomBar(this);
+        tabs.setStyleFlag(SmartisanBottomBar.STYLE_BOTTOM_TAB);
+        tabs.addBarItem(View.generateViewId(), getString(R.string.smartisan_catalog_home),
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_standard_icon_back_selector);
+        tabs.addBarItem(View.generateViewId(), getString(R.string.smartisan_catalog_search),
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_selector_small_icon_btn_search);
+        tabs.addBarItem(View.generateViewId(), getString(R.string.smartisan_catalog_settings),
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_selector_small_icon_btn_setting);
+        tabs.setup(true);
+        addRow(parent, tabs);
+
+        SmartisanIconBottomBar icons = new SmartisanIconBottomBar(this);
+        icons.setIconRefArray(new int[] {
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_standard_icon_back_selector,
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_selector_small_icon_btn_search,
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_selector_small_icon_btn_setting
+        });
+        addRow(parent, icons);
+
+        SmartisanMixBottomBar mix = new SmartisanMixBottomBar(this);
+        addRow(parent, mix);
+    }
+
+    private void addButtonGroups(LinearLayout parent) {
+        SmartisanButtonGroup joined = new SmartisanButtonGroup(this);
+        joined.setButtonCount(3, false);
+        joined.setButtonText(0, R.string.smartisan_catalog_item_one);
+        joined.setButtonText(1, R.string.smartisan_catalog_item_two);
+        joined.setButtonText(2, R.string.smartisan_catalog_item_three);
+        joined.setButtonActivated(0);
+        addRow(parent, joined);
+
+        SmartisanButtonGroup separated = new SmartisanButtonGroup(this);
+        separated.setButtonCount(3, true);
+        separated.setButtonText(0, R.string.smartisan_catalog_cancel);
+        separated.setButtonText(1, R.string.smartisan_catalog_confirm);
+        separated.setButtonText(2, R.string.smartisan_catalog_delete);
+        addRow(parent, separated);
+
+        SmartisanActionButtonGroup actions = new SmartisanActionButtonGroup(this);
+        actions.getLeftActionButton().setImageResource(
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_standard_icon_back_selector);
+        for (int i = 0; i < actions.getButtonCount(); i++) {
+            actions.setButtonText(i, i == 0 ? R.string.smartisan_catalog_item_one
+                    : R.string.smartisan_catalog_item_two);
+        }
+        addRow(parent, actions);
     }
 
     private void addDialogs(LinearLayout parent) {

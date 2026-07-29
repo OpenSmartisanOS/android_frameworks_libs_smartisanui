@@ -992,6 +992,19 @@
     {"source":"drawable-xxhdpi/eye_icon_0013.png","destination":"drawable-xxhdpi/smartisan_rom_eye_icon_0013.png","sha256":"a62777f4330ac212cc0ebb130699ea00cdb9f57babcbcf66e778e4fcbddc2e7c"},
     {"source":"drawable-xxhdpi/eye_icon_0014.png","destination":"drawable-xxhdpi/smartisan_rom_eye_icon_0014.png","sha256":"208f11387abd16912e0f6ce5cac7a6a26890a1e30a0fb0eec4d750365eb8de32"},
     {"source":"drawable-xxhdpi/eye_icon_0015.png","destination":"drawable-xxhdpi/smartisan_rom_eye_icon_0015.png","sha256":"a2cb4ef8980621cfbf104769cff5323f9158583cc13440d3a264e24fe8aa2487"},
-    {"source":"drawable-xxhdpi/eye_icon_0016.png","destination":"drawable-xxhdpi/smartisan_rom_eye_icon_0016.png","sha256":"f0c677c5d4e8bd73ca032fea273d3510a446b0a9928dfb4837a8e6073ecf4c39"}
+    {"source":"drawable-xxhdpi/eye_icon_0016.png","destination":"drawable-xxhdpi/smartisan_rom_eye_icon_0016.png","sha256":"f0c677c5d4e8bd73ca032fea273d3510a446b0a9928dfb4837a8e6073ecf4c39"},
+    {"source":"layout/mix_bottom_bar.xml","destination":"layout/smartisan_rom_mix_bottom_bar.xml","sha256":"e743c31898ea32c9e896ac8e686c75b1d185ac069e42819e8fecdd78b2f0b0bc","transform":"prefix_resource_references"},
+    {"source":"layout/smartisan_button_group_layout.xml","destination":"layout/smartisan_rom_button_group_layout.xml","sha256":"82d2112b128b013255de59e3d96cd837e3ca579d1b496e0c5b8340dbe404c6e3","transform":"prefix_resource_references"},
+    {"source":"drawable/mix_bottom_bar_action_btn.xml","destination":"drawable/smartisan_rom_mix_bottom_bar_action_btn.xml","sha256":"993cc45fea5dc0554501632fca7a9f5e3ce38d5b9b0baff0dc911a706a1c2843","transform":"prefix_drawable_references"},
+    {"source":"drawable/mix_bottom_bar_center_btn.xml","destination":"drawable/smartisan_rom_mix_bottom_bar_center_btn.xml","sha256":"33526e198490e4bfe713b51191c02a707b878d6ee0e566e59e7736e76aaa53c0","transform":"prefix_drawable_references"},
+    {"source":"color/bottom_tab_text_color.xml","destination":"color/smartisan_rom_bottom_tab_text_color.xml","sha256":"d0a7655b82a8c21d3045481e180635136643feb06855f33d15b08c65aeb7d016","transform":"prefix_resource_references"},
+    {"source":"color/filter_button_text_shadow_colors.xml","destination":"color/smartisan_rom_filter_button_text_shadow_colors.xml","sha256":"3ca6bbbd50b77cb7c7c0c63a49962a49c41e2dc8893c5618b0bcf63b27540e34","transform":"prefix_resource_references"},
+    {"source":"drawable-xxhdpi/bottom_bar.9.png","destination":"drawable-xxhdpi/smartisan_rom_bottom_bar.9.png","sha256":"9a0023d9e2084382fd5ca72b079fa18b5fcc869ec6f0ae1b2e4b537adab1ca06"},
+    {"source":"drawable-xxhdpi/bottom_bar_center_btn_normal.png","destination":"drawable-xxhdpi/smartisan_rom_bottom_bar_center_btn_normal.png","sha256":"f0a6993ae542eac6bc1ff9eb036f2aa404944d6fd25e7def7466112337a9709d"},
+    {"source":"drawable-xxhdpi/bottom_bar_center_btn_pressed.png","destination":"drawable-xxhdpi/smartisan_rom_bottom_bar_center_btn_pressed.png","sha256":"eb93704379f33011c0d65dd7225c86deb65cd6e39babccc8be83fefd38a96f9c"},
+    {"source":"drawable-xxhdpi/bottom_bar_icon.png","destination":"drawable-xxhdpi/smartisan_rom_bottom_bar_icon.png","sha256":"02803463936f6a986eeec767ccdbd0921c77186c38f9bb7a03a1f17c767ae617"},
+    {"source":"drawable-xxhdpi/bottom_bar_icon_pressed.png","destination":"drawable-xxhdpi/smartisan_rom_bottom_bar_icon_pressed.png","sha256":"c00589a223e06575bbc8d1d8a1cf1c151c8efd0847244884f1d5ca8493afd49f"},
+    {"source":"drawable-xxhdpi/secondary_bar.9.png","destination":"drawable-xxhdpi/smartisan_rom_secondary_bar.9.png","sha256":"de28530edda2f52b9c864add5ef83613c7064f1b6ae79f148358d7990c87c467"},
+    {"source":"drawable-xxhdpi/smartisan_secondary_bar_shadow.9.png","destination":"drawable-xxhdpi/smartisan_rom_smartisan_secondary_bar_shadow.9.png","sha256":"cd6902708c5f1dc79565f3d069a5e9e09962605cee8d0b2c7f178b9e5ab646f2"}
   ]
 }

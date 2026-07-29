@@ -15,11 +15,19 @@ REQUIRED_CLASSES = (
     "org/opensmartisanos/ui/widget/SmartisanEditor.class",
     "org/opensmartisanos/ui/widget/SmartisanSimpleEditor.class",
     "org/opensmartisanos/ui/widget/SmartisanLabelEditor.class",
+    "org/opensmartisanos/ui/widget/SmartisanBottomBar.class",
+    "org/opensmartisanos/ui/widget/SmartisanBottomBarItemView.class",
+    "org/opensmartisanos/ui/widget/SmartisanIconBottomBar.class",
+    "org/opensmartisanos/ui/widget/SmartisanMixBottomBar.class",
+    "org/opensmartisanos/ui/widget/SmartisanButtonGroup.class",
+    "org/opensmartisanos/ui/widget/SmartisanActionButtonGroup.class",
 )
 REQUIRED_RESOURCES = (
     "res/layout/smartisan_rom_abs_editor_layout.xml",
     "res/drawable/smartisan_rom_pwd_eye_open_close_anim.xml",
     "res/drawable-xxhdpi-v4/smartisan_rom_editor_bg_single.9.png",
+    "res/layout/smartisan_rom_mix_bottom_bar.xml",
+    "res/layout/smartisan_rom_button_group_layout.xml",
 )
 FORBIDDEN_BYTECODE_REFERENCES = (
     b"com/android/internal/",

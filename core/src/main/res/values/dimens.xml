@@ -55,4 +55,18 @@
     <dimen name="smartisan_rom_editor_left_right_widget_min_height">40dp</dimen>
     <dimen name="smartisan_rom_editor_small_vertical_margin">6dp</dimen>
     <dimen name="smartisan_rom_editor_text_icon_horizontal_margin">6dp</dimen>
+    <dimen name="smartisan_rom_action_button_icon_inset_left">9dp</dimen>
+    <dimen name="smartisan_rom_action_button_icon_inset_right">7dp</dimen>
+    <dimen name="smartisan_rom_action_button_left_margin">12dp</dimen>
+    <dimen name="smartisan_rom_button_group_btn_gap">6dp</dimen>
+    <dimen name="smartisan_rom_button_group_left_right_padding">6dp</dimen>
+    <dimen name="smartisan_rom_mix_bottom_bar_action_height">48dp</dimen>
+    <dimen name="smartisan_rom_mix_bottom_bar_action_width">48dp</dimen>
+    <dimen name="smartisan_rom_mix_bottom_bar_padding">6dp</dimen>
+    <dimen name="smartisan_rom_secondary_bar_height">48dp</dimen>
+    <dimen name="smartisan_rom_smartisan_bottom_bar_align_edge_width">48dp</dimen>
+    <dimen name="smartisan_rom_smartisan_bottom_bar_drawablePadding">3dp</dimen>
+    <dimen name="smartisan_rom_smartisan_bottom_bar_height_only_icon">48dp</dimen>
+    <dimen name="smartisan_rom_smartisan_bottom_bar_height_with_text_icon">54dp</dimen>
+    <dimen name="smartisan_rom_smartisan_small_blank_spacing_width">6dp</dimen>
 </resources>

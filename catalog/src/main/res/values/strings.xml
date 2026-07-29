@@ -43,6 +43,11 @@
     <string name="smartisan_catalog_title_bar">SmartisanTitleBar / DialogTitleBar</string>
     <string name="smartisan_catalog_search_bar">SmartisanSearchBar</string>
     <string name="smartisan_catalog_editors">Smartisan Editors</string>
+    <string name="smartisan_catalog_bottom_bars">Smartisan Bottom Bars</string>
+    <string name="smartisan_catalog_button_groups">Smartisan Button Groups</string>
+    <string name="smartisan_catalog_home">首页</string>
+    <string name="smartisan_catalog_search">搜索</string>
+    <string name="smartisan_catalog_settings">设置</string>
     <string name="smartisan_catalog_editor_value">可清空的输入内容</string>
     <string name="smartisan_catalog_editor_hint">请输入账号</string>
     <string name="smartisan_catalog_password_value">smartisan</string>

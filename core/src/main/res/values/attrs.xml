@@ -114,4 +114,34 @@
         <attr name="showLeftArrow" />
         <attr name="showRightDivider" />
     </declare-styleable>
+    <attr name="bottomBarIconArray" format="reference" />
+    <attr name="bottomBarIconShowBackgroundMode" format="boolean" />
+    <declare-styleable name="SmartisanIconBottomBar">
+        <attr name="bottomBarIconArray" />
+        <attr name="bottomBarIconShowBackgroundMode" />
+    </declare-styleable>
+    <attr name="leftButtonBackground" format="color|reference" />
+    <attr name="centerButtonBackground" format="color|reference" />
+    <attr name="rightButtonBackground" format="color|reference" />
+    <declare-styleable name="SmartisanMixBottomBar">
+        <attr name="leftButtonBackground" />
+        <attr name="centerButtonBackground" />
+        <attr name="rightButtonBackground" />
+    </declare-styleable>
+    <attr name="buttonCount" format="integer" />
+    <attr name="hasButtonGap" format="boolean" />
+    <attr name="supportLayout" format="boolean" />
+    <declare-styleable name="SmartisanButtonGroup">
+        <attr name="buttonCount" />
+        <attr name="hasButtonGap" />
+        <attr name="supportLayout" />
+    </declare-styleable>
+    <attr name="actionType">
+        <enum name="left" value="0" />
+        <enum name="both" value="1" />
+    </attr>
+    <declare-styleable name="SmartisanActionButtonGroup">
+        <attr name="actionType" />
+        <attr name="supportLayout" />
+    </declare-styleable>
 </resources>
