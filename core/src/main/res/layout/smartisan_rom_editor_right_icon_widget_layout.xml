@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:ellipsize="end" android:id="@id/smartisan_rom_label" android:paddingLeft="@dimen/smartisan_rom_editor_element_margin_left_right" android:layout_width="wrap_content" android:layout_height="match_parent" android:maxWidth="150.0dp" android:layout_weight="1.0" style="@style/smartisan_rom_EditorLabelTextStyle" />
+    <View android:id="@id/smartisan_rom_devide" android:background="@color/smartisan_rom_list_divider_color" android:visibility="gone" android:layout_width="2.0px" android:layout_height="match_parent" />
+    <ImageView android:id="@id/smartisan_rom_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dp" />
+</merge>

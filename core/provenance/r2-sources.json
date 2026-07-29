@@ -15,6 +15,13 @@
     {"source":"smartisanos.widget.support.SmartisanListPopupMenu","public":"org.opensmartisanos.ui.widget.SmartisanListPopupMenu","sha256":"e49a473dd9be30199575effce9092c8e98d9d977c2b69a07990791d6dcb41326"},
     {"source":"smartisanos.widget.TipsView","public":"org.opensmartisanos.ui.widget.SmartisanTipsBar","sha256":"07111ae3d276f1cfeb4cbd4916a1024745f0beb32537dcb8935dc733fd3f46a0"},
     {"source":"smartisanos.widget.SmartisanBlankView","public":"org.opensmartisanos.ui.widget.SmartisanEmptyView","sha256":"337e7d1ca6da3d4a904d11156fddd35043ca0b3c92df8a9c9c8977fb69d7bee6"},
-    {"source":"smartisanos.widget.ButtonTabGroup","public":"org.opensmartisanos.ui.widget.SmartisanSegmentedControl","sha256":"b4ea43cc6a0fcb63dd991a56c160e5644f47e52e610debf8bd9fc7f8f6baca8a"}
+    {"source":"smartisanos.widget.ButtonTabGroup","public":"org.opensmartisanos.ui.widget.SmartisanSegmentedControl","sha256":"b4ea43cc6a0fcb63dd991a56c160e5644f47e52e610debf8bd9fc7f8f6baca8a"},
+    {"source":"smartisanos.widget.QuickDeleteEditText","public":"org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText","sha256":"393a6d06fdfbd26cecf6b59e87ed2d3b4b7bf0a35483e69e8ec84390a7f611c8"},
+    {"source":"smartisanos.widget.PasswordEditText","public":"org.opensmartisanos.ui.widget.SmartisanPasswordEditText","sha256":"f48a9bfb3c35e94aadde24723f9001cef3900357a18e3e9d85200872624165e9"},
+    {"source":"smartisanos.widget.editor.AbsEditor","public":"org.opensmartisanos.ui.widget.SmartisanEditor","sha256":"3f98fb94ead9a0e2262f85a65c3ed96c86fd85f10b0a1b6528a08558e612f637"},
+    {"source":"smartisanos.widget.editor.SimpleEditor","public":"org.opensmartisanos.ui.widget.SmartisanSimpleEditor","sha256":"b84171b0b9985a7868d5253ccee69ca581581655d6aa3c39964026d114698e10"},
+    {"source":"smartisanos.widget.editor.LabelEditor","public":"org.opensmartisanos.ui.widget.SmartisanLabelEditor","sha256":"363bf2d40e3a2c700e98a0fdd1b963c8887500f5da70cce305393753d5389872"},
+    {"source":"smartisanos.widget.editor.EditorLeftLabelWidget","internal":"org.opensmartisanos.ui.internal.SmartisanEditorLeftLabelWidget","sha256":"6f0b5a92b79f5e8c3b2342a0fc054e164a4877d1028c127d4bd7bd84dd388ea6"},
+    {"source":"smartisanos.widget.editor.EditorRightIconWidget","internal":"org.opensmartisanos.ui.internal.SmartisanEditorRightIconWidget","sha256":"4011dfa91443c1f38f364d7aec3aa2a8c4901d9ee44a575399fc1059e7a0a61a"}
   ]
 }

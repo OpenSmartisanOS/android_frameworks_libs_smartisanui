@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="smartisan_rom_description">信息</string>
+    <string name="smartisan_rom_hide_password">隐藏密码</string>
+    <string name="smartisan_rom_quick_delete">清空</string>
+    <string name="smartisan_rom_show_password">显示密码</string>
+</resources>

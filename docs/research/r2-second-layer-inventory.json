@@ -1,0 +1,340 @@
+{
+  "rom": "Smartisan OS 8.5.3 R2",
+  "scanRules": [
+    "scan decoded app Java and XML",
+    "exclude the component's own ClassName.java",
+    "exclude generated R.java and R$*.java"
+  ],
+  "decodedAppCount": 59,
+  "components": [
+    {
+      "family": "editor",
+      "romClass": "smartisanos.widget.QuickDeleteEditText",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText",
+      "actualAppCount": 8,
+      "apps": [
+        "Bluetooth",
+        "ContactsSmartisan",
+        "FakeCall",
+        "FileManagerSmartisan",
+        "IdeaPills",
+        "QuickSearchBoxSmartisan",
+        "RechargeSmartisan",
+        "VoiceAssistant"
+      ],
+      "sourceSha256": "393a6d06fdfbd26cecf6b59e87ed2d3b4b7bf0a35483e69e8ec84390a7f611c8"
+    },
+    {
+      "family": "editor",
+      "romClass": "smartisanos.widget.PasswordEditText",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanPasswordEditText",
+      "actualAppCount": 13,
+      "apps": [
+        "Backup",
+        "Bluetooth",
+        "CloudServiceSmartisan",
+        "CloudSyncAgent",
+        "ContactsSmartisan",
+        "EmailSmartisan",
+        "FileManagerSmartisan",
+        "IdeaPills",
+        "MusicPlayer",
+        "QuickSearchBoxSmartisan",
+        "SettingsSmartisan",
+        "TeleServiceSmartisan",
+        "VoiceAssistant"
+      ],
+      "sourceSha256": "f48a9bfb3c35e94aadde24723f9001cef3900357a18e3e9d85200872624165e9"
+    },
+    {
+      "family": "editor",
+      "romClass": "smartisanos.widget.editor.AbsEditor",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanEditor",
+      "actualAppCount": 8,
+      "apps": [
+        "Bluetooth",
+        "ContactsSmartisan",
+        "EmailSmartisan",
+        "FileManagerSmartisan",
+        "IdeaPills",
+        "LauncherSmartisanNew",
+        "QuickSearchBoxSmartisan",
+        "VoiceAssistant"
+      ],
+      "sourceSha256": "3f98fb94ead9a0e2262f85a65c3ed96c86fd85f10b0a1b6528a08558e612f637"
+    },
+    {
+      "family": "editor",
+      "romClass": "smartisanos.widget.editor.SimpleEditor",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanSimpleEditor",
+      "actualAppCount": 6,
+      "apps": [
+        "CalendarSmartisan",
+        "Desktop",
+        "EmailSmartisan",
+        "FileManagerSmartisan",
+        "SettingsSmartisan",
+        "SoundRecorderSmartisan"
+      ],
+      "sourceSha256": "b84171b0b9985a7868d5253ccee69ca581581655d6aa3c39964026d114698e10"
+    },
+    {
+      "family": "editor",
+      "romClass": "smartisanos.widget.editor.LabelEditor",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanLabelEditor",
+      "actualAppCount": 8,
+      "apps": [
+        "CalendarSmartisan",
+        "CloudServiceSmartisan",
+        "EmailSmartisan",
+        "FakeCall",
+        "HandInHand",
+        "MusicPlayer",
+        "RechargeSmartisan",
+        "SettingsSmartisan"
+      ],
+      "sourceSha256": "363bf2d40e3a2c700e98a0fdd1b963c8887500f5da70cce305393753d5389872"
+    },
+    {
+      "family": "bottom_bar",
+      "romClass": "smartisanos.widget.BottomBar",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanBottomBar",
+      "actualAppCount": 21,
+      "apps": [
+        "Bluetooth",
+        "ClockSmartisan",
+        "CloudGallerySmartisan",
+        "ContactsSmartisan",
+        "EmailSmartisan",
+        "FileManagerSmartisan",
+        "GallerySmartisan",
+        "IdeaPills",
+        "InCallUISmartisan",
+        "LauncherSmartisanNew",
+        "MusicPlayer",
+        "NotesSmartisan",
+        "PermissionControllerSmartisan",
+        "QuickSearchBoxSmartisan",
+        "SettingsSmartisan",
+        "SmartisanDesktopSystemUI",
+        "SmartisanSystemUI",
+        "SmartisanWallpaperProvider",
+        "TextBoom",
+        "VoiceAssistant",
+        "Write"
+      ],
+      "sourceSha256": "75e8acbde4e65202703ddf43a10a26899acb64fae0b88222cbe9784757c05e70"
+    },
+    {
+      "family": "bottom_bar",
+      "romClass": "smartisanos.widget.BottomBarItemView",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanBottomBarItemView",
+      "actualAppCount": 8,
+      "apps": [
+        "Bluetooth",
+        "ContactsSmartisan",
+        "EmailSmartisan",
+        "FileManagerSmartisan",
+        "IdeaPills",
+        "LauncherSmartisanNew",
+        "QuickSearchBoxSmartisan",
+        "VoiceAssistant"
+      ],
+      "sourceSha256": "5bce9ca3692af04735ea0731c2b1fb760a9656e2c94077993d114c97fac745d1"
+    },
+    {
+      "family": "bottom_bar",
+      "romClass": "smartisanos.widget.SmartisanBottomBar",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanIconBottomBar",
+      "actualAppCount": 1,
+      "apps": [
+        "QuickSearchBoxSmartisan"
+      ],
+      "sourceSha256": "42f1ad9a8d07ac373277ca3ae6f34c49bc7f8da0f9b6566af967aeb4c3731fad"
+    },
+    {
+      "family": "bottom_bar",
+      "romClass": "smartisanos.widget.MixBottomBar",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanMixBottomBar",
+      "actualAppCount": 0,
+      "apps": [],
+      "sourceSha256": "5feeb2cbd2b75d221c8062348651382af5b6fefd22311aed4d3b83ef924d8325"
+    },
+    {
+      "family": "button_group",
+      "romClass": "smartisanos.widget.ButtonGroup",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanButtonGroup",
+      "actualAppCount": 36,
+      "apps": [
+        "Backup",
+        "Bluetooth",
+        "BostonScreenMirror",
+        "BuiltInPrintService",
+        "CalendarSmartisan",
+        "CloudGallerySmartisan",
+        "ContactsSmartisan",
+        "EmailSmartisan",
+        "FileManagerSmartisan",
+        "FiveGPowerService",
+        "GallerySmartisan",
+        "HearingAid",
+        "IdeaPills",
+        "LauncherSmartisanNew",
+        "MusicPlayer",
+        "NotesSmartisan",
+        "PackageInstallerSmartisan",
+        "PermissionControllerSmartisan",
+        "PrintSpooler",
+        "QuickSearchBoxSmartisan",
+        "SMTBugreport",
+        "ScreenRecorderSmartisan",
+        "SettingsSmartisan",
+        "Sidebar",
+        "SmartisanDesktopSystemUI",
+        "SmartisanSystemUI",
+        "SmartisanWallpaperProvider",
+        "SoundRecorderSmartisan",
+        "Stk",
+        "TableSetupWizard",
+        "TeleServiceSmartisan",
+        "TextBoom",
+        "VoiceAssistant",
+        "WalletSmartisan",
+        "WhiteBoardSmartisan",
+        "Write"
+      ],
+      "sourceSha256": "c2f27e97e8ecd4ae580578a1a17616ae26d52aa3f339cdc590f401973c3144e8"
+    },
+    {
+      "family": "button_group",
+      "romClass": "smartisanos.widget.ActionButtonGroup",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanActionButtonGroup",
+      "actualAppCount": 24,
+      "apps": [
+        "Backup",
+        "BostonScreenMirror",
+        "BuiltInPrintService",
+        "ContactsSmartisan",
+        "EmailSmartisan",
+        "FiveGPowerService",
+        "GallerySmartisan",
+        "HearingAid",
+        "MusicPlayer",
+        "NotesSmartisan",
+        "PackageInstallerSmartisan",
+        "PermissionControllerSmartisan",
+        "PrintSpooler",
+        "SMTBugreport",
+        "ScreenRecorderSmartisan",
+        "SettingsSmartisan",
+        "SmartisanSystemUI",
+        "SmartisanWallpaperProvider",
+        "Stk",
+        "TableSetupWizard",
+        "TeleServiceSmartisan",
+        "TextBoom",
+        "WalletSmartisan",
+        "Write"
+      ],
+      "sourceSha256": "81ead1cc569502a886b48dd222f7164b77a24d11a098121a8eff786aa8d14350"
+    },
+    {
+      "family": "slider",
+      "romClass": "smartisanos.widget.SmoothSeekBar",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar",
+      "actualAppCount": 5,
+      "apps": [
+        "Bluetooth",
+        "ContactsSmartisan",
+        "FileManagerSmartisan",
+        "QuickSearchBoxSmartisan",
+        "SmartisanDesktopSystemUI"
+      ],
+      "sourceSha256": "6b0930fbc16073854882396f55097e55affcce5b349a1ac2d81f2f887a27b14d"
+    },
+    {
+      "family": "slider",
+      "romClass": "smartisanos.widget.SliderWithIcons",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanSliderWithIcons",
+      "actualAppCount": 3,
+      "apps": [
+        "IMESmartisan",
+        "SettingsSmartisan",
+        "VoiceAssistant"
+      ],
+      "sourceSha256": "208013f56be910c4d6c27a16d9e657a39ca68fa8744303659fccda0cbc88e89e"
+    },
+    {
+      "family": "progress",
+      "romClass": "smartisanos.widget.CircleProgressView",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanCircleProgressView",
+      "actualAppCount": 3,
+      "apps": [
+        "Bluetooth",
+        "ContactsSmartisan",
+        "FileManagerSmartisan"
+      ],
+      "sourceSha256": "859fff406605331c9a40d874352b45a573ebf99238753c743be196165a36a817"
+    },
+    {
+      "family": "progress",
+      "romClass": "smartisanos.widget.CircleProgressPopup",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup",
+      "actualAppCount": 10,
+      "apps": [
+        "CalendarSmartisan",
+        "EmailSmartisan",
+        "FileManagerSmartisan",
+        "GallerySmartisan",
+        "IdeaPills",
+        "NotesSmartisan",
+        "QuickSearchBoxSmartisan",
+        "VoiceAssistant",
+        "Write",
+        "webview"
+      ],
+      "sourceSha256": "784d8b69763f45ef1205dee537cfe4f2a8536cdaa2070e134521b93748497bf6"
+    },
+    {
+      "family": "progress",
+      "romClass": "smartisanos.widget.DownloadProgressView",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanDownloadProgressView",
+      "actualAppCount": 9,
+      "apps": [
+        "CalendarSmartisan",
+        "EmailSmartisan",
+        "FileManagerSmartisan",
+        "GallerySmartisan",
+        "LauncherSmartisanNew",
+        "PackageInstallerSmartisan",
+        "PermissionControllerSmartisan",
+        "QuickSearchBoxSmartisan",
+        "SmartisanWallpaperProvider"
+      ],
+      "sourceSha256": "d5cf80fdd8a32b6b3acd3d3c478bdfb5576d153570c7bad95cdf5dc68823d9fc"
+    },
+    {
+      "family": "snackbar",
+      "romClass": "smartisanos.widget.SnackbarWithButton",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton",
+      "actualAppCount": 3,
+      "apps": [
+        "Bluetooth",
+        "BostonScreenMirror",
+        "ContactsSmartisan"
+      ],
+      "sourceSha256": "43e4daa0550f995295db020b8e6bf0072e0d3c897785781824ed4a7fcaefb86c"
+    },
+    {
+      "family": "snackbar",
+      "romClass": "smartisanos.widget.SnackbarWithDrawable",
+      "publicClass": "org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable",
+      "actualAppCount": 2,
+      "apps": [
+        "Bluetooth",
+        "ContactsSmartisan"
+      ],
+      "sourceSha256": "aea2ea9f6c2c35c4991a26c834445758c1dc47fa0cb012d7e1e9be676069cf50"
+    }
+  ]
+}

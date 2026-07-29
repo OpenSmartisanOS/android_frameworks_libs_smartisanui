@@ -19,6 +19,16 @@ PRIVATE_FRAMEWORK_DRAWABLES = {
     "@android:drawable/btn_star_on_disabled_focused_holo_dark",
     "@android:drawable/btn_star_on_disabled_focused_holo_light",
 }
+CLASS_RENAMES = {
+    "smartisanos.widget.PasswordEditText":
+        "org.opensmartisanos.ui.widget.SmartisanPasswordEditText",
+    "smartisanos.widget.QuickDeleteEditText":
+        "org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText",
+    "smartisanos.widget.editor.EditorLeftLabelWidget":
+        "org.opensmartisanos.ui.internal.SmartisanEditorLeftLabelWidget",
+    "smartisanos.widget.editor.EditorRightIconWidget":
+        "org.opensmartisanos.ui.internal.SmartisanEditorRightIconWidget",
+}
 
 
 def digest(path: Path) -> str:
@@ -41,7 +51,9 @@ def transformed_xml(source: Path, target: Path, all_references: bool = False) ->
     ET.register_namespace("app", AUTO_NS)
     tree = ET.parse(source)
     for element in tree.iter():
-        if all_references and element.tag == "smartisanos.widget.RoundedRectLinearLayout":
+        if all_references and element.tag in CLASS_RENAMES:
+            element.tag = CLASS_RENAMES[element.tag]
+        elif all_references and element.tag == "smartisanos.widget.RoundedRectLinearLayout":
             element.tag = "org.opensmartisanos.ui.internal.RomRoundedRectLinearLayout"
         elif all_references and element.tag == "smartisanos.widget.DividerListView":
             element.tag = "org.opensmartisanos.ui.internal.RomDividerListView"
@@ -56,7 +68,7 @@ def transformed_xml(source: Path, target: Path, all_references: bool = False) ->
                 element.set(key, value.replace("@android:drawable/", "@drawable/smartisan_rom_", 1))
             elif all_references and value.startswith("@") and not value.startswith("@android:"):
                 marker, separator, name = value.partition("/")
-                if separator and marker in {"@color", "@dimen", "@id", "@layout", "@string", "@style"}:
+                if separator and marker in {"@color", "@dimen", "@id", "@integer", "@layout", "@string", "@style"}:
                     element.set(key, f"{marker}/smartisan_rom_{name}")
         if all_references and element.tag == "smartisanos.widget.SwitchEx":
             element.tag = "org.opensmartisanos.ui.widget.SmartisanSwitch"

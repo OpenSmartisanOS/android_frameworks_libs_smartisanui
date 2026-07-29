@@ -46,4 +46,13 @@
     <dimen name="smartisan_rom_popup_list_menu_padding_vertical">8dp</dimen>
     <dimen name="smartisan_rom_popup_list_menu_title_height">30dp</dimen>
     <dimen name="smartisan_rom_popup_list_title_left_margin">12dp</dimen>
+    <dimen name="smartisan_rom_editor_element_margin_left_right">12dp</dimen>
+    <dimen name="smartisan_rom_editor_horizontal_margin">12dp</dimen>
+    <dimen name="smartisan_rom_editor_horizontal_padding">6dp</dimen>
+    <dimen name="smartisan_rom_editor_large_vertical_margin">10dp</dimen>
+    <dimen name="smartisan_rom_editor_left_icon_container_height">44dp</dimen>
+    <dimen name="smartisan_rom_editor_left_icon_container_width">40dp</dimen>
+    <dimen name="smartisan_rom_editor_left_right_widget_min_height">40dp</dimen>
+    <dimen name="smartisan_rom_editor_small_vertical_margin">6dp</dimen>
+    <dimen name="smartisan_rom_editor_text_icon_horizontal_margin">6dp</dimen>
 </resources>

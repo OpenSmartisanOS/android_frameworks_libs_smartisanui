@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="smartisan_rom_eyeAnimDuration">16</integer>
+    <string name="smartisan_rom_hide_password">Hide Password</string>
+    <string name="smartisan_rom_quick_delete">Clear</string>
+    <string name="smartisan_rom_show_password">Show Password</string>
+</resources>

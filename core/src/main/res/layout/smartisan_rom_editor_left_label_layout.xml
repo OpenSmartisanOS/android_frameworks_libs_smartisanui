@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <FrameLayout android:id="@id/smartisan_rom_iconContainer" android:visibility="gone" android:layout_width="@dimen/smartisan_rom_editor_left_icon_container_width" android:layout_height="@dimen/smartisan_rom_editor_left_icon_container_height">
+        <ImageView android:layout_gravity="center" android:id="@id/smartisan_rom_icon" android:layout_width="26.0dp" android:layout_height="26.0dp" android:scaleType="fitXY" />
+        <View android:layout_gravity="right" android:id="@id/smartisan_rom_divider" android:background="@color/smartisan_rom_list_divider_color" android:visibility="gone" android:layout_width="2.0px" android:layout_height="match_parent" />
+    </FrameLayout>
+    <TextView android:id="@id/smartisan_rom_label" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/smartisan_rom_editor_element_margin_left_right" style="@style/smartisan_rom_EditorLabelTextStyle" />
+    <ImageView android:id="@id/smartisan_rom_arrow" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/smartisan_rom_arrow_icon" />
+    <LinearLayout android:orientation="vertical" android:id="@id/smartisan_rom_rightExpandView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="match_parent" />
+</merge>

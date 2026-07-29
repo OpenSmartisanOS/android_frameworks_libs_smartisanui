@@ -31,7 +31,11 @@ import org.opensmartisanos.ui.widget.SmartisanSwitch;
 import org.opensmartisanos.ui.widget.SmartisanDialogTitleBar;
 import org.opensmartisanos.ui.widget.SmartisanEmptyView;
 import org.opensmartisanos.ui.widget.SmartisanListPopupMenu;
+import org.opensmartisanos.ui.widget.SmartisanLabelEditor;
+import org.opensmartisanos.ui.widget.SmartisanPasswordEditText;
+import org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText;
 import org.opensmartisanos.ui.widget.SmartisanSearchBar;
+import org.opensmartisanos.ui.widget.SmartisanSimpleEditor;
 import org.opensmartisanos.ui.widget.SmartisanSegmentedControl;
 import org.opensmartisanos.ui.widget.SmartisanTipsBar;
 import org.opensmartisanos.ui.widget.SmartisanTitleBar;
@@ -83,6 +87,9 @@ public final class CatalogActivity extends Activity {
 
         addSection(content, R.string.smartisan_catalog_search_bar);
         addSearchBars(content);
+
+        addSection(content, R.string.smartisan_catalog_editors);
+        addEditors(content);
 
         addSection(content, R.string.smartisan_catalog_dialogs);
         addDialogs(content);
@@ -425,6 +432,60 @@ public final class CatalogActivity extends Activity {
         active.onClickSearchEditor(false);
         active.setQuery(getText(R.string.smartisan_catalog_search_long_query));
         addRow(parent, active);
+    }
+
+    private void addEditors(LinearLayout parent) {
+        SmartisanQuickDeleteEditText quickDelete = new SmartisanQuickDeleteEditText(this);
+        quickDelete.setSingleLine(true);
+        quickDelete.setText(R.string.smartisan_catalog_editor_value);
+        quickDelete.setHint(R.string.smartisan_catalog_editor_hint);
+        quickDelete.setTextSize(15);
+        quickDelete.setBackgroundResource(
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_editor_bg_single);
+        quickDelete.setPadding(dp(12), 0, dp(6), 0);
+        quickDelete.requestFocus();
+        LinearLayout.LayoutParams quickParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, dp(44));
+        quickParams.bottomMargin = dp(10);
+        parent.addView(quickDelete, quickParams);
+
+        SmartisanPasswordEditText password = new SmartisanPasswordEditText(this);
+        password.setSingleLine(true);
+        password.setText(R.string.smartisan_catalog_password_value);
+        password.setHint(R.string.smartisan_catalog_password_hint);
+        password.setTextSize(15);
+        password.setBackgroundResource(
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_editor_bg_single);
+        password.setPadding(dp(12), 0, dp(6), 0);
+        LinearLayout.LayoutParams passwordParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, dp(44));
+        passwordParams.bottomMargin = dp(10);
+        parent.addView(password, passwordParams);
+
+        SmartisanLabelEditor top = labelEditor(R.string.smartisan_catalog_editor_account,
+                R.string.smartisan_catalog_editor_hint, SmartisanLabelEditor.BG_STYLE_TOP);
+        addRow(parent, top);
+        SmartisanLabelEditor middle = labelEditor(R.string.smartisan_catalog_editor_server,
+                R.string.smartisan_catalog_editor_server_hint, SmartisanLabelEditor.BG_STYLE_MIDDLE);
+        middle.setRightLabel(R.string.smartisan_catalog_editor_optional);
+        addRow(parent, middle);
+        SmartisanLabelEditor bottom = labelEditor(R.string.smartisan_catalog_editor_note,
+                R.string.smartisan_catalog_editor_note_hint, SmartisanLabelEditor.BG_STYLE_BOTTOM);
+        bottom.setParagraphMode(true);
+        addRow(parent, bottom);
+
+        SmartisanSimpleEditor simple = new SmartisanSimpleEditor(this);
+        simple.setBackgroundStyle(SmartisanSimpleEditor.BG_STYLE_SINGLE);
+        simple.getEditor().setHint(R.string.smartisan_catalog_editor_simple_hint);
+        addRow(parent, simple);
+    }
+
+    private SmartisanLabelEditor labelEditor(int label, int hint, int background) {
+        SmartisanLabelEditor editor = new SmartisanLabelEditor(this);
+        editor.setBackgroundStyle(background);
+        editor.setLeftLabel(label);
+        editor.getEditor().setHint(hint);
+        return editor;
     }
 
     private void addDialogs(LinearLayout parent) {

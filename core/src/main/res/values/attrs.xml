@@ -83,4 +83,35 @@
         <attr name="titleBarCenterText" />
         <attr name="titleBarBottomType" />
     </declare-styleable>
+
+    <attr name="editorHint" format="string|reference" />
+    <attr name="editorSingleLine" format="boolean" />
+    <attr name="editorType">
+        <enum name="defaultEditor" value="0" />
+        <enum name="passwordEditor" value="1" />
+        <enum name="quickDeleteEditor" value="2" />
+    </attr>
+    <attr name="editorEditable" format="boolean" />
+    <declare-styleable name="SmartisanEditor">
+        <attr name="editorHint" />
+        <attr name="editorSingleLine" />
+        <attr name="editorType" />
+        <attr name="editorEditable" />
+        <attr name="backgroundStyle" />
+    </declare-styleable>
+
+    <attr name="leftIcon" format="reference" />
+    <attr name="rightIcon" format="reference" />
+    <attr name="leftLabel" format="string|reference" />
+    <attr name="rightLabel" format="string|reference" />
+    <attr name="showLeftArrow" format="boolean" />
+    <attr name="showRightDivider" format="boolean" />
+    <declare-styleable name="SmartisanLabelEditor">
+        <attr name="leftIcon" />
+        <attr name="rightIcon" />
+        <attr name="leftLabel" />
+        <attr name="rightLabel" />
+        <attr name="showLeftArrow" />
+        <attr name="showRightDivider" />
+    </declare-styleable>
 </resources>
