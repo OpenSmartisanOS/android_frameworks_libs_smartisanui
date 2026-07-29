@@ -17,6 +17,7 @@ REQUIRED_CLASSES = (
     "org/opensmartisanos/ui/widget/SmartisanLabelEditor.class",
     "org/opensmartisanos/ui/widget/SmartisanBottomBar.class",
     "org/opensmartisanos/ui/widget/SmartisanBottomBarItemView.class",
+    "org/opensmartisanos/ui/widget/SmartisanTabSwitcher.class",
     "org/opensmartisanos/ui/widget/SmartisanIconBottomBar.class",
     "org/opensmartisanos/ui/widget/SmartisanMixBottomBar.class",
     "org/opensmartisanos/ui/widget/SmartisanButtonGroup.class",

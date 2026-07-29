@@ -203,6 +203,12 @@ public class SmartisanBottomBar extends FrameLayout
     shadow.setVisibility(v ? VISIBLE : GONE);
   }
 
+  public void setTopChromeVisible(boolean visible) {
+    int visibility = visible ? VISIBLE : GONE;
+    shadow.setVisibility(visibility);
+    divider.setVisibility(visibility);
+  }
+
   public void setOnCheckedChangeListener(OnCheckedChangeListener l) {
     checkedListener = l;
   }
@@ -248,6 +254,18 @@ public class SmartisanBottomBar extends FrameLayout
 
   public void clearItems() {
     items.clear();
+  }
+
+  public SmartisanBottomBarItemView getItemView(int id) {
+    if (container == null) return null;
+    View view = container.findViewById(id);
+    return view instanceof SmartisanBottomBarItemView
+        ? (SmartisanBottomBarItemView) view
+        : null;
+  }
+
+  public ViewGroup getItemContainer() {
+    return container;
   }
 
   public final class BarItem {

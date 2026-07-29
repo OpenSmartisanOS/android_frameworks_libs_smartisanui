@@ -44,4 +44,7 @@
     <item name="smartisan_rom_rightExpandView" type="id" />
     <item name="smartisan_rom_info_btn_viewstub" type="id" />
     <item name="smartisan_rom_item_info_btn" type="id" />
+    <item name="smartisan_tab_action_move_earlier" type="id" />
+    <item name="smartisan_tab_action_move_later" type="id" />
+    <item name="smartisan_tab_action_swap_zone" type="id" />
 </resources>

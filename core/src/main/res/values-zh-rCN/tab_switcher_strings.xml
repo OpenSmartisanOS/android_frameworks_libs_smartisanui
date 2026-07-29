@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="smartisan_tab_editor_title">拖动图标来更改功能的位置</string>
+    <string name="smartisan_tab_editor_cancel">取消</string>
+    <string name="smartisan_tab_editor_done">完成</string>
+    <string name="smartisan_tab_bottom_description">%1$s，位于底栏</string>
+    <string name="smartisan_tab_overflow_description">%1$s，位于更多</string>
+    <string name="smartisan_tab_move_earlier">向前移动</string>
+    <string name="smartisan_tab_move_later">向后移动</string>
+    <string name="smartisan_tab_pin_replacing">固定到底栏并替换一项</string>
+    <string name="smartisan_tab_unpin_replacing">移到更多并替换一项</string>
+    <string name="smartisan_tab_item_moved">已移动%1$s</string>
+    <string name="smartisan_tab_items_swapped">已交换%1$s和%2$s</string>
+</resources>

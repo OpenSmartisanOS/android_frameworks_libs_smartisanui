@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="smartisan_rom_description">information</string>
+    <string name="smartisan_tab_editor_title">Drag icons to change feature positions</string>
+    <string name="smartisan_tab_editor_cancel">Cancel</string>
+    <string name="smartisan_tab_editor_done">Done</string>
+    <string name="smartisan_tab_bottom_description">%1$s, in the bottom bar</string>
+    <string name="smartisan_tab_overflow_description">%1$s, in More</string>
+    <string name="smartisan_tab_move_earlier">Move earlier</string>
+    <string name="smartisan_tab_move_later">Move later</string>
+    <string name="smartisan_tab_pin_replacing">Pin and replace a bottom item</string>
+    <string name="smartisan_tab_unpin_replacing">Move to More and replace an item</string>
+    <string name="smartisan_tab_item_moved">Moved %1$s</string>
+    <string name="smartisan_tab_items_swapped">Swapped %1$s and %2$s</string>
 </resources>

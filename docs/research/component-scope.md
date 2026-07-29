@@ -19,7 +19,7 @@ counts come from static call-site analysis of 59 applications in the R2 8.5.3 RO
 | Segmented choice | `ButtonTabGroup` | 9 | `SmartisanSegmentedControl` |
 
 Second-stage common controls are quick-delete and password editors, label editor, bottom bar,
-slider, circle/download progress, snackbar, and button group.
+editable tab switcher, slider, circle/download progress, snackbar, and button group.
 
 Date/time/number pickers, calendars, BHM, sector menu, search business flows, candidates, app lock,
 tab switcher, TNT, and unmodified platform widgets are intentionally excluded.
@@ -28,7 +28,8 @@ tab switcher, TNT, and unmodified platform widgets are intentionally excluded.
 
 The first layer is complete. Core contains the title bars, buttons, switch, grouped rows, setting
 rows, phone search bar, menu and progress dialogs, anchored list popup, tips, empty state, and
-segmented control. The Catalog exposes interactive variants of every family, and the release AAR
+segmented control. It also includes the ROM tab switcher's shared bottom/overflow editing flow.
+The Catalog exposes interactive variants of every family, and the release AAR
 is verified from a separate `minSdk 23` Android application.
 
 ## Porting rule

@@ -50,6 +50,7 @@ import org.opensmartisanos.ui.widget.SmartisanSliderWithIcons;
 import org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton;
 import org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable;
 import org.opensmartisanos.ui.widget.SmartisanSwitch;
+import org.opensmartisanos.ui.widget.SmartisanTabSwitcher;
 import org.opensmartisanos.ui.widget.SmartisanTipsBar;
 import org.opensmartisanos.ui.widget.SmartisanTitleBar;
 
@@ -706,6 +707,41 @@ public final class CatalogActivity extends Activity {
         org.opensmartisanos.ui.R.color.smartisan_rom_clock_bottom_bar_icon);
     tabs.setup(true);
     addRow(parent, tabs);
+
+    int clockId = View.generateViewId();
+    int alarmId = View.generateViewId();
+    int stopwatchId = View.generateViewId();
+    int timerId = View.generateViewId();
+    SmartisanTabSwitcher editableTabs = new SmartisanTabSwitcher(this);
+    editableTabs.setTabs(
+        Arrays.asList(
+            new SmartisanTabSwitcher.Tab(
+                clockId,
+                getString(R.string.smartisan_catalog_world_clock),
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_clock_tab_worldclock,
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_clock_tab_worldclock,
+                true),
+            new SmartisanTabSwitcher.Tab(
+                alarmId,
+                getString(R.string.smartisan_catalog_alarm),
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_clock_tab_alarm,
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_clock_tab_alarm,
+                true),
+            new SmartisanTabSwitcher.Tab(
+                timerId,
+                getString(R.string.smartisan_catalog_timer),
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_clock_tab_timer,
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_clock_tab_timer,
+                false)),
+        Arrays.asList(
+            new SmartisanTabSwitcher.Tab(
+                stopwatchId,
+                getString(R.string.smartisan_catalog_stopwatch),
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_clock_tab_stopwatch,
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_clock_tab_stopwatch,
+                true)));
+    editableTabs.setSelectedTabId(clockId);
+    addRow(parent, editableTabs);
 
     SmartisanIconBottomBar icons = new SmartisanIconBottomBar(this);
     icons.setIconRefArray(
