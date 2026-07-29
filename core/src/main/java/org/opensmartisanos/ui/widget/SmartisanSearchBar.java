@@ -202,6 +202,8 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
     public void onClickSearchEditor(boolean animation) {
         if (editorClickListener != null) editorClickListener.onClick(editor);
         if (!searchMode) startAnimation(true, animation);
+        editor.setFocusableInTouchMode(true);
+        editor.setFocusable(true);
         editor.requestFocus();
         editor.setCursorVisible(true);
         if (autoFocus) showKeyboard();
@@ -212,6 +214,8 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
         editor.setText("");
         hideKeyboard();
         editor.clearFocus();
+        editor.setFocusable(false);
+        editor.setFocusableInTouchMode(false);
         editor.setCursorVisible(false);
         startAnimation(false, animation);
     }
