@@ -28,6 +28,8 @@ CLASS_RENAMES = {
         "org.opensmartisanos.ui.internal.SmartisanEditorLeftLabelWidget",
     "smartisanos.widget.editor.EditorRightIconWidget":
         "org.opensmartisanos.ui.internal.SmartisanEditorRightIconWidget",
+    "smartisanos.widget.SmoothSeekBar":
+        "org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar",
 }
 
 

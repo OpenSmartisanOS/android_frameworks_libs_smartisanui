@@ -21,6 +21,13 @@ REQUIRED_CLASSES = (
     "org/opensmartisanos/ui/widget/SmartisanMixBottomBar.class",
     "org/opensmartisanos/ui/widget/SmartisanButtonGroup.class",
     "org/opensmartisanos/ui/widget/SmartisanActionButtonGroup.class",
+    "org/opensmartisanos/ui/widget/SmartisanSmoothSeekBar.class",
+    "org/opensmartisanos/ui/widget/SmartisanSliderWithIcons.class",
+    "org/opensmartisanos/ui/widget/SmartisanCircleProgressView.class",
+    "org/opensmartisanos/ui/widget/SmartisanCircleProgressPopup.class",
+    "org/opensmartisanos/ui/widget/SmartisanDownloadProgressView.class",
+    "org/opensmartisanos/ui/widget/SmartisanSnackbarWithButton.class",
+    "org/opensmartisanos/ui/widget/SmartisanSnackbarWithDrawable.class",
 )
 REQUIRED_RESOURCES = (
     "res/layout/smartisan_rom_abs_editor_layout.xml",
@@ -28,6 +35,8 @@ REQUIRED_RESOURCES = (
     "res/drawable-xxhdpi-v4/smartisan_rom_editor_bg_single.9.png",
     "res/layout/smartisan_rom_mix_bottom_bar.xml",
     "res/layout/smartisan_rom_button_group_layout.xml",
+    "res/layout/smartisan_rom_slider_with_icons_layout.xml",
+    "res/layout/smartisan_rom_snackbar_with_btn_layout.xml",
 )
 FORBIDDEN_BYTECODE_REFERENCES = (
     b"com/android/internal/",

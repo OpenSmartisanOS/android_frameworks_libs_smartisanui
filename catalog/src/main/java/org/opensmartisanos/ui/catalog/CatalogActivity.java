@@ -24,6 +24,11 @@ import org.opensmartisanos.ui.widget.SmartisanButtonGroup;
 import org.opensmartisanos.ui.widget.SmartisanActionButtonGroup;
 import org.opensmartisanos.ui.widget.SmartisanIconBottomBar;
 import org.opensmartisanos.ui.widget.SmartisanMixBottomBar;
+import org.opensmartisanos.ui.widget.SmartisanCircleProgressView;
+import org.opensmartisanos.ui.widget.SmartisanDownloadProgressView;
+import org.opensmartisanos.ui.widget.SmartisanSliderWithIcons;
+import org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton;
+import org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable;
 import org.opensmartisanos.ui.widget.SmartisanListContentItem;
 import org.opensmartisanos.ui.widget.SmartisanListContentItemCheck;
 import org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch;
@@ -101,6 +106,12 @@ public final class CatalogActivity extends Activity {
 
         addSection(content, R.string.smartisan_catalog_button_groups);
         addButtonGroups(content);
+
+        addSection(content, R.string.smartisan_catalog_slider_progress);
+        addSliderAndProgress(content);
+
+        addSection(content, R.string.smartisan_catalog_snackbars);
+        addSnackbars(content);
 
         addSection(content, R.string.smartisan_catalog_dialogs);
         addDialogs(content);
@@ -546,6 +557,51 @@ public final class CatalogActivity extends Activity {
                     : R.string.smartisan_catalog_item_two);
         }
         addRow(parent, actions);
+    }
+
+    private void addSliderAndProgress(LinearLayout parent) {
+        SmartisanSliderWithIcons slider = new SmartisanSliderWithIcons(this);
+        slider.setLeftIconVisible(true);
+        slider.setRightIconVisible(true);
+        slider.setLeftIcon(org.opensmartisanos.ui.R.drawable.smartisan_rom_standard_icon_cancel_selector);
+        slider.setRightIcon(org.opensmartisanos.ui.R.drawable.smartisan_rom_standard_icon_complete_selector);
+        slider.setMax(100);
+        slider.setProgress(42);
+        slider.setPadding(dp(8), dp(8), dp(8), dp(8));
+        addRow(parent, slider);
+
+        LinearLayout row = newRow();
+        SmartisanCircleProgressView circle = new SmartisanCircleProgressView(this);
+        circle.setSweepAngle(230);
+        row.addView(circle);
+        int[] states = {SmartisanDownloadProgressView.STATE_PAUSED,
+                SmartisanDownloadProgressView.STATE_RESUMED,
+                SmartisanDownloadProgressView.STATE_RETRY,
+                SmartisanDownloadProgressView.STATE_PROCESSING};
+        for (int state : states) {
+            SmartisanDownloadProgressView progress = new SmartisanDownloadProgressView(this);
+            progress.setCurrentState(state);
+            progress.setProgress(64);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(dp(44), dp(44));
+            params.leftMargin = dp(14);
+            row.addView(progress, params);
+        }
+        addRow(parent, row);
+    }
+
+    private void addSnackbars(LinearLayout parent) {
+        SmartisanSnackbarWithButton button = new SmartisanSnackbarWithButton(this);
+        button.setMessage(R.string.smartisan_catalog_snackbar_message);
+        button.setActionText(R.string.smartisan_catalog_retry);
+        button.setBackgroundColor(Color.rgb(255, 248, 231));
+        addRow(parent, button);
+
+        SmartisanSnackbarWithDrawable drawable = new SmartisanSnackbarWithDrawable(this);
+        drawable.setMessage(R.string.smartisan_catalog_snackbar_message);
+        drawable.setImageResource(
+                org.opensmartisanos.ui.R.drawable.smartisan_rom_toast_action_dismiss);
+        drawable.setBackgroundColor(Color.rgb(255, 248, 231));
+        addRow(parent, drawable);
     }
 
     private void addDialogs(LinearLayout parent) {

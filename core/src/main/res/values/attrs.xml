@@ -144,4 +144,34 @@
         <attr name="actionType" />
         <attr name="supportLayout" />
     </declare-styleable>
+    <attr name="sliderProgressDrawable" format="reference" />
+    <attr name="sliderThumb" format="reference" />
+    <attr name="sliderLeftIcon" format="reference" />
+    <attr name="sliderRightIcon" format="reference" />
+    <declare-styleable name="SmartisanSliderWithIcons">
+        <attr name="sliderProgressDrawable" />
+        <attr name="sliderThumb" />
+        <attr name="sliderLeftIcon" />
+        <attr name="sliderRightIcon" />
+    </declare-styleable>
+    <attr name="foreRingWidth" format="dimension" />
+    <attr name="backRingWidth" format="dimension" />
+    <attr name="downloadProgress" format="integer" />
+    <attr name="backProgressStartColor" format="color" />
+    <attr name="backProgressEndColor" format="color" />
+    <attr name="foreProgressStartColor" format="color" />
+    <attr name="foreProgressEndColor" format="color" />
+    <attr name="innerCircleRadius" format="dimension" />
+    <attr name="failedProgressColor" format="color" />
+    <declare-styleable name="SmartisanDownloadProgressView">
+        <attr name="foreRingWidth" />
+        <attr name="backRingWidth" />
+        <attr name="downloadProgress" />
+        <attr name="backProgressStartColor" />
+        <attr name="backProgressEndColor" />
+        <attr name="foreProgressStartColor" />
+        <attr name="foreProgressEndColor" />
+        <attr name="innerCircleRadius" />
+        <attr name="failedProgressColor" />
+    </declare-styleable>
 </resources>

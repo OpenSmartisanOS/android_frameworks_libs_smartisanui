@@ -69,4 +69,5 @@
     <dimen name="smartisan_rom_smartisan_bottom_bar_height_only_icon">48dp</dimen>
     <dimen name="smartisan_rom_smartisan_bottom_bar_height_with_text_icon">54dp</dimen>
     <dimen name="smartisan_rom_smartisan_small_blank_spacing_width">6dp</dimen>
+    <dimen name="smartisan_rom_circle_progress_view_size">90dp</dimen>
 </resources>

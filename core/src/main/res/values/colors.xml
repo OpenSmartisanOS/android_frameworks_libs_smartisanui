@@ -24,6 +24,12 @@
     <color name="smartisan_rom_bottom_tab_text_normal">#66000000</color>
     <color name="smartisan_rom_bottom_tab_text_press">#9a000000</color>
     <color name="smartisan_rom_text_shadow_color_enable">#26000000</color>
+    <color name="smartisan_rom_circle_progress_view_arc_color">#cccce5ff</color>
+    <color name="smartisan_rom_def_back_progress_end_color">#5076ff</color>
+    <color name="smartisan_rom_def_back_progress_start_color">#608aff</color>
+    <color name="smartisan_rom_def_failed_progress_color">#26000000</color>
+    <color name="smartisan_rom_def_fore_progress_end_color">#33ffffff</color>
+    <color name="smartisan_rom_def_fore_progress_start_color">#33ffffff</color>
     <drawable name="smartisan_rom_menu_list_item_normal">#ffffff</drawable>
     <drawable name="smartisan_rom_menu_list_item_pressed">#f5f5f5</drawable>
 </resources>

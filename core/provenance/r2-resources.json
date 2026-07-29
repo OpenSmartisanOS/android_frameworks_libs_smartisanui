@@ -1005,6 +1005,19 @@
     {"source":"drawable-xxhdpi/bottom_bar_icon.png","destination":"drawable-xxhdpi/smartisan_rom_bottom_bar_icon.png","sha256":"02803463936f6a986eeec767ccdbd0921c77186c38f9bb7a03a1f17c767ae617"},
     {"source":"drawable-xxhdpi/bottom_bar_icon_pressed.png","destination":"drawable-xxhdpi/smartisan_rom_bottom_bar_icon_pressed.png","sha256":"c00589a223e06575bbc8d1d8a1cf1c151c8efd0847244884f1d5ca8493afd49f"},
     {"source":"drawable-xxhdpi/secondary_bar.9.png","destination":"drawable-xxhdpi/smartisan_rom_secondary_bar.9.png","sha256":"de28530edda2f52b9c864add5ef83613c7064f1b6ae79f148358d7990c87c467"},
-    {"source":"drawable-xxhdpi/smartisan_secondary_bar_shadow.9.png","destination":"drawable-xxhdpi/smartisan_rom_smartisan_secondary_bar_shadow.9.png","sha256":"cd6902708c5f1dc79565f3d069a5e9e09962605cee8d0b2c7f178b9e5ab646f2"}
+    {"source":"drawable-xxhdpi/smartisan_secondary_bar_shadow.9.png","destination":"drawable-xxhdpi/smartisan_rom_smartisan_secondary_bar_shadow.9.png","sha256":"cd6902708c5f1dc79565f3d069a5e9e09962605cee8d0b2c7f178b9e5ab646f2"},
+    {"source":"layout/slider_with_icons_layout.xml","destination":"layout/smartisan_rom_slider_with_icons_layout.xml","sha256":"42564b86b5c2b1efdaf005a70bd59d2d0090d8aa12e9d858ad6ba5ecd5b8110c","transform":"prefix_resource_references"},
+    {"source":"layout/snackbar_with_btn_layout.xml","destination":"layout/smartisan_rom_snackbar_with_btn_layout.xml","sha256":"dcab0cc1d47b9a36dd4f3777dd525de578dad3332bd0688cbf0fae4a2c7062f7","transform":"prefix_resource_references"},
+    {"source":"layout/snackbar_with_drawable_layout.xml","destination":"layout/smartisan_rom_snackbar_with_drawable_layout.xml","sha256":"9401968dd3bd1f4e6b1bb187a661ebf7ef45cf5ec57ad3b15bf2962a418ebe05","transform":"prefix_resource_references"},
+    {"source":"drawable/toast_action_btn_selector.xml","destination":"drawable/smartisan_rom_toast_action_btn_selector.xml","sha256":"11d05367cd9331759c43f69a240b9553987eedf0f8b0b85d3296bf851f8e6722","transform":"prefix_drawable_references"},
+    {"source":"drawable-xxhdpi/toast_action_dismiss.png","destination":"drawable-xxhdpi/smartisan_rom_toast_action_dismiss.png","sha256":"07dfc09526bda75d1d12968343dfe93ce17c0defc934bd92b3435031f8cf64f0"},
+    {"source":"drawable-xxhdpi/snack_button_normal.9.png","destination":"drawable-xxhdpi/smartisan_rom_snack_button_normal.9.png","sha256":"7f5e91a0d562d0e662af369ed0ad74b9683433b8c8fc893e401a96c4031954c1"},
+    {"source":"drawable-xxhdpi/snack_button_pressed.9.png","destination":"drawable-xxhdpi/smartisan_rom_snack_button_pressed.9.png","sha256":"a0b96ff42863f6a8f7bd83010b1e003ae8d174eaf6ad1ec0d065bf6874ddb3d8"},
+    {"source":"drawable-xxhdpi/circle.png","destination":"drawable-xxhdpi/smartisan_rom_circle.png","sha256":"817ff9978278ba8bfc989d14ef39d910e5b25f973c7c7d4a853ca9d0456ed5cd"},
+    {"source":"drawable-xxhdpi/circle_mask.png","destination":"drawable-xxhdpi/smartisan_rom_circle_mask.png","sha256":"62c7a1b62ccbc0aad42fa0f4e747ab60a346d42d82203431755e989ca8e1e86c"},
+    {"source":"drawable-xxhdpi/circular_progress_download.png","destination":"drawable-xxhdpi/smartisan_rom_circular_progress_download.png","sha256":"b615545f41b9cf83e8f21543d6e8672a3cbf5f5cb245a14219e078379488a15e"},
+    {"source":"drawable-xxhdpi/circular_progress_pause.png","destination":"drawable-xxhdpi/smartisan_rom_circular_progress_pause.png","sha256":"2778baeea4e48e4b7bf91590515f2638ad1decf55d90730acaa704400d1bb586"},
+    {"source":"drawable-xxhdpi/circular_progress_processing.png","destination":"drawable-xxhdpi/smartisan_rom_circular_progress_processing.png","sha256":"5cbef00ff8e360053aa86418b5aaa303479f31867807c9d813dac6ec87bfd4b5"},
+    {"source":"drawable-xxhdpi/circular_progress_redo.png","destination":"drawable-xxhdpi/smartisan_rom_circular_progress_redo.png","sha256":"2c579c08a6f9e929f51bb4e0e3ddd5236acce706c7279db3050f3b67cd4d3658"}
   ]
 }

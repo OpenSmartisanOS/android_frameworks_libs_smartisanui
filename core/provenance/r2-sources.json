@@ -28,6 +28,13 @@
     {"source":"smartisanos.widget.SmartisanBottomBar","public":"org.opensmartisanos.ui.widget.SmartisanIconBottomBar","sha256":"42f1ad9a8d07ac373277ca3ae6f34c49bc7f8da0f9b6566af967aeb4c3731fad"},
     {"source":"smartisanos.widget.MixBottomBar","public":"org.opensmartisanos.ui.widget.SmartisanMixBottomBar","sha256":"5feeb2cbd2b75d221c8062348651382af5b6fefd22311aed4d3b83ef924d8325"},
     {"source":"smartisanos.widget.ButtonGroup","public":"org.opensmartisanos.ui.widget.SmartisanButtonGroup","sha256":"c2f27e97e8ecd4ae580578a1a17616ae26d52aa3f339cdc590f401973c3144e8"},
-    {"source":"smartisanos.widget.ActionButtonGroup","public":"org.opensmartisanos.ui.widget.SmartisanActionButtonGroup","sha256":"81ead1cc569502a886b48dd222f7164b77a24d11a098121a8eff786aa8d14350"}
+    {"source":"smartisanos.widget.ActionButtonGroup","public":"org.opensmartisanos.ui.widget.SmartisanActionButtonGroup","sha256":"81ead1cc569502a886b48dd222f7164b77a24d11a098121a8eff786aa8d14350"},
+    {"source":"smartisanos.widget.SmoothSeekBar","public":"org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar","sha256":"6b0930fbc16073854882396f55097e55affcce5b349a1ac2d81f2f887a27b14d"},
+    {"source":"smartisanos.widget.SliderWithIcons","public":"org.opensmartisanos.ui.widget.SmartisanSliderWithIcons","sha256":"208013f56be910c4d6c27a16d9e657a39ca68fa8744303659fccda0cbc88e89e"},
+    {"source":"smartisanos.widget.CircleProgressView","public":"org.opensmartisanos.ui.widget.SmartisanCircleProgressView","sha256":"859fff406605331c9a40d874352b45a573ebf99238753c743be196165a36a817"},
+    {"source":"smartisanos.widget.CircleProgressPopup","public":"org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup","sha256":"784d8b69763f45ef1205dee537cfe4f2a8536cdaa2070e134521b93748497bf6"},
+    {"source":"smartisanos.widget.DownloadProgressView","public":"org.opensmartisanos.ui.widget.SmartisanDownloadProgressView","sha256":"d5cf80fdd8a32b6b3acd3d3c478bdfb5576d153570c7bad95cdf5dc68823d9fc"},
+    {"source":"smartisanos.widget.SnackbarWithButton","public":"org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton","sha256":"43e4daa0550f995295db020b8e6bf0072e0d3c897785781824ed4a7fcaefb86c"},
+    {"source":"smartisanos.widget.SnackbarWithDrawable","public":"org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable","sha256":"aea2ea9f6c2c35c4991a26c834445758c1dc47fa0cb012d7e1e9be676069cf50"}
   ]
 }

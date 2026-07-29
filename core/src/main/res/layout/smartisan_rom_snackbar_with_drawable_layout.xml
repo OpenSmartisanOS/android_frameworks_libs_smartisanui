@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout android:layout_gravity="center" android:id="@id/smartisan_rom_content" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <LinearLayout android:orientation="horizontal" android:id="@id/smartisan_rom_divider_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+            <FrameLayout android:id="@id/smartisan_rom_divider" android:background="#1e996b3d" android:layout_width="2.0px" android:layout_height="match_parent" />
+            <ImageView android:layout_gravity="center" android:id="@id/smartisan_rom_action_img" android:layout_width="40.0dp" android:layout_height="40.0dp" android:src="@drawable/smartisan_rom_toast_action_dismiss" android:scaleType="center" />
+        </LinearLayout>
+        <TextView android:id="@android:id/message" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/smartisan_rom_divider_layout" style="@style/smartisan_rom_SnackbarMessageStyle" />
+    </RelativeLayout>
+</merge>

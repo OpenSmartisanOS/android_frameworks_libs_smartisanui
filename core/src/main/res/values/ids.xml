@@ -8,6 +8,11 @@
     <item name="smartisan_rom_empty" type="id" />
     <item name="smartisan_rom_ll_group_button_container" type="id" />
     <item name="smartisan_rom_smartisan_iv_btn_group_shadow" type="id" />
+    <item name="smartisan_rom_seek_bar" type="id" />
+    <item name="smartisan_rom_action_btn" type="id" />
+    <item name="smartisan_rom_content" type="id" />
+    <item name="smartisan_rom_divider_layout" type="id" />
+    <item name="smartisan_rom_action_img" type="id" />
     <item name="smartisan_rom_editor" type="id" />
     <item name="smartisan_rom_left_widget" type="id" />
     <item name="smartisan_rom_right_widget" type="id" />

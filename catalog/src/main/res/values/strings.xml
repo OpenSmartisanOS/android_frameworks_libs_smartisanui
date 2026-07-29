@@ -45,6 +45,9 @@
     <string name="smartisan_catalog_editors">Smartisan Editors</string>
     <string name="smartisan_catalog_bottom_bars">Smartisan Bottom Bars</string>
     <string name="smartisan_catalog_button_groups">Smartisan Button Groups</string>
+    <string name="smartisan_catalog_slider_progress">Smartisan Slider / Progress</string>
+    <string name="smartisan_catalog_snackbars">Smartisan Snackbars</string>
+    <string name="smartisan_catalog_snackbar_message">操作未完成，请稍后重试</string>
     <string name="smartisan_catalog_home">首页</string>
     <string name="smartisan_catalog_search">搜索</string>
     <string name="smartisan_catalog_settings">设置</string>
