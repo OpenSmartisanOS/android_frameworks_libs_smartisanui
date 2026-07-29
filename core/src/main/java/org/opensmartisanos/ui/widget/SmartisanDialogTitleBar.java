@@ -155,6 +155,11 @@ public class SmartisanDialogTitleBar extends LinearLayout {
     public void setTitleBarBackgroundResource(int resource) { titleBarContainer.setBackgroundResource(resource); }
     public void setTitleSingleLine(boolean singleLine) { titleView.setSingleLine(singleLine); }
 
+    @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int height = getResources().getDimensionPixelSize(R.dimen.smartisan_rom_title_bar_height);
+        super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
+    }
+
     @Override public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         event.setClassName(getClass().getName());
         event.setPackageName(getContext().getPackageName());

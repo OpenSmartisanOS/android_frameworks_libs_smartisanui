@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -25,6 +26,7 @@ import org.opensmartisanos.ui.widget.SmartisanActionButtonGroup;
 import org.opensmartisanos.ui.widget.SmartisanBottomBar;
 import org.opensmartisanos.ui.widget.SmartisanButton;
 import org.opensmartisanos.ui.widget.SmartisanButtonGroup;
+import org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup;
 import org.opensmartisanos.ui.widget.SmartisanCircleProgressView;
 import org.opensmartisanos.ui.widget.SmartisanDialogTitleBar;
 import org.opensmartisanos.ui.widget.SmartisanDownloadProgressView;
@@ -40,6 +42,7 @@ import org.opensmartisanos.ui.widget.SmartisanMixBottomBar;
 import org.opensmartisanos.ui.widget.SmartisanPasswordEditText;
 import org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText;
 import org.opensmartisanos.ui.widget.SmartisanSearchBar;
+import org.opensmartisanos.ui.widget.SmartisanSearchEditText;
 import org.opensmartisanos.ui.widget.SmartisanSegmentedControl;
 import org.opensmartisanos.ui.widget.SmartisanSettingItemCheck;
 import org.opensmartisanos.ui.widget.SmartisanSettingItemSwitch;
@@ -47,6 +50,7 @@ import org.opensmartisanos.ui.widget.SmartisanSettingItemText;
 import org.opensmartisanos.ui.widget.SmartisanShadowButton;
 import org.opensmartisanos.ui.widget.SmartisanSimpleEditor;
 import org.opensmartisanos.ui.widget.SmartisanSliderWithIcons;
+import org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar;
 import org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton;
 import org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable;
 import org.opensmartisanos.ui.widget.SmartisanSwitch;
@@ -551,6 +555,13 @@ public final class CatalogActivity extends Activity {
     disabled.setBackgroundStyle(SmartisanListContentItem.BG_STYLE_SINGLE);
     disabled.setEnabled(false);
     addListItem(parent, disabled, 10);
+
+    View custom =
+        LayoutInflater.from(this).inflate(R.layout.catalog_custom_list_item, parent, false);
+    ((SmartisanListContentItem) custom)
+        .setBackgroundStyle(SmartisanListContentItem.BG_STYLE_SINGLE);
+    custom.setClickable(true);
+    addListItem(parent, custom, 10);
   }
 
   private void addSettingItems(LinearLayout parent) {
@@ -606,19 +617,41 @@ public final class CatalogActivity extends Activity {
     standard.setHint(getText(R.string.smartisan_catalog_search_hint));
     standard.addRightImageView(
         org.opensmartisanos.ui.R.drawable.smartisan_rom_sorting_icon_selector);
-    addRow(parent, standard);
+    addSearchBar(parent, standard);
 
     SmartisanSearchBar filter = new SmartisanSearchBar(this);
     filter.setHint(getText(R.string.smartisan_catalog_search_hint));
     filter.setSecondaryFilterText(R.string.smartisan_catalog_filter);
     filter.setSecondaryFilterVisibility(View.VISIBLE);
-    addRow(parent, filter);
+    addSearchBar(parent, filter);
 
     SmartisanSearchBar active = new SmartisanSearchBar(this);
     active.setWithAnimation(false);
     active.onClickSearchEditor(false);
     active.setQuery(getText(R.string.smartisan_catalog_search_long_query));
-    addRow(parent, active);
+    addSearchBar(parent, active);
+
+    SmartisanSearchEditText editor = new SmartisanSearchEditText(this);
+    editor.setSingleLine(true);
+    editor.setHint(R.string.smartisan_catalog_search_editor_hint);
+    editor.setTextSize(15);
+    editor.setTextColor(Color.rgb(51, 51, 51));
+    editor.setHintTextColor(Color.rgb(153, 153, 153));
+    editor.setGravity(Gravity.CENTER_VERTICAL);
+    editor.setPadding(dp(14), 0, dp(14), 0);
+    editor.setBackgroundResource(
+        org.opensmartisanos.ui.R.drawable.smartisan_rom_search_bar_edit_bg_selector);
+    LinearLayout.LayoutParams editorParams =
+        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(44));
+    editorParams.bottomMargin = dp(10);
+    parent.addView(editor, editorParams);
+  }
+
+  private void addSearchBar(LinearLayout parent, SmartisanSearchBar searchBar) {
+    LinearLayout.LayoutParams params =
+        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(48));
+    params.bottomMargin = dp(10);
+    parent.addView(searchBar, params);
   }
 
   private void addEditors(LinearLayout parent) {
@@ -774,6 +807,7 @@ public final class CatalogActivity extends Activity {
     joined.setButtonText(1, R.string.smartisan_catalog_item_two);
     joined.setButtonText(2, R.string.smartisan_catalog_item_three);
     joined.setButtonActivated(0);
+    bindButtonGroup(joined, false);
     addRow(parent, joined);
 
     SmartisanButtonGroup separated = new SmartisanButtonGroup(this);
@@ -781,6 +815,7 @@ public final class CatalogActivity extends Activity {
     separated.setButtonText(0, R.string.smartisan_catalog_cancel);
     separated.setButtonText(1, R.string.smartisan_catalog_confirm);
     separated.setButtonText(2, R.string.smartisan_catalog_delete);
+    bindButtonGroup(separated, true);
     addRow(parent, separated);
 
     SmartisanActionButtonGroup actions = new SmartisanActionButtonGroup(this);
@@ -790,9 +825,38 @@ public final class CatalogActivity extends Activity {
             org.opensmartisanos.ui.R.drawable.smartisan_rom_standard_icon_back_selector);
     for (int i = 0; i < actions.getButtonCount(); i++) {
       actions.setButtonText(
-          i, i == 0 ? R.string.smartisan_catalog_item_one : R.string.smartisan_catalog_item_two);
+          i,
+          i % 3 == 0
+              ? R.string.smartisan_catalog_item_one
+              : i % 3 == 1
+                  ? R.string.smartisan_catalog_item_two
+                  : R.string.smartisan_catalog_item_three);
+      final int index = i;
+      actions.getButton(i).setOnClickListener(view -> actions.setButtonActivated(index));
     }
+    actions.setButtonActivated(0);
+    actions.getLeftActionButton().setOnClickListener(view -> actions.setButtonActivated(-1));
     addRow(parent, actions);
+  }
+
+  private void bindButtonGroup(SmartisanButtonGroup group, boolean highlightSelected) {
+    for (int i = 0; i < group.getButtonCount(); i++) {
+      final int selected = i;
+      group.getButton(i).setOnClickListener(
+          view -> {
+            group.setButtonActivated(selected);
+            if (highlightSelected) {
+              for (int button = 0; button < group.getButtonCount(); button++) {
+                group
+                    .getButton(button)
+                    .updateBackgroundStyle(
+                        button == selected
+                            ? SmartisanShadowButton.SmallButtonStyle.HIGH_LIGHT
+                            : SmartisanShadowButton.SmallButtonStyle.STANDARD);
+              }
+            }
+          });
+    }
   }
 
   private void addSliderAndProgress(LinearLayout parent) {
@@ -807,6 +871,35 @@ public final class CatalogActivity extends Activity {
     slider.setProgress(42);
     slider.setPadding(dp(8), dp(8), dp(8), dp(8));
     addRow(parent, slider);
+
+    SmartisanSmoothSeekBar smooth = new SmartisanSmoothSeekBar(this);
+    smooth.setMax(100);
+    smooth.setProgress(20);
+    addRow(parent, smooth);
+
+    LinearLayout controls = newRow();
+    SmartisanButton animate =
+        button(SmartisanButton.STYLE_NORMAL, R.string.smartisan_catalog_smooth_seek);
+    animate.setOnClickListener(
+        view -> smooth.setProgressSmooth(smooth.getProgress() >= 50 ? 15 : 85));
+    SmartisanButton showPopup =
+        button(SmartisanButton.STYLE_HIGHLIGHT_BLUE, R.string.smartisan_catalog_circle_popup);
+    showPopup.setOnClickListener(
+        view -> {
+          SmartisanCircleProgressPopup popup = new SmartisanCircleProgressPopup(this);
+          popup.setCircleAnimDuration(900);
+          popup.setCircleProgressListener(
+              new SmartisanCircleProgressPopup.CircleProgressListenerAdapter() {
+                @Override
+                public void complete() {
+                  popup.dismiss();
+                }
+              });
+          popup.show(view, view.getWidth() / 2, view.getHeight() / 2, true);
+        });
+    controls.addView(animate);
+    controls.addView(showPopup, spacedWrapParams());
+    addRow(parent, controls);
 
     LinearLayout row = newRow();
     SmartisanCircleProgressView circle = new SmartisanCircleProgressView(this);

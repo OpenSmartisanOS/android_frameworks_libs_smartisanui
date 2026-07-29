@@ -35,6 +35,9 @@
     <string name="smartisan_catalog_no_arrow">无箭头文本项</string>
     <string name="smartisan_catalog_value">右侧值</string>
     <string name="smartisan_catalog_disabled_switch">禁用开关项</string>
+    <string name="smartisan_catalog_custom_item">自定义列表项</string>
+    <string name="smartisan_catalog_custom_item_summary">右侧可承载自定义内容</string>
+    <string name="smartisan_catalog_manage">管理</string>
     <string name="smartisan_catalog_setting_item">SmartisanSettingItem</string>
     <string name="smartisan_catalog_account">欢喜云服务</string>
     <string name="smartisan_catalog_account_summary">同步联系人、便签和相册</string>
@@ -77,9 +80,12 @@
     <string name="smartisan_catalog_page_title">通用组件</string>
     <string name="smartisan_catalog_search_hint">搜索联系人</string>
     <string name="smartisan_catalog_search_long_query">这是一段较长的搜索关键词</string>
+    <string name="smartisan_catalog_search_editor_hint">SmartisanSearchEditText</string>
     <string name="smartisan_catalog_filter">筛选</string>
     <string name="smartisan_catalog_menu_dialog">打开菜单弹窗</string>
     <string name="smartisan_catalog_progress_dialog">打开进度弹窗</string>
+    <string name="smartisan_catalog_smooth_seek">平滑移动</string>
+    <string name="smartisan_catalog_circle_popup">进度浮层</string>
     <string name="smartisan_catalog_popup_open">打开 Popup</string>
     <string name="smartisan_catalog_tips_short">当前网络不可用</string>
     <string name="smartisan_catalog_tips_long">部分功能暂时不可用，请检查网络设置后重试。</string>
