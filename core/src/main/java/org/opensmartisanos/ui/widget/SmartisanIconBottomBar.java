@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.opensmartisanos.ui.R;
+import org.opensmartisanos.ui.internal.SmartisanShadowComponent;
 
 public class SmartisanIconBottomBar extends LinearLayout {
   public interface BottomBarInnerClickCallback {
@@ -22,7 +23,7 @@ public class SmartisanIconBottomBar extends LinearLayout {
   private boolean backgroundMode;
   private int width, buttonMargin;
   private final int fixedHeight;
-  private final ImageView shadow;
+  private final SmartisanShadowComponent shadowComponent;
 
   public SmartisanIconBottomBar(Context c) {
     this(c, null);
@@ -46,8 +47,12 @@ public class SmartisanIconBottomBar extends LinearLayout {
             .getDimensionPixelSize(R.dimen.smartisan_rom_smartisan_small_blank_spacing_width);
     setPadding(p, 0, p, 0);
     fixedHeight = getResources().getDimensionPixelSize(R.dimen.smartisan_button_fixed_height);
-    shadow = new ImageView(c);
-    shadow.setImageResource(R.drawable.smartisan_rom_bottom_bar_shadow);
+    shadowComponent =
+        new SmartisanShadowComponent(
+            this,
+            R.drawable.smartisan_rom_bottom_bar_shadow,
+            true,
+            SmartisanShadowComponent.ORIENTATION_ABOVE_HOST);
     if (array >= 0) setIconRefArray(array, backgroundMode);
   }
 
@@ -143,14 +148,14 @@ public class SmartisanIconBottomBar extends LinearLayout {
   }
 
   public void setShadowDrawable(int id) {
-    shadow.setImageResource(id);
+    shadowComponent.setShadowDrawable(id);
   }
 
   public void setShadowVisible(boolean visible) {
-    shadow.setVisibility(visible ? VISIBLE : GONE);
+    shadowComponent.setShadowVisible(visible);
   }
 
   public ImageView getShadowView() {
-    return shadow;
+    return shadowComponent.getShadowView();
   }
 }

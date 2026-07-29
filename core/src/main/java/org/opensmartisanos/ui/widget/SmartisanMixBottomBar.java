@@ -31,6 +31,8 @@ public class SmartisanMixBottomBar extends LinearLayout {
     prepareButton(left);
     prepareButton(center);
     prepareButton(right);
+    center.setMinimumWidth(
+        getResources().getDimensionPixelSize(R.dimen.smartisan_rom_mix_bottom_bar_action_width));
     TypedArray v = c.obtainStyledAttributes(a, R.styleable.SmartisanMixBottomBar, s, 0);
     Drawable l = v.getDrawable(R.styleable.SmartisanMixBottomBar_leftButtonBackground),
         m = v.getDrawable(R.styleable.SmartisanMixBottomBar_centerButtonBackground),

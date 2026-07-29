@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -712,7 +713,19 @@ public final class CatalogActivity extends Activity {
           org.opensmartisanos.ui.R.drawable.smartisan_rom_qsb_tab_t9_voice_selector,
           org.opensmartisanos.ui.R.drawable.smartisan_rom_qsb_tab_softkey_selector
         });
-    addRow(parent, icons);
+    FrameLayout iconBarHost = new FrameLayout(this);
+    iconBarHost.setClipChildren(false);
+    int iconBarHeight =
+        getResources()
+            .getDimensionPixelSize(org.opensmartisanos.ui.R.dimen.smartisan_button_fixed_height);
+    iconBarHost.addView(
+        icons,
+        new FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, iconBarHeight));
+    LinearLayout.LayoutParams iconBarHostParams =
+        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, iconBarHeight);
+    iconBarHostParams.bottomMargin = dp(10);
+    parent.addView(iconBarHost, iconBarHostParams);
 
     SmartisanMixBottomBar mix = new SmartisanMixBottomBar(this);
     addRow(parent, mix);
