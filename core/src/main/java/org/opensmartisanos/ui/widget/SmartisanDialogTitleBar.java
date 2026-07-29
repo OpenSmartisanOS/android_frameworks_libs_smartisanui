@@ -21,6 +21,7 @@ public class SmartisanDialogTitleBar extends LinearLayout {
     private final TextView titleView;
     private final ViewGroup titleBarContainer;
     private final View shadowView;
+    private final View dividerView;
     private View.OnClickListener leftClickListener;
     private View.OnClickListener rightClickListener;
     private boolean requestAccessibilityFocus = true;
@@ -69,7 +70,27 @@ public class SmartisanDialogTitleBar extends LinearLayout {
 
         shadowView = new View(context);
         shadowView.setBackgroundResource(R.drawable.smartisan_rom_title_bar_shadow);
-        addView(shadowView, new LayoutParams(LayoutParams.MATCH_PARENT, dp(14)));
+        RelativeLayout.LayoutParams shadow = new RelativeLayout.LayoutParams(
+                LayoutParams.MATCH_PARENT, dp(14));
+        shadow.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        shadowView.setTranslationY(dp(14));
+        titleBarContainer.addView(shadowView, shadow);
+
+        dividerView = new View(context);
+        dividerView.setBackgroundResource(R.drawable.smartisan_rom_divider_bg);
+        RelativeLayout.LayoutParams divider = new RelativeLayout.LayoutParams(
+                LayoutParams.MATCH_PARENT, getResources().getDimensionPixelSize(
+                        R.dimen.smartisan_rom_bar_divider_height));
+        divider.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        dividerView.setTranslationY(divider.height);
+        titleBarContainer.addView(dividerView, divider);
+        titleBarContainer.addOnLayoutChangeListener((view, l, t, r, b,
+                oldL, oldT, oldR, oldB) -> {
+            ViewGroup parent = view.getParent() instanceof ViewGroup
+                    ? (ViewGroup) view.getParent() : null;
+            if (parent != null) parent.setClipChildren(false);
+            ((ViewGroup) view).setClipToPadding(false);
+        });
         setElevation(0.1f);
         leftImageView.setOnClickListener(v -> { if (leftClickListener != null) leftClickListener.onClick(v); });
         rightImageView.setOnClickListener(v -> { if (rightClickListener != null) rightClickListener.onClick(v); });
