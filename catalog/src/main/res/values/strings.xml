@@ -51,6 +51,10 @@
     <string name="smartisan_catalog_home">首页</string>
     <string name="smartisan_catalog_search">搜索</string>
     <string name="smartisan_catalog_settings">设置</string>
+    <string name="smartisan_catalog_world_clock">世界时钟</string>
+    <string name="smartisan_catalog_alarm">闹钟</string>
+    <string name="smartisan_catalog_stopwatch">秒表</string>
+    <string name="smartisan_catalog_timer">计时器</string>
     <string name="smartisan_catalog_editor_value">可清空的输入内容</string>
     <string name="smartisan_catalog_editor_hint">请输入账号</string>
     <string name="smartisan_catalog_password_value">smartisan</string>
@@ -64,7 +68,8 @@
     <string name="smartisan_catalog_editor_simple_hint">普通编辑器</string>
     <string name="smartisan_catalog_dialogs">Smartisan Dialogs</string>
     <string name="smartisan_catalog_popup">SmartisanListPopupMenu</string>
-    <string name="smartisan_catalog_tips_empty">Tips / Empty</string>
+    <string name="smartisan_catalog_tips">SmartisanTipsBar</string>
+    <string name="smartisan_catalog_empty_view">SmartisanEmptyView</string>
     <string name="smartisan_catalog_segmented">SmartisanSegmentedControl</string>
     <string name="smartisan_catalog_page_title">通用组件</string>
     <string name="smartisan_catalog_search_hint">搜索联系人</string>

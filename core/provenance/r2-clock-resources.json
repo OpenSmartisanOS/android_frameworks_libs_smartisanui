@@ -1,0 +1,13 @@
+{
+  "license": "Apache-2.0",
+  "decoder": "apktool 3.0.3",
+  "source_apk": "system/system/priv-app/ClockSmartisan/ClockSmartisan.apk",
+  "source_apk_sha256": "7af83b54309cd8d67add398003cfcf8adae6f43f127b2a6722f17a507d38342a",
+  "resources": [
+    {"source":"drawable/selector_tab_worldclock.xml","destination":"drawable/smartisan_rom_clock_tab_worldclock.xml","sha256":"5bdf755de4ade044b36a031c9d3bfaca1f7734542440cad345fe4309e733d1c2"},
+    {"source":"drawable/selector_tab_alarm.xml","destination":"drawable/smartisan_rom_clock_tab_alarm.xml","sha256":"39868067e06db3db82da701bffc0c9432d12816228040d50891be24bc481540a"},
+    {"source":"drawable/selector_tab_stopwatch.xml","destination":"drawable/smartisan_rom_clock_tab_stopwatch.xml","sha256":"3d33327459c55153626cafdffdba21a56033ce6760360091e64b584b214356eb"},
+    {"source":"drawable/selector_tab_timer.xml","destination":"drawable/smartisan_rom_clock_tab_timer.xml","sha256":"8a86d054029c1661ae7ce1d489ee9a931848e4d00c4efe066e521756905b6489"},
+    {"source":"color/bottom_bar_icon_selector.xml","destination":"color/smartisan_rom_clock_bottom_bar_icon.xml","sha256":"bf8fb7a78c76b8e0423b8b0aed70bbef3954cf3a3c57ec109e3645ba81621b8e"}
+  ]
+}

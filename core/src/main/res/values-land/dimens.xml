@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- R2 ROM landscape override. -->
+    <dimen name="smartisan_rom_blankview_actionbtn_margintop">24dp</dimen>
+</resources>

@@ -69,5 +69,9 @@
     <dimen name="smartisan_rom_smartisan_bottom_bar_height_only_icon">48dp</dimen>
     <dimen name="smartisan_rom_smartisan_bottom_bar_height_with_text_icon">54dp</dimen>
     <dimen name="smartisan_rom_smartisan_small_blank_spacing_width">6dp</dimen>
+    <!-- Values from framework-res.apk's blank_view.xml and dimensions. -->
+    <dimen name="smartisan_rom_blank_view_vertical_margin">40dp</dimen>
+    <dimen name="smartisan_rom_blankview_actionbtn_margintop">84dp</dimen>
+    <dimen name="smartisan_rom_small_blank_image_size">60dp</dimen>
     <dimen name="smartisan_rom_circle_progress_view_size">90dp</dimen>
 </resources>

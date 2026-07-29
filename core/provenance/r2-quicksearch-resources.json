@@ -1,0 +1,14 @@
+{
+  "license": "Apache-2.0",
+  "decoder": "apktool 3.0.3",
+  "source_apk": "system/system/app/QuickSearchBoxSmartisan/QuickSearchBoxSmartisan.apk",
+  "source_apk_sha256": "c473ebb251ecd4b41bf158e8c8fb3bf70e577c98bf2040fc5ffa7dbeae865fb9",
+  "resources": [
+    {"source":"drawable/tab_t9_voice_selector.xml","destination":"drawable/smartisan_rom_qsb_tab_t9_voice_selector.xml","sha256":"67efba01d5bb51ad0ad87ce2af798fb569fda58ab83aa79cba5820640b7ddb83","transform":"prefix_drawable_references"},
+    {"source":"drawable/tab_softkey_selector.xml","destination":"drawable/smartisan_rom_qsb_tab_softkey_selector.xml","sha256":"cdf53aac3df954ac03dd580f995bcbec715b96d10fb0efc583cfc52af37f32d1","transform":"prefix_drawable_references"},
+    {"source":"drawable-xxhdpi/tab_t9_voice_normal.png","destination":"drawable-xxhdpi/smartisan_rom_tab_t9_voice_normal.png","sha256":"a7e4b53717714b54f0bffe28898d5447d9d94f2634e1b6b2921ae50a6823a95c"},
+    {"source":"drawable-xxhdpi/tab_t9_voice_pressed.png","destination":"drawable-xxhdpi/smartisan_rom_tab_t9_voice_pressed.png","sha256":"0d5dc33d60cac3ebfca56f394eb712d3cb6279fa59b694cf2a40e8e25e5d09f2"},
+    {"source":"drawable-xxhdpi/tab_softkey_normal.png","destination":"drawable-xxhdpi/smartisan_rom_tab_softkey_normal.png","sha256":"aafbb4d14d4e0875f1349dbab82b2cdbc6d5d0d3be912956777e006ebc381bf2"},
+    {"source":"drawable-xxhdpi/tab_softkey_pressed.png","destination":"drawable-xxhdpi/smartisan_rom_tab_softkey_pressed.png","sha256":"67074b89d119f02b7ce98f1303c521bbe16bd1ec1b782ce7eb9898c86fe9b33d"}
+  ]
+}
