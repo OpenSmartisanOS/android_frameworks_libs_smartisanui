@@ -1,13 +1,15 @@
 /* Ported from smartisanos.app.SmartisanProgressDialog in Smartisan OS 8.5.3. */
 package org.opensmartisanos.ui.app;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Rect;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -41,26 +43,18 @@ public class SmartisanProgressDialog extends Dialog {
         dialog.setTitle(title); dialog.setMessage(message); dialog.show(); return dialog;
     }
 
+    @SuppressLint("InflateParams")
     @Override protected void onCreate(Bundle state) {
         super.onCreate(state);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        content = new LinearLayout(context);
-        content.setOrientation(LinearLayout.VERTICAL);
-        content.setGravity(Gravity.CENTER);
-        content.setPadding(dp(30), dp(8), dp(30), dp(8));
-
-        titleView = new TextView(context);
-        titleView.setTextSize(18f); titleView.setGravity(Gravity.CENTER); titleView.setSingleLine(true);
-        content.addView(titleView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        progressBar = new ProgressBar(context);
+        View view = LayoutInflater.from(context).inflate(
+                R.layout.smartisan_rom_smartisan_progress_dialog, null);
+        titleView = view.findViewById(R.id.smartisan_progress_dialog_title);
+        progressBar = view.findViewById(R.id.smartisan_progress_dialog_progress);
+        messageView = view.findViewById(R.id.smartisan_progress_dialog_message);
+        content = view.findViewById(R.id.smartisan_progress_dialog_content);
         progressBar.setIndeterminate(true);
-        LinearLayout.LayoutParams progressParams = new LinearLayout.LayoutParams(dp(48), dp(48));
-        progressParams.topMargin = dp(2); content.addView(progressBar, progressParams);
-        messageView = new TextView(context);
-        messageView.setTextSize(13f); messageView.setGravity(Gravity.CENTER); messageView.setSingleLine(true);
-        LinearLayout.LayoutParams messageParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        messageParams.topMargin = dp(8); messageParams.bottomMargin = dp(8); content.addView(messageView, messageParams);
-        setContentView(content, new ViewGroup.LayoutParams(dp(246), ViewGroup.LayoutParams.WRAP_CONTENT));
+        setContentView(view);
         Window window = getWindow();
         if (window != null) {
             window.setBackgroundDrawableResource(android.R.color.transparent);
@@ -79,9 +73,52 @@ public class SmartisanProgressDialog extends Dialog {
         content.setBackground(background != null ? background : context.getDrawable(darkTheme
                 ? R.drawable.smartisan_rom_smartisan_progress_dialog_bg_dark
                 : R.drawable.smartisan_rom_smartisan_progress_dialog_bg));
-        if (indeterminateDrawable != null) progressBar.setIndeterminateDrawable(indeterminateDrawable);
-        progressBar.setVisibility(hideProgressBar ? View.GONE : View.VISIBLE);
+        if (hideProgressBar) {
+            progressBar.setIndeterminate(false);
+            progressBar.setIndeterminateDrawable(null);
+            progressBar.setVisibility(View.GONE);
+        } else {
+            Drawable drawable = indeterminateDrawable != null
+                    ? indeterminateDrawable
+                    : context.getDrawable(darkTheme
+                            ? R.drawable.smartisan_rom_progress_medium_smartisanos_dark
+                            : R.drawable.smartisan_rom_progress_medium_smartisanos_light);
+            updateDrawableBounds(drawable, progressBar.getWidth(), progressBar.getHeight());
+            progressBar.setIndeterminateDrawable(drawable);
+            progressBar.setIndeterminate(true);
+            progressBar.setVisibility(View.VISIBLE);
+        }
         content.getRootView().setSystemUiVisibility(systemUiVisibility);
+    }
+
+    private void updateDrawableBounds(Drawable drawable, int width, int height) {
+        if (drawable == null || width <= 0 || height <= 0) return;
+        Rect padding = new Rect();
+        drawable.getPadding(padding);
+        int availableWidth = width - padding.left - padding.right;
+        int availableHeight = height - padding.top - padding.bottom;
+        int left = 0;
+        int top = 0;
+        int right = availableWidth;
+        int bottom = availableHeight;
+        if (!(drawable instanceof AnimationDrawable)) {
+            int intrinsicWidth = drawable.getIntrinsicWidth();
+            int intrinsicHeight = drawable.getIntrinsicHeight();
+            if (intrinsicWidth > 0 && intrinsicHeight > 0) {
+                float intrinsicAspect = (float) intrinsicWidth / intrinsicHeight;
+                float boundAspect = (float) availableWidth / availableHeight;
+                if (boundAspect > intrinsicAspect) {
+                    int scaledWidth = Math.round(availableHeight * intrinsicAspect);
+                    left = (availableWidth - scaledWidth) / 2;
+                    right = left + scaledWidth;
+                } else if (boundAspect < intrinsicAspect) {
+                    int scaledHeight = Math.round(availableWidth / intrinsicAspect);
+                    top = (availableHeight - scaledHeight) / 2;
+                    bottom = top + scaledHeight;
+                }
+            }
+        }
+        drawable.setBounds(left, top, right, bottom);
     }
 
     private int dp(float value) { return (int) (value * context.getResources().getDisplayMetrics().density + 0.5f); }

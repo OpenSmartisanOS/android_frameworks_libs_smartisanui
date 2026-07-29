@@ -8,6 +8,17 @@
 
     <style name="Widget.SmartisanUi.ShadowButton" parent="@android:style/Widget.Material.Button" />
 
+    <style name="SmartisanProgressBarCircleStyle.Medium"
+        parent="@android:style/Widget.DeviceDefault.Light.ProgressBar">
+        <item name="android:maxWidth">48dp</item>
+        <item name="android:maxHeight">48dp</item>
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateDuration">3500</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
     <style name="smartisan_rom_PopupMenuStyle">
         <item name="android:background">@drawable/smartisan_rom_pop_up_menu_bg</item>
     </style>

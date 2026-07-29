@@ -769,6 +769,26 @@
       "sha256": "87eed8a05acdd69e14f686e28de84b5f7468cfceff515d4b8026dbeabef1081c"
     },
     {
+      "source": "drawable-xhdpi/spinner_48_outer_smartisanos_dark.png",
+      "destination": "drawable-xhdpi/smartisan_rom_spinner_48_outer_smartisanos_dark.png",
+      "sha256": "9195d46dad865eb80441b09f11e755109b8d87e1e9a5362fc6bd7b97c9e90074"
+    },
+    {
+      "source": "drawable-xhdpi/spinner_48_outer_smartisanos_light.png",
+      "destination": "drawable-xhdpi/smartisan_rom_spinner_48_outer_smartisanos_light.png",
+      "sha256": "a2c3793d15c5324dd07a59a2b77a2e12997ee4534a3bac77f460548bc3d92cf2"
+    },
+    {
+      "source": "drawable-xxhdpi/spinner_48_outer_smartisanos_dark.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_spinner_48_outer_smartisanos_dark.png",
+      "sha256": "245c2dff33c21925584c696d256dd59c18a8e3862f9249f3c1b49dfa648ca682"
+    },
+    {
+      "source": "drawable-xxhdpi/spinner_48_outer_smartisanos_light.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_spinner_48_outer_smartisanos_light.png",
+      "sha256": "009a300b481aa21017283e05f57b6aca94293bba383d75b96207955c411ec9a3"
+    },
+    {
       "source": "drawable-xxhdpi/popup_menu_bg_shadow.9.png",
       "destination": "drawable-xxhdpi/smartisan_rom_popup_menu_bg_shadow.9.png",
       "sha256": "614c7799556f449fb7d9e895110b00e8e7f73ea86e6b188c6158f4996014f3f9"
