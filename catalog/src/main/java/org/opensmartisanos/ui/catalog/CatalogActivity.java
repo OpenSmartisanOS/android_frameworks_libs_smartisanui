@@ -145,6 +145,8 @@ public final class CatalogActivity extends Activity {
     root.addView(createTitleBar(R.string.smartisan_catalog_name, false));
 
     LinearLayout content = createScrollContent(root, 12, 12, 12, 32);
+    content.setBackgroundColor(
+        getResources().getColor(org.opensmartisanos.ui.R.color.smartisan_catalog_background));
     for (int group = 0; group < CATALOG_GROUPS.length; group++) {
       addCatalogGroup(content, CATALOG_GROUP_TITLES[group], CATALOG_GROUPS[group]);
     }
@@ -225,6 +227,7 @@ public final class CatalogActivity extends Activity {
       SmartisanListContentItemText item = new SmartisanListContentItemText(this);
       item.setTitle(entry.title);
       item.setBackgroundStyle(groupBackgroundStyle(i, entries.length));
+      item.setShadowShouldProjects(false);
       item.setClickable(true);
       item.setOnClickListener(view -> openComponent(entry.id));
       addListItem(parent, item, i == entries.length - 1 ? 12 : 0);
