@@ -41,6 +41,7 @@ public class SmartisanMenuDialog extends Dialog implements DialogInterface.OnKey
     private CharSequence negativeText;
     private View.OnClickListener positiveListener;
     private View.OnClickListener negativeListener;
+    private int negativeImageResource;
     private SmartisanShadowButton.LongButtonStyle positiveStyle = SmartisanShadowButton.LongButtonStyle.HIGH_LIGHT;
 
     public SmartisanMenuDialog(Context context) { this(context, LOCATION_BOTTOM); }
@@ -57,7 +58,13 @@ public class SmartisanMenuDialog extends Dialog implements DialogInterface.OnKey
         titleBar = new SmartisanDialogTitleBar(context);
         titleBar.setTitle(title); titleBar.setTitleSingleLine(titleSingleLine);
         titleBar.setLeftButtonVisibility(View.INVISIBLE);
-        titleBar.setOnRightButtonClickListener(v -> dismiss());
+        titleBar.setOnRightButtonClickListener(v -> {
+            if (negativeListener != null) negativeListener.onClick(v);
+            dismiss();
+        });
+        if (negativeImageResource != 0) {
+            titleBar.setRightImageViewResource(negativeImageResource);
+        }
         root.addView(titleBar, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         listView = new ListView(context);
         listView.setDivider(null); listView.setAdapter(adapter); listView.setOnItemClickListener(itemClickListener);
@@ -108,12 +115,21 @@ public class SmartisanMenuDialog extends Dialog implements DialogInterface.OnKey
     }
     public ListView getListView() { return listView; }
     public SmartisanDialogTitleBar getTitleBar() { return titleBar; }
+    public void setNegativeButton(View.OnClickListener listener) {
+        negativeText = null;
+        negativeListener = listener;
+        if (negativeButton != null) negativeButton.setVisibility(View.GONE);
+    }
     public void setNegativeButton(int resource, View.OnClickListener listener) { setNegativeButton(context.getText(resource), listener); }
     public void setNegativeButton(CharSequence text, View.OnClickListener listener) {
         negativeText = text; negativeListener = listener;
         if (negativeButton != null) { negativeButton.setText(text); negativeButton.setVisibility(text == null ? View.GONE : View.VISIBLE); }
     }
-    public void setNegativeImage(int resource, View.OnClickListener listener) { setNegativeButton(context.getText(android.R.string.cancel), listener); }
+    public void setNegativeImage(int resource, View.OnClickListener listener) {
+        negativeImageResource = resource;
+        setNegativeButton(listener);
+        if (titleBar != null) titleBar.setRightImageViewResource(resource);
+    }
     public void setPositiveButton(int resource, View.OnClickListener listener) { setPositiveButton(context.getText(resource), listener); }
     public void setPositiveButton(CharSequence text, View.OnClickListener listener) {
         positiveText = text; positiveListener = listener;
