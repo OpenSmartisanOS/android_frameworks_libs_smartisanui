@@ -5,6 +5,7 @@
 package org.opensmartisanos.ui.catalog;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -50,8 +51,70 @@ import org.opensmartisanos.ui.widget.SmartisanTipsBar;
 import org.opensmartisanos.ui.widget.SmartisanTitleBar;
 
 public final class CatalogActivity extends Activity {
+  private static final String EXTRA_COMPONENT = "component";
+
+  private static final String COMPONENT_BUTTON = "button";
+  private static final String COMPONENT_SHADOW_BUTTON = "shadow_button";
+  private static final String COMPONENT_SWITCH = "switch";
+  private static final String COMPONENT_SEGMENTED = "segmented";
+  private static final String COMPONENT_LIST_ITEM = "list_item";
+  private static final String COMPONENT_SETTING_ITEM = "setting_item";
+  private static final String COMPONENT_SEARCH_BAR = "search_bar";
+  private static final String COMPONENT_EDITORS = "editors";
+  private static final String COMPONENT_TITLE_BAR = "title_bar";
+  private static final String COMPONENT_BOTTOM_BARS = "bottom_bars";
+  private static final String COMPONENT_BUTTON_GROUPS = "button_groups";
+  private static final String COMPONENT_SLIDER_PROGRESS = "slider_progress";
+  private static final String COMPONENT_SNACKBARS = "snackbars";
+  private static final String COMPONENT_DIALOGS = "dialogs";
+  private static final String COMPONENT_POPUP = "popup";
+  private static final String COMPONENT_TIPS = "tips";
+  private static final String COMPONENT_EMPTY_VIEW = "empty_view";
+
+  private static final CatalogEntry[][] CATALOG_GROUPS = {
+    {
+      new CatalogEntry(COMPONENT_BUTTON, R.string.smartisan_catalog_smartisan_button),
+      new CatalogEntry(COMPONENT_SHADOW_BUTTON, R.string.smartisan_catalog_shadow_button),
+      new CatalogEntry(COMPONENT_SWITCH, R.string.smartisan_catalog_switch),
+      new CatalogEntry(COMPONENT_SEGMENTED, R.string.smartisan_catalog_segmented)
+    },
+    {
+      new CatalogEntry(COMPONENT_LIST_ITEM, R.string.smartisan_catalog_list_item),
+      new CatalogEntry(COMPONENT_SETTING_ITEM, R.string.smartisan_catalog_setting_item),
+      new CatalogEntry(COMPONENT_SEARCH_BAR, R.string.smartisan_catalog_search_bar),
+      new CatalogEntry(COMPONENT_EDITORS, R.string.smartisan_catalog_editors)
+    },
+    {
+      new CatalogEntry(COMPONENT_TITLE_BAR, R.string.smartisan_catalog_title_bar),
+      new CatalogEntry(COMPONENT_BOTTOM_BARS, R.string.smartisan_catalog_bottom_bars),
+      new CatalogEntry(COMPONENT_BUTTON_GROUPS, R.string.smartisan_catalog_button_groups),
+      new CatalogEntry(COMPONENT_SLIDER_PROGRESS, R.string.smartisan_catalog_slider_progress),
+      new CatalogEntry(COMPONENT_SNACKBARS, R.string.smartisan_catalog_snackbars),
+      new CatalogEntry(COMPONENT_DIALOGS, R.string.smartisan_catalog_dialogs),
+      new CatalogEntry(COMPONENT_POPUP, R.string.smartisan_catalog_popup),
+      new CatalogEntry(COMPONENT_TIPS, R.string.smartisan_catalog_tips),
+      new CatalogEntry(COMPONENT_EMPTY_VIEW, R.string.smartisan_catalog_empty_view)
+    }
+  };
+
+  private static final int[] CATALOG_GROUP_TITLES = {
+    R.string.smartisan_catalog_group_controls,
+    R.string.smartisan_catalog_group_content,
+    R.string.smartisan_catalog_group_navigation
+  };
+
   private final java.util.List<SmartisanSwitch> switchSamples = new java.util.ArrayList<>();
   private boolean darkSwitchStyle;
+
+  private static final class CatalogEntry {
+    final String id;
+    final int title;
+
+    CatalogEntry(String id, int title) {
+      this.id = id;
+      this.title = title;
+    }
+  }
 
   private int dp(float value) {
     return (int) (value * getResources().getDisplayMetrics().density + 0.5f);
@@ -61,84 +124,136 @@ public final class CatalogActivity extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+    String component = getIntent().getStringExtra(EXTRA_COMPONENT);
+    if (component == null) {
+      showCatalog();
+    } else {
+      showComponent(component);
+    }
+  }
+
+  private void showCatalog() {
+    LinearLayout root = createPageRoot();
+    root.addView(createTitleBar(R.string.smartisan_catalog_name, false));
+
+    LinearLayout content = createScrollContent(root, 12, 12, 12, 32);
+    for (int group = 0; group < CATALOG_GROUPS.length; group++) {
+      addCatalogGroup(content, CATALOG_GROUP_TITLES[group], CATALOG_GROUPS[group]);
+    }
+    setContentView(root);
+  }
+
+  private void showComponent(String component) {
+    CatalogEntry entry = findEntry(component);
+    if (entry == null) {
+      finish();
+      return;
+    }
+
+    LinearLayout root = createPageRoot();
+    root.addView(createTitleBar(entry.title, true));
+    LinearLayout content = createScrollContent(root, 16, 18, 16, 32);
+    addComponentSamples(content, component);
+    setContentView(root);
+  }
+
+  private LinearLayout createPageRoot() {
+    LinearLayout root = new LinearLayout(this);
+    root.setOrientation(LinearLayout.VERTICAL);
+    root.setBackgroundColor(
+        getResources().getColor(org.opensmartisanos.ui.R.color.smartisan_catalog_background));
+    return root;
+  }
+
+  private SmartisanTitleBar createTitleBar(int title, boolean showBack) {
+    SmartisanTitleBar titleBar = new SmartisanTitleBar(this);
+    titleBar.setCenterText(title);
+    if (showBack) {
+      titleBar.addLeftImageView(SmartisanTitleBar.BACK_ICON_RES).setOnClickListener(view -> finish());
+    }
+    return titleBar;
+  }
+
+  private LinearLayout createScrollContent(
+      LinearLayout root, int left, int top, int right, int bottom) {
     ScrollView scroll = new ScrollView(this);
     scroll.setFillViewport(true);
+    scroll.setClipToPadding(false);
     LinearLayout content = new LinearLayout(this);
     content.setOrientation(LinearLayout.VERTICAL);
-    content.setPadding(dp(16), dp(20), dp(16), dp(32));
-    content.setBackgroundColor(
-        getResources().getColor(org.opensmartisanos.ui.R.color.smartisan_catalog_background));
+    content.setPadding(dp(left), dp(top), dp(right), dp(bottom));
     scroll.addView(
         content,
         new ScrollView.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-
-    addHeading(content, R.string.smartisan_catalog_heading, 22);
-    addSection(content, R.string.smartisan_catalog_smartisan_button);
-    addSmartisanButtons(content);
-
-    addSection(content, R.string.smartisan_catalog_shadow_button);
-    addShadowButtons(content);
-
-    addSection(content, R.string.smartisan_catalog_switch);
-    addSwitchRow(content, false, false);
-    addSwitchRow(content, true, false);
-    addSwitchRow(content, false, true);
-    addSwitchStyleControl(content);
-
-    addSection(content, R.string.smartisan_catalog_list_item);
-    addListItems(content);
-
-    addSection(content, R.string.smartisan_catalog_setting_item);
-    addSettingItems(content);
-
-    addSection(content, R.string.smartisan_catalog_title_bar);
-    addTitleBars(content);
-
-    addSection(content, R.string.smartisan_catalog_search_bar);
-    addSearchBars(content);
-
-    addSection(content, R.string.smartisan_catalog_editors);
-    addEditors(content);
-
-    addSection(content, R.string.smartisan_catalog_bottom_bars);
-    addBottomBars(content);
-
-    addSection(content, R.string.smartisan_catalog_button_groups);
-    addButtonGroups(content);
-
-    addSection(content, R.string.smartisan_catalog_slider_progress);
-    addSliderAndProgress(content);
-
-    addSection(content, R.string.smartisan_catalog_snackbars);
-    addSnackbars(content);
-
-    addSection(content, R.string.smartisan_catalog_dialogs);
-    addDialogs(content);
-
-    addSection(content, R.string.smartisan_catalog_popup);
-    addPopup(content);
-
-    addSection(content, R.string.smartisan_catalog_tips);
-    addTips(content);
-
-    addSection(content, R.string.smartisan_catalog_empty_view);
-    addEmptyView(content);
-
-    addSection(content, R.string.smartisan_catalog_segmented);
-    addSegmentedControls(content);
-
-    setContentView(scroll);
+    root.addView(scroll, new LinearLayout.LayoutParams(0, 0, 1f));
+    LinearLayout.LayoutParams scrollParams = (LinearLayout.LayoutParams) scroll.getLayoutParams();
+    scrollParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
+    scroll.setLayoutParams(scrollParams);
+    return content;
   }
 
-  private void addHeading(LinearLayout parent, int text, int textSize) {
-    TextView view = new TextView(this);
-    view.setText(text);
-    view.setTextColor(Color.rgb(51, 51, 51));
-    view.setTextSize(textSize);
-    view.setGravity(Gravity.CENTER_VERTICAL);
-    parent.addView(
-        view, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(44)));
+  private void addCatalogGroup(LinearLayout parent, int heading, CatalogEntry[] entries) {
+    addSection(parent, heading);
+    for (int i = 0; i < entries.length; i++) {
+      CatalogEntry entry = entries[i];
+      SmartisanListContentItemText item = new SmartisanListContentItemText(this);
+      item.setTitle(entry.title);
+      item.setBackgroundStyle(groupBackgroundStyle(i, entries.length));
+      item.setClickable(true);
+      item.setOnClickListener(view -> openComponent(entry.id));
+      addListItem(parent, item, i == entries.length - 1 ? 12 : 0);
+    }
+  }
+
+  private static int groupBackgroundStyle(int index, int size) {
+    if (size == 1) return SmartisanListContentItem.BG_STYLE_SINGLE;
+    if (index == 0) return SmartisanListContentItem.BG_STYLE_TOP;
+    if (index == size - 1) return SmartisanListContentItem.BG_STYLE_BOTTOM;
+    return SmartisanListContentItem.BG_STYLE_MIDDLE;
+  }
+
+  private void openComponent(String component) {
+    Intent intent = new Intent(this, CatalogActivity.class);
+    intent.putExtra(EXTRA_COMPONENT, component);
+    startActivity(intent);
+  }
+
+  private CatalogEntry findEntry(String component) {
+    for (CatalogEntry[] group : CATALOG_GROUPS) {
+      for (CatalogEntry entry : group) {
+        if (entry.id.equals(component)) return entry;
+      }
+    }
+    return null;
+  }
+
+  private void addComponentSamples(LinearLayout content, String component) {
+    switch (component) {
+      case COMPONENT_BUTTON -> addSmartisanButtons(content);
+      case COMPONENT_SHADOW_BUTTON -> addShadowButtons(content);
+      case COMPONENT_SWITCH -> {
+        addSwitchRow(content, false, false);
+        addSwitchRow(content, true, false);
+        addSwitchRow(content, false, true);
+        addSwitchStyleControl(content);
+      }
+      case COMPONENT_SEGMENTED -> addSegmentedControls(content);
+      case COMPONENT_LIST_ITEM -> addListItems(content);
+      case COMPONENT_SETTING_ITEM -> addSettingItems(content);
+      case COMPONENT_SEARCH_BAR -> addSearchBars(content);
+      case COMPONENT_EDITORS -> addEditors(content);
+      case COMPONENT_TITLE_BAR -> addTitleBars(content);
+      case COMPONENT_BOTTOM_BARS -> addBottomBars(content);
+      case COMPONENT_BUTTON_GROUPS -> addButtonGroups(content);
+      case COMPONENT_SLIDER_PROGRESS -> addSliderAndProgress(content);
+      case COMPONENT_SNACKBARS -> addSnackbars(content);
+      case COMPONENT_DIALOGS -> addDialogs(content);
+      case COMPONENT_POPUP -> addPopup(content);
+      case COMPONENT_TIPS -> addTips(content);
+      case COMPONENT_EMPTY_VIEW -> addEmptyView(content);
+      default -> throw new IllegalArgumentException("Unknown component: " + component);
+    }
   }
 
   private void addSection(LinearLayout parent, int text) {
