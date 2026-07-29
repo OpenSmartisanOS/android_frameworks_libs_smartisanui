@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="smartisan_rom_description">information</string>
+    <string name="smartisan_search_bar_cancel">Cancel</string>
+    <string name="smartisan_search_bar_clear">Clear search text</string>
+    <string name="smartisan_search_bar_editor">Search box</string>
     <string name="smartisan_tab_editor_title">Drag icons to change feature positions</string>
     <string name="smartisan_tab_editor_cancel">Cancel</string>
     <string name="smartisan_tab_editor_done">Done</string>

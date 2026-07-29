@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="smartisan_search_bar_cancel">取消</string>
+    <string name="smartisan_search_bar_clear">清除搜索内容</string>
+    <string name="smartisan_search_bar_editor">搜索框</string>
+</resources>

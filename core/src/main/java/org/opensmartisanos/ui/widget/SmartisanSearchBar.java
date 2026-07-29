@@ -10,8 +10,8 @@ import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -35,8 +35,8 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
 
     private final SmartisanSearchEditText editor;
     private final RelativeLayout editLayout;
-    private final ImageView leftIcon;
-    private final ImageView clearView;
+    private final View leftIcon;
+    private final View clearView;
     private final ImageView cancelView;
     private final LinearLayout rightContainer;
     private final LinearLayout secondaryFilter;
@@ -63,95 +63,15 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
         super(context, attrs, defStyleAttr);
         setBackgroundColor(0xffffffff);
         setMinimumHeight(dp(48));
-
-        rightContainer = new LinearLayout(context);
-        rightContainer.setId(View.generateViewId());
-        rightContainer.setGravity(Gravity.CENTER_VERTICAL);
-        LayoutParams rightParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        rightParams.addRule(ALIGN_PARENT_END);
-        rightParams.addRule(CENTER_VERTICAL);
-        rightParams.rightMargin = dp(6);
-        addView(rightContainer, rightParams);
-
-        cancelView = icon(R.drawable.smartisan_rom_standard_icon_cancel_selector);
-        cancelView.setId(View.generateViewId());
-        cancelView.setVisibility(GONE);
-        LayoutParams cancelParams = new LayoutParams(dp(36), dp(36));
-        cancelParams.addRule(ALIGN_PARENT_END);
-        cancelParams.addRule(CENTER_VERTICAL);
-        cancelParams.rightMargin = dp(6);
-        addView(cancelView, cancelParams);
-
-        editLayout = new RelativeLayout(context);
-        editLayout.setId(View.generateViewId());
-        editLayout.setBackgroundResource(R.drawable.smartisan_rom_search_bar_edit_bg_selector);
-        LayoutParams editParams = new LayoutParams(LayoutParams.MATCH_PARENT, dp(36));
-        editParams.addRule(ALIGN_PARENT_START);
-        editParams.addRule(CENTER_VERTICAL);
-        editParams.addRule(START_OF, rightContainer.getId());
-        editParams.leftMargin = dp(6);
-        editParams.rightMargin = dp(6);
-        addView(editLayout, editParams);
-
-        leftIcon = icon(R.drawable.smartisan_rom_search_bar_left_icon_selector);
-        leftIcon.setId(View.generateViewId());
-        LayoutParams leftParams = new LayoutParams(dp(24), dp(24));
-        leftParams.addRule(ALIGN_PARENT_START);
-        leftParams.addRule(CENTER_VERTICAL);
-        leftParams.leftMargin = dp(6);
-        editLayout.addView(leftIcon, leftParams);
-
-        clearView = icon(R.drawable.smartisan_rom_selector_small_icon_btn_text_clear);
-        clearView.setId(View.generateViewId());
-        clearView.setVisibility(GONE);
-        LayoutParams clearParams = new LayoutParams(dp(30), dp(30));
-        clearParams.addRule(ALIGN_PARENT_END);
-        clearParams.addRule(CENTER_VERTICAL);
-        editLayout.addView(clearView, clearParams);
-
-        secondaryFilter = new LinearLayout(context);
-        secondaryFilter.setId(View.generateViewId());
-        secondaryFilter.setGravity(Gravity.CENTER_VERTICAL);
-        secondaryFilter.setVisibility(GONE);
-        ImageView divider = new ImageView(context);
-        divider.setImageResource(R.drawable.smartisan_rom_search_bar_secondary_filter_divider);
-        LinearLayout.LayoutParams dividerParams = new LinearLayout.LayoutParams(
-                LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
-        dividerParams.rightMargin = dp(11);
-        secondaryFilter.addView(divider, dividerParams);
-        secondaryFilterText = new TextView(context);
-        secondaryFilterText.setTextSize(13.5f);
-        secondaryFilterText.setTextColor(0xffa3a3a3);
-        secondaryFilterText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.smartisan_rom_search_bar_secondary_filter_btn, 0);
-        secondaryFilterText.setCompoundDrawablePadding(dp(7));
-        secondaryFilterText.setPadding(0, 0, dp(4), 0);
-        LinearLayout.LayoutParams filterTextParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        secondaryFilter.addView(secondaryFilterText, filterTextParams);
-        LayoutParams filterParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        filterParams.addRule(ALIGN_PARENT_END);
-        filterParams.addRule(CENTER_VERTICAL);
-        filterParams.rightMargin = dp(6);
-        editLayout.addView(secondaryFilter, filterParams);
-
-        editor = new SmartisanSearchEditText(context);
-        editor.setSingleLine(true);
-        editor.setTextSize(15f);
-        editor.setTextColor(0xcc000000);
-        editor.setHintTextColor(0x66000000);
-        editor.setBackground(null);
-        editor.setGravity(Gravity.CENTER_VERTICAL);
-        editor.setPadding(0, 0, 0, 0);
-        editor.setIncludeFontPadding(true);
-        editor.setImeOptions(android.view.inputmethod.EditorInfo.IME_ACTION_DONE);
-        editor.setCursorVisible(false);
-        editor.setFocusable(false);
-        editor.setFocusableInTouchMode(false);
-        LayoutParams editorParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        editorParams.addRule(END_OF, leftIcon.getId());
-        editorParams.addRule(START_OF, clearView.getId());
-        editorParams.addRule(CENTER_VERTICAL);
-        editorParams.leftMargin = dp(6);
-        editLayout.addView(editor, editorParams);
+        LayoutInflater.from(context).inflate(R.layout.smartisan_rom_search_bar, this, true);
+        rightContainer = findViewById(R.id.smartisan_search_bar_right_view_container);
+        cancelView = findViewById(R.id.smartisan_search_bar_cancel_button);
+        editLayout = findViewById(R.id.smartisan_search_bar_edit_layout);
+        leftIcon = findViewById(R.id.smartisan_search_bar_left_icon);
+        clearView = findViewById(R.id.smartisan_search_bar_clear_text);
+        secondaryFilter = findViewById(R.id.smartisan_search_bar_secondary_filter);
+        secondaryFilterText = findViewById(R.id.smartisan_search_bar_secondary_filter_btn);
+        editor = findViewById(R.id.smartisan_search_bar_edit_text);
 
         shadowView = new View(context);
         shadowView.setBackgroundResource(R.drawable.smartisan_rom_title_bar_shadow);
@@ -160,6 +80,7 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
         shadowView.setTranslationY(dp(14));
         addView(shadowView, shadowParams);
         bindEvents();
+        applySecondaryFilterState();
     }
 
     private void bindEvents() {
@@ -282,8 +203,8 @@ public class SmartisanSearchBar extends RelativeLayout implements View.OnClickLi
     public View getCancelView() { return cancelView; }
     public View getClearView() { return clearView; }
     public View getSecondaryFilterLayout() { return secondaryFilter; }
-    public void setSearchLeftIcon(Drawable icon) { leftIcon.setImageDrawable(icon); }
-    public void setSearchLeftIcon(int resource) { leftIcon.setImageResource(resource); }
+    public void setSearchLeftIcon(Drawable icon) { leftIcon.setBackground(icon); }
+    public void setSearchLeftIcon(int resource) { leftIcon.setBackgroundResource(resource); }
     public void setCancelViewVisibility(int visibility) { cancelView.setVisibility(visibility); }
     public void setSecondaryFilterVisibility(int visibility) {
         secondaryFilterEnabled = visibility == VISIBLE;

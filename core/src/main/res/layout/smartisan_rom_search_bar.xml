@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:id="@+id/smartisan_search_bar_right_view_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/smartisan_search_bar_cancel_button"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:contentDescription="@string/smartisan_search_bar_cancel"
+        android:scaleType="centerInside"
+        android:src="@drawable/smartisan_rom_standard_icon_cancel_selector"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/smartisan_search_bar_edit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="6dp"
+        android:layout_toStartOf="@id/smartisan_search_bar_right_view_container"
+        android:background="@drawable/smartisan_rom_search_bar_edit_bg_selector">
+        <TextView
+            android:id="@+id/smartisan_search_bar_left_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/smartisan_rom_search_bar_left_icon_selector"
+            android:gravity="center"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/smartisan_search_bar_clear_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/smartisan_rom_selector_small_icon_btn_text_clear"
+            android:contentDescription="@string/smartisan_search_bar_clear"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <org.opensmartisanos.ui.widget.SmartisanSearchEditText
+            android:id="@+id/smartisan_search_bar_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:layout_toEndOf="@id/smartisan_search_bar_left_icon"
+            android:layout_toStartOf="@id/smartisan_search_bar_secondary_filter"
+            android:background="@null"
+            android:contentDescription="@string/smartisan_search_bar_editor"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:imeOptions="actionDone"
+            android:saveEnabled="false"
+            android:singleLine="true"
+            android:textColor="#cc000000"
+            android:textColorHint="#66000000"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/smartisan_search_bar_secondary_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:id="@+id/smartisan_search_bar_secondary_filter_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="11dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/smartisan_rom_search_bar_secondary_filter_divider" />
+
+            <TextView
+                android:id="@+id/smartisan_search_bar_secondary_filter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/smartisan_rom_search_bar_secondary_filter_btn"
+                android:drawablePadding="7dp"
+                android:paddingEnd="4dp"
+                android:textColor="#a3a3a3"
+                android:textSize="13.5sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</merge>
