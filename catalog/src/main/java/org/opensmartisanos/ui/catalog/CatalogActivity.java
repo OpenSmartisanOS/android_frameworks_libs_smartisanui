@@ -15,11 +15,13 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.Arrays;
+import org.opensmartisanos.ui.app.SmartisanAlertDialog;
 import org.opensmartisanos.ui.app.SmartisanMenuDialog;
 import org.opensmartisanos.ui.app.SmartisanProgressDialog;
 import org.opensmartisanos.ui.widget.SmartisanActionButtonGroup;
@@ -974,6 +976,41 @@ public final class CatalogActivity extends Activity {
     row.addView(menu);
     row.addView(progress, spacedWrapParams());
     addRow(parent, row);
+
+    LinearLayout revoneRow = newRow();
+    SmartisanButton confirm =
+        button(SmartisanButton.STYLE_NORMAL, R.string.smartisan_catalog_revone_confirm);
+    confirm.setOnClickListener(v -> new SmartisanAlertDialog.Builder(this)
+        .setTitle(R.string.smartisan_catalog_confirm_title)
+        .setMessage(R.string.smartisan_catalog_confirm_message)
+        .setNegativeButton(R.string.smartisan_catalog_cancel, null)
+        .setPositiveButton(R.string.smartisan_catalog_confirm, null)
+        .show());
+    SmartisanButton inputButton =
+        button(SmartisanButton.STYLE_HIGHLIGHT_BLUE, R.string.smartisan_catalog_revone_input);
+    inputButton.setOnClickListener(v -> {
+      EditText input = new EditText(this);
+      input.setSingleLine(true);
+      input.setHint(R.string.smartisan_catalog_input_hint);
+      SmartisanAlertDialog dialog = new SmartisanAlertDialog.Builder(this)
+          .setTitle(R.string.smartisan_catalog_input_title)
+          .setView(input)
+          .setNegativeButton(R.string.smartisan_catalog_cancel, null)
+          .setPositiveButton(R.string.smartisan_catalog_confirm, null)
+          .create();
+      dialog.setOnShowListener(shown -> dialog.getButton(SmartisanAlertDialog.BUTTON_POSITIVE)
+          .setOnClickListener(button -> {
+            if (input.getText().toString().trim().isEmpty()) {
+              input.setError(getText(R.string.smartisan_catalog_input_error));
+            } else {
+              dialog.dismiss();
+            }
+          }));
+      dialog.show();
+    });
+    revoneRow.addView(confirm);
+    revoneRow.addView(inputButton, spacedWrapParams());
+    addRow(parent, revoneRow);
   }
 
   private void addPopup(LinearLayout parent) {

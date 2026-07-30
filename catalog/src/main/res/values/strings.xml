@@ -98,4 +98,11 @@
     <string name="smartisan_catalog_item_one">第一项</string>
     <string name="smartisan_catalog_item_two">第二项</string>
     <string name="smartisan_catalog_item_three">第三项</string>
+    <string name="smartisan_catalog_revone_confirm">Revone 确认弹窗</string>
+    <string name="smartisan_catalog_revone_input">Revone 输入弹窗</string>
+    <string name="smartisan_catalog_confirm_title">确认操作</string>
+    <string name="smartisan_catalog_confirm_message">这是音乐应用重构版使用的 Revone 通用弹窗。</string>
+    <string name="smartisan_catalog_input_title">输入名称</string>
+    <string name="smartisan_catalog_input_hint">名称不能为空</string>
+    <string name="smartisan_catalog_input_error">请输入名称</string>
 </resources>

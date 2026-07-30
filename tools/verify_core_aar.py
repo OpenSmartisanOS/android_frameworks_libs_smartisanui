@@ -29,6 +29,8 @@ REQUIRED_CLASSES = (
     "org/opensmartisanos/ui/widget/SmartisanDownloadProgressView.class",
     "org/opensmartisanos/ui/widget/SmartisanSnackbarWithButton.class",
     "org/opensmartisanos/ui/widget/SmartisanSnackbarWithDrawable.class",
+    "org/opensmartisanos/ui/app/SmartisanAlertDialog.class",
+    "org/opensmartisanos/ui/app/SmartisanAlertDialog$Builder.class",
 )
 REQUIRED_RESOURCES = (
     "res/layout/smartisan_rom_abs_editor_layout.xml",
@@ -42,6 +44,9 @@ REQUIRED_RESOURCES = (
     "res/layout/smartisan_rom_button_group_layout.xml",
     "res/layout/smartisan_rom_slider_with_icons_layout.xml",
     "res/layout/smartisan_rom_snackbar_with_btn_layout.xml",
+    "res/drawable/smartisan_alert_revone_root.xml",
+    "res/drawable/smartisan_alert_revone_content.xml",
+    "res/drawable/smartisan_alert_revone_button_right.xml",
 )
 FORBIDDEN_BYTECODE_REFERENCES = (
     b"com/android/internal/",
