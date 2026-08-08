@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,6 @@ import java.util.List;
 
 public class SmartisanTitleBar extends RelativeLayout {
     public static final int BACK_ICON_RES = R.drawable.smartisan_rom_standard_icon_back_selector;
-
     private final Context context;
     private final int marginEdge;
     private final int marginView;
@@ -53,7 +53,8 @@ public class SmartisanTitleBar extends RelativeLayout {
         imageViewSize = getResources().getDimensionPixelOffset(R.dimen.smartisan_rom_standard_icon_size);
         titleBarHeight = getResources().getDimensionPixelOffset(R.dimen.smartisan_rom_title_bar_height);
         centerLimit = getResources().getDimensionPixelOffset(R.dimen.smartisan_rom_title_bar_center_limit);
-        defaultTextSize = getResources().getDimensionPixelOffset(R.dimen.smartisan_rom_title_bar_title_size);
+        defaultTextSize = getResources().getDimensionPixelOffset(
+                R.dimen.smartisan_rom_title_bar_center_text_size);
         TypedArray values = context.obtainStyledAttributes(attrs, R.styleable.SmartisanTitleBar,
                 defStyleAttr, 0);
         if (values.hasValue(R.styleable.SmartisanTitleBar_titleBarCenterText)) {
@@ -62,7 +63,7 @@ public class SmartisanTitleBar extends RelativeLayout {
         boolean bottomType = values.getBoolean(
                 R.styleable.SmartisanTitleBar_titleBarBottomType, false);
         values.recycle();
-        setBackgroundColor(0xffffffff);
+        setBackgroundResource(R.drawable.smartisan_rom_title_bar_bg);
         addShadowAndDivider(bottomType);
         setElevation(0.11f);
     }
@@ -120,7 +121,7 @@ public class SmartisanTitleBar extends RelativeLayout {
             titleView = new TextView(context);
             titleView.setMaxLines(1);
             titleView.setEllipsize(TextUtils.TruncateAt.END);
-            titleView.setTextSize(defaultTextSize);
+            titleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, defaultTextSize);
             titleView.setPaintFlags(33);
             titleView.setTextColor(getResources().getColor(R.color.smartisan_rom_title_bar_text));
         }

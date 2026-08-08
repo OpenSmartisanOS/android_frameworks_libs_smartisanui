@@ -30,6 +30,7 @@
     <dimen name="smartisan_rom_title_bar_height">48dp</dimen>
     <dimen name="smartisan_rom_title_bar_center_limit">114dp</dimen>
     <dimen name="smartisan_rom_title_bar_title_size">18px</dimen>
+    <dimen name="smartisan_rom_title_bar_center_text_size">18sp</dimen>
     <dimen name="smartisan_rom_title_bar_shadow_height">14dp</dimen>
     <dimen name="smartisan_rom_bottom_bar_shadow_height">11dp</dimen>
     <dimen name="smartisan_rom_bar_divider_height">0.6700001dp</dimen>
