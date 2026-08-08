@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SettingsSmartisan.apk/setting_background.xml: tiled framework common_bg. -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/smartisan_rom_common_bg"
+    android:tileMode="repeat" />

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="smartisan_catalog_page_background">#000000</color>
+    <color name="smartisan_catalog_system_bar">#000000</color>
+    <color name="smartisan_catalog_primary_text">#ccffffff</color>
+    <color name="smartisan_catalog_secondary_text">#99ffffff</color>
+    <color name="smartisan_catalog_metadata_surface">#24ffffff</color>
+</resources>

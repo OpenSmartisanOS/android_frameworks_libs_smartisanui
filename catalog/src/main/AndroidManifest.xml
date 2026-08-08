@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.opensmartisanos.ui.catalog">
     <application
         android:label="@string/smartisan_catalog_name"
-        android:theme="@style/Theme.SmartisanUi">
+        android:theme="@style/Theme.SmartisanUi.Catalog">
         <activity
             android:name=".CatalogActivity"
             android:exported="true">
