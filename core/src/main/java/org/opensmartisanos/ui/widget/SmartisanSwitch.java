@@ -69,8 +69,8 @@ public class SmartisanSwitch extends CheckBox {
             R.drawable.smartisan_rom_switch_ex_pressed_dark,
             R.drawable.smartisan_rom_switch_ex_frame_pressed_dark
     };
-    private static int[] drawableIds = LIGHT_DRAWABLES;
-    private static int style = STYLE_LIGHT;
+    private static final Object BITMAP_LOCK = new Object();
+    private static volatile int cacheGeneration;
 
     private static final Pair<Float, Float> BOTTOM_BASE = Pair.create(286f, 144f);
     private static final Pair<Float, Float> THUMB_BASE = Pair.create(286f, 144f);
@@ -89,32 +89,35 @@ public class SmartisanSwitch extends CheckBox {
     private static final RectF PRESSED_FRAME_RECT = new RectF();
     private static final RectF PRESSED_RECT = new RectF();
 
-    private static Bitmap bottom;
-    private static Bitmap normalThumb;
-    private static Bitmap pressedThumb;
-    private static Bitmap frame;
-    private static Bitmap pressedFrame;
-    private static Bitmap mask;
-    private static Bitmap currentThumb;
-    private static Bitmap disabledOnBitmap;
-    private static Bitmap disabledOffBitmap;
-    private static Bitmap onBitmap;
-    private static Bitmap onPressedBitmap;
-    private static Bitmap offBitmap;
-    private static Bitmap offPressedBitmap;
-    private static Pair<Float, Float> bottomScale;
-    private static Pair<Float, Float> normalScale;
-    private static Pair<Float, Float> frameScale;
-    private static Pair<Float, Float> maskScale;
-    private static Pair<Float, Float> pressedScale;
-    private static Pair<Float, Float> pressedFrameScale;
-    private static float thumbWidth;
-    private static float maskWidth;
-    private static float maskHeight;
-    private static float onPosition;
-    private static float offPosition;
-    private static int cachedDensityDpi;
-    private static boolean cacheCleared;
+    private int[] drawableIds = LIGHT_DRAWABLES.clone();
+    private int style = STYLE_LIGHT;
+    private Bitmap bottom;
+    private Bitmap normalThumb;
+    private Bitmap pressedThumb;
+    private Bitmap frame;
+    private Bitmap pressedFrame;
+    private Bitmap mask;
+    private Bitmap currentThumb;
+    private Bitmap disabledOnBitmap;
+    private Bitmap disabledOffBitmap;
+    private Bitmap onBitmap;
+    private Bitmap onPressedBitmap;
+    private Bitmap offBitmap;
+    private Bitmap offPressedBitmap;
+    private Pair<Float, Float> bottomScale;
+    private Pair<Float, Float> normalScale;
+    private Pair<Float, Float> frameScale;
+    private Pair<Float, Float> maskScale;
+    private Pair<Float, Float> pressedScale;
+    private Pair<Float, Float> pressedFrameScale;
+    private float thumbWidth;
+    private float maskWidth;
+    private float maskHeight;
+    private float onPosition;
+    private float offPosition;
+    private int cachedDensityDpi;
+    private int observedCacheGeneration;
+    private boolean cacheCleared;
 
     private final Handler handler = new CheckHandler(this);
     private final Resources resources;
@@ -187,9 +190,9 @@ public class SmartisanSwitch extends CheckBox {
         initSwitchBitmap(resources);
     }
 
-    private static synchronized void initSwitchBitmap(Resources resources) {
+    private synchronized void initSwitchBitmap(Resources resources) {
         if (cachedDensityDpi != resources.getConfiguration().densityDpi) {
-            clearSwitchBitmap(false);
+            clearInstanceBitmaps();
         }
         if (bottom == null || normalThumb == null || frame == null || mask == null
                 || pressedThumb == null || pressedFrame == null) {
@@ -215,7 +218,7 @@ public class SmartisanSwitch extends CheckBox {
         return ((BitmapDrawable) resources.getDrawable(id)).getBitmap();
     }
 
-    private static void initDrawableScale(Resources resources) {
+    private void initDrawableScale(Resources resources) {
         int densityDpi = resources.getConfiguration().densityDpi;
         bottomScale = scaled(BOTTOM_BASE, densityDpi);
         normalScale = scaled(THUMB_BASE, densityDpi);
@@ -234,16 +237,19 @@ public class SmartisanSwitch extends CheckBox {
     }
 
     public static void clearSwitchBitmap() {
-        clearSwitchBitmap(true);
+        synchronized (BITMAP_LOCK) {
+            cacheGeneration++;
+        }
     }
 
-    private static synchronized void clearSwitchBitmap(boolean resetStyle) {
+    private synchronized void clearInstanceBitmaps() {
         bottom = null;
         normalThumb = null;
         pressedThumb = null;
         frame = null;
         pressedFrame = null;
         mask = null;
+        currentThumb = null;
         disabledOnBitmap = null;
         disabledOffBitmap = null;
         onBitmap = null;
@@ -251,17 +257,13 @@ public class SmartisanSwitch extends CheckBox {
         offBitmap = null;
         offPressedBitmap = null;
         cacheCleared = true;
-        if (resetStyle) {
-            style = STYLE_LIGHT;
-            applySwitchStyle();
-        }
     }
 
-    private static void applySwitchStyle() {
+    private void applySwitchStyle() {
         if (style == STYLE_DARK) {
-            drawableIds = DARK_DRAWABLES;
+            drawableIds = DARK_DRAWABLES.clone();
         } else if (style == STYLE_LIGHT || drawableIds == null) {
-            drawableIds = LIGHT_DRAWABLES;
+            drawableIds = LIGHT_DRAWABLES.clone();
         }
     }
 
@@ -274,7 +276,7 @@ public class SmartisanSwitch extends CheckBox {
         extendedOffsetY = (int) (2f * density + 0.5f);
     }
 
-    private static void initComposedBitmaps() {
+    private void initComposedBitmaps() {
         cacheCleared = false;
         if (disabledOnBitmap == null || disabledOffBitmap == null || onBitmap == null
                 || offBitmap == null || onPressedBitmap == null || offPressedBitmap == null) {
@@ -293,9 +295,13 @@ public class SmartisanSwitch extends CheckBox {
     }
 
     public void setSwitchDrawableStyle(int newStyle) {
+        if (newStyle != STYLE_LIGHT && newStyle != STYLE_DARK) {
+            throw new IllegalArgumentException("Unknown switch style: " + newStyle);
+        }
         if (style != newStyle) {
             style = newStyle;
-            clearSwitchBitmap(false);
+            applySwitchStyle();
+            clearInstanceBitmaps();
             initSwitchResources();
             invalidate();
         }
@@ -307,7 +313,7 @@ public class SmartisanSwitch extends CheckBox {
                 drawables.get(SWITCH_FRAME), drawables.get(SWITCH_MASK),
                 drawables.get(SWITCH_PRESSED), drawables.get(SWITCH_FRAME_PRESSED)
         };
-        clearSwitchBitmap(false);
+        clearInstanceBitmaps();
         initSwitchBitmap(resources);
         invalidate();
     }
@@ -493,7 +499,7 @@ public class SmartisanSwitch extends CheckBox {
         }
     }
 
-    private static float realPosition(float position) {
+    private float realPosition(float position) {
         return position - thumbWidth / 2f;
     }
 
@@ -501,37 +507,44 @@ public class SmartisanSwitch extends CheckBox {
         return composeBitmap(alpha, realPosition, pressedShadowAlpha);
     }
 
-    private static synchronized Bitmap composeBitmap(int alpha, float position,
+    private Bitmap composeBitmap(int alpha, float position,
             int shadowAlpha) {
-        int width = Math.round(maskScale.first);
-        int height = Math.round(maskScale.second);
-        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-        BITMAP_CANVAS.setBitmap(bitmap);
-        BITMAP_PAINT.setAlpha(alpha);
-        MASK_RECT.set(0f, 0f, maskScale.first, maskScale.second);
-        BITMAP_CANVAS.drawBitmap(mask, null, MASK_RECT, BITMAP_PAINT);
-        BITMAP_PAINT.setXfermode(MASK_XFERMODE);
-        BOTTOM_RECT.set(position, 0f, bottomScale.first + position, bottomScale.second);
-        BITMAP_CANVAS.drawBitmap(bottom, null, BOTTOM_RECT, BITMAP_PAINT);
-        BITMAP_PAINT.setXfermode(null);
-        FRAME_RECT.set(0f, 0f, frameScale.first, frameScale.second);
-        BITMAP_CANVAS.drawBitmap(frame, null, FRAME_RECT, BITMAP_PAINT);
-        if (shadowAlpha > 0) {
-            int previousAlpha = BITMAP_PAINT.getAlpha();
-            BITMAP_PAINT.setAlpha(shadowAlpha);
-            PRESSED_FRAME_RECT.set(0f, 0f, pressedFrameScale.first, pressedFrameScale.second);
-            BITMAP_CANVAS.drawBitmap(pressedFrame, null, PRESSED_FRAME_RECT, BITMAP_PAINT);
-            BITMAP_PAINT.setAlpha(previousAlpha);
+        synchronized (BITMAP_LOCK) {
+            int width = Math.round(maskScale.first);
+            int height = Math.round(maskScale.second);
+            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            BITMAP_CANVAS.setBitmap(bitmap);
+            BITMAP_PAINT.setAlpha(alpha);
+            MASK_RECT.set(0f, 0f, maskScale.first, maskScale.second);
+            BITMAP_CANVAS.drawBitmap(mask, null, MASK_RECT, BITMAP_PAINT);
+            BITMAP_PAINT.setXfermode(MASK_XFERMODE);
+            BOTTOM_RECT.set(position, 0f, bottomScale.first + position, bottomScale.second);
+            BITMAP_CANVAS.drawBitmap(bottom, null, BOTTOM_RECT, BITMAP_PAINT);
+            BITMAP_PAINT.setXfermode(null);
+            FRAME_RECT.set(0f, 0f, frameScale.first, frameScale.second);
+            BITMAP_CANVAS.drawBitmap(frame, null, FRAME_RECT, BITMAP_PAINT);
+            if (shadowAlpha > 0) {
+                int previousAlpha = BITMAP_PAINT.getAlpha();
+                BITMAP_PAINT.setAlpha(shadowAlpha);
+                PRESSED_FRAME_RECT.set(0f, 0f, pressedFrameScale.first,
+                        pressedFrameScale.second);
+                BITMAP_CANVAS.drawBitmap(pressedFrame, null, PRESSED_FRAME_RECT, BITMAP_PAINT);
+                BITMAP_PAINT.setAlpha(previousAlpha);
+            }
+            PRESSED_RECT.set(position, 0f, pressedScale.first + position, pressedScale.second);
+            BITMAP_CANVAS.drawBitmap(shadowAlpha == 255 ? pressedThumb : currentThumb,
+                    null, PRESSED_RECT, BITMAP_PAINT);
+            BITMAP_CANVAS.setBitmap(null);
+            return bitmap;
         }
-        PRESSED_RECT.set(position, 0f, pressedScale.first + position, pressedScale.second);
-        BITMAP_CANVAS.drawBitmap(shadowAlpha == 255 ? pressedThumb : currentThumb,
-                null, PRESSED_RECT, BITMAP_PAINT);
-        BITMAP_CANVAS.setBitmap(null);
-        return bitmap;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        if (observedCacheGeneration != cacheGeneration) {
+            observedCacheGeneration = cacheGeneration;
+            clearInstanceBitmaps();
+        }
         if (cacheCleared || cachedDensityDpi != resources.getConfiguration().densityDpi) {
             initSwitchBitmap(resources);
         }
