@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap android:src="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos_tile5" android:tileMode="repeat"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

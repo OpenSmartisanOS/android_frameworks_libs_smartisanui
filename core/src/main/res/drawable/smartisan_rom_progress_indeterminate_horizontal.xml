@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:duration="50" android:drawable="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos1" />
+    <item android:duration="50" android:drawable="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos2" />
+    <item android:duration="50" android:drawable="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos3" />
+    <item android:duration="50" android:drawable="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos4" />
+    <item android:duration="50" android:drawable="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos5" />
+    <item android:duration="50" android:drawable="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos6" />
+    <item android:duration="50" android:drawable="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos7" />
+    <item android:duration="50" android:drawable="@drawable/smartisan_rom_progressbar_indeterminate_smartisanos8" />
+</animation-list>
