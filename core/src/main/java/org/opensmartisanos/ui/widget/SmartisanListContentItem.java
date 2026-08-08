@@ -79,7 +79,7 @@ public abstract class SmartisanListContentItem extends RelativeLayout {
 
     public SmartisanListContentItem(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+        setGravity(Gravity.CENTER_VERTICAL | Gravity.START);
         LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(R.layout.smartisan_rom_list_content_item_layout, this, true);
         leftContainer = root.findViewById(R.id.smartisan_rom_left_container);
@@ -252,10 +252,14 @@ public abstract class SmartisanListContentItem extends RelativeLayout {
         leftContainer.setVisibility(visible ? VISIBLE : GONE);
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) midContainer.getLayoutParams();
         if (visible) {
+            params.removeRule(ALIGN_PARENT_START);
             params.removeRule(ALIGN_PARENT_LEFT);
-            params.addRule(RIGHT_OF, R.id.smartisan_rom_left_container);
+            params.removeRule(RIGHT_OF);
+            params.addRule(END_OF, R.id.smartisan_rom_left_container);
         } else {
-            params.addRule(ALIGN_PARENT_LEFT);
+            params.removeRule(END_OF);
+            params.removeRule(RIGHT_OF);
+            params.addRule(ALIGN_PARENT_START);
         }
         midContainer.setLayoutParams(params);
         setMidContentPaddingLeft(visible ? 0
@@ -274,15 +278,15 @@ public abstract class SmartisanListContentItem extends RelativeLayout {
                 ? getResources().getDimensionPixelSize(R.dimen.smartisan_rom_left_icon_area_width) : 0f;
     }
     protected float getMidContentWidth() {
-        return Math.max(textWidth(title), textWidth(summary)) + midContainer.getPaddingLeft();
+        return Math.max(textWidth(title), textWidth(summary)) + midContainer.getPaddingStart();
     }
     protected static float textWidth(TextView view) {
         return view == null || view.getText() == null ? 0f
                 : view.getPaint().measureText(view.getText().toString());
     }
     protected void setMidContentPaddingLeft(int padding) {
-        midContainer.setPadding(padding, midContainer.getPaddingTop(),
-                midContainer.getPaddingRight(), midContainer.getPaddingBottom());
+        midContainer.setPaddingRelative(padding, midContainer.getPaddingTop(),
+                midContainer.getPaddingEnd(), midContainer.getPaddingBottom());
     }
     protected float getRightContentWidth() { throw new IllegalStateException("calculate your width"); }
 
