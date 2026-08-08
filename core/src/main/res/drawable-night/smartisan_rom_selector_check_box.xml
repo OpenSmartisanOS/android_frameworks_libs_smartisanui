@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_window_focused="false" android:state_enabled="true"
+        android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_btn_check_on_smartisanos_dark_canonical" />
+    <item android:state_window_focused="false" android:state_enabled="true"
+        android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_btn_check_off_smartisanos_dark_canonical" />
+    <item android:state_enabled="true" android:state_focused="true"
+        android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_btn_check_on_pressed_smartisanos_dark_canonical" />
+    <item android:state_enabled="true" android:state_focused="true"
+        android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_btn_check_off_pressed_smartisanos_dark_canonical" />
+    <item android:state_enabled="false" android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_btn_check_on_disabled_smartisanos_dark_canonical" />
+    <item android:state_enabled="false" android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_btn_check_off_disabled_smartisanos_dark_canonical" />
+    <item android:state_enabled="true" android:state_pressed="true" android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_btn_check_on_pressed_smartisanos_dark_canonical" />
+    <item android:state_enabled="true" android:state_pressed="true" android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_btn_check_off_pressed_smartisanos_dark_canonical" />
+    <item android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_btn_check_on_smartisanos_dark_canonical" />
+    <item android:drawable="@drawable/smartisan_rom_btn_check_off_smartisanos_dark_canonical" />
+</selector>

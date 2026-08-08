@@ -2,25 +2,25 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_window_focused="false" android:state_enabled="true"
         android:state_checked="true"
-        android:drawable="@drawable/smartisan_rom_btn_radio_on_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_on_smartisanos_dark" />
     <item android:state_window_focused="false" android:state_enabled="true"
         android:state_checked="false"
-        android:drawable="@drawable/smartisan_rom_btn_radio_off_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_off_smartisanos_dark" />
     <item android:state_enabled="true" android:state_focused="true"
         android:state_checked="true"
-        android:drawable="@drawable/smartisan_rom_btn_radio_on_pressed_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_on_pressed_smartisanos_dark" />
     <item android:state_enabled="true" android:state_focused="true"
         android:state_checked="false"
-        android:drawable="@drawable/smartisan_rom_btn_radio_off_pressed_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_off_pressed_smartisanos_dark" />
     <item android:state_enabled="false" android:state_checked="true"
-        android:drawable="@drawable/smartisan_rom_btn_radio_on_disabled_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_on_disabled_smartisanos_dark" />
     <item android:state_enabled="false" android:state_checked="false"
-        android:drawable="@drawable/smartisan_rom_btn_radio_off_disabled_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_off_disabled_smartisanos_dark" />
     <item android:state_enabled="true" android:state_pressed="true" android:state_checked="true"
-        android:drawable="@drawable/smartisan_rom_btn_radio_on_pressed_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_on_pressed_smartisanos_dark" />
     <item android:state_enabled="true" android:state_pressed="true" android:state_checked="false"
-        android:drawable="@drawable/smartisan_rom_btn_radio_off_pressed_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_off_pressed_smartisanos_dark" />
     <item android:state_checked="true"
-        android:drawable="@drawable/smartisan_rom_btn_radio_on_smartisanos_light" />
-    <item android:drawable="@drawable/smartisan_rom_btn_radio_off_smartisanos_light" />
+        android:drawable="@drawable/smartisan_rom_btn_radio_on_smartisanos_dark" />
+    <item android:drawable="@drawable/smartisan_rom_btn_radio_off_smartisanos_dark" />
 </selector>
