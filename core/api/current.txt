@@ -1,0 +1,1035 @@
+Compiled from "SmartisanUi.java"
+public final class org.opensmartisanos.ui.SmartisanUi {
+  public static final int API_VERSION = 1;
+}
+Compiled from "SmartisanAlertDialog.java"
+public class org.opensmartisanos.ui.app.SmartisanAlertDialog extends android.app.Dialog {
+  public static final int BUTTON_POSITIVE = -1;
+  public static final int BUTTON_NEGATIVE = -2;
+  public static final int BUTTON_NEUTRAL = -3;
+  public android.os.Bundle onSaveInstanceState();
+  public android.widget.Button getButton(int);
+  public android.widget.ListView getListView();
+  public android.view.View getCustomView();
+}
+Compiled from "SmartisanAlertDialog.java"
+public final class org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder {
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder(android.content.Context);
+  public android.content.Context getContext();
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setTitle(int);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setTitle(java.lang.CharSequence);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMessage(int);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMessage(java.lang.CharSequence);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setIcon(int);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setIcon(android.graphics.drawable.Drawable);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setView(int);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setView(android.view.View);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setPositiveButton(int, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setPositiveButton(java.lang.CharSequence, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setNegativeButton(int, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setNegativeButton(java.lang.CharSequence, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setNeutralButton(int, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setNeutralButton(java.lang.CharSequence, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setDestructivePositive(boolean);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setItems(java.lang.CharSequence[], android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setItems(int, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setAdapter(android.widget.ListAdapter, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setSingleChoiceItems(java.lang.CharSequence[], int, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setSingleChoiceItems(int, int, android.content.DialogInterface$OnClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMultiChoiceItems(java.lang.CharSequence[], boolean[], android.content.DialogInterface$OnMultiChoiceClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMultiChoiceItems(int, boolean[], android.content.DialogInterface$OnMultiChoiceClickListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setCancelable(boolean);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setOnCancelListener(android.content.DialogInterface$OnCancelListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setOnDismissListener(android.content.DialogInterface$OnDismissListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setOnShowListener(android.content.DialogInterface$OnShowListener);
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog create();
+  public org.opensmartisanos.ui.app.SmartisanAlertDialog show();
+}
+Compiled from "SmartisanMenuDialog.java"
+public class org.opensmartisanos.ui.app.SmartisanMenuDialog extends android.app.Dialog implements android.content.DialogInterface$OnKeyListener {
+  public static final int LOCATION_BOTTOM = 0;
+  public static final int LOCATION_CENTER = 1;
+  public org.opensmartisanos.ui.app.SmartisanMenuDialog(android.content.Context);
+  public org.opensmartisanos.ui.app.SmartisanMenuDialog(android.content.Context, int);
+  public void setTitle(int);
+  public void setTitle(java.lang.CharSequence);
+  public void setTitleSingleLine(boolean);
+  public void setAdapter(android.widget.ListAdapter);
+  public void setAdapter(android.widget.ListAdapter, android.widget.AdapterView$OnItemClickListener);
+  public android.widget.ListView getListView();
+  public org.opensmartisanos.ui.widget.SmartisanDialogTitleBar getTitleBar();
+  public void setNegativeButton(android.view.View$OnClickListener);
+  public void setNegativeButton(int, android.view.View$OnClickListener);
+  public void setNegativeButton(java.lang.CharSequence, android.view.View$OnClickListener);
+  public void setNegativeImage(int, android.view.View$OnClickListener);
+  public void setPositiveButton(int, android.view.View$OnClickListener);
+  public void setPositiveButton(java.lang.CharSequence, android.view.View$OnClickListener);
+  public void setPositiveButtonGone();
+  public void setPositiveRedBackground(boolean);
+  public void setPositiveBackgroundStyle(org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle);
+  public boolean onKey(android.content.DialogInterface, int, android.view.KeyEvent);
+  public static android.widget.ListAdapter singleChoiceAdapter(android.content.Context, java.util.List<? extends java.lang.CharSequence>);
+  public static android.widget.ListAdapter multiChoiceAdapter(android.content.Context, java.util.List<? extends java.lang.CharSequence>);
+}
+Compiled from "SmartisanProgressDialog.java"
+public class org.opensmartisanos.ui.app.SmartisanProgressDialog extends android.app.Dialog {
+  public org.opensmartisanos.ui.app.SmartisanProgressDialog(android.content.Context);
+  public static org.opensmartisanos.ui.app.SmartisanProgressDialog show(android.content.Context, java.lang.CharSequence, java.lang.CharSequence);
+  public void setDarkTheme(boolean);
+  public void setTitle(int);
+  public void setTitle(java.lang.CharSequence);
+  public void setMessage(int);
+  public void setMessage(java.lang.CharSequence);
+  public void setIndeterminateDrawableResource(int);
+  public void setIndeterminateDrawable(android.graphics.drawable.Drawable);
+  public void setHideProgressBar(boolean);
+  public void setBackgroundResource(int);
+  public void setBackground(android.graphics.drawable.Drawable);
+  public void setSystemUiVisibility(int);
+  public void setTitleColor(int);
+  public void setMessageColor(int);
+}
+Compiled from "SmartisanActionButtonGroup.java"
+public class org.opensmartisanos.ui.widget.SmartisanActionButtonGroup extends android.widget.LinearLayout {
+  public static final int ACTION_LEFT = 0;
+  public static final int ACTION_BOTH = 1;
+  public org.opensmartisanos.ui.widget.SmartisanActionButtonGroup(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanActionButtonGroup(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanActionButtonGroup(android.content.Context, android.util.AttributeSet, int);
+  public int getButtonCount();
+  public void setButtonText(int, java.lang.CharSequence);
+  public void setButtonText(int, int);
+  public void setButtonDrawable(int, android.graphics.drawable.Drawable);
+  public void setButtonDrawable(int, int);
+  public org.opensmartisanos.ui.widget.SmartisanShadowButton getButton(int);
+  public void setButtonActivated(int);
+  public android.widget.ImageButton getLeftActionButton();
+  public android.widget.ImageButton getRightActionButton();
+  public void setActionButtonGroupBackground(int);
+  public void setActionButtonGroupBackground(android.graphics.drawable.Drawable);
+  public void setActionButtonGroupBackgroundColor(int);
+  public void setActionButtonGroupSidePadding(int, int);
+  public void setActionButtonGroupShadowVisibility(boolean);
+  public void setShadowDrawable(int);
+}
+Compiled from "SmartisanBottomBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanBottomBar extends android.widget.FrameLayout implements android.view.View$OnClickListener,android.view.View$OnLongClickListener {
+  public static final int NONE = -1;
+  public static final int STYLE_DEFAULT = 0;
+  public static final int STYLE_ALIGN_EDGE = 1;
+  public static final int STYLE_BOTTOM_TAB = 2;
+  public org.opensmartisanos.ui.widget.SmartisanBottomBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanBottomBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanBottomBar(android.content.Context, android.util.AttributeSet, int);
+  public void setDefaultSelectedItem(int);
+  public void setStyleFlag(int);
+  public void setup();
+  public void setup(boolean);
+  public android.view.View getShadowView();
+  public void setShadowViewVisible(boolean);
+  public void setTopChromeVisible(boolean);
+  public void setOnCheckedChangeListener(org.opensmartisanos.ui.widget.SmartisanBottomBar$OnCheckedChangeListener);
+  public void setOnClickListener(android.view.View$OnClickListener);
+  public void setOnLongClickListener(android.view.View$OnLongClickListener);
+  public void onClick(android.view.View);
+  public boolean onLongClick(android.view.View);
+  public org.opensmartisanos.ui.widget.SmartisanBottomBar$BarItem addBarItem(int, java.lang.String, int, int, android.content.res.ColorStateList);
+  public org.opensmartisanos.ui.widget.SmartisanBottomBar$BarItem addBarItem(int, java.lang.String, int, int);
+  public org.opensmartisanos.ui.widget.SmartisanBottomBar$BarItem addBarItem(int, java.lang.String, int);
+  public void clearItems();
+  public org.opensmartisanos.ui.widget.SmartisanBottomBarItemView getItemView(int);
+  public android.view.ViewGroup getItemContainer();
+  public void setPadding(int, int, int, int);
+}
+Compiled from "SmartisanBottomBar.java"
+public final class org.opensmartisanos.ui.widget.SmartisanBottomBar$BarItem {
+  public void setContentDescription(int);
+  public void setTextSize(int);
+}
+Compiled from "SmartisanBottomBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanBottomBar$OnCheckedChangeListener {
+  public abstract void onCheckedChanged(android.view.ViewGroup, int);
+}
+Compiled from "SmartisanBottomBarItemView.java"
+public class org.opensmartisanos.ui.widget.SmartisanBottomBarItemView extends android.widget.LinearLayout implements android.widget.Checkable {
+  public org.opensmartisanos.ui.widget.SmartisanBottomBarItemView(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanBottomBarItemView(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanBottomBarItemView(android.content.Context, android.util.AttributeSet, int);
+  public void setDrawableResource(int);
+  public void setDrawableResource(int, java.lang.String);
+  public void setDrawableColorList(int);
+  public void setTextColor(android.content.res.ColorStateList);
+  public void setTextSize(float);
+  public void setText(java.lang.String);
+  public void setScaleable(boolean);
+  public void setOnCheckedChangeListener(org.opensmartisanos.ui.widget.SmartisanBottomBarItemView$OnCheckedChangeListener);
+  public void setChecked(boolean);
+  public boolean isChecked();
+  public void toggle();
+  public boolean performClick();
+  public boolean onTouchEvent(android.view.MotionEvent);
+}
+Compiled from "SmartisanBottomBarItemView.java"
+public interface org.opensmartisanos.ui.widget.SmartisanBottomBarItemView$OnCheckedChangeListener {
+  public abstract void onCheckedChanged(org.opensmartisanos.ui.widget.SmartisanBottomBarItemView, boolean);
+}
+Compiled from "SmartisanBottomSheetDialog.java"
+public class org.opensmartisanos.ui.widget.SmartisanBottomSheetDialog extends android.app.Dialog {
+  public org.opensmartisanos.ui.widget.SmartisanBottomSheetDialog(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanBottomSheetDialog(android.content.Context, int);
+  public void setContentView(int);
+  public void setContentView(android.view.View);
+  public void setContentView(android.view.View, android.view.ViewGroup$LayoutParams);
+  public android.widget.FrameLayout getSheetView();
+  public void setSheetHeight(int);
+}
+Compiled from "SmartisanButton.java"
+public class org.opensmartisanos.ui.widget.SmartisanButton extends android.widget.Button {
+  public static final int STYLE_NORMAL = 0;
+  public static final int STYLE_BACK = 1;
+  public static final int STYLE_SETTING = 2;
+  public static final int STYLE_DELETE = 3;
+  public static final int STYLE_HIGHLIGHT_BLUE = 4;
+  public static final int STYLE_HIGHLIGHT_RED = 5;
+  public static final int STYLE_NORMAL_WITH_ICON = 6;
+  public static final int STYLE_AREA_ONLY_ICON = 7;
+  public static final int STYLE_SEARCH = 8;
+  public static final int STYLE_CUSTOM_BACKGROUND = 9;
+  public static final int STYLE_MIX = 10;
+  public org.opensmartisanos.ui.widget.SmartisanButton(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanButton(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanButton(android.content.Context, android.util.AttributeSet, int);
+  public void setButtonSourceBitmap(int);
+  public void setButtonStyle(int);
+  public int getButtonStyle();
+  public void setButtonText(java.lang.String);
+  public void setButtonText(int);
+  public void setEnabledStyle(boolean);
+}
+Compiled from "SmartisanButtonGroup.java"
+public class org.opensmartisanos.ui.widget.SmartisanButtonGroup extends android.widget.LinearLayout {
+  public org.opensmartisanos.ui.widget.SmartisanButtonGroup(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanButtonGroup(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanButtonGroup(android.content.Context, android.util.AttributeSet, int);
+  public void setButtonCount(int, boolean);
+  public int getButtonCount();
+  public void setButtonText(int, java.lang.CharSequence);
+  public void setButtonText(int, int);
+  public org.opensmartisanos.ui.widget.SmartisanShadowButton getButton(int);
+  public void setButtonActivated(int);
+  public void setButtonGroupBackground(int);
+  public void setButtonGroupBackground(android.graphics.drawable.Drawable);
+  public void setButtonGroupBackgroundColor(int);
+  public void setButtonGroupShadowVisibility(boolean);
+  public void setShadowDrawable(int);
+}
+Compiled from "SmartisanCheckBox.java"
+public class org.opensmartisanos.ui.widget.SmartisanCheckBox extends android.widget.CheckBox {
+  public org.opensmartisanos.ui.widget.SmartisanCheckBox(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanCheckBox(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanCheckBox(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanCheckBox(android.content.Context, android.util.AttributeSet, int, int);
+}
+Compiled from "SmartisanCircleProgressPopup.java"
+public class org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup extends android.widget.PopupWindow {
+  public org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup(android.content.Context);
+  public void show(android.view.View, int, int, boolean);
+  public void dismiss();
+  public void setCircleProgressListener(org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$CircleProgressListener);
+  public void setCircleAnimDuration(int);
+}
+Compiled from "SmartisanCircleProgressPopup.java"
+public interface org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$CircleProgressListener {
+  public abstract void cancel();
+  public abstract void complete();
+}
+Compiled from "SmartisanCircleProgressPopup.java"
+public abstract class org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$CircleProgressListenerAdapter implements org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$CircleProgressListener {
+  public org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$CircleProgressListenerAdapter();
+  public void cancel();
+  public void complete();
+}
+Compiled from "SmartisanCircleProgressView.java"
+public class org.opensmartisanos.ui.widget.SmartisanCircleProgressView extends android.view.View {
+  public org.opensmartisanos.ui.widget.SmartisanCircleProgressView(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanCircleProgressView(android.content.Context, android.util.AttributeSet);
+  public int getCircleWidth();
+  public int getCircleHeight();
+  public float getSweepAngle();
+  public void setSweepAngle(float);
+  public void reset();
+}
+Compiled from "SmartisanCircularProgressBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanCircularProgressBar extends android.widget.ProgressBar {
+  public org.opensmartisanos.ui.widget.SmartisanCircularProgressBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanCircularProgressBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanCircularProgressBar(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanCircularProgressBar(android.content.Context, android.util.AttributeSet, int, int);
+}
+Compiled from "SmartisanDialogTitleBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanDialogTitleBar extends android.widget.LinearLayout {
+  public org.opensmartisanos.ui.widget.SmartisanDialogTitleBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanDialogTitleBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanDialogTitleBar(android.content.Context, android.util.AttributeSet, int);
+  public void addCancelImage(boolean);
+  public void addCompleteImage(boolean);
+  public void forceRequestAccessibilityFocusWhenAttached(boolean);
+  public android.widget.ImageView getLeftImageView();
+  public android.widget.ImageView getRightImageView();
+  public android.view.ViewGroup getTitleBarContainer();
+  public android.widget.TextView getTitleView();
+  public void setLeftButtonVisibility(int);
+  public void setRightButtonVisibility(int);
+  public void setLeftImageViewResource(int);
+  public void setRightImageViewResource(int);
+  public void setOnLeftButtonClickListener(android.view.View$OnClickListener);
+  public void setOnRightButtonClickListener(android.view.View$OnClickListener);
+  public void setShadowVisible(boolean);
+  public void setTitle(int);
+  public void setTitle(java.lang.CharSequence);
+  public void setTitleBarBackgroundResource(int);
+  public void setTitleSingleLine(boolean);
+  public boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
+}
+Compiled from "SmartisanDownloadProgressView.java"
+public class org.opensmartisanos.ui.widget.SmartisanDownloadProgressView extends android.view.View {
+  public static final int STATE_PAUSED = 1;
+  public static final int STATE_RESUMED = 2;
+  public static final int STATE_RETRY = 3;
+  public static final int STATE_PROCESSING = 4;
+  public org.opensmartisanos.ui.widget.SmartisanDownloadProgressView(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanDownloadProgressView(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanDownloadProgressView(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanDownloadProgressView(android.content.Context, android.util.AttributeSet, int, int);
+  public void setCurrentState(int);
+  public int getCurrentState();
+  public int getLastState();
+  public void setProgress(int);
+  public int getProgress();
+  public void setAlphaAnimationDuration(long);
+  public android.os.Parcelable onSaveInstanceState();
+  public void onRestoreInstanceState(android.os.Parcelable);
+}
+Compiled from "SmartisanEditor.java"
+public abstract class org.opensmartisanos.ui.widget.SmartisanEditor extends android.widget.LinearLayout implements android.view.View$OnClickListener {
+  public static final int BG_STYLE_SINGLE = 1;
+  public static final int BG_STYLE_TOP = 2;
+  public static final int BG_STYLE_MIDDLE = 3;
+  public static final int BG_STYLE_BOTTOM = 4;
+  public static final int EDITOR_TYPE_DEFAULT = 0;
+  public static final int EDITOR_TYPE_PASSWORD = 1;
+  public static final int EDITOR_TYPE_QUICK_DELETE = 2;
+  public org.opensmartisanos.ui.widget.SmartisanEditor(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanEditor(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanEditor(android.content.Context, android.util.AttributeSet, int);
+  public void setEditorType(int);
+  public void setParagraphMode(boolean);
+  public android.widget.EditText getEditText();
+  public android.widget.EditText getEditor();
+  public void setEditable(boolean);
+  public void setEditorMarginVertically(int, int);
+  public void setText(java.lang.CharSequence);
+  public void setText(int);
+  public void setInputType(int);
+  public void setTransformationMethod(android.text.method.TransformationMethod);
+  public void setSingleLine(boolean);
+  public void setLeftContainerCenterVertical(boolean);
+  public void setEditorGravity(int);
+  public void setBackgroundStyle(int);
+  public void addRightViewComponent(android.view.View);
+  public void onClick(android.view.View);
+}
+Compiled from "SmartisanEmptyView.java"
+public class org.opensmartisanos.ui.widget.SmartisanEmptyView extends android.widget.LinearLayout {
+  public static final int STYLE_NORMAL = 0;
+  public static final int STYLE_SMALL = 1;
+  public static final int STYLE_WITH_ACTION = 2;
+  public org.opensmartisanos.ui.widget.SmartisanEmptyView(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanEmptyView(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanEmptyView(android.content.Context, android.util.AttributeSet, int);
+  public void setEmptyStyle(int);
+  public int getEmptyStyle();
+  public void setPrimaryHint(java.lang.CharSequence);
+  public void setSecondaryHint(java.lang.CharSequence);
+  public void setActionText(java.lang.CharSequence);
+  public android.widget.ImageView getImageView();
+  public android.widget.TextView getPrimaryHintView();
+  public android.widget.TextView getSecondaryHintView();
+  public android.widget.TextView getActionButton();
+}
+Compiled from "SmartisanIconBottomBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanIconBottomBar extends android.widget.LinearLayout {
+  public org.opensmartisanos.ui.widget.SmartisanIconBottomBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanIconBottomBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanIconBottomBar(android.content.Context, android.util.AttributeSet, int);
+  public void setBottomInnerClickListener(org.opensmartisanos.ui.widget.SmartisanIconBottomBar$BottomBarInnerClickCallback);
+  public void setIconRefArray(int[], boolean);
+  public void setIconRefArray(int[]);
+  public void setIconRefArray(int, boolean);
+  public void setIconRefArray(int);
+  public android.widget.ImageButton getBottomItem(int);
+  public android.widget.ImageButton[] getBottomItems();
+  public void setShadowDrawable(int);
+  public void setShadowVisible(boolean);
+  public android.widget.ImageView getShadowView();
+}
+Compiled from "SmartisanIconBottomBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanIconBottomBar$BottomBarInnerClickCallback {
+  public abstract void onClick(int, android.view.View);
+}
+Compiled from "SmartisanLabelEditor.java"
+public class org.opensmartisanos.ui.widget.SmartisanLabelEditor extends org.opensmartisanos.ui.widget.SmartisanEditor {
+  public org.opensmartisanos.ui.widget.SmartisanLabelEditor(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanLabelEditor(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanLabelEditor(android.content.Context, android.util.AttributeSet, int);
+  public void setShowLeftWidget(boolean);
+  public void setOnLeftLabelClickListener(android.view.View$OnClickListener);
+  public void setOnLeftIconClickListener(android.view.View$OnClickListener);
+  public void setLeftIcon(android.graphics.drawable.Drawable);
+  public void setLeftIconResource(int);
+  public void setLeftIconContainerBgStyle(org.opensmartisanos.ui.widget.SmartisanLabelEditor$LeftIconContainerBgStyle);
+  public void setLeftLabelClickListener(android.view.View$OnClickListener);
+  public void setLeftWidgetExpandView(android.view.View);
+  public void setLeftLabel(java.lang.CharSequence);
+  public void setLeftLabel(int);
+  public void setShowLeftLabelArrow(boolean);
+  public void setLeftLabelWidth(int);
+  public int getLeftLabelWidth();
+  public void setLeftWidgetBackgroundResource(int);
+  public void setLeftLabelRightMargin(int);
+  public void setLeftLabelLeftMargin(int);
+  public void setLeftLabelGravity(int);
+  public android.view.View getLeftWidgetIconView();
+  public void setShowRightWidget(boolean);
+  public void setRightLabel(java.lang.CharSequence);
+  public void setRightLabel(int);
+  public void setRightIcon(android.graphics.drawable.Drawable);
+  public void setRightIconResource(int);
+  public void setRightIconContentDescription(java.lang.String);
+  public void setOnRightWidgetClickListener(android.view.View$OnClickListener);
+  public void setRightWidgetWidth(int);
+  public void setShowRightDevide(boolean);
+  public void setShowLeftDivider(boolean);
+  public void addSpecialEditorRightExpandView(android.view.View);
+  public void setSingleLine(boolean);
+  public android.view.View getLeftContainer();
+  public android.view.View getRightContainer();
+}
+Compiled from "SmartisanLabelEditor.java"
+public final class org.opensmartisanos.ui.widget.SmartisanLabelEditor$LeftIconContainerBgStyle extends java.lang.Enum<org.opensmartisanos.ui.widget.SmartisanLabelEditor$LeftIconContainerBgStyle> {
+  public static final org.opensmartisanos.ui.widget.SmartisanLabelEditor$LeftIconContainerBgStyle GRAY;
+  public static org.opensmartisanos.ui.widget.SmartisanLabelEditor$LeftIconContainerBgStyle[] values();
+  public static org.opensmartisanos.ui.widget.SmartisanLabelEditor$LeftIconContainerBgStyle valueOf(java.lang.String);
+}
+Compiled from "SmartisanListContentItem.java"
+public abstract class org.opensmartisanos.ui.widget.SmartisanListContentItem extends android.widget.RelativeLayout {
+  public static final int BG_STYLE_SINGLE = 1;
+  public static final int BG_STYLE_TOP = 2;
+  public static final int BG_STYLE_MIDDLE = 3;
+  public static final int BG_STYLE_BOTTOM = 4;
+  public org.opensmartisanos.ui.widget.SmartisanListContentItem(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItem(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItem(android.content.Context, android.util.AttributeSet, int);
+  public void setMaxTitleSize(float);
+  public void setMaxSummarySize(float);
+  public void setOnDisabledClickListener(org.opensmartisanos.ui.widget.SmartisanListContentItem$OnDisabledClickListener);
+  public void setTitle(java.lang.CharSequence);
+  public void setTitle(int);
+  public java.lang.CharSequence getTitle();
+  public android.widget.TextView getTitleView();
+  public void setSummary(java.lang.CharSequence);
+  public void setSummary(int);
+  public java.lang.CharSequence getSummary();
+  public android.widget.TextView getSummaryView();
+  public void setIcon(int);
+  public void setIcon(android.graphics.drawable.Drawable);
+  public android.widget.ImageView getIconView();
+  public void setDisabledTips(int);
+  public boolean onInterceptTouchEvent(android.view.MotionEvent);
+  public boolean onTouchEvent(android.view.MotionEvent);
+  public void cancelToast();
+  public void setLeftContainerVisible(boolean);
+  public void setBackgroundStyle(int);
+  public void setPressed(boolean);
+  public void setBackground(android.graphics.drawable.Drawable);
+  public void setPressable(boolean);
+  public boolean isPressable();
+  public void setShadowEnabled(boolean);
+  public void setShadowShouldProjects(boolean);
+}
+Compiled from "SmartisanListContentItem.java"
+public interface org.opensmartisanos.ui.widget.SmartisanListContentItem$OnDisabledClickListener {
+  public abstract void onDisabledClick();
+}
+Compiled from "SmartisanListContentItemCheck.java"
+public class org.opensmartisanos.ui.widget.SmartisanListContentItemCheck extends org.opensmartisanos.ui.widget.SmartisanListContentItem {
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemCheck(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemCheck(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemCheck(android.content.Context, android.util.AttributeSet, int);
+  public void setSelectedIconRes(int);
+  public void setChecked(boolean);
+  public boolean isChecked();
+  public android.widget.ImageView getSelectedIcon();
+  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
+}
+Compiled from "SmartisanListContentItemCustom.java"
+public class org.opensmartisanos.ui.widget.SmartisanListContentItemCustom extends org.opensmartisanos.ui.widget.SmartisanListContentItem {
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemCustom(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemCustom(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemCustom(android.content.Context, android.util.AttributeSet, int);
+}
+Compiled from "SmartisanListContentItemSwitch.java"
+public class org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch extends org.opensmartisanos.ui.widget.SmartisanListContentItem {
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch(android.content.Context, android.util.AttributeSet, int);
+  public void setOnCheckedChangeListener(android.widget.CompoundButton$OnCheckedChangeListener);
+  public void setChecked(boolean);
+  public void setCheckedWithListenerCallback(boolean);
+  public boolean isChecked();
+  public org.opensmartisanos.ui.widget.SmartisanSwitch getSwitch();
+  public void setEnabled(boolean);
+  public void setSwitcherCallback(org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch$SwitcherCallback);
+  public void setRightExpandView(android.view.View);
+}
+Compiled from "SmartisanListContentItemSwitch.java"
+public interface org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch$SwitcherCallback {
+  public abstract void onDisabledSwitchClicked();
+}
+Compiled from "SmartisanListContentItemText.java"
+public class org.opensmartisanos.ui.widget.SmartisanListContentItemText extends org.opensmartisanos.ui.widget.SmartisanListContentItem {
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemText(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemText(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanListContentItemText(android.content.Context, android.util.AttributeSet, int);
+  public void setTitle(java.lang.CharSequence);
+  public void setSummary(java.lang.CharSequence);
+  public void setSubtitle(java.lang.CharSequence);
+  public void setSubtitle(int);
+  public java.lang.CharSequence getSubTitle();
+  public android.widget.TextView getSubTitleView();
+  public android.widget.ImageView getArrowImageView();
+  public void setArrowVisible(boolean);
+  public void setSubtitleRightPadding(int);
+  public void setRightExpandView(android.view.View);
+  public boolean hasRightExpandView();
+}
+Compiled from "SmartisanListPopupMenu.java"
+public class org.opensmartisanos.ui.widget.SmartisanListPopupMenu extends org.opensmartisanos.ui.widget.SmartisanPopupMenu {
+  public org.opensmartisanos.ui.widget.SmartisanListPopupMenu(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanListPopupMenu(android.content.Context, int);
+  public void setAdapter(android.widget.ListAdapter);
+  public void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener);
+  public void setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener);
+  public void setBottomActionBarVisible(boolean);
+  public void setLeftButtonText(java.lang.CharSequence);
+  public void setLeftImageViewRes(int);
+  public void setLeftImageViewResource(int);
+  public void setLeftButtonOnClickListener(android.view.View$OnClickListener);
+  public void setRightButtonText(java.lang.CharSequence);
+  public void setRightImageViewRes(int);
+  public void setRightImageViewResource(int);
+  public void setRightButtonOnClickListener(android.view.View$OnClickListener);
+  public void setLeftButtonVisible(boolean);
+  public void setRightButtonVisible(boolean);
+  public void setBottomText(java.lang.CharSequence);
+  public void setMenuListTitleVisible(boolean);
+  public void setMenuListTitle(java.lang.CharSequence);
+  public int getListViewHeight();
+  public int getBottomActionBarHeight();
+  public int getMenuListTitleHeight();
+  public void setTextOrIconViewVisibility(boolean, boolean);
+  public boolean isShowingDividers();
+  public void setShowingDividers(boolean);
+  public boolean isShowPadding();
+  public void setShowPadding(boolean);
+  public android.widget.ImageView getLeftActionView();
+  public android.widget.ImageView getRightActionView();
+  public android.widget.Button getLeftButton();
+  public android.widget.Button getRightButton();
+  public android.widget.ListView getListView();
+}
+Compiled from "SmartisanMixBottomBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanMixBottomBar extends android.widget.LinearLayout {
+  public org.opensmartisanos.ui.widget.SmartisanMixBottomBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanMixBottomBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanMixBottomBar(android.content.Context, android.util.AttributeSet, int);
+  public void setLeftButtonClickListener(android.view.View$OnClickListener);
+  public void setCenterButtonClickListener(android.view.View$OnClickListener);
+  public void setRightButtonClickListener(android.view.View$OnClickListener);
+  public android.view.View getLeftButton();
+  public android.view.View getCenterButton();
+  public android.view.View getRightButton();
+}
+Compiled from "SmartisanPasswordEditText.java"
+public class org.opensmartisanos.ui.widget.SmartisanPasswordEditText extends android.widget.EditText {
+  public org.opensmartisanos.ui.widget.SmartisanPasswordEditText(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanPasswordEditText(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanPasswordEditText(android.content.Context, android.util.AttributeSet, int);
+  public void setEyeAnimator(android.graphics.drawable.Drawable);
+  public void setEyePaddingRight(int);
+  public void setEyePaddingLeft(int);
+  public void setEyePaddingTop(int);
+  public boolean isPasswordVisible();
+  public void setInputType(int);
+  public int getCompoundPaddingRight();
+  public int getHorizontalOffsetForDrawables();
+  public boolean onTouchEvent(android.view.MotionEvent);
+  public void togglePasswordVisibility();
+  public android.view.accessibility.AccessibilityNodeProvider getAccessibilityNodeProvider();
+}
+Compiled from "SmartisanPopupMenu.java"
+public abstract class org.opensmartisanos.ui.widget.SmartisanPopupMenu {
+  public static final int ARROW_TOP = 0;
+  public static final int ARROW_BOTTOM = 1;
+  public static final int ARROW_LEFT = 2;
+  public static final int ARROW_RIGHT = 3;
+  public static final int DIRECTION_TOP = 0;
+  public static final int DIRECTION_BOTTOM = 1;
+  public static final int DIRECTION_LEFT = 2;
+  public static final int DIRECTION_RIGHT = 3;
+  public org.opensmartisanos.ui.widget.SmartisanPopupMenu(android.content.Context);
+  public void show(int, int, int, int, int);
+  public void show(int, int, int, int, int, boolean);
+  public int getPopupWindowWidth();
+  public int getLeftRightShadowWidth();
+  public int getMenuPanelBgRoundCornerRadius();
+  public void showCenter();
+  public void showCenter(int, int);
+  public void setShowAboveAnchor(boolean);
+  public boolean isShowing();
+  public void dismiss();
+  public void setOnDismissListener(android.widget.PopupWindow$OnDismissListener);
+  public void setAnchorView(android.view.View);
+  public android.view.View getAnchorView();
+  public void setContentAreaWidth(int);
+  public void setFocusable(boolean);
+  public void setArrowInvisible();
+  public void setArrowVisible(boolean);
+  public android.widget.PopupWindow getPopupWindow();
+  public void setClipToScreenEnabled(boolean);
+  public void setAutoAdjustPopupDirection(boolean);
+  public void setMenuPopup(boolean);
+}
+Compiled from "SmartisanProgressBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanProgressBar extends android.widget.ProgressBar {
+  public org.opensmartisanos.ui.widget.SmartisanProgressBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanProgressBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanProgressBar(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanProgressBar(android.content.Context, android.util.AttributeSet, int, int);
+}
+Compiled from "SmartisanQuickDeleteEditText.java"
+public class org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText extends android.widget.EditText {
+  public org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText(android.content.Context, android.util.AttributeSet, int, int);
+  public void setDrawable(int);
+  public void setIconPaddingRight(int);
+  public void setIconPaddingLeft(int);
+  public void setIconPaddingTop(int);
+  public void setIconVisible(boolean);
+  public void setOnDeleteIconClickListener(org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText$OnDeleteIconClickListener);
+  public void updateDrawableVisibility(boolean);
+  public int getCompoundPaddingRight();
+  public int getHorizontalOffsetForDrawables();
+  public boolean onTouchEvent(android.view.MotionEvent);
+  public android.view.accessibility.AccessibilityNodeProvider getAccessibilityNodeProvider();
+}
+Compiled from "SmartisanQuickDeleteEditText.java"
+public interface org.opensmartisanos.ui.widget.SmartisanQuickDeleteEditText$OnDeleteIconClickListener {
+  public abstract void onDeleteIconClick();
+}
+Compiled from "SmartisanRadioButton.java"
+public class org.opensmartisanos.ui.widget.SmartisanRadioButton extends android.widget.RadioButton {
+  public org.opensmartisanos.ui.widget.SmartisanRadioButton(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanRadioButton(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanRadioButton(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanRadioButton(android.content.Context, android.util.AttributeSet, int, int);
+}
+Compiled from "SmartisanSearchBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanSearchBar extends android.widget.RelativeLayout implements android.view.View$OnClickListener {
+  public org.opensmartisanos.ui.widget.SmartisanSearchBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSearchBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSearchBar(android.content.Context, android.util.AttributeSet, int);
+  public void onClick(android.view.View);
+  public void onClickSearchEditor(boolean);
+  public void onClickCancelView(boolean);
+  public void addShadow();
+  public void removeShadow();
+  public android.view.View getShadowView();
+  public boolean isSearchMode();
+  public boolean isPlayingAnimation();
+  public boolean isAutoFocus();
+  public void setAutoFocus(boolean);
+  public boolean isWithAnimation();
+  public void setWithAnimation(boolean);
+  public org.opensmartisanos.ui.widget.SmartisanSearchEditText getSearchEditor();
+  public android.view.View getSearchEditLayout();
+  public android.view.View getSearchLeftIcon();
+  public android.view.View getCancelView();
+  public android.view.View getClearView();
+  public android.view.View getSecondaryFilterLayout();
+  public void setSearchLeftIcon(android.graphics.drawable.Drawable);
+  public void setSearchLeftIcon(int);
+  public void setCancelViewVisibility(int);
+  public void setSecondaryFilterVisibility(int);
+  public void setSecondaryFilterText(java.lang.CharSequence);
+  public void setSecondaryFilterText(int);
+  public void setSearchEnabled(boolean);
+  public void setHint(java.lang.CharSequence);
+  public java.lang.CharSequence getQuery();
+  public void setQuery(java.lang.CharSequence);
+  public void hideKeyboard();
+  public void showKeyboard();
+  public android.widget.ImageView addRightImageView(int);
+  public void removeRightView(android.view.View);
+  public void removeAllRightImageViews();
+  public void setImageScaleEnabled(boolean);
+  public void avoidImageViewScale(android.widget.ImageView);
+  public void setAnimationListener(org.opensmartisanos.ui.widget.SmartisanSearchBar$AnimationListener);
+  public void setOnCancelClickListener(org.opensmartisanos.ui.widget.SmartisanSearchBar$OnCancelClickListener);
+  public void setOnEditorClickListener(org.opensmartisanos.ui.widget.SmartisanSearchBar$OnEditorClickListener);
+  public void setOnFilterClickListener(org.opensmartisanos.ui.widget.SmartisanSearchBar$OnFilterClickListener);
+  public void setOnSearchIconClickListener(org.opensmartisanos.ui.widget.SmartisanSearchBar$OnSearchIconClickListener);
+  public void setOnSecondaryFilterClickListener(org.opensmartisanos.ui.widget.SmartisanSearchBar$OnSecondaryFilterClickListener);
+  public void setOnCommitCompletionListener(org.opensmartisanos.ui.widget.SmartisanSearchBar$OnCommitCompletionListener);
+  public void setOnQueryTextListener(org.opensmartisanos.ui.widget.SmartisanSearchBar$OnQueryTextListener);
+}
+Compiled from "SmartisanSearchBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchBar$AnimationListener {
+  public abstract void onAnimationStart();
+  public abstract void onAnimationEnd();
+}
+Compiled from "SmartisanSearchBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchBar$OnCancelClickListener {
+  public abstract void onClick(android.view.View);
+}
+Compiled from "SmartisanSearchBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchBar$OnCommitCompletionListener {
+  public abstract void onCommitCompletion(android.view.inputmethod.CompletionInfo);
+}
+Compiled from "SmartisanSearchBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchBar$OnEditorClickListener {
+  public abstract void onClick(android.view.View);
+}
+Compiled from "SmartisanSearchBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchBar$OnFilterClickListener {
+  public abstract void onClick(android.view.View);
+}
+Compiled from "SmartisanSearchBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchBar$OnQueryTextListener {
+  public abstract void onQueryTextChanged(java.lang.String);
+}
+Compiled from "SmartisanSearchBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchBar$OnSearchIconClickListener {
+  public abstract void onClick(android.view.View);
+}
+Compiled from "SmartisanSearchBar.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchBar$OnSecondaryFilterClickListener {
+  public abstract void onClick(android.view.View);
+}
+Compiled from "SmartisanSearchEditText.java"
+public class org.opensmartisanos.ui.widget.SmartisanSearchEditText extends android.widget.EditText {
+  public org.opensmartisanos.ui.widget.SmartisanSearchEditText(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSearchEditText(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSearchEditText(android.content.Context, android.util.AttributeSet, int);
+  public void setOnCommitCompletionListener(org.opensmartisanos.ui.widget.SmartisanSearchEditText$OnCommitCompletionListener);
+  public void onCommitCompletion(android.view.inputmethod.CompletionInfo);
+}
+Compiled from "SmartisanSearchEditText.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSearchEditText$OnCommitCompletionListener {
+  public abstract void onCommitCompletion(android.view.inputmethod.CompletionInfo);
+}
+Compiled from "SmartisanSegmentedControl.java"
+public class org.opensmartisanos.ui.widget.SmartisanSegmentedControl extends android.widget.LinearLayout implements android.view.View$OnClickListener {
+  public org.opensmartisanos.ui.widget.SmartisanSegmentedControl(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSegmentedControl(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSegmentedControl(android.content.Context, android.util.AttributeSet, int);
+  public void setControlWidth(int);
+  public void setItems(java.util.List<? extends java.lang.CharSequence>);
+  public void setItems(java.util.List<? extends java.lang.CharSequence>, boolean);
+  public void setItemDrawables(java.util.List<java.lang.Integer>);
+  public void setup();
+  public org.opensmartisanos.ui.widget.SmartisanShadowButton getItemView(int);
+  public void setSelectedIndex(int);
+  public int getSelectedIndex();
+  public void onClick(android.view.View);
+  public void setOnItemClickListener(org.opensmartisanos.ui.widget.SmartisanSegmentedControl$OnItemClickListener);
+  public void setItemEnabled(int, boolean);
+  public void setAlwaysNotifyOnReselect(boolean);
+  public void onRtlPropertiesChanged(int);
+}
+Compiled from "SmartisanSegmentedControl.java"
+public interface org.opensmartisanos.ui.widget.SmartisanSegmentedControl$OnItemClickListener {
+  public abstract void onItemClick(android.view.View, int);
+}
+Compiled from "SmartisanSettingItemCheck.java"
+public class org.opensmartisanos.ui.widget.SmartisanSettingItemCheck extends org.opensmartisanos.ui.widget.SmartisanListContentItemCheck {
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemCheck(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemCheck(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemCheck(android.content.Context, android.util.AttributeSet, int);
+  public android.widget.ImageView getIcon();
+  public void setIconVisibility(int);
+  public void setSummaryMarqueeEnable(boolean);
+}
+Compiled from "SmartisanSettingItemSwitch.java"
+public class org.opensmartisanos.ui.widget.SmartisanSettingItemSwitch extends org.opensmartisanos.ui.widget.SmartisanListContentItemSwitch {
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemSwitch(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemSwitch(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemSwitch(android.content.Context, android.util.AttributeSet, int);
+  public void setIconMarginRight(int);
+  public void setIconMarginRightDimen(int);
+  public void setIconResource(int);
+  public void setOnCheckedChangeListener(android.widget.CompoundButton$OnCheckedChangeListener);
+  public void setupInfoButton(boolean, android.view.View$OnClickListener);
+  public void setSwitchEnable(boolean);
+  public void setSwitchDisabledTips(int);
+  public void setSwitchClickListener(android.view.View$OnClickListener);
+}
+Compiled from "SmartisanSettingItemText.java"
+public class org.opensmartisanos.ui.widget.SmartisanSettingItemText extends org.opensmartisanos.ui.widget.SmartisanListContentItemText {
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemText(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemText(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSettingItemText(android.content.Context, android.util.AttributeSet, int);
+  public android.widget.ImageView getBadgeImageView();
+  public void setIconResource(int);
+  public void setIconDrawable(android.graphics.drawable.Drawable);
+  public void setIconRightMargin(int);
+  public void setSubTitle(java.lang.CharSequence);
+  public void setSubTitle(int);
+  public void setupInfoButton(boolean, android.view.View$OnClickListener);
+  public void setItemEnable(boolean);
+  public void setBadgeResources(int);
+  public void setupView(int, java.lang.CharSequence, int, int, int);
+}
+Compiled from "SmartisanShadowButton.java"
+public class org.opensmartisanos.ui.widget.SmartisanShadowButton extends android.widget.Button {
+  public org.opensmartisanos.ui.widget.SmartisanShadowButton(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanShadowButton(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanShadowButton(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanShadowButton(android.content.Context, android.util.AttributeSet, int, int);
+  public void setText(java.lang.CharSequence, android.widget.TextView$BufferType);
+  public void setMaxTitleSize(float);
+  public void setShadowColors(android.content.res.ColorStateList, float, float, float);
+  public void setShadowEnable(boolean);
+  public void updateBackgroundStyle(org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle);
+  public void updateBackgroundStyle(org.opensmartisanos.ui.widget.SmartisanShadowButton$SmallButtonStyle);
+  public void setOnDisabledClickListener(org.opensmartisanos.ui.widget.SmartisanShadowButton$OnDisabledClickListener);
+  public boolean onTouchEvent(android.view.MotionEvent);
+  public void setBackground(android.graphics.drawable.Drawable);
+  public void setShadowEnabled(boolean);
+  public void setShadowShouldProjects(boolean);
+}
+Compiled from "SmartisanShadowButton.java"
+public final class org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle extends java.lang.Enum<org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle> {
+  public static final org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle HIGH_LIGHT;
+  public static final org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle RED;
+  public static final org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle WHITE;
+  public static final org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle GRAY;
+  public static org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle[] values();
+  public static org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle valueOf(java.lang.String);
+}
+Compiled from "SmartisanShadowButton.java"
+public interface org.opensmartisanos.ui.widget.SmartisanShadowButton$OnDisabledClickListener {
+  public abstract void onDisabledClick();
+}
+Compiled from "SmartisanShadowButton.java"
+public final class org.opensmartisanos.ui.widget.SmartisanShadowButton$SmallButtonStyle extends java.lang.Enum<org.opensmartisanos.ui.widget.SmartisanShadowButton$SmallButtonStyle> {
+  public static final org.opensmartisanos.ui.widget.SmartisanShadowButton$SmallButtonStyle HIGH_LIGHT;
+  public static final org.opensmartisanos.ui.widget.SmartisanShadowButton$SmallButtonStyle RED;
+  public static final org.opensmartisanos.ui.widget.SmartisanShadowButton$SmallButtonStyle STANDARD;
+  public static org.opensmartisanos.ui.widget.SmartisanShadowButton$SmallButtonStyle[] values();
+  public static org.opensmartisanos.ui.widget.SmartisanShadowButton$SmallButtonStyle valueOf(java.lang.String);
+}
+Compiled from "SmartisanSimpleEditor.java"
+public class org.opensmartisanos.ui.widget.SmartisanSimpleEditor extends org.opensmartisanos.ui.widget.SmartisanEditor {
+  public org.opensmartisanos.ui.widget.SmartisanSimpleEditor(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSimpleEditor(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSimpleEditor(android.content.Context, android.util.AttributeSet, int);
+}
+Compiled from "SmartisanSliderWithIcons.java"
+public class org.opensmartisanos.ui.widget.SmartisanSliderWithIcons extends android.widget.RelativeLayout {
+  public org.opensmartisanos.ui.widget.SmartisanSliderWithIcons(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSliderWithIcons(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSliderWithIcons(android.content.Context, android.util.AttributeSet, int);
+  public void setMax(int);
+  public void setProgress(int);
+  public void setProgressSmooth(int);
+  public android.widget.SeekBar getSeekBar();
+  public android.widget.ImageView getLeftImageView();
+  public void setLeftIconVisible(boolean);
+  public void setLeftIcon(int);
+  public void setLeftIcon(android.graphics.drawable.Drawable);
+  public android.widget.ImageView getRightImageView();
+  public void setRightIconVisible(boolean);
+  public void setRightIcon(int);
+  public void setRightIcon(android.graphics.drawable.Drawable);
+  public int getProgress();
+  public int getMax();
+  public void setOnSeekBarChangeListener(android.widget.SeekBar$OnSeekBarChangeListener);
+}
+Compiled from "SmartisanSmoothSeekBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar extends android.widget.SeekBar {
+  public org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanSmoothSeekBar(android.content.Context, android.util.AttributeSet, int, int);
+  public synchronized void setProgressSmooth(int);
+  public synchronized void setProgress(int);
+  public synchronized int getProgress();
+}
+Compiled from "SmartisanSnackbarWithButton.java"
+public class org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton extends android.widget.LinearLayout {
+  public org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSnackbarWithButton(android.content.Context, android.util.AttributeSet, int);
+  public void setMessage(java.lang.CharSequence);
+  public void setMessage(int);
+  public void setActionText(java.lang.CharSequence);
+  public void setActionText(int);
+  public void setActionListener(android.view.View$OnClickListener);
+}
+Compiled from "SmartisanSnackbarWithDrawable.java"
+public class org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable extends android.widget.LinearLayout {
+  public org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSnackbarWithDrawable(android.content.Context, android.util.AttributeSet, int);
+  public void setMessage(java.lang.CharSequence);
+  public void setMessage(int);
+  public void setImageDrawable(android.graphics.drawable.Drawable);
+  public void setImageResource(int);
+  public void setActionListener(android.view.View$OnClickListener);
+}
+Compiled from "SmartisanSpinner.java"
+public class org.opensmartisanos.ui.widget.SmartisanSpinner extends android.widget.Spinner {
+  public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context, int);
+  public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context, android.util.AttributeSet, int);
+  public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context, android.util.AttributeSet, int, int);
+  public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context, android.util.AttributeSet, int, int, int);
+  public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context, android.util.AttributeSet, int, int, int, android.content.res.Resources$Theme);
+}
+Compiled from "SmartisanSwitch.java"
+public class org.opensmartisanos.ui.widget.SmartisanSwitch extends android.widget.CheckBox {
+  public static final int STYLE_LIGHT = 1;
+  public static final int STYLE_DARK = 2;
+  public static final int SWITCH_BOTTOM = 0;
+  public static final int SWITCH_UNPRESSED = 1;
+  public static final int SWITCH_FRAME = 2;
+  public static final int SWITCH_MASK = 3;
+  public static final int SWITCH_PRESSED = 4;
+  public static final int SWITCH_FRAME_PRESSED = 5;
+  public org.opensmartisanos.ui.widget.SmartisanSwitch(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanSwitch(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanSwitch(android.content.Context, android.util.AttributeSet, int);
+  public static void clearSwitchBitmap();
+  public void setSwitchDrawable(int, android.graphics.Bitmap);
+  public void setSwitchDrawableStyle(int);
+  public void setSwitchDrawables(android.util.SparseIntArray);
+  public void setBottomDrawable(int);
+  public void setFrameDrawable(int);
+  public void setEnabled(boolean);
+  public boolean isChecked();
+  public void toggle();
+  public void setChecked(boolean);
+  public void setVibrateFeedbackEnabled(boolean);
+  public void onRestoreInstanceState(android.os.Parcelable);
+  public void setOnCheckedChangeListener(android.widget.CompoundButton$OnCheckedChangeListener);
+  public boolean onTouchEvent(android.view.MotionEvent);
+  public boolean performClick();
+  public void setOnClickListener(android.view.View$OnClickListener);
+  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
+  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
+}
+Compiled from "SmartisanTabSwitcher.java"
+public class org.opensmartisanos.ui.widget.SmartisanTabSwitcher extends org.opensmartisanos.ui.widget.SmartisanBottomBar {
+  public org.opensmartisanos.ui.widget.SmartisanTabSwitcher(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanTabSwitcher(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanTabSwitcher(android.content.Context, android.util.AttributeSet, int);
+  public void setTabs(java.util.List<org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab>, java.util.List<org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab>);
+  public java.util.List<org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab> getBottomTabs();
+  public java.util.List<org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab> getOverflowTabs();
+  public void setSelectedTabId(int);
+  public int getSelectedTabId();
+  public void setEditable(boolean);
+  public boolean isEditable();
+  public void setOnTabSelectedListener(org.opensmartisanos.ui.widget.SmartisanTabSwitcher$OnTabSelectedListener);
+  public void setOnTabsChangedListener(org.opensmartisanos.ui.widget.SmartisanTabSwitcher$OnTabsChangedListener);
+  public void setOnEditorVisibilityChangedListener(org.opensmartisanos.ui.widget.SmartisanTabSwitcher$OnEditorVisibilityChangedListener);
+  public void setNavigationBarInsets(int, int, int);
+  public boolean isEditorShown();
+  public void showEditor();
+  public void dismissEditor(boolean);
+}
+Compiled from "SmartisanTabSwitcher.java"
+public interface org.opensmartisanos.ui.widget.SmartisanTabSwitcher$OnEditorVisibilityChangedListener {
+  public abstract void onEditorVisibilityChanged(boolean);
+}
+Compiled from "SmartisanTabSwitcher.java"
+public interface org.opensmartisanos.ui.widget.SmartisanTabSwitcher$OnTabSelectedListener {
+  public abstract void onTabSelected(int);
+}
+Compiled from "SmartisanTabSwitcher.java"
+public interface org.opensmartisanos.ui.widget.SmartisanTabSwitcher$OnTabsChangedListener {
+  public abstract void onTabsChanged(java.util.List<org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab>, java.util.List<org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab>);
+}
+Compiled from "SmartisanTabSwitcher.java"
+public final class org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab {
+  public org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab(int, java.lang.CharSequence, int, int, boolean);
+  public org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab(int, java.lang.CharSequence, int, int, android.content.res.ColorStateList, boolean);
+  public int getId();
+  public java.lang.CharSequence getTitle();
+  public int getBottomDrawable();
+  public int getOverflowDrawable();
+  public boolean isMovable();
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+}
+Compiled from "SmartisanTipsBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanTipsBar extends android.widget.TextView {
+  public org.opensmartisanos.ui.widget.SmartisanTipsBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanTipsBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanTipsBar(android.content.Context, android.util.AttributeSet, int);
+}
+Compiled from "SmartisanTitleBar.java"
+public class org.opensmartisanos.ui.widget.SmartisanTitleBar extends android.widget.RelativeLayout {
+  public static final int BACK_ICON_RES;
+  public org.opensmartisanos.ui.widget.SmartisanTitleBar(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanTitleBar(android.content.Context, android.util.AttributeSet);
+  public org.opensmartisanos.ui.widget.SmartisanTitleBar(android.content.Context, android.util.AttributeSet, int);
+  public void setShadowVisible(boolean);
+  public android.view.View getShadowView();
+  public void setCenterView(android.view.View);
+  public void setAutoAdjustCenterViewVisibility(boolean);
+  public boolean isCenterTitleTextView();
+  public void setCenterText(int);
+  public void setCenterText(java.lang.String);
+  public void setCenterTextColor(int);
+  public android.widget.TextView getTitleView();
+  public android.widget.RelativeLayout$LayoutParams generateSingleCenterViewLayoutParams(boolean);
+  public void addLeftView(android.view.View);
+  public void addRightView(android.view.View);
+  public void removeAllLeftViews();
+  public void removeAllRightViews();
+  public void removeLeftView(int);
+  public void removeRightView(int);
+  public android.widget.ImageView addLeftImageView(int);
+  public android.widget.ImageView addRightImageView(int);
+  public android.widget.ImageView addLeftImageView(int, int);
+  public android.widget.ImageView addRightImageView(int, int);
+  public org.opensmartisanos.ui.widget.SmartisanButton addLeftButton(int, int);
+  public org.opensmartisanos.ui.widget.SmartisanButton addRightButton(int, int);
+  public boolean hasLeftView();
+  public boolean hasRightView();
+  public int getLeftViewCount();
+  public int getRightViewCount();
+  public android.view.View getLeftViewByIndex(int);
+  public android.view.View getRightViewByIndex(int);
+  public void setAutoAdapterEnabled(boolean);
+  public boolean isAutoAdapterEnabled();
+  public void applyNavigationBarVisibility(boolean, int);
+  public void setTitleBarHeight(int);
+  public void setImageScaleEnable(boolean);
+  public void avoidImageViewScale(android.widget.ImageView);
+}
