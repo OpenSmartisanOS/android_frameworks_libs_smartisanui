@@ -38,25 +38,45 @@ public class SmartisanSegmentedControl extends LinearLayout implements View.OnCl
     }
     public void setControlWidth(int width) { forcedWidth = width; requestLayout(); }
     public void setItems(List<? extends CharSequence> values) { setItems(values, false); }
-    public void setItems(List<? extends CharSequence> values, boolean withGap) { items = new ArrayList<>(values); hasGap = withGap; setup(); }
+    public void setItems(List<? extends CharSequence> values, boolean withGap) {
+        List<? extends CharSequence> newItems = new ArrayList<>(values);
+        if (items.equals(newItems) && hasGap == withGap) return;
+        items = newItems;
+        hasGap = withGap;
+        setup();
+    }
     public void setItemDrawables(List<Integer> values) { drawables = values == null ? Collections.emptyList() : new ArrayList<>(values); setup(); }
     public void setup() {
+        int previousSelection = selectedIndex;
         removeAllViews(); buttons.clear(); selectedIndex = -1;
         for (int i = 0; i < items.size(); i++) {
             SmartisanShadowButton button = new SmartisanShadowButton(getContext());
-            button.setText(items.get(i)); button.setEllipsize(TextUtils.TruncateAt.END); button.setMaxLines(1); button.setOnClickListener(this);
-            if (hasGap || items.size() == 1) button.setBackgroundResource(R.drawable.smartisan_rom_selector_small_btn_standard);
-            else if (i == 0) button.setBackgroundResource(R.drawable.smartisan_rom_selector_small_btn_filter_left);
-            else if (i == items.size() - 1) button.setBackgroundResource(R.drawable.smartisan_rom_selector_small_btn_filter_right);
-            else button.setBackgroundResource(R.drawable.smartisan_rom_selector_small_btn_filter_middle);
+            button.setText(items.get(i)); button.setEllipsize(TextUtils.TruncateAt.END);
+            button.setMaxLines(1); button.setOnClickListener(this);
+            if (hasGap || items.size() == 1) {
+                button.setBackgroundResource(R.drawable.smartisan_rom_selector_small_btn_standard);
+            } else if (i == 0) {
+                button.setBackgroundResource(isLayoutRtl()
+                        ? R.drawable.smartisan_rom_selector_small_btn_filter_right
+                        : R.drawable.smartisan_rom_selector_small_btn_filter_left);
+            } else if (i == items.size() - 1) {
+                button.setBackgroundResource(isLayoutRtl()
+                        ? R.drawable.smartisan_rom_selector_small_btn_filter_left
+                        : R.drawable.smartisan_rom_selector_small_btn_filter_right);
+            } else {
+                button.setBackgroundResource(R.drawable.smartisan_rom_selector_small_btn_filter_middle);
+            }
             if (i < drawables.size()) {
                 Drawable icon = getContext().getDrawable(drawables.get(i));
-                button.setCompoundDrawablesWithIntrinsicBounds(new InsetDrawable(icon, dp(4), 0, dp(4), 0), null, null, null);
+                button.setCompoundDrawablesWithIntrinsicBounds(
+                        new InsetDrawable(icon, dp(4), 0, dp(4), 0), null, null, null);
             }
             buttons.add(button);
             LayoutParams params = new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f);
-            if (hasGap && i != 0) params.leftMargin = -dp(2);
             addView(button, params);
+        }
+        if (previousSelection >= 0 && previousSelection < buttons.size()) {
+            setSelectedIndex(previousSelection);
         }
     }
     private int dp(float value) { return (int) (value * getResources().getDisplayMetrics().density + 0.5f); }
@@ -65,8 +85,13 @@ public class SmartisanSegmentedControl extends LinearLayout implements View.OnCl
     private void setSelectedIndex(int index, boolean fromUser) {
         checkIndex(index);
         if (index == selectedIndex) { if (fromUser && (hasGap || alwaysNotify) && listener != null) listener.onItemClick(buttons.get(index), index); return; }
-        if (selectedIndex >= 0) buttons.get(selectedIndex).setActivated(false);
-        selectedIndex = index; buttons.get(index).setActivated(true);
+        if (selectedIndex >= 0) {
+            buttons.get(selectedIndex).setActivated(false);
+            buttons.get(selectedIndex).setSelected(false);
+        }
+        selectedIndex = index;
+        buttons.get(index).setActivated(true);
+        buttons.get(index).setSelected(true);
         if (fromUser && listener != null) listener.onItemClick(buttons.get(index), index);
     }
     public int getSelectedIndex() { return selectedIndex; }
@@ -75,4 +100,10 @@ public class SmartisanSegmentedControl extends LinearLayout implements View.OnCl
     public void setOnItemClickListener(OnItemClickListener value) { listener = value; }
     public void setItemEnabled(int index, boolean enabled) { SmartisanShadowButton button = getItemView(index); button.setEnabled(enabled); button.setAlpha(enabled ? 1f : 0.3f); }
     public void setAlwaysNotifyOnReselect(boolean value) { alwaysNotify = value; }
+    private boolean isLayoutRtl() { return getLayoutDirection() == View.LAYOUT_DIRECTION_RTL; }
+    @Override public void onRtlPropertiesChanged(int layoutDirection) {
+        super.onRtlPropertiesChanged(layoutDirection);
+        // View can dispatch this callback from its constructor, before subclass fields initialize.
+        if (items != null && !items.isEmpty()) setup();
+    }
 }
