@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="catalog_java_checkbox" type="id" />
+    <item name="catalog_java_radio_first" type="id" />
+    <item name="catalog_java_radio_second" type="id" />
+    <item name="catalog_java_spinner" type="id" />
+</resources>

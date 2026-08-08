@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <org.opensmartisanos.ui.widget.SmartisanCheckBox
+        android:id="@+id/catalog_xml_checkbox_checked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/smartisan_catalog_checked" />
+
+    <org.opensmartisanos.ui.widget.SmartisanCheckBox
+        android:id="@+id/catalog_xml_checkbox_disabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:enabled="false"
+        android:text="@string/smartisan_catalog_disabled" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <org.opensmartisanos.ui.widget.SmartisanRadioButton
+            android:id="@+id/catalog_sdk_radio_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/smartisan_catalog_item_one" />
+
+        <org.opensmartisanos.ui.widget.SmartisanRadioButton
+            android:id="@+id/catalog_sdk_radio_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/smartisan_catalog_item_two" />
+    </RadioGroup>
+</LinearLayout>
