@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/smartisan_rom_thin_progress_track" />
+    <item
+        android:id="@android:id/progress"
+        android:start="1dp"
+        android:end="1dp">
+        <scale
+            android:drawable="@drawable/smartisan_rom_thin_progress"
+            android:scaleWidth="100%" />
+    </item>
+    <item android:id="@android:id/secondaryProgress">
+        <scale
+            android:drawable="@drawable/smartisan_rom_thin_secondary_progress"
+            android:scaleWidth="100%" />
+    </item>
+</layer-list>

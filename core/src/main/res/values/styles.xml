@@ -86,7 +86,9 @@
         <item name="android:layout_marginBottom">@dimen/smartisan_rom_editor_small_vertical_margin</item>
     </style>
     <style name="smartisan_rom_SeekBarStyle.Thin.LargeThumb.Actived" parent="@android:style/Widget.Material.SeekBar">
-        <item name="android:progressDrawable">@null</item>
+        <item name="android:thumb">@drawable/smartisan_rom_seekbar_scrubber_control_selector</item>
+        <item name="android:progressDrawable">@drawable/smartisan_rom_thin_progress_horizontal_drawable</item>
+        <item name="android:splitTrack">false</item>
     </style>
     <style name="smartisan_rom_SnackbarMessageStyle">
         <item name="android:textStyle">bold</item>
