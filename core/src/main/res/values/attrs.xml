@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Public-SDK adapter theme hooks. Keep names prefixed to avoid app/theme collisions. -->
+    <attr name="smartisanCheckBoxStyle" format="reference" />
+    <attr name="smartisanRadioButtonStyle" format="reference" />
+    <attr name="smartisanProgressBarStyle" format="reference" />
+    <attr name="smartisanCircularProgressBarStyle" format="reference" />
+    <attr name="smartisanSpinnerStyle" format="reference" />
+    <attr name="smartisanBottomSheetDialogTheme" format="reference" />
+
     <attr name="cornerRadius" format="dimension" />
     <attr name="buttonStyle" format="integer">
         <enum name="normal" value="0" />

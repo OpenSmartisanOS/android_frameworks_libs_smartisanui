@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.SmartisanUi.ProgressBar.Circular"
+        parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateDuration">3500</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDrawable">@drawable/smartisan_rom_progress_medium_smartisanos_dark</item>
+        <item name="android:indeterminateTint">@null</item>
+    </style>
+</resources>

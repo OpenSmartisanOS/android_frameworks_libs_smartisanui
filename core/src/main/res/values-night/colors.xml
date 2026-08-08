@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- New compatibility-control colors only; old core controls keep their established resources. -->
+    <color name="smartisan_rom_warning_text_color">#d44d44</color>
+    <color name="smartisan_rom_dialog_primary_text">#ccffffff</color>
+    <color name="smartisan_rom_dialog_secondary_text">#9affffff</color>
+    <color name="smartisan_rom_bottom_sheet_background">#ff000000</color>
+</resources>

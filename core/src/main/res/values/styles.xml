@@ -4,6 +4,12 @@
         <item name="android:fontFamily">sans</item>
         <item name="android:windowActionModeOverlay">true</item>
         <item name="android:windowBackground">@color/smartisan_catalog_background</item>
+        <item name="smartisanCheckBoxStyle">@style/Widget.SmartisanUi.CheckBox</item>
+        <item name="smartisanRadioButtonStyle">@style/Widget.SmartisanUi.RadioButton</item>
+        <item name="smartisanProgressBarStyle">@style/Widget.SmartisanUi.ProgressBar.Horizontal</item>
+        <item name="smartisanCircularProgressBarStyle">@style/Widget.SmartisanUi.ProgressBar.Circular.Medium</item>
+        <item name="smartisanSpinnerStyle">@style/Widget.SmartisanUi.Spinner</item>
+        <item name="smartisanBottomSheetDialogTheme">@style/ThemeOverlay.SmartisanUi.BottomSheetDialog</item>
     </style>
     <style name="Theme.SmartisanUi.AlertDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -18,15 +24,84 @@
 
     <style name="Widget.SmartisanUi.ShadowButton" parent="@android:style/Widget.Material.Button" />
 
-    <style name="SmartisanProgressBarCircleStyle.Medium"
-        parent="@android:style/Widget.DeviceDefault.Light.ProgressBar">
-        <item name="android:maxWidth">48dp</item>
-        <item name="android:maxHeight">48dp</item>
+    <style name="Widget.SmartisanUi.CheckBox"
+        parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/smartisan_rom_selector_check_box</item>
+        <item name="android:buttonTint">@null</item>
+    </style>
+
+    <style name="Widget.SmartisanUi.RadioButton"
+        parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/smartisan_rom_selector_radio_choice</item>
+        <item name="android:buttonTint">@null</item>
+    </style>
+
+    <style name="Widget.SmartisanUi.ProgressBar.Horizontal"
+        parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/smartisan_rom_progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@drawable/smartisan_rom_progress_indeterminate_horizontal</item>
+        <item name="android:progressTint">@null</item>
+        <item name="android:secondaryProgressTint">@null</item>
+        <item name="android:progressBackgroundTint">@null</item>
+        <item name="android:indeterminateTint">@null</item>
+        <item name="android:minHeight">16dp</item>
+    </style>
+
+    <style name="Widget.SmartisanUi.ProgressBar.Circular"
+        parent="@android:style/Widget.ProgressBar">
         <item name="android:indeterminateOnly">true</item>
         <item name="android:indeterminateDuration">3500</item>
         <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDrawable">@drawable/smartisan_rom_progress_medium_smartisanos_light</item>
+        <item name="android:indeterminateTint">@null</item>
+    </style>
+
+    <style name="Widget.SmartisanUi.ProgressBar.Circular.Small"
+        parent="Widget.SmartisanUi.ProgressBar.Circular">
+        <item name="android:minWidth">32dp</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:maxWidth">32dp</item>
+        <item name="android:maxHeight">32dp</item>
+    </style>
+
+    <style name="Widget.SmartisanUi.ProgressBar.Circular.Medium"
+        parent="Widget.SmartisanUi.ProgressBar.Circular">
+        <item name="android:maxWidth">48dp</item>
+        <item name="android:maxHeight">48dp</item>
         <item name="android:minWidth">48dp</item>
         <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Widget.SmartisanUi.ProgressBar.Circular.Large"
+        parent="Widget.SmartisanUi.ProgressBar.Circular">
+        <item name="android:minWidth">64dp</item>
+        <item name="android:minHeight">64dp</item>
+        <item name="android:maxWidth">64dp</item>
+        <item name="android:maxHeight">64dp</item>
+    </style>
+
+    <!-- Kept as an alias for existing XML callers. -->
+    <style name="SmartisanProgressBarCircleStyle.Medium"
+        parent="Widget.SmartisanUi.ProgressBar.Circular.Medium" />
+
+    <style name="Widget.SmartisanUi.Spinner" parent="@android:style/Widget.Spinner">
+        <item name="android:spinnerMode">dropdown</item>
+        <item name="android:background">@drawable/smartisan_rom_editor_bg_single</item>
+        <item name="android:popupBackground">@drawable/smartisan_rom_pop_up_menu_bg</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:minHeight">40dp</item>
+    </style>
+
+    <style name="ThemeOverlay.SmartisanUi.BottomSheetDialog"
+        parent="@android:style/Theme.DeviceDefault.Dialog.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
 
     <style name="smartisan_rom_PopupMenuStyle">

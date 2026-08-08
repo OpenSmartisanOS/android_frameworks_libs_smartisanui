@@ -20,6 +20,10 @@
     <color name="smartisan_rom_editor_hint_text_color">#26000000</color>
     <color name="smartisan_rom_editor_label_text_color">#66000000</color>
     <color name="smartisan_rom_editor_text_color">#cc000000</color>
+    <color name="smartisan_rom_warning_text_color">#d44d44</color>
+    <color name="smartisan_rom_dialog_primary_text">#cc000000</color>
+    <color name="smartisan_rom_dialog_secondary_text">#9a000000</color>
+    <color name="smartisan_rom_bottom_sheet_background">#fff3f3f3</color>
     <color name="smartisan_rom_bottom_tab_press">#de393c</color>
     <color name="smartisan_rom_bottom_tab_text_normal">#66000000</color>
     <color name="smartisan_rom_bottom_tab_text_press">#9a000000</color>
