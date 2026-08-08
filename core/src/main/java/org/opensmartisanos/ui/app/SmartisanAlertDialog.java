@@ -98,7 +98,7 @@ public class SmartisanAlertDialog extends Dialog {
     private View createPanels() {
         LinearLayout root = new LinearLayout(getContext());
         root.setOrientation(LinearLayout.VERTICAL);
-        root.setBackgroundResource(R.drawable.smartisan_alert_revone_root);
+        root.setBackgroundResource(R.drawable.smartisan_rom_dialog_full);
 
         View title = createTitlePanel();
         if (title != null) {
@@ -137,7 +137,7 @@ public class SmartisanAlertDialog extends Dialog {
         TextView title = new TextView(getContext());
         title.setText(params.title);
         title.setTextSize(18);
-        title.setTextColor(0xcc000000);
+        title.setTextColor(getContext().getColor(R.color.smartisan_rom_dialog_primary_text));
         title.setTypeface(title.getTypeface(), Typeface.BOLD);
         title.setGravity(Gravity.CENTER);
         title.setSingleLine(true);
@@ -154,7 +154,6 @@ public class SmartisanAlertDialog extends Dialog {
                 ((ViewGroup) customView.getParent()).removeView(customView);
             }
             FrameLayout panel = new FrameLayout(getContext());
-            panel.setBackgroundResource(R.drawable.smartisan_alert_revone_content);
             panel.setPadding(dp(18), dp(18), dp(18), dp(18));
             panel.addView(customView, new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -165,14 +164,13 @@ public class SmartisanAlertDialog extends Dialog {
         TextView message = new TextView(getContext());
         message.setText(params.message);
         message.setTextSize(15);
-        message.setTextColor(0x80000000);
+        message.setTextColor(getContext().getColor(R.color.smartisan_rom_dialog_secondary_text));
         message.setGravity(Gravity.CENTER);
         message.setPadding(dp(24), dp(18), dp(24), dp(18));
         message.setMinHeight(dp(76));
         message.setLineSpacing(dp(2), 1);
         ScrollView scroll = new ScrollView(getContext());
         scroll.setClipToPadding(false);
-        scroll.setBackgroundResource(R.drawable.smartisan_alert_revone_content);
         scroll.addView(message, new ScrollView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return scroll;
@@ -180,7 +178,7 @@ public class SmartisanAlertDialog extends Dialog {
 
     private View createList() {
         listView = new ListView(getContext());
-        listView.setBackgroundResource(R.drawable.smartisan_alert_revone_content);
+        listView.setBackgroundColor(0x00000000);
         listView.setDivider(null);
         listView.setSelector(android.R.color.transparent);
         listView.setChoiceMode(params.multiChoice ? ListView.CHOICE_MODE_MULTIPLE
@@ -258,16 +256,12 @@ public class SmartisanAlertDialog extends Dialog {
         button.setPadding(0, 0, 0, 0);
         button.setBackgroundResource(positionBackground(position));
         boolean highlight = which == rightmostButton();
-        ColorStateList colors = highlight
-                ? new ColorStateList(new int[][] {
-                    new int[] {-android.R.attr.state_enabled}, new int[] {}
-                }, new int[] {0xff5c89f2, 0xff5c89f2})
-                : new ColorStateList(new int[][] {
-                    new int[] {-android.R.attr.state_enabled}, new int[] {}
-                }, new int[] {0xffd9d9d9, 0xff898989});
+        ColorStateList colors = getContext().getColorStateList(highlight
+                ? R.color.smartisan_rom_dialog_highlight_btn_text
+                : R.color.smartisan_rom_dialog_normal_btn_text);
         if (params.destructivePositive && which == BUTTON_POSITIVE) {
-            colors = new ColorStateList(new int[][] {new int[] {-android.R.attr.state_enabled},
-                    new int[] {}}, new int[] {0x4dba3b3b, 0xffba3b3b});
+            colors = getContext().getColorStateList(
+                    R.color.smartisan_rom_dialog_destructive_btn_text);
         }
         button.setTextColor(colors);
         button.setOnClickListener(view -> {
@@ -355,14 +349,15 @@ public class SmartisanAlertDialog extends Dialog {
                     ? (CheckedTextView) convertView : new CheckedTextView(getContext());
             configureChoiceText(text);
             text.setText(getItem(position));
-            text.setCheckMarkDrawable(params.singleChoice ? android.R.drawable.radiobutton_on_background
-                    : android.R.drawable.checkbox_on_background);
+            text.setCheckMarkDrawable(params.singleChoice
+                    ? R.drawable.smartisan_rom_selector_radio_choice
+                    : R.drawable.smartisan_rom_selector_check_box);
             return text;
         }
 
         private void configureChoiceText(TextView text) {
             text.setTextSize(16);
-            text.setTextColor(0xcc000000);
+            text.setTextColor(getContext().getColor(R.color.smartisan_rom_dialog_primary_text));
             text.setGravity(Gravity.CENTER_VERTICAL);
             text.setSingleLine(true);
             text.setEllipsize(TextUtils.TruncateAt.END);
