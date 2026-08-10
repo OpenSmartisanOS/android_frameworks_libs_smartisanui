@@ -18,7 +18,7 @@ package org.opensmartisanos.ui;
 
 /** Entry point and version information for the public Smartisan UI API. */
 public final class SmartisanUi {
-    public static final int API_VERSION = 1;
+    public static final int API_VERSION = 3;
 
     private SmartisanUi() {}
 }

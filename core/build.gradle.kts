@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.opensmartisanos"
-version = "0.1.0-SNAPSHOT"
+version = "0.3.0-SNAPSHOT"
 
 android {
     namespace = "org.opensmartisanos.ui"
@@ -44,4 +44,8 @@ publishing {
             }
         }
     }
+}
+
+dependencies {
+    testImplementation("junit:junit:4.13.2")
 }
