@@ -17,6 +17,10 @@ import android.widget.TextView;
 import org.opensmartisanos.ui.R;
 
 public class SmartisanListPopupMenu extends SmartisanPopupMenu {
+    /** Optional adapter contract for inserting the ROM's larger divider between logical groups. */
+    public interface GroupedAdapter {
+        boolean isGroupStart(int position);
+    }
     private final LinearLayout titleContainer;
     private final ListView listView;
     private final TextView titleView;
@@ -41,20 +45,20 @@ public class SmartisanListPopupMenu extends SmartisanPopupMenu {
 
     public SmartisanListPopupMenu(Context context) {
         super(context);
-        contentAreaWidth = context.getResources().getDimensionPixelSize(
+        mContentAreaWidth = context.getResources().getDimensionPixelSize(
                 R.dimen.smartisan_rom_popup_list_menu_default_width);
-        menuPanelView = LayoutInflater.from(context).inflate(
+        mMenuPanelView = LayoutInflater.from(context).inflate(
                 R.layout.smartisan_rom_menu_popupwindow_layout, null);
-        titleContainer = menuPanelView.findViewById(R.id.smartisan_rom_menu_title_container);
-        listView = menuPanelView.findViewById(R.id.smartisan_rom_menu_list);
-        titleView = menuPanelView.findViewById(R.id.smartisan_rom_menu_title);
-        bottomActionBar = menuPanelView.findViewById(R.id.smartisan_rom_bottom_action_bar);
-        bottomDivider = menuPanelView.findViewById(R.id.smartisan_rom_menu_list_bottom_divider);
-        leftAction = menuPanelView.findViewById(R.id.smartisan_rom_left_icon);
-        rightAction = menuPanelView.findViewById(R.id.smartisan_rom_right_icon);
-        leftButton = menuPanelView.findViewById(R.id.smartisan_rom_left_btn);
-        rightButton = menuPanelView.findViewById(R.id.smartisan_rom_right_btn);
-        actionText = menuPanelView.findViewById(R.id.smartisan_rom_action_text);
+        titleContainer = mMenuPanelView.findViewById(R.id.smartisan_rom_menu_title_container);
+        listView = mMenuPanelView.findViewById(R.id.smartisan_rom_menu_list);
+        titleView = mMenuPanelView.findViewById(R.id.smartisan_rom_menu_title);
+        bottomActionBar = mMenuPanelView.findViewById(R.id.smartisan_rom_bottom_action_bar);
+        bottomDivider = mMenuPanelView.findViewById(R.id.smartisan_rom_menu_list_bottom_divider);
+        leftAction = mMenuPanelView.findViewById(R.id.smartisan_rom_left_icon);
+        rightAction = mMenuPanelView.findViewById(R.id.smartisan_rom_right_icon);
+        leftButton = mMenuPanelView.findViewById(R.id.smartisan_rom_left_btn);
+        rightButton = mMenuPanelView.findViewById(R.id.smartisan_rom_right_btn);
+        actionText = mMenuPanelView.findViewById(R.id.smartisan_rom_action_text);
         listVerticalPadding = context.getResources().getDimensionPixelOffset(
                 R.dimen.smartisan_rom_popup_list_menu_padding_vertical);
     }
@@ -62,11 +66,21 @@ public class SmartisanListPopupMenu extends SmartisanPopupMenu {
     /** Width follows the ROM API and includes the left and right shadow areas. */
     public SmartisanListPopupMenu(Context context, int width) {
         this(context);
-        contentAreaWidth = width - bgLeftRightShadowWidth * 2;
-        if (contentAreaWidth <= 0) throw new IllegalArgumentException("width is smaller than popup shadows");
+        mContentAreaWidth = width - mBgLeftRightShadowWidth * 2;
     }
 
     @Override protected void prepareShow() {
+        LinearLayout.LayoutParams listParams = (LinearLayout.LayoutParams) listView.getLayoutParams();
+        if (SmartisanLocaleUtils.isExternalDisplay(mContext)
+                && !showBottomActionBar && !showMenuListTitle) {
+            int margin = mContext.getResources().getDimensionPixelSize(
+                    R.dimen.smartisan_rom_revone_list_popup_menu_vertical_margin);
+            listParams.topMargin = margin;
+            listParams.bottomMargin = margin;
+        } else {
+            listParams.topMargin = 0;
+            listParams.bottomMargin = 0;
+        }
         bottomActionBar.setVisibility(showBottomActionBar ? View.VISIBLE : View.GONE);
         bottomDivider.setVisibility(showBottomActionBar ? View.VISIBLE : View.GONE);
         titleContainer.setVisibility(showMenuListTitle ? View.VISIBLE : View.GONE);
@@ -75,12 +89,6 @@ public class SmartisanListPopupMenu extends SmartisanPopupMenu {
         left.setOnClickListener(leftClickListener);
         right.setOnClickListener(rightClickListener);
         buildList();
-
-        // PopupWindow measures weighted children against available height. Give the ROM's 0dp
-        // list track its intrinsic height first so the same XML also works in ordinary AAR apps.
-        ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = getListViewHeight();
-        listView.setLayoutParams(params);
     }
 
     private void buildList() {
@@ -88,9 +96,20 @@ public class SmartisanListPopupMenu extends SmartisanPopupMenu {
         listView.setOnItemClickListener(itemClickListener);
         listView.setOnItemSelectedListener(itemSelectedListener);
         listView.setFocusable(true);
-        listView.setDivider(showingDividers
-                ? context.getDrawable(R.drawable.smartisan_rom_list_divider_drawable) : null);
-        listView.setSelector(R.drawable.smartisan_rom_menu_list_selector);
+        boolean externalDisplay = SmartisanLocaleUtils.isExternalDisplay(mContext);
+        boolean grouped = adapter instanceof GroupedAdapter;
+        if (externalDisplay) {
+            listView.setDivider(showingDividers
+                    ? mContext.getDrawable(R.drawable.smartisan_rom_revone_list_popup_menu_separator)
+                    : null);
+            listView.setSelector(R.drawable.smartisan_rom_revone_menu_list_selector);
+        } else {
+            listView.setDivider(showingDividers
+                    ? mContext.getDrawable(R.drawable.smartisan_rom_list_divider_drawable) : null);
+            listView.setSelector(grouped
+                    ? R.drawable.smartisan_rom_menu_list_group_selector
+                    : R.drawable.smartisan_rom_menu_list_selector);
+        }
         int horizontalLeft = listView.getPaddingLeft();
         int horizontalRight = listView.getPaddingRight();
         int vertical = showPadding ? listVerticalPadding : 0;
@@ -102,6 +121,23 @@ public class SmartisanListPopupMenu extends SmartisanPopupMenu {
     public void setAdapter(ListAdapter adapter) {
         this.adapter = adapter;
         listView.setAdapter(adapter);
+    }
+
+    @Override public void show(int direction, int xOffset, int yOffset,
+            int arrowXOffset, int arrowYOffset) {
+        if (adapter instanceof SmartisanGroupMenuAdapter) {
+            mContentAreaWidth = mContext.getResources().getDimensionPixelOffset(
+                    R.dimen.smartisan_rom_popup_list_menu_long_press_width);
+            setOnItemClickListener((SmartisanGroupMenuAdapter) adapter);
+            setShowPadding(true);
+            setShowingDividers(false);
+            setClipToScreenEnabled(false);
+            setAutoAdjustPopupDirection(true);
+            setArrowInvisible();
+            xOffset -= mBgLeftRightShadowWidth;
+            yOffset -= mBgTopBottomShadowHeight;
+        }
+        super.show(direction, xOffset, yOffset, arrowXOffset, arrowYOffset);
     }
     public void setOnItemClickListener(AdapterView.OnItemClickListener listener) { itemClickListener = listener; }
     public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener listener) { itemSelectedListener = listener; }
@@ -127,7 +163,12 @@ public class SmartisanListPopupMenu extends SmartisanPopupMenu {
             View item = adapter.getView(i, null, listView);
             item.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
             height += item.getMeasuredHeight();
-            if (showingDividers) height += listView.getDividerHeight();
+            if (showingDividers && i > 0 && adapter instanceof GroupedAdapter
+                    && ((GroupedAdapter) adapter).isGroupStart(i)) {
+                height += listVerticalPadding;
+            } else if (showingDividers) {
+                height += listView.getDividerHeight();
+            }
         }
         return height + (showPadding ? listVerticalPadding * 2 : 0);
     }
@@ -140,7 +181,7 @@ public class SmartisanListPopupMenu extends SmartisanPopupMenu {
 
     public int getMenuListTitleHeight() {
         return titleView.getVisibility() == View.GONE ? 0
-                : context.getResources().getDimensionPixelSize(
+                : mContext.getResources().getDimensionPixelSize(
                         R.dimen.smartisan_rom_popup_list_menu_title_height);
     }
 
