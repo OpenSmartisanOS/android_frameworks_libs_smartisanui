@@ -1,4 +1,146 @@
-/* Ported from smartisanos.widget.CircleProgressPopup in Smartisan OS 8.5.3. */
 package org.opensmartisanos.ui.widget;
-import android.animation.Animator;import android.animation.AnimatorListenerAdapter;import android.animation.AnimatorSet;import android.animation.ObjectAnimator;import android.animation.ValueAnimator;import android.content.Context;import android.view.View;import android.widget.PopupWindow;
-public class SmartisanCircleProgressPopup extends PopupWindow {public interface CircleProgressListener{void cancel();void complete();}public abstract static class CircleProgressListenerAdapter implements CircleProgressListener{public void cancel(){}public void complete(){}}private final SmartisanCircleProgressView view;private final AnimatorSet start=new AnimatorSet(),end=new AnimatorSet();private final ValueAnimator circle=ValueAnimator.ofFloat(0,360);private CircleProgressListener listener;private int duration=1000;public SmartisanCircleProgressPopup(Context c){view=new SmartisanCircleProgressView(c);setContentView(view);setWidth(android.view.ViewGroup.LayoutParams.WRAP_CONTENT);setHeight(android.view.ViewGroup.LayoutParams.WRAP_CONTENT);setFocusable(false);setTouchable(false);setClippingEnabled(false);start.playTogether(ObjectAnimator.ofFloat(view,"alpha",0,1),ObjectAnimator.ofFloat(view,"scaleX",.5f,1),ObjectAnimator.ofFloat(view,"scaleY",.5f,1));start.setDuration(100);end.playTogether(ObjectAnimator.ofFloat(view,"alpha",1,0),ObjectAnimator.ofFloat(view,"scaleX",1,.5f),ObjectAnimator.ofFloat(view,"scaleY",1,.5f));end.setDuration(300);circle.addUpdateListener(a->view.setSweepAngle((float)a.getAnimatedValue()));}public void show(View anchor,int x,int y,boolean animate){if(isShowing())dismissImmediate();int[] pos=new int[2];anchor.getLocationOnScreen(pos);view.reset();showAtLocation(anchor,0,pos[0]+x-view.getCircleWidth()/2,pos[1]+y-view.getCircleHeight()/2);start.removeAllListeners();start.addListener(new AnimatorListenerAdapter(){@Override public void onAnimationEnd(Animator a){if(animate)playCircle();}});start.start();}@Override public void dismiss(){if(!end.isRunning()&&isShowing()){circle.cancel();end.removeAllListeners();end.addListener(new AnimatorListenerAdapter(){@Override public void onAnimationEnd(Animator a){SmartisanCircleProgressPopup.super.dismiss();}});end.start();}}private void dismissImmediate(){circle.cancel();super.dismiss();}private void playCircle(){circle.setDuration(duration);circle.removeAllListeners();circle.addListener(new AnimatorListenerAdapter(){@Override public void onAnimationEnd(Animator a){if(listener!=null&&Math.floor(view.getSweepAngle())==360)listener.complete();}@Override public void onAnimationCancel(Animator a){if(listener!=null)listener.cancel();}});circle.start();}public void setCircleProgressListener(CircleProgressListener l){listener=l;}public void setCircleAnimDuration(int d){duration=d;}}
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.PopupWindow;
+
+/** Circular long-press progress popup with the original 100/300ms scale transitions. */
+public class SmartisanCircleProgressPopup extends PopupWindow {
+    private static final int DEFAULT_CIRCLE_ANIM_DURATION = 1000;
+
+    public interface CircleProgressListener {
+        void cancel();
+        void complete();
+    }
+
+    public abstract static class CircleProgressListenerAdapter implements CircleProgressListener {
+        @Override public void complete() { }
+        @Override public void cancel() { }
+    }
+
+    private final SmartisanCircleProgressView progressView;
+    private final AnimatorSet startAnimator = new AnimatorSet();
+    private final AnimatorSet endAnimator = new AnimatorSet();
+    private final ValueAnimator circleAnimator = ValueAnimator.ofFloat(0f, 360f);
+    private int circleAnimatorDuration = DEFAULT_CIRCLE_ANIM_DURATION;
+    private CircleProgressListener listener;
+
+    public SmartisanCircleProgressPopup(Context context) {
+        progressView = new SmartisanCircleProgressView(context);
+        setContentView(progressView);
+        setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        setFocusable(false);
+        setTouchable(false);
+        setWindowLayoutType(WindowManager.LayoutParams.TYPE_APPLICATION_SUB_PANEL);
+        setClippingEnabled(false);
+        setAttachedInDecor(false);
+        initAnimators();
+    }
+
+    public void show(View anchor, int x, int y, boolean withAnimation) {
+        if (isShowing()) dismissImmediate();
+        int[] position = new int[2];
+        anchor.getLocationOnScreen(position);
+        int popupX = position[0] + x - progressView.getCircleWidth() / 2;
+        int popupY = position[1] + y - progressView.getCircleHeight() / 2;
+        progressView.reset();
+        showAtLocation(anchor, Gravity.NO_GRAVITY, popupX, popupY);
+        playStartAnimation(withAnimation);
+    }
+
+    @Override public void dismiss() {
+        if (!endAnimator.isRunning() && isShowing()) {
+            cancelCircleAnimation();
+            resetAnimators();
+            playEndAnimation();
+        }
+    }
+
+    public void setCircleProgressListener(CircleProgressListener listener) {
+        this.listener = listener;
+    }
+
+    public void setCircleAnimDuration(int duration) { circleAnimatorDuration = duration; }
+
+    private void dismissImmediate() {
+        cancelCircleAnimation();
+        resetAnimators();
+        super.dismiss();
+    }
+
+    private void initAnimators() {
+        startAnimator.playTogether(
+                ObjectAnimator.ofFloat(progressView, View.ALPHA, 0f, 1f),
+                ObjectAnimator.ofFloat(progressView, View.SCALE_X, 0.5f, 1f),
+                ObjectAnimator.ofFloat(progressView, View.SCALE_Y, 0.5f, 1f));
+        startAnimator.setDuration(100L);
+        endAnimator.playTogether(
+                ObjectAnimator.ofFloat(progressView, View.ALPHA, 1f, 0f),
+                ObjectAnimator.ofFloat(progressView, View.SCALE_X, 1f, 0.5f),
+                ObjectAnimator.ofFloat(progressView, View.SCALE_Y, 1f, 0.5f));
+        endAnimator.setDuration(300L);
+        circleAnimator.setDuration(circleAnimatorDuration);
+        circleAnimator.addUpdateListener(animation ->
+                progressView.setSweepAngle((Float) animation.getAnimatedValue()));
+    }
+
+    private void cancelCircleAnimation() {
+        if (startAnimator.isRunning()) {
+            if (listener != null) listener.cancel();
+        } else if (circleAnimator.isRunning()) {
+            circleAnimator.cancel();
+        }
+    }
+
+    private void resetAnimators() {
+        circleAnimator.removeAllListeners();
+        startAnimator.removeAllListeners();
+        endAnimator.removeAllListeners();
+        if (circleAnimator.isRunning()) circleAnimator.cancel();
+        if (startAnimator.isRunning()) startAnimator.end();
+        if (endAnimator.isRunning()) endAnimator.end();
+    }
+
+    private void playStartAnimation(boolean nextAnimation) {
+        startAnimator.start();
+        startAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override public void onAnimationEnd(Animator animation) {
+                if (nextAnimation) playCircleAnimation();
+            }
+        });
+    }
+
+    private void playEndAnimation() {
+        endAnimator.start();
+        endAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override public void onAnimationEnd(Animator animation) {
+                if (isShowing()) {
+                    resetAnimators();
+                    SmartisanCircleProgressPopup.super.dismiss();
+                }
+            }
+        });
+    }
+
+    private void playCircleAnimation() {
+        circleAnimator.setDuration(circleAnimatorDuration);
+        if (listener != null) {
+            circleAnimator.addListener(new AnimatorListenerAdapter() {
+                @Override public void onAnimationEnd(Animator animation) {
+                    if ((int) Math.floor(progressView.getSweepAngle()) == 360) listener.complete();
+                }
+                @Override public void onAnimationCancel(Animator animation) { listener.cancel(); }
+            });
+        }
+        circleAnimator.start();
+    }
+}
