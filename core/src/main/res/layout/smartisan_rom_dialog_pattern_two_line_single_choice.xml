@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/smartisan_rom_dialog_single_choice_height"
+    android:layout_gravity="center_vertical"
+    android:duplicateParentState="true"
+    android:minHeight="?android:listPreferredItemHeightSmall"
+    android:paddingStart="20dp"
+    android:paddingEnd="6dp">
+    <RelativeLayout
+        android:id="@id/smartisan_rom_text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/smartisan_rom_item_check"
+        android:duplicateParentState="true">
+        <TextView
+            android:id="@id/smartisan_rom_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="?android:textColorAlertDialogListItem" />
+        <TextView
+            android:id="@id/smartisan_rom_item_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/smartisan_rom_item_title"
+            android:duplicateParentState="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/smartisan_rom_dialog_single_choice_summary"
+            android:textSize="12.5sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@id/smartisan_rom_item_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/smartisan_rom_dialog_pattern_choice_selected"
+        android:visibility="invisible" />
+</RelativeLayout>

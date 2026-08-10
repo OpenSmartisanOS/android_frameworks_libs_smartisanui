@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="SmartisanDialogPatternAppInfoLayout">
+        <attr name="smartisanDialogAppInfoTitle" format="string" />
+        <attr name="smartisanDialogAppInfoSummary" format="string" />
+        <attr name="smartisanDialogAppInfoIcon" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="SmartisanDialogPatternSectionGroup">
+        <attr name="smartisanDialogSectionTitle" format="string" />
+        <attr name="smartisanDialogSectionSubtitle" format="string" />
+        <attr name="smartisanDialogSectionMessage" format="string" />
+    </declare-styleable>
     <!-- Public-SDK adapter theme hooks. Keep names prefixed to avoid app/theme collisions. -->
     <attr name="smartisanCheckBoxStyle" format="reference" />
     <attr name="smartisanRadioButtonStyle" format="reference" />
     <attr name="smartisanProgressBarStyle" format="reference" />
     <attr name="smartisanCircularProgressBarStyle" format="reference" />
     <attr name="smartisanSpinnerStyle" format="reference" />
-    <attr name="smartisanBottomSheetDialogTheme" format="reference" />
+    <attr name="smartisanSpinnerViewStyle" format="integer">
+        <enum name="normal" value="0" />
+        <enum name="drop" value="1" />
+        <enum name="range" value="2" />
+    </attr>
+    <attr name="smartisanSpinnerText" format="string|reference" />
+    <attr name="smartisanSpinnerLeftIcon" format="reference" />
+    <attr name="smartisanSpinnerVerticalScroll" format="boolean" />
+    <declare-styleable name="SmartisanSpinnerView">
+        <attr name="smartisanSpinnerViewStyle" />
+        <attr name="smartisanSpinnerText" />
+        <attr name="smartisanSpinnerLeftIcon" />
+        <attr name="smartisanSpinnerVerticalScroll" />
+    </declare-styleable>
+    <declare-styleable name="SmartisanWheelTextView">
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+    </declare-styleable>
+    <attr name="smartisanShowDivider" format="boolean" />
+    <declare-styleable name="SmartisanDialogTitleBar">
+        <attr name="smartisanShowDivider" />
+    </declare-styleable>
 
     <attr name="cornerRadius" format="dimension" />
     <attr name="buttonStyle" format="integer">

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/smartisan_rom_bottom_menu_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@id/smartisan_rom_bottom_menu_parent_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <org.opensmartisanos.ui.widget.SmartisanDialogTitleBar
+            android:id="@id/smartisan_rom_bottom_menu_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:smartisanShowDivider="false" />
+
+        <FrameLayout
+            android:id="@id/smartisan_rom_bottom_menu_content_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <GridView
+                android:id="@id/smartisan_rom_bottom_menu_grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:listSelector="@null" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/smartisan_rom_bottom_menu_line" />
+    </LinearLayout>
+</FrameLayout>

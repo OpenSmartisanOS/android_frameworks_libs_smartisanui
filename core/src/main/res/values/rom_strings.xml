@@ -15,4 +15,14 @@
     <string name="smartisan_tab_unpin_replacing">Move to More and replace an item</string>
     <string name="smartisan_tab_item_moved">Moved %1$s</string>
     <string name="smartisan_tab_items_swapped">Swapped %1$s and %2$s</string>
+    <string name="smartisan_bottom_menu_title">Menu</string>
+    <string name="smartisan_rom_btn_cancel">Cancel</string>
+    <string name="smartisan_rom_btn_done">Done</string>
+    <string name="smartisan_rom_date_picker_day">Day</string>
+    <string name="smartisan_rom_date_picker_month">Month</string>
+    <string name="smartisan_rom_date_picker_year">Year</string>
+    <string name="smartisan_rom_date_time_picker_hour">时</string>
+    <string name="smartisan_rom_date_time_picker_minute">分</string>
+    <string name="smartisan_rom_select_time">Set Time</string>
+    <string name="smartisan_rom_indicator_content_description">Page %1$d, total %2$d pages, swipe left or right to change page.</string>
 </resources>

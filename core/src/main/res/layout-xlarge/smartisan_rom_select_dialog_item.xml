@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct namespace remap of layout-xlarge/select_dialog_item_smartisanos.xml. -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/smartisan_rom_alert_item_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:gravity="center_vertical"
+    android:minHeight="64dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:textColor="@color/smartisan_rom_alert_list_text"
+    android:textSize="15sp" />

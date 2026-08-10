@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="smartisan_rom_popup_menu_title_text_color">#99000000</color>
+    <dimen name="smartisan_rom_revone_list_popup_menu_vertical_margin">6dp</dimen>
+    <string name="smartisan_rom_popup_menu_delete">Delete</string>
+
+    <style name="smartisan_rom_StandardIconStyle">
+        <item name="android:layout_width">@dimen/smartisan_rom_standard_icon_size</item>
+        <item name="android:layout_height">@dimen/smartisan_rom_standard_icon_size</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+</resources>

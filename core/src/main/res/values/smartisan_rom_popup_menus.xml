@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="smartisan_rom_bottom_menu_scrim">#9a000000</color>
+    <color name="smartisan_rom_bottom_menu_line">#e2e2e2</color>
+    <color name="smartisan_rom_bottom_menu_text">#9a000000</color>
+    <color name="smartisan_rom_bottom_menu_divider">#14000000</color>
+    <color name="smartisan_rom_bottom_menu_land_surface_color">#f5f5f5</color>
+    <color name="smartisan_rom_grid_indicator_page">#1a000000</color>
+    <color name="smartisan_rom_grid_indicator_fill">#99000000</color>
+
+    <drawable name="smartisan_rom_bottom_menu_land_surface">
+        @color/smartisan_rom_bottom_menu_land_surface_color
+    </drawable>
+
+    <dimen name="smartisan_rom_popup_grid_menu_default_width">336dp</dimen>
+    <dimen name="smartisan_rom_popup_grid_menu_margin">12dp</dimen>
+    <dimen name="smartisan_rom_grid_indicator_radius">3dp</dimen>
+</resources>

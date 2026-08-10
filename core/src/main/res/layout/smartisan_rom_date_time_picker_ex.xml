@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/smartisan_rom_pickers" android:layout_width="match_parent" android:layout_height="@dimen/smartisan_rom_date_time_picker_height">
+    <org.opensmartisanos.ui.widget.SmartisanNumberPickerEx android:layout_gravity="center" android:id="@id/smartisan_rom_date" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="match_parent" android:layout_weight="1.0" />
+    <include layout="@layout/smartisan_rom_date_time_picker_divider_layout" />
+    <org.opensmartisanos.ui.widget.SmartisanNumberPickerEx android:layout_gravity="center" android:id="@id/smartisan_rom_hour" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="match_parent" android:layout_weight="1.0" />
+    <include layout="@layout/smartisan_rom_date_time_picker_divider_layout" />
+    <org.opensmartisanos.ui.widget.SmartisanNumberPickerEx android:layout_gravity="center" android:id="@id/smartisan_rom_minute" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="match_parent" android:layout_weight="1.0" />
+</LinearLayout>

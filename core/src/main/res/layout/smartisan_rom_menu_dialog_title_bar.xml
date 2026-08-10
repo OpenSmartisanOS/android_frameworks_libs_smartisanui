@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct public-SDK namespace remap of R2 menu_dialog_title_bar.xml. -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:id="@id/smartisan_rom_menu_dialog_title_bar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/smartisan_rom_bottom_sheet_title_bar_bg"
+        android:minHeight="48dp">
+
+        <ImageView
+            android:id="@id/smartisan_rom_menu_dialog_cancel_left"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/smartisan_rom_bar_margin_edge"
+            android:contentDescription="@android:string/cancel"
+            android:scaleType="centerInside"
+            android:src="@drawable/smartisan_rom_standard_icon_cancel_selector"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@id/smartisan_rom_menu_dialog_cancel_right"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/smartisan_rom_bar_margin_edge"
+            android:contentDescription="@android:string/cancel"
+            android:scaleType="centerInside"
+            android:src="@drawable/smartisan_rom_standard_icon_cancel_selector" />
+
+        <TextView
+            android:id="@id/smartisan_rom_menu_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@id/smartisan_rom_menu_dialog_cancel_right"
+            android:layout_toRightOf="@id/smartisan_rom_menu_dialog_cancel_left"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:textColor="@color/smartisan_rom_menu_dialog_title_text"
+            android:textSize="13.5sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</merge>

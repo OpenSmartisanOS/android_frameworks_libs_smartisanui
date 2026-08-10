@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Density-safe remap of the R2 sw432 override (1080px at 400dpi). -->
+    <dimen name="smartisan_rom_time_picker_width">432dp</dimen>
+</resources>

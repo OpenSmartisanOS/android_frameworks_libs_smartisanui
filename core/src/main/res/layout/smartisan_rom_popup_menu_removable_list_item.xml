@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/smartisan_rom_popup_list_menu_item_height">
+
+        <ImageView
+            android:id="@id/smartisan_rom_menu_icon"
+            android:layout_width="44dp"
+            android:layout_height="@dimen/smartisan_rom_popup_list_menu_item_height"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside" />
+
+        <FrameLayout
+            android:id="@id/smartisan_rom_menu_closed"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/smartisan_rom_popup_menu_delete">
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/smartisan_rom_menu_item_close" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@id/smartisan_rom_menu_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@id/smartisan_rom_menu_closed"
+            android:layout_toRightOf="@id/smartisan_rom_menu_icon"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/smartisan_rom_popup_menu_title_text_color"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</RelativeLayout>

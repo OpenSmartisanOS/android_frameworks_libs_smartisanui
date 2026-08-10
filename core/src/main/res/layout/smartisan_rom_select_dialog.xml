@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct public-SDK remap of select_dialog_smartisanos.xml. -->
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/smartisan_rom_alert_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:cacheColorHint="@null"
+    android:divider="@drawable/smartisan_rom_alert_list_divider"
+    android:listSelector="@drawable/smartisan_rom_alert_list_selector"
+    android:overScrollMode="ifContentScrolls"
+    android:scrollbars="vertical" />

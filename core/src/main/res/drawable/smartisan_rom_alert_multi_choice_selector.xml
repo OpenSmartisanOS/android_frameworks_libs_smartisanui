@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct namespace remap of selector_checkbox_smartisanos_light.xml. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_window_focused="false" android:state_enabled="true"
+        android:state_checked="true" android:drawable="@drawable/smartisan_rom_alert_check_box_on" />
+    <item android:state_window_focused="false" android:state_enabled="true"
+        android:state_checked="false" android:drawable="@drawable/smartisan_rom_alert_check_box_off" />
+    <item android:state_enabled="true" android:state_checked="true" android:state_pressed="true"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_on_pressed" />
+    <item android:state_enabled="true" android:state_checked="false" android:state_pressed="true"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_off" />
+    <item android:state_focused="true" android:state_enabled="true" android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_on_pressed" />
+    <item android:state_focused="true" android:state_enabled="true" android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_off" />
+    <item android:state_enabled="true" android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_off" />
+    <item android:state_enabled="true" android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_on" />
+    <item android:state_window_focused="false" android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_on_disabled" />
+    <item android:state_window_focused="false" android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_off_disabled" />
+    <item android:state_focused="true" android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_on_disabled" />
+    <item android:state_focused="true" android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_off_disabled" />
+    <item android:state_checked="false"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_off_disabled" />
+    <item android:state_checked="true"
+        android:drawable="@drawable/smartisan_rom_alert_check_box_on_disabled" />
+</selector>

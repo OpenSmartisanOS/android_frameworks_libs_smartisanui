@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Exact R2 landscape override. -->
+    <dimen name="smartisan_rom_menu_dialog_horizontal_distance">80dp</dimen>
+</resources>

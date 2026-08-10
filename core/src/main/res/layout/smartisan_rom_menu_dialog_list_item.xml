@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct public-SDK namespace remap of R2 menu_dialog_list_item.xml. -->
+<org.opensmartisanos.ui.widget.SmartisanShadowButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.SmartisanUi.MenuDialog.Item"
+    android:layout_width="match_parent"
+    android:singleLine="true" />

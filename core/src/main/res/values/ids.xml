@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="smartisan_rom_shadow_divider" type="id" />
+    <item name="smartisan_rom_app_info_icon" type="id" />
+    <item name="smartisan_rom_app_info_title" type="id" />
+    <item name="smartisan_rom_app_info_summary" type="id" />
+    <item name="smartisan_rom_section_primary_title" type="id" />
+    <item name="smartisan_rom_section_subtitle" type="id" />
+    <item name="smartisan_rom_section_message" type="id" />
+    <item name="smartisan_rom_item_check" type="id" />
+    <item name="smartisan_rom_text_layout" type="id" />
     <item name="smartisan_rom_container" type="id" />
     <item name="smartisan_rom_right_view_component" type="id" />
     <item name="smartisan_rom_left_button" type="id" />
@@ -47,4 +56,59 @@
     <item name="smartisan_tab_action_move_earlier" type="id" />
     <item name="smartisan_tab_action_move_later" type="id" />
     <item name="smartisan_tab_action_swap_zone" type="id" />
+    <item name="smartisan_rom_pickers" type="id" />
+    <item name="smartisan_rom_year" type="id" />
+    <item name="smartisan_rom_month" type="id" />
+    <item name="smartisan_rom_day" type="id" />
+    <item name="smartisan_rom_date" type="id" />
+    <item name="smartisan_rom_hour" type="id" />
+    <item name="smartisan_rom_minute" type="id" />
+    <item name="smartisan_rom_amPm" type="id" />
+    <item name="smartisan_rom_date_picker" type="id" />
+    <item name="smartisan_rom_time_picker" type="id" />
+    <item name="smartisan_rom_date_time_picker" type="id" />
+    <item name="smartisan_rom_picker_container" type="id" />
+    <item name="smartisan_rom_menu_dialog_title_bar" type="id" />
+    <item name="smartisan_rom_menu_dialog_title_bar_parent" type="id" />
+    <item name="smartisan_rom_menu_dialog_content_panel" type="id" />
+    <item name="smartisan_rom_menu_dialog_content_list" type="id" />
+    <item name="smartisan_rom_menu_dialog_ok" type="id" />
+    <item name="smartisan_rom_menu_dialog_title_bar_container" type="id" />
+    <item name="smartisan_rom_menu_dialog_cancel_left" type="id" />
+    <item name="smartisan_rom_menu_dialog_cancel_right" type="id" />
+    <item name="smartisan_rom_menu_dialog_title" type="id" />
+    <item name="smartisan_rom_alert_parent_panel" type="id" />
+    <item name="smartisan_rom_alert_top_panel" type="id" />
+    <item name="smartisan_rom_alert_title_template" type="id" />
+    <item name="smartisan_rom_alert_icon" type="id" />
+    <item name="smartisan_rom_alert_title" type="id" />
+    <item name="smartisan_rom_alert_content_panel" type="id" />
+    <item name="smartisan_rom_alert_scroll_view" type="id" />
+    <item name="smartisan_rom_alert_message" type="id" />
+    <item name="smartisan_rom_alert_custom_panel" type="id" />
+    <item name="smartisan_rom_alert_custom" type="id" />
+    <item name="smartisan_rom_alert_button_panel" type="id" />
+    <item name="smartisan_rom_alert_button_negative" type="id" />
+    <item name="smartisan_rom_alert_button_neutral" type="id" />
+    <item name="smartisan_rom_alert_button_positive" type="id" />
+    <item name="smartisan_rom_alert_list" type="id" />
+    <item name="smartisan_rom_alert_item_text" type="id" />
+    <item name="smartisan_rom_dialog_pattern_edit_text" type="id" />
+    <item name="smartisan_rom_dialog_pattern_edit_text_tips" type="id" />
+    <item name="smartisan_rom_bottom_menu_container" type="id" />
+    <item name="smartisan_rom_bottom_menu_parent_panel" type="id" />
+    <item name="smartisan_rom_bottom_menu_title_bar" type="id" />
+    <item name="smartisan_rom_bottom_menu_content_panel" type="id" />
+    <item name="smartisan_rom_bottom_menu_grid" type="id" />
+    <item name="smartisan_rom_bottom_menu_item" type="id" />
+    <item name="smartisan_rom_bottom_menu_icon" type="id" />
+    <item name="smartisan_rom_bottom_menu_text" type="id" />
+    <item name="smartisan_rom_grid_menu_pager" type="id" />
+    <item name="smartisan_rom_grid_menu_indicator" type="id" />
+    <item name="smartisan_rom_grid_menu_grid" type="id" />
+    <item name="smartisan_rom_grid_menu_icon" type="id" />
+    <item name="smartisan_rom_menu_icon" type="id" />
+    <item name="smartisan_rom_menu_selected" type="id" />
+    <item name="smartisan_rom_menu_closed" type="id" />
+    <item name="smartisan_rom_spinner_text" type="id" />
 </resources>

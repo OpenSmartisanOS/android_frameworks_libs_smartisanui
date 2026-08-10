@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Public-SDK namespace remap of SettingsSmartisan dlg_pattern_edittext_layout.xml. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/smartisan_rom_dialog_pattern_section_vertical_space"
+    android:paddingBottom="@dimen/smartisan_rom_dialog_pattern_section_vertical_space">
+
+    <EditText
+        android:id="@id/smartisan_rom_dialog_pattern_edit_text"
+        style="@style/Widget.SmartisanUi.DialogPattern.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <org.opensmartisanos.ui.widget.SmartisanTipsBar
+        android:id="@id/smartisan_rom_dialog_pattern_edit_text_tips"
+        style="@style/Widget.SmartisanUi.DialogPattern.Tips"
+        android:layout_marginBottom="0dp"
+        android:visibility="gone" />
+</LinearLayout>

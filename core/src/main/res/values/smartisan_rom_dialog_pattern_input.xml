@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Direct value remap of DialogPatternEditText/EditTextStyle from R2. -->
+    <dimen name="smartisan_rom_dialog_pattern_section_vertical_space">18dp</dimen>
+    <dimen name="smartisan_rom_dialog_pattern_edit_text_margin_horizontal">18dp</dimen>
+    <dimen name="smartisan_rom_dialog_pattern_edit_text_padding_horizontal">10dp</dimen>
+    <dimen name="smartisan_rom_dialog_pattern_tips_margin_top">3dp</dimen>
+
+    <style name="Widget.SmartisanUi.DialogPattern.EditText"
+        parent="@android:style/Widget.EditText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textColorHint">#26000000</item>
+        <item name="android:background">@drawable/smartisan_rom_dialog_pattern_edit_text_bg</item>
+        <item name="android:paddingLeft">@dimen/smartisan_rom_dialog_pattern_edit_text_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/smartisan_rom_dialog_pattern_edit_text_padding_horizontal</item>
+        <item name="android:layout_marginLeft">@dimen/smartisan_rom_dialog_pattern_edit_text_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/smartisan_rom_dialog_pattern_edit_text_margin_horizontal</item>
+    </style>
+
+    <!-- Public-SDK counterpart of SettingsSmartisan's SettingItemTipsStyle. -->
+    <style name="Widget.SmartisanUi.DialogPattern.Tips"
+        parent="SmartisanTipsBarAppearance">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/smartisan_rom_dialog_pattern_tips_margin_top</item>
+    </style>
+</resources>

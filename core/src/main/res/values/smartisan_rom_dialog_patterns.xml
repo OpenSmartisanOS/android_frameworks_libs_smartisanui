@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Direct public-SDK resource remap of Smartisan OS dialog content patterns. -->
+    <dimen name="smartisan_rom_dialog_pattern_padding_start">20dp</dimen>
+    <dimen name="smartisan_rom_dialog_pattern_padding_end">18dp</dimen>
+    <dimen name="smartisan_rom_dialog_single_choice_height">60dp</dimen>
+
+    <color name="smartisan_rom_dialog_pattern_secondary_text">#66000000</color>
+    <color name="smartisan_rom_dialog_single_choice_summary_pressed_text">#4cffffff</color>
+
+    <style name="Widget.SmartisanUi.DialogPattern.PrimaryText" parent="">
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#9a000000</item>
+    </style>
+    <style name="Widget.SmartisanUi.DialogPattern.SecondaryText" parent="">
+        <item name="android:textSize">12.5sp</item>
+        <item name="android:textColor">@color/smartisan_rom_dialog_pattern_secondary_text</item>
+    </style>
+    <style name="Widget.SmartisanUi.DialogPattern.SectionTitle" parent="">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#9a000000</item>
+        <item name="android:paddingLeft">@dimen/smartisan_rom_dialog_pattern_padding_start</item>
+        <item name="android:paddingRight">@dimen/smartisan_rom_dialog_pattern_padding_end</item>
+    </style>
+    <style name="Widget.SmartisanUi.DialogPattern.SectionSubtitle"
+        parent="Widget.SmartisanUi.DialogPattern.SectionTitle">
+        <item name="android:textSize">12.5sp</item>
+        <item name="android:textColor">@color/smartisan_rom_dialog_pattern_secondary_text</item>
+    </style>
+    <style name="Widget.SmartisanUi.DialogPattern.SectionMessage" parent="">
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">#9a000000</item>
+        <item name="android:paddingLeft">@dimen/smartisan_rom_dialog_pattern_padding_start</item>
+        <item name="android:paddingRight">@dimen/smartisan_rom_dialog_pattern_padding_end</item>
+    </style>
+</resources>

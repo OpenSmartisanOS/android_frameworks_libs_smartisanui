@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="bottom" android:layout_width="match_parent" android:layout_height="match_parent">
+    <org.opensmartisanos.ui.widget.SmartisanDialogTitleBar android:id="@id/smartisan_rom_menu_dialog_title_bar_parent" android:layout_width="match_parent" android:layout_height="wrap_content" app:smartisanShowDivider="false" />
+    <org.opensmartisanos.ui.widget.SmartisanDateTimePicker android:id="@id/smartisan_rom_date_time_picker" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/smartisan_rom_menu_dialog_title_bar_parent" />
+</RelativeLayout>

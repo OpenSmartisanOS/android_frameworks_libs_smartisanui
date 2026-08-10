@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct value remap of primary_text_smartisanos_dark.xml. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false" android:color="#4cffffff" />
+    <item android:state_window_focused="false" android:color="#c0ffffff" />
+    <item android:state_pressed="true" android:color="#ffffffff" />
+    <item android:state_selected="true" android:color="#c0ffffff" />
+    <item android:state_activated="true" android:color="#c0ffffff" />
+    <item android:color="#c0ffffff" />
+</selector>

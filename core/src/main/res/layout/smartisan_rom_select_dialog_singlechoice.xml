@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct namespace remap of select_dialog_singlechoice_smartisanos.xml. -->
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/smartisan_rom_alert_item_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:checkMark="@drawable/smartisan_rom_alert_single_choice_selector"
+    android:checkMarkTint="@null"
+    android:ellipsize="end"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/smartisan_rom_alert_dialog_list_item_height"
+    android:paddingStart="20dp"
+    android:paddingEnd="6dp"
+    android:singleLine="true"
+    android:textColor="@color/smartisan_rom_alert_list_text"
+    android:textSize="15sp" />

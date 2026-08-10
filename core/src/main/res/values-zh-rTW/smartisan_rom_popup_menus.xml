@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="smartisan_rom_indicator_content_description">第%1$d頁，共%2$d頁，左右滑動翻頁</string>
+</resources>

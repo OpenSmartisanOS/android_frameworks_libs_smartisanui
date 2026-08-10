@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct namespace remap of list_selector_background_transition_smartisanos_dark.xml. -->
+<transition xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/smartisan_rom_alert_list_pressed" />
+    <item android:drawable="@drawable/smartisan_rom_alert_list_longpressed" />
+</transition>

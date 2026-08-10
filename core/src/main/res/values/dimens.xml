@@ -75,4 +75,17 @@
     <dimen name="smartisan_rom_blankview_actionbtn_margintop">84dp</dimen>
     <dimen name="smartisan_rom_small_blank_image_size">60dp</dimen>
     <dimen name="smartisan_rom_circle_progress_view_size">90dp</dimen>
+    <dimen name="smartisan_rom_date_picker_height">208dp</dimen>
+    <dimen name="smartisan_rom_date_time_picker_height">220dp</dimen>
+    <dimen name="smartisan_rom_number_picker_text_padding">10dp</dimen>
+    <dimen name="smartisan_rom_numberpicker_highlight_suffix_font_size">12sp</dimen>
+    <dimen name="smartisan_rom_numberpicker_highlight_suffix_margin">12dp</dimen>
+    <dimen name="smartisan_rom_smartisan_datepicker_divider_width">2px</dimen>
+    <dimen name="smartisan_rom_time_picker_width">360dp</dimen>
+    <!-- Directly remapped from framework-res.apk's Smartisan alert resources. -->
+    <dimen name="smartisan_rom_alert_dialog_title_height">48dp</dimen>
+    <dimen name="smartisan_rom_alert_dialog_button_bar_height">48dp</dimen>
+    <dimen name="smartisan_rom_alert_dialog_list_item_height">48dp</dimen>
+    <dimen name="smartisan_rom_alert_dialog_min_width_major">65%</dimen>
+    <dimen name="smartisan_rom_alert_dialog_min_width_minor">100%</dimen>
 </resources>

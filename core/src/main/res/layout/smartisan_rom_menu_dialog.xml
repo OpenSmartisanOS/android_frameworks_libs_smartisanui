@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Direct public-SDK namespace remap of R2 menu_dialog.xml. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <org.opensmartisanos.ui.widget.SmartisanDialogTitleBar
+        android:id="@id/smartisan_rom_menu_dialog_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:smartisanShowDivider="true" />
+
+    <LinearLayout
+        android:id="@id/smartisan_rom_menu_dialog_content_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5f5"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@id/smartisan_rom_menu_dialog_content_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="18dp"
+            android:listSelector="@android:color/transparent"
+            android:overScrollMode="never"
+            android:paddingLeft="@dimen/smartisan_rom_menu_dialog_horizontal_distance"
+            android:paddingTop="24dp"
+            android:paddingRight="@dimen/smartisan_rom_menu_dialog_horizontal_distance"
+            android:paddingBottom="24dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            android:visibility="gone" />
+
+        <org.opensmartisanos.ui.widget.SmartisanShadowButton
+            android:id="@id/smartisan_rom_menu_dialog_ok"
+            style="@style/Widget.SmartisanUi.MenuDialog.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/smartisan_rom_menu_dialog_horizontal_distance"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="@dimen/smartisan_rom_menu_dialog_horizontal_distance"
+            android:layout_marginBottom="24dp"
+            android:singleLine="true"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="18dp"
+    android:paddingBottom="@dimen/smartisan_rom_popup_grid_menu_margin"
+    style="@style/smartisan_rom_PopupMenuStyle">
+
+    <org.opensmartisanos.ui.internal.RomPagedView
+        android:id="@id/smartisan_rom_grid_menu_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <org.opensmartisanos.ui.internal.RomPageIndicator
+        android:id="@id/smartisan_rom_grid_menu_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" />
+</LinearLayout>

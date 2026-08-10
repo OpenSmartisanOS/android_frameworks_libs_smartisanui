@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/smartisan_rom_grid_menu_grid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/smartisan_rom_popup_grid_menu_margin"
+    android:paddingRight="@dimen/smartisan_rom_popup_grid_menu_margin"
+    android:listSelector="@android:color/transparent"
+    android:overScrollMode="never"
+    android:verticalSpacing="6dp" />

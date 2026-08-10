@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@id/smartisan_rom_menu_icon"
+        android:duplicateParentState="true"
+        android:layout_centerVertical="true"
+        style="@style/smartisan_rom_StandardIconStyle" />
+
+    <TextView
+        android:id="@id/smartisan_rom_menu_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6dp"
+        android:layout_toRightOf="@id/smartisan_rom_menu_icon"
+        android:duplicateParentState="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@color/smartisan_rom_popup_menu_title_text_color"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+</merge>

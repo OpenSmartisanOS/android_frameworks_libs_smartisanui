@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/smartisan_rom_popup_list_menu_item_height">
+
+        <ImageView
+            android:id="@id/smartisan_rom_menu_icon"
+            android:layout_width="44dp"
+            android:layout_height="@dimen/smartisan_rom_popup_list_menu_item_height"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside" />
+
+        <ImageView
+            android:id="@id/smartisan_rom_menu_selected"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/smartisan_rom_selector_radio_choice"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@id/smartisan_rom_menu_selected"
+            android:layout_toRightOf="@id/smartisan_rom_menu_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@id/smartisan_rom_menu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/smartisan_rom_popup_menu_title_text_color"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@id/smartisan_rom_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="#4d000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

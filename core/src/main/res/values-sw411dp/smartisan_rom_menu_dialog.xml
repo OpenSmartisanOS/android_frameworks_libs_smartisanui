@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Exact R2 large-phone overrides. -->
+    <dimen name="smartisan_rom_menu_dialog_recent_padding">50dp</dimen>
+    <dimen name="smartisan_rom_menu_dialog_recent_padding_left">80dp</dimen>
+    <!-- R2 uses 1440px on its 560dpi sw411 display; keep the same 411.43dp intent
+         without baking one device's physical resolution into the public SDK. -->
+    <dimen name="smartisan_rom_time_picker_width">411.43dp</dimen>
+</resources>

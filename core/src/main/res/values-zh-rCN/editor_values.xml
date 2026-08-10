@@ -4,4 +4,14 @@
     <string name="smartisan_rom_hide_password">隐藏密码</string>
     <string name="smartisan_rom_quick_delete">清空</string>
     <string name="smartisan_rom_show_password">显示密码</string>
+    <string name="smartisan_bottom_menu_title">菜单</string>
+    <string name="smartisan_rom_btn_cancel">取消</string>
+    <string name="smartisan_rom_btn_done">完成</string>
+    <string name="smartisan_rom_date_picker_day">日</string>
+    <string name="smartisan_rom_date_picker_month">月</string>
+    <string name="smartisan_rom_date_picker_year">年</string>
+    <string name="smartisan_rom_date_time_picker_hour">时</string>
+    <string name="smartisan_rom_date_time_picker_minute">分</string>
+    <string name="smartisan_rom_select_time">设置时间</string>
+    <string name="smartisan_rom_indicator_content_description">第%1$d页，共%2$d页，左右滑动翻页</string>
 </resources>

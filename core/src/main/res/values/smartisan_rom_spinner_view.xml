@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="smartisan_rom_spinner_title_text">#666666</color>
+    <color name="smartisan_rom_spinner_subtitle_text">#4c000000</color>
+
+    <dimen name="smartisan_rom_spinner_title_text_size">20sp</dimen>
+    <dimen name="smartisan_rom_spinner_subtitle_text_size">10sp</dimen>
+    <dimen name="smartisan_rom_spinner_small_blank_spacing_width">6dp</dimen>
+    <dimen name="smartisan_rom_spinner_small_icon_width">22dp</dimen>
+    <dimen name="smartisan_rom_spinner_view_text_width">152dp</dimen>
+
+    <style name="Widget.SmartisanUi.WheelTextView" parent="">
+        <item name="android:textSize">@dimen/smartisan_rom_spinner_title_text_size</item>
+        <item name="android:textColor">@color/smartisan_rom_spinner_title_text</item>
+    </style>
+</resources>
