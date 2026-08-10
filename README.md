@@ -4,8 +4,27 @@ Shared Smartisan UI components ported from the Smartisan OS 8.5.3 R2 ROM for Ope
 
 The library provides a single visual and behavioral foundation for OpenSmartisanOS
 system and third-party applications. Core controls retain the ROM rendering,
-measurement, state and interaction behavior; extracted resources are hash-pinned
-under `core/provenance`.
+measurement, state and interaction behavior. Required original resources are vendored directly in
+`core/src/main/res`, so published AARs and source-tree builds never depend on a ROM extraction step;
+their artifact, source and destination hashes are pinned under `core/provenance` for offline audit.
+
+The ordinary SDK boundary check verifies every vendored destination and closes the complete Core
+resource tree against the provenance manifests plus an immutable pre-port commit. It does not need
+the ROM. Maintainers with licensed R2 artifacts can additionally verify the artifact files and
+canonical decoded sources with:
+
+```shell
+python3 tools/rom/audit_r2_resources.py \
+  --framework-res-apk /path/to/framework-res.apk \
+  --framework-smartisanos-res-apk /path/to/framework-smartisanos-res.apk \
+  --smartisanos-jar /path/to/smartisanos.jar \
+  --framework-jar /path/to/framework.jar \
+  --jadx /path/to/jadx-1.5.6/bin/jadx \
+  --settings-apk /path/to/SettingsSmartisan.apk \
+  --decoded-framework-res /path/to/decoded/framework-res \
+  --decoded-smartisanos-res /path/to/decoded/framework-smartisanos-res \
+  --decoded-settings /path/to/decoded/SettingsSmartisan
+```
 
 ## Modules
 
