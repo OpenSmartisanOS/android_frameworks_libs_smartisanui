@@ -8,12 +8,10 @@
         <item name="android:statusBarColor">@color/smartisan_catalog_system_bar</item>
         <item name="android:navigationBarColor">@color/smartisan_catalog_page_background</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="android:windowLightNavigationBar">false</item>
         <item name="smartisanCheckBoxStyle">@style/Widget.SmartisanUi.CheckBox</item>
         <item name="smartisanRadioButtonStyle">@style/Widget.SmartisanUi.RadioButton</item>
         <item name="smartisanProgressBarStyle">@style/Widget.SmartisanUi.ProgressBar.Horizontal</item>
         <item name="smartisanCircularProgressBarStyle">@style/Widget.SmartisanUi.ProgressBar.Circular.Medium</item>
         <item name="smartisanSpinnerStyle">@style/Widget.SmartisanUi.Spinner</item>
-        <item name="smartisanBottomSheetDialogTheme">@style/ThemeOverlay.SmartisanUi.BottomSheetDialog</item>
     </style>
 </resources>

@@ -6,6 +6,5 @@
         <item name="android:statusBarColor">@color/smartisan_catalog_system_bar</item>
         <item name="android:navigationBarColor">@color/smartisan_catalog_page_background</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowLightNavigationBar">true</item>
     </style>
 </resources>
