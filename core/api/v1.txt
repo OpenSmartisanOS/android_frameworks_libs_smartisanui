@@ -1,39 +1,29 @@
 Compiled from "SmartisanUi.java"
 public final class org.opensmartisanos.ui.SmartisanUi {
-  public static final int API_VERSION = 3;
+  public static final int API_VERSION = 1;
 }
 Compiled from "SmartisanAlertDialog.java"
 public class org.opensmartisanos.ui.app.SmartisanAlertDialog extends android.app.Dialog {
   public static final int BUTTON_POSITIVE = -1;
   public static final int BUTTON_NEGATIVE = -2;
   public static final int BUTTON_NEUTRAL = -3;
-  public boolean onKeyDown(int, android.view.KeyEvent);
-  public boolean onKeyUp(int, android.view.KeyEvent);
   public android.os.Bundle onSaveInstanceState();
   public android.widget.Button getButton(int);
   public android.widget.ListView getListView();
   public android.view.View getCustomView();
-  public void setTitle(java.lang.CharSequence);
-  public void setMessage(java.lang.CharSequence);
-  public void setIcon(int);
-  public void setIcon(android.graphics.drawable.Drawable);
 }
 Compiled from "SmartisanAlertDialog.java"
 public final class org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder {
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder(android.content.Context);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder(android.content.Context, int);
   public android.content.Context getContext();
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setTitle(int);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setTitle(java.lang.CharSequence);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setCustomTitle(android.view.View);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMessage(int);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMessage(java.lang.CharSequence);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setIcon(int);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setIcon(android.graphics.drawable.Drawable);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setIconAttribute(int);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setView(int);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setView(android.view.View);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setView(android.view.View, int, int, int, int);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setPositiveButton(int, android.content.DialogInterface$OnClickListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setPositiveButton(java.lang.CharSequence, android.content.DialogInterface$OnClickListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setNegativeButton(int, android.content.DialogInterface$OnClickListener);
@@ -44,28 +34,19 @@ public final class org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder {
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setItems(java.lang.CharSequence[], android.content.DialogInterface$OnClickListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setItems(int, android.content.DialogInterface$OnClickListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setAdapter(android.widget.ListAdapter, android.content.DialogInterface$OnClickListener);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setCursor(android.database.Cursor, android.content.DialogInterface$OnClickListener, java.lang.String);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setSingleChoiceItems(java.lang.CharSequence[], int, android.content.DialogInterface$OnClickListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setSingleChoiceItems(int, int, android.content.DialogInterface$OnClickListener);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setSingleChoiceItems(android.widget.ListAdapter, int, android.content.DialogInterface$OnClickListener);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setSingleChoiceItems(android.database.Cursor, int, java.lang.String, android.content.DialogInterface$OnClickListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMultiChoiceItems(java.lang.CharSequence[], boolean[], android.content.DialogInterface$OnMultiChoiceClickListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMultiChoiceItems(int, boolean[], android.content.DialogInterface$OnMultiChoiceClickListener);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setMultiChoiceItems(android.database.Cursor, java.lang.String, java.lang.String, android.content.DialogInterface$OnMultiChoiceClickListener);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setCancelable(boolean);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setOnCancelListener(android.content.DialogInterface$OnCancelListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setOnDismissListener(android.content.DialogInterface$OnDismissListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setOnShowListener(android.content.DialogInterface$OnShowListener);
-  public org.opensmartisanos.ui.app.SmartisanAlertDialog$Builder setOnKeyListener(android.content.DialogInterface$OnKeyListener);
   public org.opensmartisanos.ui.app.SmartisanAlertDialog create();
   public org.opensmartisanos.ui.app.SmartisanAlertDialog show();
 }
 Compiled from "SmartisanMenuDialog.java"
 public class org.opensmartisanos.ui.app.SmartisanMenuDialog extends android.app.Dialog implements android.content.DialogInterface$OnKeyListener {
-  public static final int LOCATION_APP_BOTTOM = 0;
-  public static final int LOCATION_APP_CENTER = 1;
-  public static final int LOCATION_DISPLAY_CENTER = 2;
   public static final int LOCATION_BOTTOM = 0;
   public static final int LOCATION_CENTER = 1;
   public org.opensmartisanos.ui.app.SmartisanMenuDialog(android.content.Context);
@@ -73,63 +54,27 @@ public class org.opensmartisanos.ui.app.SmartisanMenuDialog extends android.app.
   public void setTitle(int);
   public void setTitle(java.lang.CharSequence);
   public void setTitleSingleLine(boolean);
-  public void setTitleSinleLine(boolean);
-  public void setAdapter(org.opensmartisanos.ui.app.SmartisanMenuDialogListAdapter);
   public void setAdapter(android.widget.ListAdapter);
   public void setAdapter(android.widget.ListAdapter, android.widget.AdapterView$OnItemClickListener);
-  public void setAdaper(org.opensmartisanos.ui.app.SmartisanMenuDialogMultiAdapter, android.widget.AdapterView$OnItemClickListener);
   public android.widget.ListView getListView();
   public org.opensmartisanos.ui.widget.SmartisanDialogTitleBar getTitleBar();
   public void setNegativeButton(android.view.View$OnClickListener);
   public void setNegativeButton(int, android.view.View$OnClickListener);
   public void setNegativeButton(java.lang.CharSequence, android.view.View$OnClickListener);
   public void setNegativeImage(int, android.view.View$OnClickListener);
-  public void setPositiveRedBg(boolean);
-  public void setPositiveBgStyle(org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle);
-  public void setPositiveRedBackground(boolean);
-  public void setPositiveBackgroundStyle(org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle);
   public void setPositiveButton(int, android.view.View$OnClickListener);
   public void setPositiveButton(java.lang.CharSequence, android.view.View$OnClickListener);
   public void setPositiveButtonGone();
-  public void onWindowFocusChanged(boolean);
+  public void setPositiveRedBackground(boolean);
+  public void setPositiveBackgroundStyle(org.opensmartisanos.ui.widget.SmartisanShadowButton$LongButtonStyle);
   public boolean onKey(android.content.DialogInterface, int, android.view.KeyEvent);
-  public void onApplyNavigationBarStatusChange(boolean);
-  public void onConfigurationChanged(android.content.res.Configuration);
   public static android.widget.ListAdapter singleChoiceAdapter(android.content.Context, java.util.List<? extends java.lang.CharSequence>);
   public static android.widget.ListAdapter multiChoiceAdapter(android.content.Context, java.util.List<? extends java.lang.CharSequence>);
-}
-Compiled from "SmartisanMenuDialog.java"
-public interface org.opensmartisanos.ui.app.SmartisanMenuDialog$DialogLocation extends java.lang.annotation.Annotation {
-  public abstract int from();
-  public abstract int to();
-}
-Compiled from "SmartisanMenuDialogListAdapter.java"
-public class org.opensmartisanos.ui.app.SmartisanMenuDialogListAdapter extends android.widget.BaseAdapter {
-  public org.opensmartisanos.ui.app.SmartisanMenuDialogListAdapter(android.content.Context, java.util.List<java.lang.String>, java.util.List<android.view.View$OnClickListener>);
-  public org.opensmartisanos.ui.app.SmartisanMenuDialogListAdapter(android.content.Context, java.util.List<java.lang.String>, java.util.List<android.view.View$OnClickListener>, boolean);
-  public void setDialog(android.app.Dialog);
-  public void setPopupWindow(android.widget.PopupWindow);
-  public int getCount();
-  public java.lang.String getItem(int);
-  public long getItemId(int);
-  public android.view.View getView(int, android.view.View, android.view.ViewGroup);
-  public java.lang.Object getItem(int);
-}
-Compiled from "SmartisanMenuDialogMultiAdapter.java"
-public class org.opensmartisanos.ui.app.SmartisanMenuDialogMultiAdapter extends android.widget.BaseAdapter {
-  public org.opensmartisanos.ui.app.SmartisanMenuDialogMultiAdapter(android.content.Context, java.util.List<java.lang.String>);
-  public org.opensmartisanos.ui.app.SmartisanMenuDialogMultiAdapter(android.content.Context, java.util.List<java.lang.String>, boolean);
-  public int getCount();
-  public java.lang.String getItem(int);
-  public long getItemId(int);
-  public android.view.View getView(int, android.view.View, android.view.ViewGroup);
-  public java.lang.Object getItem(int);
 }
 Compiled from "SmartisanProgressDialog.java"
 public class org.opensmartisanos.ui.app.SmartisanProgressDialog extends android.app.Dialog {
   public org.opensmartisanos.ui.app.SmartisanProgressDialog(android.content.Context);
   public static org.opensmartisanos.ui.app.SmartisanProgressDialog show(android.content.Context, java.lang.CharSequence, java.lang.CharSequence);
-  public void onStart();
   public void setDarkTheme(boolean);
   public void setTitle(int);
   public void setTitle(java.lang.CharSequence);
@@ -138,25 +83,11 @@ public class org.opensmartisanos.ui.app.SmartisanProgressDialog extends android.
   public void setIndeterminateDrawableResource(int);
   public void setIndeterminateDrawable(android.graphics.drawable.Drawable);
   public void setHideProgressBar(boolean);
-  public void setProgress(int);
   public void setBackgroundResource(int);
   public void setBackground(android.graphics.drawable.Drawable);
   public void setSystemUiVisibility(int);
   public void setTitleColor(int);
   public void setMessageColor(int);
-}
-Compiled from "OnTimeSetListener.java"
-public interface org.opensmartisanos.ui.widget.OnTimeSetListener {
-  public abstract void onTimeSet(long);
-}
-Compiled from "SmartisanAbsMenuItem.java"
-public abstract class org.opensmartisanos.ui.widget.SmartisanAbsMenuItem implements org.opensmartisanos.ui.widget.SmartisanMenuItem {
-  public org.opensmartisanos.ui.widget.SmartisanAbsMenuItem();
-  public abstract java.lang.String getTitle();
-  public boolean hasMenuIcon();
-  public void setMenuIcon(android.widget.ImageView);
-  public boolean isSelected();
-  public java.lang.String getSubtitle();
 }
 Compiled from "SmartisanActionButtonGroup.java"
 public class org.opensmartisanos.ui.widget.SmartisanActionButtonGroup extends android.widget.LinearLayout {
@@ -242,46 +173,15 @@ Compiled from "SmartisanBottomBarItemView.java"
 public interface org.opensmartisanos.ui.widget.SmartisanBottomBarItemView$OnCheckedChangeListener {
   public abstract void onCheckedChanged(org.opensmartisanos.ui.widget.SmartisanBottomBarItemView, boolean);
 }
-Compiled from "SmartisanBottomMenuAdapter.java"
-public class org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter extends android.widget.BaseAdapter {
-  public static final int TOP_ITEM = 0;
-  public static final int RIGHT_BOTTOTM_ITEM = 1;
-  public static final int MIDLE_BOTTOM_ITEM = 2;
-  public static final int RIGHT_BOTTOM_ITEM = 1;
-  public static final int MIDDLE_BOTTOM_ITEM = 2;
-  public int mType;
-  public org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter(android.content.Context, java.util.List<? extends android.view.MenuItem>);
-  public int getCount();
-  public android.view.MenuItem getItem(int);
-  public long getItemId(int);
-  public boolean isEnabled(int);
-  public java.lang.Object getItems();
-  public boolean isItemCheck(int);
-  public void setChildHeight(int);
-  public android.view.View getView(int, android.view.View, android.view.ViewGroup);
-  public static int dip2px(android.content.Context, double);
-  public static int getCompatibilityStatusBarHeight(android.content.Context);
-  public java.lang.Object getItem(int);
-}
-Compiled from "SmartisanBottomMenuAdapter.java"
-public interface org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter$ItemPressStateListener {
-  public abstract void onItemPressStateChanged(int, boolean);
-}
-Compiled from "SmartisanBottomMenuPopupWindow.java"
-public class org.opensmartisanos.ui.widget.SmartisanBottomMenuPopupWindow extends android.widget.PopupWindow implements android.view.View$OnClickListener {
-  public static final int MENU_ITEM_COLUMN = 4;
-  public static final int MENU_ITEM_COLUMN_LAND = 3;
-  public org.opensmartisanos.ui.widget.SmartisanBottomMenuPopupWindow(android.content.Context);
-  public void setAdapter(org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter);
-  public org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter getAdapter();
-  public void setNumColumns(int);
-  public void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener);
-  public org.opensmartisanos.ui.widget.SmartisanDialogTitleBar getTitleBar();
-  public android.widget.GridView getGridView();
-  public void onClick(android.view.View);
-  public void showAtLocation(android.view.View, int, int, int);
-  public void showBrowserMenu(android.view.View, android.view.Menu, int, int, int);
-  public void showBrowserMenu(android.view.View, android.view.Menu, int, int, int, int, int);
+Compiled from "SmartisanBottomSheetDialog.java"
+public class org.opensmartisanos.ui.widget.SmartisanBottomSheetDialog extends android.app.Dialog {
+  public org.opensmartisanos.ui.widget.SmartisanBottomSheetDialog(android.content.Context);
+  public org.opensmartisanos.ui.widget.SmartisanBottomSheetDialog(android.content.Context, int);
+  public void setContentView(int);
+  public void setContentView(android.view.View);
+  public void setContentView(android.view.View, android.view.ViewGroup$LayoutParams);
+  public android.widget.FrameLayout getSheetView();
+  public void setSheetHeight(int);
 }
 Compiled from "SmartisanButton.java"
 public class org.opensmartisanos.ui.widget.SmartisanButton extends android.widget.Button {
@@ -346,8 +246,8 @@ public interface org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$Circ
 Compiled from "SmartisanCircleProgressPopup.java"
 public abstract class org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$CircleProgressListenerAdapter implements org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$CircleProgressListener {
   public org.opensmartisanos.ui.widget.SmartisanCircleProgressPopup$CircleProgressListenerAdapter();
-  public void complete();
   public void cancel();
+  public void complete();
 }
 Compiled from "SmartisanCircleProgressView.java"
 public class org.opensmartisanos.ui.widget.SmartisanCircleProgressView extends android.view.View {
@@ -366,196 +266,6 @@ public class org.opensmartisanos.ui.widget.SmartisanCircularProgressBar extends 
   public org.opensmartisanos.ui.widget.SmartisanCircularProgressBar(android.content.Context, android.util.AttributeSet, int);
   public org.opensmartisanos.ui.widget.SmartisanCircularProgressBar(android.content.Context, android.util.AttributeSet, int, int);
 }
-Compiled from "SmartisanDatePicker.java"
-public class org.opensmartisanos.ui.widget.SmartisanDatePicker extends android.widget.FrameLayout {
-  public static final int DEFAULT_BIRTHDAY_START_YEAR = 1800;
-  public org.opensmartisanos.ui.widget.SmartisanDatePicker(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanDatePicker(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanDatePicker(android.content.Context, android.util.AttributeSet, int);
-  public void setMinDate(long);
-  public void setMaxDate(long);
-  public void setEnabled(boolean);
-  public boolean isEnabled();
-  public boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
-  public boolean getSpinnersShown();
-  public void setSpinnersShown(boolean);
-  public void updateDate(int, int, int);
-  public void init(org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType, int, int, int, org.opensmartisanos.ui.widget.SmartisanDatePicker$OnDateChangedListener);
-  public int getYear();
-  public int getMonth();
-  public int getDayOfMonth();
-  public static boolean seemsUnsetYear(int, org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType);
-}
-Compiled from "SmartisanDatePicker.java"
-public final class org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType extends java.lang.Enum<org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType> {
-  public static final org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType EVENT;
-  public static final org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType BIRTHDAY;
-  public static final org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType BIRTHDAY_LUNAR;
-  public static org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType[] values();
-  public static org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType valueOf(java.lang.String);
-}
-Compiled from "SmartisanDatePicker.java"
-public interface org.opensmartisanos.ui.widget.SmartisanDatePicker$OnDateChangedListener {
-  public abstract void onDateChanged(org.opensmartisanos.ui.widget.SmartisanDatePicker, int, int, int, org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType);
-}
-Compiled from "SmartisanDatePickerDialog.java"
-public class org.opensmartisanos.ui.widget.SmartisanDatePickerDialog extends android.app.Dialog implements org.opensmartisanos.ui.widget.SmartisanDatePicker$OnDateChangedListener,android.view.View$OnClickListener {
-  public org.opensmartisanos.ui.widget.SmartisanDatePickerDialog(android.content.Context, org.opensmartisanos.ui.widget.SmartisanDatePickerDialog$OnDateSetListener, int, int, int);
-  public org.opensmartisanos.ui.widget.SmartisanDatePickerDialog(android.content.Context, org.opensmartisanos.ui.widget.SmartisanDatePickerDialog$OnDateSetListener, int, int, int, org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType);
-  public void onDateChanged(org.opensmartisanos.ui.widget.SmartisanDatePicker, int, int, int, org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType);
-  public void onClick(android.view.View);
-  public org.opensmartisanos.ui.widget.SmartisanDatePicker getDatePicker();
-  public void updateDate(int, int, int);
-  public android.os.Bundle onSaveInstanceState();
-  public void onRestoreInstanceState(android.os.Bundle);
-}
-Compiled from "SmartisanDatePickerDialog.java"
-public interface org.opensmartisanos.ui.widget.SmartisanDatePickerDialog$OnDateSetListener {
-  public abstract void onDateSet(org.opensmartisanos.ui.widget.SmartisanDatePicker, int, int, int);
-}
-Compiled from "SmartisanDatePickerEx.java"
-public class org.opensmartisanos.ui.widget.SmartisanDatePickerEx extends android.widget.FrameLayout {
-  public static final int DEFAULT_BIRTHDAY_START_YEAR = 1800;
-  public org.opensmartisanos.ui.widget.SmartisanDatePickerEx(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanDatePickerEx(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanDatePickerEx(android.content.Context, android.util.AttributeSet, int);
-  public void setMinDate(long);
-  public void setMaxDate(long);
-  public void setEnabled(boolean);
-  public boolean isEnabled();
-  public boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
-  public boolean getSpinnersShown();
-  public void setSpinnersShown(boolean);
-  public void updateDate(int, int, int);
-  public void init(org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType, int, int, int, org.opensmartisanos.ui.widget.SmartisanDatePickerEx$OnDateChangedListener);
-  public int getYear();
-  public int getMonth();
-  public int getDayOfMonth();
-  public static boolean seemsUnsetYear(int, org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType);
-}
-Compiled from "SmartisanDatePickerEx.java"
-public final class org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType extends java.lang.Enum<org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType> {
-  public static final org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType EVENT;
-  public static final org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType BIRTHDAY;
-  public static final org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType BIRTHDAY_LUNAR;
-  public static org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType[] values();
-  public static org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType valueOf(java.lang.String);
-}
-Compiled from "SmartisanDatePickerEx.java"
-public interface org.opensmartisanos.ui.widget.SmartisanDatePickerEx$OnDateChangedListener {
-  public abstract void onDateChanged(org.opensmartisanos.ui.widget.SmartisanDatePickerEx, int, int, int, org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType);
-}
-Compiled from "SmartisanDatePickerExDialog.java"
-public class org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog extends android.app.Dialog implements org.opensmartisanos.ui.widget.SmartisanDatePickerEx$OnDateChangedListener,android.view.View$OnClickListener {
-  public org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog(android.content.Context, org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog$OnDateSetListener, int, int, int);
-  public org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog(android.content.Context, org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog$OnDateSetListener, int, int, int, org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType);
-  public void onDateChanged(org.opensmartisanos.ui.widget.SmartisanDatePickerEx, int, int, int, org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType);
-  public void onClick(android.view.View);
-  public org.opensmartisanos.ui.widget.SmartisanDatePickerEx getDatePicker();
-  public void updateDate(int, int, int);
-  public void setRightImageRes(int);
-  public void setLeftImageRes(int);
-  public void setRightButtonText(java.lang.CharSequence);
-  public void setRightButtonText(int);
-  public void setLeftButtonText(java.lang.CharSequence);
-  public void setLeftButtonText(int);
-  public android.os.Bundle onSaveInstanceState();
-  public void onRestoreInstanceState(android.os.Bundle);
-}
-Compiled from "SmartisanDatePickerExDialog.java"
-public interface org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog$OnDateSetListener {
-  public abstract void onDateSet(org.opensmartisanos.ui.widget.SmartisanDatePickerEx, int, int, int);
-}
-Compiled from "SmartisanDateTimePicker.java"
-public class org.opensmartisanos.ui.widget.SmartisanDateTimePicker extends android.widget.FrameLayout {
-  public org.opensmartisanos.ui.widget.SmartisanDateTimePicker(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanDateTimePicker(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanDateTimePicker(android.content.Context, android.util.AttributeSet, int);
-  public long getCurrentMills();
-  public long getMinDate();
-  public long getMaxDate();
-  public void setMinDate(long);
-  public void setCurrentDate(long);
-  public void setMaxDate(long);
-  public void setEnabled(boolean);
-  public boolean isEnabled();
-  public boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
-  public boolean getSpinnersShown();
-  public void setSpinnersShown(boolean);
-  public android.os.Parcelable onSaveInstanceState();
-  public void onRestoreInstanceState(android.os.Parcelable);
-  public void init(long, long, long, org.opensmartisanos.ui.widget.SmartisanDateTimePicker$OnDateChangedListener);
-  public void setOnDateChangedListener(org.opensmartisanos.ui.widget.SmartisanDateTimePicker$OnDateChangedListener);
-}
-Compiled from "SmartisanDateTimePicker.java"
-public interface org.opensmartisanos.ui.widget.SmartisanDateTimePicker$OnDateChangedListener {
-  public abstract void onDateChanged(long);
-}
-Compiled from "SmartisanDateTimePickerDialog.java"
-public class org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog extends android.app.Dialog implements android.view.View$OnClickListener {
-  public org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog(android.content.Context, org.opensmartisanos.ui.widget.OnTimeSetListener, long);
-  public org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog(android.content.Context, org.opensmartisanos.ui.widget.OnTimeSetListener, long, long, long);
-  public void onClick(android.view.View);
-  public org.opensmartisanos.ui.widget.SmartisanDateTimePicker getDateTimePicker();
-  public void updateTitle(java.lang.String);
-  public void setRightImageRes(int);
-  public void setLeftImageRes(int);
-  public void setRightButtonText(java.lang.CharSequence);
-  public void setRightButtonText(int);
-  public void setLeftButtonText(java.lang.CharSequence);
-  public void setLeftButtonText(int);
-  public android.os.Bundle onSaveInstanceState();
-  public void onRestoreInstanceState(android.os.Bundle);
-}
-Compiled from "SmartisanDateTimePickerDialog.java"
-public interface org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog$OnDateTimeSetListener extends org.opensmartisanos.ui.widget.OnTimeSetListener {
-  public abstract void onDateTimeSet(long);
-  public default void onTimeSet(long);
-}
-Compiled from "SmartisanDialogPatternAppInfoLayout.java"
-public class org.opensmartisanos.ui.widget.SmartisanDialogPatternAppInfoLayout extends android.widget.LinearLayout {
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternAppInfoLayout(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternAppInfoLayout(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternAppInfoLayout(android.content.Context, android.util.AttributeSet, int);
-  public void setIcon(int);
-  public void setIcon(android.graphics.drawable.Drawable);
-  public void setTitle(int);
-  public void setTitle(java.lang.CharSequence);
-  public void setSummary(int);
-  public void setSummary(java.lang.CharSequence);
-}
-Compiled from "SmartisanDialogPatternSectionGroup.java"
-public class org.opensmartisanos.ui.widget.SmartisanDialogPatternSectionGroup extends android.widget.LinearLayout {
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternSectionGroup(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternSectionGroup(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternSectionGroup(android.content.Context, android.util.AttributeSet, int);
-  public void setPrimaryTitle(int);
-  public void setPrimaryTitle(java.lang.CharSequence);
-  public void setSubtitle(int);
-  public void setSubtitle(java.lang.CharSequence);
-  public void setMessage(int);
-  public void setMessage(java.lang.CharSequence);
-}
-Compiled from "SmartisanDialogPatternTwoLineSingleChoice.java"
-public class org.opensmartisanos.ui.widget.SmartisanDialogPatternTwoLineSingleChoice extends android.widget.RelativeLayout {
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternTwoLineSingleChoice(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternTwoLineSingleChoice(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanDialogPatternTwoLineSingleChoice(android.content.Context, android.util.AttributeSet, int);
-  public void setTitle(int);
-  public void setTitle(java.lang.CharSequence);
-  public void setSummary(int);
-  public void setSummary(java.lang.CharSequence);
-  public void setChecked(boolean);
-}
 Compiled from "SmartisanDialogTitleBar.java"
 public class org.opensmartisanos.ui.widget.SmartisanDialogTitleBar extends android.widget.LinearLayout {
   public org.opensmartisanos.ui.widget.SmartisanDialogTitleBar(android.content.Context);
@@ -571,18 +281,7 @@ public class org.opensmartisanos.ui.widget.SmartisanDialogTitleBar extends andro
   public void setLeftButtonVisibility(int);
   public void setRightButtonVisibility(int);
   public void setLeftImageViewResource(int);
-  public void setLeftImageViewRes(int);
   public void setRightImageViewResource(int);
-  public void setRightImageRes(int);
-  public void setLeftButtonText(int);
-  public void setLeftButtonText(java.lang.CharSequence);
-  public void setRightButtonText(int);
-  public void setRightButtonText(java.lang.CharSequence);
-  public android.widget.TextView getLeftButton();
-  public android.widget.TextView getRightButton();
-  public int getTopShadowHeight();
-  public android.widget.TextView getLeftButtonView();
-  public android.widget.TextView getRightButtonView();
   public void setOnLeftButtonClickListener(android.view.View$OnClickListener);
   public void setOnRightButtonClickListener(android.view.View$OnClickListener);
   public void setShadowVisible(boolean);
@@ -657,38 +356,6 @@ public class org.opensmartisanos.ui.widget.SmartisanEmptyView extends android.wi
   public android.widget.TextView getPrimaryHintView();
   public android.widget.TextView getSecondaryHintView();
   public android.widget.TextView getActionButton();
-}
-Compiled from "SmartisanGridIconPopupMenu.java"
-public class org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu extends org.opensmartisanos.ui.widget.SmartisanPopupMenu {
-  public org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu(android.content.Context, int);
-  public void setIcons(java.util.ArrayList<android.graphics.drawable.Drawable>);
-  public void setIcons(int[]);
-  public void setIconResources(java.util.List<java.lang.Integer>);
-  public void setOnMenuItemClickListener(org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu$OnMenuItemClickListener);
-  public void dismiss();
-}
-Compiled from "SmartisanGridIconPopupMenu.java"
-public interface org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu$OnMenuItemClickListener {
-  public abstract void onMenuItemClick(int);
-}
-Compiled from "SmartisanGroupMenuAdapter.java"
-public class org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter extends android.widget.BaseAdapter implements android.widget.AdapterView$OnItemClickListener,org.opensmartisanos.ui.widget.SmartisanListPopupMenu$GroupedAdapter {
-  public org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter(android.view.Menu);
-  public int getCount();
-  public android.view.MenuItem getItem(int);
-  public long getItemId(int);
-  public int getViewTypeCount();
-  public int getItemViewType(int);
-  public boolean isEnabled(int);
-  public boolean isGroupStart(int);
-  public void setOnMenuItemActionListener(org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter$OnMenuItemActionListener);
-  public android.view.View getView(int, android.view.View, android.view.ViewGroup);
-  public void onItemClick(android.widget.AdapterView<?>, android.view.View, int, long);
-  public java.lang.Object getItem(int);
-}
-Compiled from "SmartisanGroupMenuAdapter.java"
-public interface org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter$OnMenuItemActionListener {
-  public abstract void onMenuItemAction(android.view.MenuItem);
 }
 Compiled from "SmartisanIconBottomBar.java"
 public class org.opensmartisanos.ui.widget.SmartisanIconBottomBar extends android.widget.LinearLayout {
@@ -851,7 +518,6 @@ public class org.opensmartisanos.ui.widget.SmartisanListPopupMenu extends org.op
   public org.opensmartisanos.ui.widget.SmartisanListPopupMenu(android.content.Context);
   public org.opensmartisanos.ui.widget.SmartisanListPopupMenu(android.content.Context, int);
   public void setAdapter(android.widget.ListAdapter);
-  public void show(int, int, int, int, int);
   public void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener);
   public void setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener);
   public void setBottomActionBarVisible(boolean);
@@ -882,30 +548,6 @@ public class org.opensmartisanos.ui.widget.SmartisanListPopupMenu extends org.op
   public android.widget.Button getRightButton();
   public android.widget.ListView getListView();
 }
-Compiled from "SmartisanListPopupMenu.java"
-public interface org.opensmartisanos.ui.widget.SmartisanListPopupMenu$GroupedAdapter {
-  public abstract boolean isGroupStart(int);
-}
-Compiled from "SmartisanListPopupMenuStandardAdapter.java"
-public class org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter extends android.widget.ArrayAdapter<org.opensmartisanos.ui.widget.SmartisanMenuItem> {
-  public static final int STYLE_SELECTED = 1;
-  public static final int STYLE_REMOVABLE = 2;
-  public org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter(android.content.Context, java.util.List<org.opensmartisanos.ui.widget.SmartisanMenuItem>);
-  public org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter(android.content.Context, int, java.util.List<org.opensmartisanos.ui.widget.SmartisanMenuItem>);
-  public org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter(android.content.Context, org.opensmartisanos.ui.widget.SmartisanMenuItem[]);
-  public org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter(android.content.Context, int, org.opensmartisanos.ui.widget.SmartisanMenuItem[]);
-  public void setMenuItemStyle(int);
-  public void setCloseIconClickListener(android.view.View$OnClickListener);
-  public void setCloseIconVisible(boolean);
-  public android.view.View getView(int, android.view.View, android.view.ViewGroup);
-}
-Compiled from "SmartisanMenuItem.java"
-public interface org.opensmartisanos.ui.widget.SmartisanMenuItem {
-  public abstract java.lang.String getTitle();
-  public abstract boolean hasMenuIcon();
-  public abstract boolean isSelected();
-  public abstract void setMenuIcon(android.widget.ImageView);
-}
 Compiled from "SmartisanMixBottomBar.java"
 public class org.opensmartisanos.ui.widget.SmartisanMixBottomBar extends android.widget.LinearLayout {
   public org.opensmartisanos.ui.widget.SmartisanMixBottomBar(android.content.Context);
@@ -917,117 +559,6 @@ public class org.opensmartisanos.ui.widget.SmartisanMixBottomBar extends android
   public android.view.View getLeftButton();
   public android.view.View getCenterButton();
   public android.view.View getRightButton();
-}
-Compiled from "SmartisanNumberPicker.java"
-public class org.opensmartisanos.ui.widget.SmartisanNumberPicker extends android.widget.LinearLayout {
-  public static final int UNSET_YEAR = 4;
-  public static final org.opensmartisanos.ui.widget.SmartisanNumberPicker$Formatter getTwoDigitFormatter();
-  public void setSoundEnable(boolean);
-  public org.opensmartisanos.ui.widget.SmartisanNumberPicker(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanNumberPicker(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanNumberPicker(android.content.Context, android.util.AttributeSet, int);
-  public boolean onInterceptTouchEvent(android.view.MotionEvent);
-  public boolean onTouchEvent(android.view.MotionEvent);
-  public boolean performClick();
-  public boolean onKeyDown(int, android.view.KeyEvent);
-  public void computeScroll();
-  public void scrollBy(int, int);
-  public void setOnValueChangedListener(org.opensmartisanos.ui.widget.SmartisanNumberPicker$OnValueChangeListener);
-  public void setOnScrollListener(org.opensmartisanos.ui.widget.SmartisanNumberPicker$OnScrollListener);
-  public void setFormatter(org.opensmartisanos.ui.widget.SmartisanNumberPicker$Formatter);
-  public void setValue(int);
-  public boolean getWrapSelectorWheel();
-  public void setWrapSelectorWheel(boolean);
-  public int getValue();
-  public int getMinValue();
-  public void setMinValue(int);
-  public int getMaxValue();
-  public void setMaxValue(int, boolean);
-  public void setMaxValue(int);
-  public void setTextSize(int, int);
-  public void setTextColor(int, int);
-  public java.lang.String[] getDisplayedValues();
-  public void setDisplayedValues(java.lang.String[]);
-  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public android.view.accessibility.AccessibilityNodeProvider getAccessibilityNodeProvider();
-}
-Compiled from "SmartisanNumberPicker.java"
-public interface org.opensmartisanos.ui.widget.SmartisanNumberPicker$Formatter {
-  public abstract java.lang.String format(int);
-}
-Compiled from "SmartisanNumberPicker.java"
-public interface org.opensmartisanos.ui.widget.SmartisanNumberPicker$OnScrollListener {
-  public static final int SCROLL_STATE_FLING = 2;
-  public static final int SCROLL_STATE_IDLE = 0;
-  public static final int SCROLL_STATE_TOUCH_SCROLL = 1;
-  public abstract void onScrollStateChange(org.opensmartisanos.ui.widget.SmartisanNumberPicker, int);
-}
-Compiled from "SmartisanNumberPicker.java"
-public interface org.opensmartisanos.ui.widget.SmartisanNumberPicker$OnValueChangeListener {
-  public abstract void onValueChange(org.opensmartisanos.ui.widget.SmartisanNumberPicker, int, int);
-}
-Compiled from "SmartisanNumberPickerEx.java"
-public class org.opensmartisanos.ui.widget.SmartisanNumberPickerEx extends android.widget.LinearLayout {
-  public static final int UNSET_YEAR = 4;
-  public static final org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$Formatter getTwoDigitFormatter();
-  public void setSoundEnable(boolean);
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerEx(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerEx(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerEx(android.content.Context, android.util.AttributeSet, int);
-  public boolean onInterceptTouchEvent(android.view.MotionEvent);
-  public boolean onTouchEvent(android.view.MotionEvent);
-  public boolean performClick();
-  public boolean onKeyDown(int, android.view.KeyEvent);
-  public void computeScroll();
-  public void scrollBy(int, int);
-  public void setOnValueChangedListener(org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$OnValueChangeListener);
-  public void setOnScrollListener(org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$OnScrollListener);
-  public void setFormatter(org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$Formatter);
-  public void setValue(int);
-  public void setInitialValue(int);
-  public void setHightlightSuffix(java.lang.String);
-  public boolean getWrapSelectorWheel();
-  public void setWrapSelectorWheel(boolean);
-  public int getValue();
-  public int getMinValue();
-  public void setMinValue(int);
-  public int getMaxValue();
-  public void setMaxValue(int, boolean);
-  public void setMaxValue(int);
-  public void setTextSize(int, int);
-  public void setTextColor(int, int);
-  public void setTextSize(int);
-  public void setTextScaleX(int);
-  public void setLineSpacemMultiplier(float);
-  public java.lang.String[] getDisplayedValues();
-  public void setDisplayedValues(java.lang.String[]);
-  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public android.view.accessibility.AccessibilityNodeProvider getAccessibilityNodeProvider();
-}
-Compiled from "SmartisanNumberPickerEx.java"
-public interface org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$Formatter {
-  public abstract java.lang.String format(int);
-}
-Compiled from "SmartisanNumberPickerEx.java"
-public interface org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$OnScrollListener {
-  public static final int SCROLL_STATE_FLING = 2;
-  public static final int SCROLL_STATE_IDLE = 0;
-  public static final int SCROLL_STATE_TOUCH_SCROLL = 1;
-  public abstract void onScrollStateChange(org.opensmartisanos.ui.widget.SmartisanNumberPickerEx, int);
-}
-Compiled from "SmartisanNumberPickerEx.java"
-public interface org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$OnValueChangeListener {
-  public abstract void onValueChange(org.opensmartisanos.ui.widget.SmartisanNumberPickerEx, int, int);
-}
-Compiled from "SmartisanNumberPickerExtended.java"
-public class org.opensmartisanos.ui.widget.SmartisanNumberPickerExtended extends org.opensmartisanos.ui.widget.SmartisanNumberPickerEx {
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerExtended(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerExtended(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerExtended(android.content.Context, android.util.AttributeSet, int);
-  public void setMaxValue(int);
-  public void setFackIndex(int);
-  public void setFormatter(org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$Formatter);
-  public void scrollBy(int, int);
 }
 Compiled from "SmartisanPasswordEditText.java"
 public class org.opensmartisanos.ui.widget.SmartisanPasswordEditText extends android.widget.EditText {
@@ -1078,47 +609,6 @@ public abstract class org.opensmartisanos.ui.widget.SmartisanPopupMenu {
   public void setClipToScreenEnabled(boolean);
   public void setAutoAdjustPopupDirection(boolean);
   public void setMenuPopup(boolean);
-}
-Compiled from "SmartisanPopupMenuLongPressedListItem.java"
-public class org.opensmartisanos.ui.widget.SmartisanPopupMenuLongPressedListItem extends android.widget.RelativeLayout {
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuLongPressedListItem(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuLongPressedListItem(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuLongPressedListItem(android.content.Context, android.util.AttributeSet, int);
-  public void initialize(android.view.MenuItem, int);
-  public android.view.MenuItem getItemData();
-}
-Compiled from "SmartisanPopupMenuRemovableListItem.java"
-public class org.opensmartisanos.ui.widget.SmartisanPopupMenuRemovableListItem extends android.widget.RelativeLayout {
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuRemovableListItem(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuRemovableListItem(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuRemovableListItem(android.content.Context, android.util.AttributeSet, int);
-  public void setMenuIcon(int);
-  public void setMenuIcon(android.graphics.drawable.Drawable);
-  public void adjustMenuTitleMargin(boolean);
-  public android.widget.ImageView getIconView();
-  public void setMenuTitle(int);
-  public void setMenuTitle(java.lang.CharSequence);
-  public void setOnCloseIconClickListener(android.view.View$OnClickListener);
-  public android.view.View getCloseIconView();
-  public void setCloseIconVisibility(int);
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
-}
-Compiled from "SmartisanPopupMenuStandardListItem.java"
-public class org.opensmartisanos.ui.widget.SmartisanPopupMenuStandardListItem extends android.widget.RelativeLayout {
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuStandardListItem(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuStandardListItem(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanPopupMenuStandardListItem(android.content.Context, android.util.AttributeSet, int);
-  public void setMenuIcon(int);
-  public void setMenuIcon(android.graphics.drawable.Drawable);
-  public void adjustMenuTitleMargin(boolean);
-  public android.widget.ImageView getIconView();
-  public void setMenuTitle(int);
-  public void setMenuTitle(java.lang.CharSequence);
-  public void setMenuSubtitle(java.lang.CharSequence);
-  public void adjustTitleTextSize();
-  public void setChecked(boolean);
-  public boolean isChecked();
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
 }
 Compiled from "SmartisanProgressBar.java"
 public class org.opensmartisanos.ui.widget.SmartisanProgressBar extends android.widget.ProgressBar {
@@ -1420,57 +910,6 @@ public class org.opensmartisanos.ui.widget.SmartisanSpinner extends android.widg
   public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context, android.util.AttributeSet, int, int, int);
   public org.opensmartisanos.ui.widget.SmartisanSpinner(android.content.Context, android.util.AttributeSet, int, int, int, android.content.res.Resources$Theme);
 }
-Compiled from "SmartisanSpinnerView.java"
-public class org.opensmartisanos.ui.widget.SmartisanSpinnerView extends android.widget.RelativeLayout {
-  public static final int SPINNER_STYLE_NORMAL = 0;
-  public static final int SPINNER_STYLE_DROP = 1;
-  public static final int SPINNER_STYLE_RANGE = 2;
-  public org.opensmartisanos.ui.widget.SmartisanSpinnerView(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanSpinnerView(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanSpinnerView(android.content.Context, android.util.AttributeSet, int);
-  public android.widget.ImageView getTextLeftIcon();
-  public void setIsNeedVerticalScroll(boolean);
-  public void setCenterLeftIcon(int);
-  public void setSpinnerPickText(java.lang.String[], java.lang.String);
-  public void setPickerAvailWidth(int);
-  public void setSubContentText(java.lang.CharSequence);
-  public void setSubContentText(java.lang.String);
-  public void setSpinnerStyle(int);
-  public void setTitleColor(int);
-  public void setTitleSize(float);
-  public void setTitleMaxSize(float);
-  public void setSubtitleColor(int);
-  public void setSubtitleTextSize(float);
-  public void seTextLeftIcon(int);
-  public void setDropDownClickListener(org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerDropDownClickListener);
-  public void setRangeClickListener(org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerRangeClickListener);
-  public void setRangeWheelTextChangeListener(org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerRangeWheelTextChangeListener);
-  public void setLeftRangeSpinnerIconVisible(int);
-  public void setRightRangeSpinnerIconVisible(int);
-  public void setRangeSpinnerIconVisible(int);
-  public void setDropdownIconVisibility(int);
-  public android.view.View getDropdownIconView();
-  public android.widget.ImageButton getRangeLeftIcon();
-  public android.widget.ImageButton getRangeRightIcon();
-  public void setOnClickListener(android.view.View$OnClickListener);
-  public int getSpinnerStyle();
-  public void setEnabled(boolean);
-  public void onRtlPropertiesChanged(int);
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
-}
-Compiled from "SmartisanSpinnerView.java"
-public interface org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerDropDownClickListener {
-  public abstract void onDropDownClick();
-}
-Compiled from "SmartisanSpinnerView.java"
-public interface org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerRangeClickListener {
-  public abstract void onRangeLeftClick();
-  public abstract void onRangeRightClick();
-}
-Compiled from "SmartisanSpinnerView.java"
-public interface org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerRangeWheelTextChangeListener {
-  public abstract void onWheelTextChangeListener(org.opensmartisanos.ui.widget.SmartisanWheelTextView, int, int);
-}
 Compiled from "SmartisanSwitch.java"
 public class org.opensmartisanos.ui.widget.SmartisanSwitch extends android.widget.CheckBox {
   public static final int STYLE_LIGHT = 1;
@@ -1547,86 +986,6 @@ public final class org.opensmartisanos.ui.widget.SmartisanTabSwitcher$Tab {
   public boolean equals(java.lang.Object);
   public int hashCode();
 }
-Compiled from "SmartisanTimePicker.java"
-public class org.opensmartisanos.ui.widget.SmartisanTimePicker extends android.widget.FrameLayout {
-  public org.opensmartisanos.ui.widget.SmartisanNumberPicker mAmPmSpinner;
-  public org.opensmartisanos.ui.widget.SmartisanNumberPicker mHourSpinner;
-  public org.opensmartisanos.ui.widget.SmartisanNumberPicker mMinuteSpinner;
-  public org.opensmartisanos.ui.widget.SmartisanTimePicker(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanTimePicker(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanTimePicker(android.content.Context, android.util.AttributeSet, int);
-  public java.lang.String[] getDisplayDate(android.content.Context, int, android.text.format.Time);
-  public void setEnabled(boolean);
-  public boolean isEnabled();
-  public java.lang.Integer getCurrentHour();
-  public void setCurrentHour(java.lang.Integer);
-  public void setIs24HourView(java.lang.Boolean);
-  public boolean is24HourView();
-  public java.lang.Integer getCurrentMinute();
-  public void setCurrentMinute(java.lang.Integer);
-  public void setOnTimeChangedListener(org.opensmartisanos.ui.widget.SmartisanTimePicker$OnTimeChangedListener);
-  public int getBaseline();
-  public boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
-}
-Compiled from "SmartisanTimePicker.java"
-public interface org.opensmartisanos.ui.widget.SmartisanTimePicker$OnTimeChangedListener {
-  public abstract void onTimeChanged(org.opensmartisanos.ui.widget.SmartisanTimePicker, int, int);
-}
-Compiled from "SmartisanTimePickerDialog.java"
-public class org.opensmartisanos.ui.widget.SmartisanTimePickerDialog extends android.app.Dialog implements android.view.View$OnClickListener {
-  public org.opensmartisanos.ui.widget.SmartisanTimePickerDialog(android.content.Context, org.opensmartisanos.ui.widget.SmartisanTimePickerDialog$OnTimeSetListener, int, int, boolean);
-  public void onClick(android.view.View);
-  public void updateTime(int, int);
-  public org.opensmartisanos.ui.widget.SmartisanTimePicker getTimePicker();
-  public void setTitle(java.lang.CharSequence);
-  public void setTitle(int);
-  public android.os.Bundle onSaveInstanceState();
-  public void onRestoreInstanceState(android.os.Bundle);
-}
-Compiled from "SmartisanTimePickerDialog.java"
-public interface org.opensmartisanos.ui.widget.SmartisanTimePickerDialog$OnTimeSetListener {
-  public abstract void onTimeSet(org.opensmartisanos.ui.widget.SmartisanTimePicker, int, int);
-}
-Compiled from "SmartisanTimePickerEx.java"
-public class org.opensmartisanos.ui.widget.SmartisanTimePickerEx extends android.widget.FrameLayout {
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerEx mAmPmSpinner;
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerEx mHourSpinner;
-  public org.opensmartisanos.ui.widget.SmartisanNumberPickerEx mMinuteSpinner;
-  public org.opensmartisanos.ui.widget.SmartisanTimePickerEx(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanTimePickerEx(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanTimePickerEx(android.content.Context, android.util.AttributeSet, int);
-  public void setSpinnersInitialValues();
-  public java.lang.String[] getDisplayDate(android.content.Context, int, android.text.format.Time);
-  public void setEnabled(boolean);
-  public boolean isEnabled();
-  public java.lang.Integer getCurrentHour();
-  public void setCurrentHour(java.lang.Integer);
-  public void setIs24HourView(java.lang.Boolean);
-  public boolean is24HourView();
-  public java.lang.Integer getCurrentMinute();
-  public void setCurrentMinute(java.lang.Integer);
-  public int getBaseline();
-  public boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
-}
-Compiled from "SmartisanTimePickerExDialog.java"
-public class org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog extends android.app.Dialog implements android.view.View$OnClickListener {
-  public org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog(android.content.Context, org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog$OnTimeSetListener, int, int, boolean);
-  public void onClick(android.view.View);
-  public void updateTime(int, int);
-  public org.opensmartisanos.ui.widget.SmartisanTimePickerEx getTimePicker();
-  public android.os.Bundle onSaveInstanceState();
-  public void onRestoreInstanceState(android.os.Bundle);
-}
-Compiled from "SmartisanTimePickerExDialog.java"
-public interface org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog$OnTimeSetListener {
-  public abstract void onTimeSet(org.opensmartisanos.ui.widget.SmartisanTimePickerEx, int, int);
-}
 Compiled from "SmartisanTipsBar.java"
 public class org.opensmartisanos.ui.widget.SmartisanTipsBar extends android.widget.TextView {
   public org.opensmartisanos.ui.widget.SmartisanTipsBar(android.content.Context);
@@ -1673,34 +1032,4 @@ public class org.opensmartisanos.ui.widget.SmartisanTitleBar extends android.wid
   public void setTitleBarHeight(int);
   public void setImageScaleEnable(boolean);
   public void avoidImageViewScale(android.widget.ImageView);
-}
-Compiled from "SmartisanWheelTextView.java"
-public class org.opensmartisanos.ui.widget.SmartisanWheelTextView extends android.view.View {
-  public org.opensmartisanos.ui.widget.SmartisanWheelTextView(android.content.Context);
-  public org.opensmartisanos.ui.widget.SmartisanWheelTextView(android.content.Context, android.util.AttributeSet);
-  public org.opensmartisanos.ui.widget.SmartisanWheelTextView(android.content.Context, android.util.AttributeSet, int);
-  public void setSubTextSize(float);
-  public boolean onTouchEvent(android.view.MotionEvent);
-  public boolean performClick();
-  public void computeScroll();
-  public void scrollBy(int, int);
-  public void setAvailWidth(int);
-  public void setOnValueChangedListener(org.opensmartisanos.ui.widget.SmartisanWheelTextView$OnValueChangeListener);
-  public void setValue(int);
-  public int getValue();
-  public void setDisplayedValues(java.lang.String...);
-  public void setSubContentText(java.lang.String);
-  public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo);
-  public boolean performAccessibilityAction(int, android.os.Bundle);
-  public boolean onKeyDown(int, android.view.KeyEvent);
-  public void onPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent);
-  public void setTextSize(float);
-  public void setTextMaxSize(float);
-  public void setTextColor(int);
-  public void setIsNeedRotate(boolean);
-}
-Compiled from "SmartisanWheelTextView.java"
-public interface org.opensmartisanos.ui.widget.SmartisanWheelTextView$OnValueChangeListener {
-  public abstract void onValueChange(org.opensmartisanos.ui.widget.SmartisanWheelTextView, int, int);
 }

@@ -1,0 +1,451 @@
+{
+  "source_artifact": "smartisanos.jar",
+  "source_sha256": "73f75f1391d581ec0457562047bea99a61b75387b7782b6aba44f442987deaa7",
+  "r2_descriptor_substitutions": {
+    "Lcom/android/internal/view/menu/MenuBuilder;": "Landroid/view/Menu;",
+    "Lcom/android/internal/view/menu/MenuItemImpl;": "Landroid/view/MenuItem;",
+    "Lsmartisanos/tablet/widget/SmartisanPopupWindowBase;": "Landroid/widget/PopupWindow;",
+    "Lsmartisanos/widget/ShadowButton$LongButtonStyle;": "Lorg/opensmartisanos/ui/widget/SmartisanShadowButton$LongButtonStyle;"
+  },
+  "ignored_r2_interfaces": [
+    "Lsmartisanos/util/NavigationBarHelper$NavigationBarStatusListener;"
+  ],
+  "r2_dex_access_baseline": {
+    "path": "core/api/r2-dex-access.txt",
+    "sha256": "a12c31ac35c79ca3d32cb2af19decf80bf5e5bd8a132a6963af287553f8c58e5",
+    "root_classes": [
+      "Lsmartisanos/app/MenuDialog;",
+      "Lsmartisanos/app/MenuDialogListAdapter;",
+      "Lsmartisanos/app/MenuDialogMultiAdapter;",
+      "Lsmartisanos/app/SmartisanProgressDialog;",
+      "Lsmartisanos/widget/BottomMenuPopupAdapter;",
+      "Lsmartisanos/widget/BottomMenuPopupWindow;",
+      "Lsmartisanos/widget/OnTimeSetListener;",
+      "Lsmartisanos/widget/SmartisanDatePicker;",
+      "Lsmartisanos/widget/SmartisanDatePickerDialog;",
+      "Lsmartisanos/widget/SmartisanDatePickerEx;",
+      "Lsmartisanos/widget/SmartisanDatePickerExDialog;",
+      "Lsmartisanos/widget/SmartisanDateTimePicker;",
+      "Lsmartisanos/widget/SmartisanDateTimePickerDialog;",
+      "Lsmartisanos/widget/SmartisanNumberPicker;",
+      "Lsmartisanos/widget/SmartisanNumberPickerEx;",
+      "Lsmartisanos/widget/SmartisanNumberPickerExtended;",
+      "Lsmartisanos/widget/SmartisanSpinnerView;",
+      "Lsmartisanos/widget/SmartisanTimePicker;",
+      "Lsmartisanos/widget/SmartisanTimePickerDialog;",
+      "Lsmartisanos/widget/SmartisanTimePickerEx;",
+      "Lsmartisanos/widget/SmartisanTimePickerExDialog;",
+      "Lsmartisanos/widget/SmartisanWheelTextView;",
+      "Lsmartisanos/widget/support/AbsSmartisanMenuItem;",
+      "Lsmartisanos/widget/support/GroupMenuAdapter;",
+      "Lsmartisanos/widget/support/ListPopMenuStandardAdapter;",
+      "Lsmartisanos/widget/support/PopupMenuLongPressedListItem;",
+      "Lsmartisanos/widget/support/PopupMenuRemovableListItem;",
+      "Lsmartisanos/widget/support/PopupMenuStandardListItem;",
+      "Lsmartisanos/widget/support/SmartisanGridIconPopupMenu;",
+      "Lsmartisanos/widget/support/SmartisanListPopupMenu;",
+      "Lsmartisanos/widget/support/SmartisanMenuItem;",
+      "Lsmartisanos/widget/support/SmartisanPopupMenu;",
+      "Lsmartisanos/widget/DialogPatternAppInfoLayout;",
+      "Lsmartisanos/widget/DialogPatternSectionGroup;",
+      "Lsmartisanos/widget/DialogPatternTwoLineSingleChoice;"
+    ]
+  },
+  "r2_class_mappings": [
+    {
+      "original": "Lsmartisanos/app/MenuDialog;",
+      "sdk": "org.opensmartisanos.ui.app.SmartisanMenuDialog"
+    },
+    {
+      "original": "Lsmartisanos/app/MenuDialogListAdapter;",
+      "sdk": "org.opensmartisanos.ui.app.SmartisanMenuDialogListAdapter"
+    },
+    {
+      "original": "Lsmartisanos/app/MenuDialogMultiAdapter;",
+      "sdk": "org.opensmartisanos.ui.app.SmartisanMenuDialogMultiAdapter"
+    },
+    {
+      "original": "Lsmartisanos/app/SmartisanProgressDialog;",
+      "sdk": "org.opensmartisanos.ui.app.SmartisanProgressDialog"
+    },
+    {
+      "original": "Lsmartisanos/widget/BottomMenuPopupAdapter;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter"
+    },
+    {
+      "original": "Lsmartisanos/widget/BottomMenuPopupWindow;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanBottomMenuPopupWindow"
+    },
+    {
+      "original": "Lsmartisanos/widget/OnTimeSetListener;",
+      "sdk": "org.opensmartisanos.ui.widget.OnTimeSetListener"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanDatePicker;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDatePicker"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanDatePickerDialog;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDatePickerDialog"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanDatePickerEx;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDatePickerEx"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanDatePickerExDialog;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanDateTimePicker;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDateTimePicker"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanDateTimePickerDialog;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanNumberPicker;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanNumberPicker"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanNumberPickerEx;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanNumberPickerExtended;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanNumberPickerExtended"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanSpinnerView;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanSpinnerView"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanTimePicker;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanTimePicker"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanTimePickerDialog;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanTimePickerDialog"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanTimePickerEx;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanTimePickerEx"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanTimePickerExDialog;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog"
+    },
+    {
+      "original": "Lsmartisanos/widget/SmartisanWheelTextView;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanWheelTextView"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/AbsSmartisanMenuItem;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanAbsMenuItem"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/GroupMenuAdapter;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/ListPopMenuStandardAdapter;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/PopupMenuLongPressedListItem;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanPopupMenuLongPressedListItem"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/PopupMenuRemovableListItem;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanPopupMenuRemovableListItem"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/PopupMenuStandardListItem;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanPopupMenuStandardListItem"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/SmartisanGridIconPopupMenu;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/SmartisanListPopupMenu;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanListPopupMenu"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/SmartisanMenuItem;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanMenuItem"
+    },
+    {
+      "original": "Lsmartisanos/widget/support/SmartisanPopupMenu;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanPopupMenu"
+    },
+    {
+      "original": "Lsmartisanos/widget/DialogPatternAppInfoLayout;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDialogPatternAppInfoLayout"
+    },
+    {
+      "original": "Lsmartisanos/widget/DialogPatternSectionGroup;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDialogPatternSectionGroup"
+    },
+    {
+      "original": "Lsmartisanos/widget/DialogPatternTwoLineSingleChoice;",
+      "sdk": "org.opensmartisanos.ui.widget.SmartisanDialogPatternTwoLineSingleChoice"
+    }
+  ],
+  "framework_source_mappings": [
+    {
+      "original": "android.app.AlertDialog",
+      "source": "framework reverse source",
+      "source_sha256": "159a78a59d4e208902409393acdfdcb7081ab0acc965c9a858424d05afabe925",
+      "sdk": "org.opensmartisanos.ui.app.SmartisanAlertDialog"
+    }
+  ],
+  "allowed_removed_v1_classes": [
+    "org.opensmartisanos.ui.widget.SmartisanBottomSheetDialog"
+  ],
+  "allowed_changed_v1_members": {
+    "org.opensmartisanos.ui.SmartisanUi": [
+      "public static final int API_VERSION = 1;"
+    ]
+  },
+  "mapped_public_classes": [
+    "org.opensmartisanos.ui.app.SmartisanAlertDialog",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialog",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialogListAdapter",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialogMultiAdapter",
+    "org.opensmartisanos.ui.app.SmartisanProgressDialog",
+    "org.opensmartisanos.ui.widget.OnTimeSetListener",
+    "org.opensmartisanos.ui.widget.SmartisanAbsMenuItem",
+    "org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter",
+    "org.opensmartisanos.ui.widget.SmartisanBottomMenuPopupWindow",
+    "org.opensmartisanos.ui.widget.SmartisanDatePicker",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerDialog",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerEx",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePicker",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternAppInfoLayout",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternSectionGroup",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternTwoLineSingleChoice",
+    "org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu",
+    "org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter",
+    "org.opensmartisanos.ui.widget.SmartisanListPopupMenu",
+    "org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter",
+    "org.opensmartisanos.ui.widget.SmartisanMenuItem",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerExtended",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenu",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuLongPressedListItem",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuRemovableListItem",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuStandardListItem",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView",
+    "org.opensmartisanos.ui.widget.SmartisanTimePicker",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerDialog",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerEx",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog",
+    "org.opensmartisanos.ui.widget.SmartisanWheelTextView"
+  ],
+  "approved_api3_classes": [
+    "org.opensmartisanos.ui.app.SmartisanMenuDialog$DialogLocation",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialogListAdapter",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialogMultiAdapter",
+    "org.opensmartisanos.ui.widget.SmartisanAbsMenuItem",
+    "org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter",
+    "org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter$ItemPressStateListener",
+    "org.opensmartisanos.ui.widget.SmartisanBottomMenuPopupWindow",
+    "org.opensmartisanos.ui.widget.SmartisanDatePicker",
+    "org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType",
+    "org.opensmartisanos.ui.widget.SmartisanDatePicker$OnDateChangedListener",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerDialog",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerDialog$OnDateSetListener",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerEx",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerEx$OnDateChangedListener",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog$OnDateSetListener",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePicker",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePicker$OnDateChangedListener",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog$OnDateTimeSetListener",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternAppInfoLayout",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternSectionGroup",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternTwoLineSingleChoice",
+    "org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu",
+    "org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu$OnMenuItemClickListener",
+    "org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter",
+    "org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter$OnMenuItemActionListener",
+    "org.opensmartisanos.ui.widget.SmartisanListPopupMenu$GroupedAdapter",
+    "org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter",
+    "org.opensmartisanos.ui.widget.OnTimeSetListener",
+    "org.opensmartisanos.ui.widget.SmartisanMenuItem",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker$Formatter",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker$OnScrollListener",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker$OnValueChangeListener",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$Formatter",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$OnScrollListener",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$OnValueChangeListener",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerExtended",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuLongPressedListItem",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuRemovableListItem",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuStandardListItem",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerDropDownClickListener",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerRangeClickListener",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerRangeWheelTextChangeListener",
+    "org.opensmartisanos.ui.widget.SmartisanTimePicker",
+    "org.opensmartisanos.ui.widget.SmartisanTimePicker$OnTimeChangedListener",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerDialog",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerDialog$OnTimeSetListener",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerEx",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog$OnTimeSetListener",
+    "org.opensmartisanos.ui.widget.SmartisanWheelTextView",
+    "org.opensmartisanos.ui.widget.SmartisanWheelTextView$OnValueChangeListener"
+  ],
+  "mapped_sdk_api_sha256": {
+    "org.opensmartisanos.ui.app.SmartisanAlertDialog": "7ad2029e442428ca87c97fb845de9ac7cbcc7210da59ff15f0d3dcc520d2e8e1",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialog": "61be58b6bbb5685694799441153459b45f8d1f91ec2c3468dedfe8845928644c",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialog$DialogLocation": "0671637d8ff20b7f527539cba5d0f125bd6415c3d56ad61b9a58aa194723e652",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialogListAdapter": "7a651d6213cd0f254470dcaf0c2e00845554d7eaf7fe34087c1ede236b39a8a8",
+    "org.opensmartisanos.ui.app.SmartisanMenuDialogMultiAdapter": "098887b385077dae1018461a2b3d37733491da30f457bd09191ead9047e7ab19",
+    "org.opensmartisanos.ui.app.SmartisanProgressDialog": "39779887fa38f89414959295c45dc8983b3fa854b4b0d03af49fd0fdbbc049b4",
+    "org.opensmartisanos.ui.widget.OnTimeSetListener": "1e04c3b8186404700468fce93db0906b7f3d8714c61ee8068c67d944c04b03b8",
+    "org.opensmartisanos.ui.widget.SmartisanAbsMenuItem": "3d173a729882eb0110d79d958272648863e4fce9934a4c8baccef97e5e45e040",
+    "org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter": "33a438a048ead30700a157f1c110f4a7866e6b1f3a78bc631149940826424728",
+    "org.opensmartisanos.ui.widget.SmartisanBottomMenuAdapter$ItemPressStateListener": "d6b722123f02669992ad283dc1f2a6a6270345c7057ed8512a3dc4764439cdf5",
+    "org.opensmartisanos.ui.widget.SmartisanBottomMenuPopupWindow": "b86433aedc25efb0685399dfaeaa1a97ecede7305f0046c5a884a02e23af51ef",
+    "org.opensmartisanos.ui.widget.SmartisanDatePicker": "ef821ccd87bd04e88b6c2fbaaa01843cd1d6dc7f1aa048b9808ce24411bef0d0",
+    "org.opensmartisanos.ui.widget.SmartisanDatePicker$DatePickerType": "bb5edc0e38b0d6ce0354617f21ea3b77dab73f2b08468d473cd05f9de86da587",
+    "org.opensmartisanos.ui.widget.SmartisanDatePicker$OnDateChangedListener": "50dd6412ddcb0f8d92361c25ed2106806267a50f4107e0408e0ca5236ea95479",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerDialog": "23e2ca9c6038221592f2cdbaa6b0c29d39b0e74633b867f5808d3d0458de9bb5",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerDialog$OnDateSetListener": "ea9f42642e9eab2575b2f081046f6cfadb6ec6e9542f331edb99bce48fd03751",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerEx": "538c7c824d9e2e68d319b92d29e994071349863549f42c9eaa1832626686f5b4",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerEx$DatePickerType": "67ee3311f9381dcfec4e2b9a31c0985b03daa92843cd0d7e08b19931787e7108",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerEx$OnDateChangedListener": "3407aad1a814f858ff3add9d23f6913c17e13736dc5e8ab5720745193a703be9",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog": "ca5a82bdb2811014931c4851d062c9104855b5f921c270bfa08911e01a8e1362",
+    "org.opensmartisanos.ui.widget.SmartisanDatePickerExDialog$OnDateSetListener": "6c498602accd3209c160e69c5e85d2ae25d14d98dde43dc6f0f03313badfcc05",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePicker": "2003804dc41c820e8ba2d0fd902a5e39553dc867081f234900b8234a6f2fa9e5",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePicker$OnDateChangedListener": "bb3df7ab4a4d964531f1cf64d000ddaf36aa3a5048f24a3c938e25e1cc56a152",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog": "9c4c2f331f6d52ce472c1196c6fa28ac6de45756a927a6ffe0e5db351997fed7",
+    "org.opensmartisanos.ui.widget.SmartisanDateTimePickerDialog$OnDateTimeSetListener": "23bc81de1cf532e6df9acdb4c8d3ec1a4d680295605bf9d37a12c9a5804482fe",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternAppInfoLayout": "018b36cda95ff2d4041e9fa7e8760659e06ee8191bd9596c925347b93d95bdfa",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternSectionGroup": "80a944483082ceff67730572e46ee8ba0b08da3025303157d7328970e1a5380c",
+    "org.opensmartisanos.ui.widget.SmartisanDialogPatternTwoLineSingleChoice": "a63f7b54c9ae5c3b90534104e0ce5b4f2f94c50a52886a405b2eec0f17fa6b69",
+    "org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu": "c50c833b0d0af9e497fdcc764aae4a9ec2ce6bd48813498ea2a2cae07d8e4865",
+    "org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu$OnMenuItemClickListener": "cb9ed1e6aaa862245071e54f51eac6f9935cbbdb3e3f3ee2a76abbfeab12217b",
+    "org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter": "fb81c1ccc699b36395cba6a02348a54b4fae1102175f77f2ef71925098eec597",
+    "org.opensmartisanos.ui.widget.SmartisanGroupMenuAdapter$OnMenuItemActionListener": "9c2b36bdbc543f6f273527be63abc631fb9ee4df32abf2510adcd20af6aaa9ed",
+    "org.opensmartisanos.ui.widget.SmartisanListPopupMenu": "4fbe80826714674147d10c4b76de0729c77869867e40969a4797add6304a283e",
+    "org.opensmartisanos.ui.widget.SmartisanListPopupMenu$GroupedAdapter": "5690b801a7320322ac5f775d7de8aab9155e424f05b314f074be028438eb6bbf",
+    "org.opensmartisanos.ui.widget.SmartisanListPopupMenuStandardAdapter": "539a0d68e92ba01635c6ed01755f0f6d69b57a5088e2b961fa0fcd8f8e45e606",
+    "org.opensmartisanos.ui.widget.SmartisanMenuItem": "b3ad8fdd123bb2d567390819c7fa6ea6bfbd51d40ec8e9d766820f3a8d6a5a38",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker": "6f94fed8cafab25a1512b348d2a7c35ab201266242d796ca85f37a3d8859ae6c",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker$Formatter": "3cdd64c2e405ecdca6c410f5a7b78cdda6b292b942fc6589d03abe79602e3249",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker$OnScrollListener": "e517c15b1237b3e770a0419cdde0803446a02e9f0e5dae7b6e27ce2be5dfc31e",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPicker$OnValueChangeListener": "9101a18579e098d064b9344a1425dcc15d87984358ebc225eba88f5942e37919",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx": "b9e4155c3f1b84b7cc90511774d09ae0ab54cb9762eb30e92c5edb7be01fc605",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$Formatter": "af3ee55e36187986a7aa6b0bf01a2d3f3752708526f696160c16ac1999bf994b",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$OnScrollListener": "888cd1066597040e55fbdbf38b731ab94c80119e63cd3bf7b120e78ea31a65fc",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx$OnValueChangeListener": "2dcdf161fa8c1f85b6c8bff6734bd360bd16a41ac451c0f108993bbaa6ebfcff",
+    "org.opensmartisanos.ui.widget.SmartisanNumberPickerExtended": "875d25699cd9828d030128f5b487b3f74d8546aa3392d70e910921614d0c9c10",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenu": "f8b4f530e7494e54c1566ab244edaf6910381ab8575a2f374977776e53fee371",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuLongPressedListItem": "d444db2efbfc27b1a36e6cf0034f556be7a02afee8d02cd7ea01f2818de464ad",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuRemovableListItem": "f6bde171e453913d9ca670f28f2e13efa6285cc137174e13b0a0a5f8d2299f1a",
+    "org.opensmartisanos.ui.widget.SmartisanPopupMenuStandardListItem": "981bcbed5fddfb4e93b174b8080fba9bc23614999bdc81ce2bdff78454656ac2",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView": "d0ff845f0ba751ffa27b44b47c973e8220e5d6c15c72a124afd0f944f7af3e43",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerDropDownClickListener": "e9ac8b15bbd839a95e9ad6d12531907828865decc93ba7ef21d9581197296448",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerRangeClickListener": "b5b8551f57fdc0d3b436e3fd8742dbfa2e41698e5a51201691db5e040230b988",
+    "org.opensmartisanos.ui.widget.SmartisanSpinnerView$SpinnerRangeWheelTextChangeListener": "8eb4d8a3cfea2bac34b9f116b71499b4b1c3b27bff51f78137ba051176208f91",
+    "org.opensmartisanos.ui.widget.SmartisanTimePicker": "421ac472e15fbd0616f17b34e92f470720fa7262666e92ceec33a8d411ddba23",
+    "org.opensmartisanos.ui.widget.SmartisanTimePicker$OnTimeChangedListener": "b283e3bd848c6a3b7d47ad1f2f4ba5cb7d20c7f3e7c0c48e6c2981c9a7e25b7a",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerDialog": "56afc34ba13313a00444be3f5895ae0a1e5b36e6ab4735694385dfd9572c0ef8",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerDialog$OnTimeSetListener": "6822de30d05e65bfa2bfb24cf2252cb483c5c06fcaf336b549160865a2bd870e",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerEx": "773d89e2383e1c133f465409dd875740cb5c8ccddab21ecdb7e6e3153d97f31d",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog": "619b7a0c37f66f9f98ee4f672c76c2a4b138c04235a36a5e71f486e29d96fb6d",
+    "org.opensmartisanos.ui.widget.SmartisanTimePickerExDialog$OnTimeSetListener": "4125f1009465ac87d05b594e2af45d8fbf199db1f84e217841c4eef48dda8b8e",
+    "org.opensmartisanos.ui.widget.SmartisanWheelTextView": "03836747c0dde6729dae8b6e7e7ecc9cec92dd941b3fc19944e21ae7640fc4f9",
+    "org.opensmartisanos.ui.widget.SmartisanWheelTextView$OnValueChangeListener": "c23cf891262bf6608ec2982e93877aaeef7238c2d84f54cab4907b1cf71e9ea7"
+  },
+  "private_dex_helpers": [
+    [
+      "org.opensmartisanos.ui.widget.SmartisanDatePicker",
+      "public void setDate(int, int, int);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanDatePicker",
+      "public void updateSpinners();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanDatePicker",
+      "public void notifyDateChanged();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanDatePickerEx",
+      "public void setDate(int, int, int);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanDatePickerEx",
+      "public void updateSpinners();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanDatePickerEx",
+      "public void notifyDateChanged();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanDateTimePicker",
+      "public long getTimMillsForDayValue(int);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanDateTimePicker",
+      "public void notifyDateChanged();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanNumberPicker",
+      "public void changeValueByOne(boolean);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanNumberPicker",
+      "public int getWrappedSelectorIndex(int);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanNumberPicker",
+      "public java.lang.String formatNumber(int);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx",
+      "public void changeValueByOne(boolean);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx",
+      "public int getWrappedSelectorIndex(int);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanNumberPickerEx",
+      "public java.lang.String formatNumber(int);"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanTimePicker",
+      "public void updateAmPmControl();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanTimePicker",
+      "public void onTimeChanged();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanTimePickerEx",
+      "public void updateAmPmControl();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanTimePickerEx",
+      "public void onTimeChanged();"
+    ],
+    [
+      "org.opensmartisanos.ui.widget.SmartisanGridIconPopupMenu",
+      "public int getPageCount();"
+    ]
+  ]
+}
