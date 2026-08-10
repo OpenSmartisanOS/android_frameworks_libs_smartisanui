@@ -36,7 +36,10 @@ public class SmartisanProgressDialog extends Dialog {
     private TextView messageView;
     private ProgressBar progressBar;
 
-    public SmartisanProgressDialog(Context context) { super(context); this.context = context; }
+    public SmartisanProgressDialog(Context context) {
+        super(context, R.style.Theme_SmartisanUi_ProgressDialog);
+        this.context = context;
+    }
 
     public static SmartisanProgressDialog show(Context context, CharSequence title, CharSequence message) {
         SmartisanProgressDialog dialog = new SmartisanProgressDialog(context);
@@ -58,13 +61,13 @@ public class SmartisanProgressDialog extends Dialog {
         Window window = getWindow();
         if (window != null) {
             window.setBackgroundDrawableResource(android.R.color.transparent);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            window.setFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
+                    WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
             WindowManager.LayoutParams params = window.getAttributes(); params.width = dp(246); window.setAttributes(params);
         }
-        applyState();
     }
 
-    @Override protected void onStart() { super.onStart(); applyState(); }
+    @Override public void onStart() { super.onStart(); applyState(); }
 
     private void applyState() {
         if (content == null) return;
@@ -73,20 +76,17 @@ public class SmartisanProgressDialog extends Dialog {
         content.setBackground(background != null ? background : context.getDrawable(darkTheme
                 ? R.drawable.smartisan_rom_smartisan_progress_dialog_bg_dark
                 : R.drawable.smartisan_rom_smartisan_progress_dialog_bg));
+        Drawable drawable = indeterminateDrawable != null
+                ? indeterminateDrawable
+                : context.getDrawable(darkTheme
+                        ? R.drawable.smartisan_rom_progress_medium_smartisanos_dark
+                        : R.drawable.smartisan_rom_progress_medium_smartisanos_light);
+        updateDrawableBounds(drawable, progressBar.getWidth(), progressBar.getHeight());
+        progressBar.setIndeterminateDrawable(drawable);
         if (hideProgressBar) {
             progressBar.setIndeterminate(false);
             progressBar.setIndeterminateDrawable(null);
             progressBar.setVisibility(View.GONE);
-        } else {
-            Drawable drawable = indeterminateDrawable != null
-                    ? indeterminateDrawable
-                    : context.getDrawable(darkTheme
-                            ? R.drawable.smartisan_rom_progress_medium_smartisanos_dark
-                            : R.drawable.smartisan_rom_progress_medium_smartisanos_light);
-            updateDrawableBounds(drawable, progressBar.getWidth(), progressBar.getHeight());
-            progressBar.setIndeterminateDrawable(drawable);
-            progressBar.setIndeterminate(true);
-            progressBar.setVisibility(View.VISIBLE);
         }
         content.getRootView().setSystemUiVisibility(systemUiVisibility);
     }
@@ -126,18 +126,37 @@ public class SmartisanProgressDialog extends Dialog {
         darkTheme = dark;
         if (!customTitleColor) titleColor = dark ? 0xffffffff : 0x9c000000;
         if (!customMessageColor) messageColor = dark ? 0xffffffff : 0x9c000000;
-        applyState();
     }
     @Override public void setTitle(int resource) { setTitle(context.getText(resource)); }
-    @Override public void setTitle(CharSequence title) { dialogTitle = title; applyState(); }
+    @Override public void setTitle(CharSequence title) {
+        dialogTitle = title;
+        if (titleView != null) {
+            titleView.setText(title);
+            titleView.setVisibility(title == null ? View.GONE : View.VISIBLE);
+        }
+    }
     public void setMessage(int resource) { setMessage(context.getText(resource)); }
-    public void setMessage(CharSequence value) { message = value; applyState(); }
+    public void setMessage(CharSequence value) {
+        message = value;
+        if (messageView != null) {
+            messageView.setText(value);
+            messageView.setVisibility(value == null ? View.GONE : View.VISIBLE);
+        }
+    }
     public void setIndeterminateDrawableResource(int resource) { setIndeterminateDrawable(context.getDrawable(resource)); }
-    public void setIndeterminateDrawable(Drawable drawable) { indeterminateDrawable = drawable; applyState(); }
-    public void setHideProgressBar(boolean hide) { hideProgressBar = hide; applyState(); }
+    public void setIndeterminateDrawable(Drawable drawable) {
+        indeterminateDrawable = drawable;
+        if (progressBar != null) {
+            progressBar.setIndeterminateDrawable(drawable);
+            progressBar.requestLayout();
+        }
+    }
+    public void setHideProgressBar(boolean hide) { hideProgressBar = hide; }
+    /** Original 8.5.3 R2 contract: retained as an intentional no-op. */
+    public void setProgress(int value) { }
     public void setBackgroundResource(int resource) { setBackground(context.getDrawable(resource)); }
-    public void setBackground(Drawable drawable) { background = drawable; applyState(); }
-    public void setSystemUiVisibility(int visibility) { systemUiVisibility = visibility; applyState(); }
-    public void setTitleColor(int color) { customTitleColor = true; titleColor = color; applyState(); }
-    public void setMessageColor(int color) { customMessageColor = true; messageColor = color; applyState(); }
+    public void setBackground(Drawable drawable) { background = drawable; }
+    public void setSystemUiVisibility(int visibility) { systemUiVisibility = visibility; }
+    public void setTitleColor(int color) { customTitleColor = true; titleColor = color; }
+    public void setMessageColor(int color) { customMessageColor = true; messageColor = color; }
 }
