@@ -1,170 +1,396 @@
-/* Ported from smartisanos.app.MenuDialog in Smartisan OS 8.5.3. */
 package org.opensmartisanos.ui.app;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Bundle;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.provider.Settings;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import org.opensmartisanos.ui.R;
+import org.opensmartisanos.ui.internal.DialogCallbackOrder;
 import org.opensmartisanos.ui.widget.SmartisanDialogTitleBar;
 import org.opensmartisanos.ui.widget.SmartisanShadowButton;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.util.Collections;
 import java.util.List;
 
+/** Direct public-SDK port of the Smartisan OS 8.5.3 R2 MenuDialog. */
 public class SmartisanMenuDialog extends Dialog implements DialogInterface.OnKeyListener {
-    public static final int LOCATION_BOTTOM = 0;
-    public static final int LOCATION_CENTER = 1;
-    private final Context context;
-    private final int location;
-    private SmartisanDialogTitleBar titleBar;
-    private ListView listView;
-    private SmartisanShadowButton positiveButton;
-    private SmartisanShadowButton negativeButton;
-    private CharSequence title;
-    private boolean titleSingleLine;
-    private ListAdapter adapter;
-    private AdapterView.OnItemClickListener itemClickListener;
-    private CharSequence positiveText;
-    private CharSequence negativeText;
-    private View.OnClickListener positiveListener;
-    private View.OnClickListener negativeListener;
-    private int negativeImageResource;
-    private SmartisanShadowButton.LongButtonStyle positiveStyle = SmartisanShadowButton.LongButtonStyle.HIGH_LIGHT;
+    public static final int LOCATION_APP_BOTTOM = 0;
+    public static final int LOCATION_APP_CENTER = 1;
+    public static final int LOCATION_DISPLAY_CENTER = 2;
+    public static final int LOCATION_BOTTOM = LOCATION_APP_BOTTOM;
+    public static final int LOCATION_CENTER = LOCATION_APP_CENTER;
 
-    public SmartisanMenuDialog(Context context) { this(context, LOCATION_BOTTOM); }
-    public SmartisanMenuDialog(Context context, int location) {
-        super(context, android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar);
-        this.context = context; this.location = location; setOnKeyListener(this);
+    @Target(ElementType.PARAMETER)
+    @Retention(RetentionPolicy.CLASS)
+    public @interface DialogLocation {
+        int from() default LOCATION_APP_BOTTOM;
+        int to() default LOCATION_DISPLAY_CENTER;
     }
 
-    @Override protected void onCreate(Bundle state) {
-        super.onCreate(state);
-        LinearLayout root = new LinearLayout(context);
-        root.setOrientation(LinearLayout.VERTICAL);
-        root.setBackgroundColor(0xfff4f4f4);
-        titleBar = new SmartisanDialogTitleBar(context);
-        titleBar.setTitle(title); titleBar.setTitleSingleLine(titleSingleLine);
-        titleBar.setLeftButtonVisibility(View.INVISIBLE);
-        titleBar.setOnRightButtonClickListener(v -> {
-            if (negativeListener != null) negativeListener.onClick(v);
-            dismiss();
-        });
-        if (negativeImageResource != 0) {
-            titleBar.setRightImageViewResource(negativeImageResource);
+    private final Context context;
+    private final boolean externalDisplay;
+    private final int location;
+    private final View.OnClickListener cancelListener = view -> dismiss();
+    private SmartisanDialogTitleBar titleBar;
+    private SmartisanShadowButton positiveButton;
+    private ListView listView;
+    private View contentPanel;
+    private int buttonMarginEdge;
+    private int buttonMarginView;
+
+    public SmartisanMenuDialog(Context context) {
+        this(context, LOCATION_APP_BOTTOM, true);
+    }
+
+    public SmartisanMenuDialog(Context context, @DialogLocation int location) {
+        this(context, location, false);
+    }
+
+    private SmartisanMenuDialog(Context context, @DialogLocation int location,
+            boolean defaultConstructor) {
+        super(context, defaultConstructor && isExternalDisplay(context)
+                ? R.style.Theme_SmartisanUi_ExternalMenuDialog
+                : R.style.Theme_SmartisanUi_MenuDialog);
+        this.context = context;
+        this.location = location;
+        externalDisplay = isExternalDisplay(context);
+        init();
+        // The original default constructor keeps an external-display dialog centered.
+        // Explicit location constructors still override the initial gravity.
+        if (!defaultConstructor) locateDialog(location);
+    }
+
+    private void init() {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(externalDisplay
+                ? R.layout.smartisan_rom_revone_menu_dialog
+                : R.layout.smartisan_rom_menu_dialog);
+        titleBar = findViewById(R.id.smartisan_rom_menu_dialog_title_bar);
+        positiveButton = findViewById(R.id.smartisan_rom_menu_dialog_ok);
+        listView = findViewById(R.id.smartisan_rom_menu_dialog_content_list);
+        contentPanel = findViewById(R.id.smartisan_rom_menu_dialog_content_panel);
+
+        if (externalDisplay) {
+            titleBar.getTitleBarContainer().setBackgroundColor(Color.TRANSPARENT);
+            titleBar.setBackgroundResource(R.drawable.smartisan_rom_revone_dialog_bg_title);
+            View divider = titleBar.findViewById(R.id.smartisan_rom_shadow_divider);
+            if (divider != null) divider.setVisibility(View.GONE);
         }
-        root.addView(titleBar, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        listView = new ListView(context);
-        listView.setDivider(null); listView.setAdapter(adapter); listView.setOnItemClickListener(itemClickListener);
-        root.addView(listView, new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        LinearLayout actions = new LinearLayout(context);
-        actions.setGravity(Gravity.CENTER); actions.setPadding(dp(8), 0, dp(8), dp(8));
-        negativeButton = actionButton(negativeText, false);
-        positiveButton = actionButton(positiveText, true);
-        LinearLayout.LayoutParams actionParams = new LinearLayout.LayoutParams(0, dp(48), 1f);
-        actionParams.leftMargin = dp(4); actionParams.rightMargin = dp(4);
-        actions.addView(negativeButton, new LinearLayout.LayoutParams(actionParams));
-        actions.addView(positiveButton, new LinearLayout.LayoutParams(actionParams));
-        root.addView(actions, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(56)));
-        setContentView(root);
+        titleBar.forceRequestAccessibilityFocusWhenAttached(false);
+        titleBar.setOnRightButtonClickListener(cancelListener);
+        titleBar.setOnLeftButtonClickListener(cancelListener);
+        titleBar.setShadowVisible(false);
+        initLeftRightHands();
+        listView.setFocusable(false);
+
         Window window = getWindow();
         if (window != null) {
             window.setBackgroundDrawableResource(android.R.color.transparent);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND | WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setGravity(location == LOCATION_CENTER ? Gravity.CENTER : Gravity.BOTTOM);
-            WindowManager.LayoutParams params = window.getAttributes();
-            params.width = location == LOCATION_CENTER ? dp(360) : WindowManager.LayoutParams.MATCH_PARENT;
-            params.height = WindowManager.LayoutParams.WRAP_CONTENT; window.setAttributes(params);
+            window.setGravity(externalDisplay ? Gravity.CENTER : Gravity.BOTTOM);
+            window.setLayout(externalDisplay
+                            ? WindowManager.LayoutParams.WRAP_CONTENT
+                            : WindowManager.LayoutParams.MATCH_PARENT,
+                    WindowManager.LayoutParams.WRAP_CONTENT);
+            // Original values are FLAG_WATCH_OUTSIDE_TOUCH and FLAG_ALT_FOCUSABLE_IM.
+            window.addFlags(WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
+                    | WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+            installNavigationBarAdapter(window);
+        }
+
+        buttonMarginView = context.getResources().getDimensionPixelOffset(
+                R.dimen.smartisan_rom_menu_dialog_button_margin_view);
+        buttonMarginEdge = context.getResources().getDimensionPixelOffset(
+                R.dimen.smartisan_rom_menu_dialog_button_margin_edge);
+        setOnKeyListener(this);
+    }
+
+    private void installNavigationBarAdapter(Window window) {
+        window.getDecorView().setOnApplyWindowInsetsListener((view, insets) -> {
+            boolean landscape = context.getResources().getConfiguration().orientation
+                    == Configuration.ORIENTATION_LANDSCAPE;
+            boolean navigationBarVisible = insets.getSystemWindowInsetBottom() > 0;
+            onApplyNavigationBarStatusChange(landscape || navigationBarVisible);
+            return insets;
+        });
+    }
+
+    private void initLeftRightHands() {
+        int value = 1;
+        try {
+            value = Settings.Global.getInt(context.getContentResolver(), "one_hand_mode", 1);
+        } catch (RuntimeException ignored) {
+            // The public SDK cannot depend on the private SettingsSmt key accessor.
+        }
+        titleBar.setLeftButtonVisibility(value == 0 ? View.VISIBLE : View.INVISIBLE);
+        titleBar.setRightButtonVisibility(value == 0 ? View.INVISIBLE : View.VISIBLE);
+    }
+
+    private void locateDialog(int value) {
+        Window window = getWindow();
+        if (window == null) return;
+        if (value == LOCATION_APP_BOTTOM) {
+            window.setGravity(Gravity.BOTTOM);
+        } else if (value == LOCATION_APP_CENTER || value == LOCATION_DISPLAY_CENTER) {
+            window.setGravity(Gravity.CENTER);
+            // The original DISPLAY_CENTER external-display type 2056 is a hidden system API.
+            // A public SDK window remains attached to the caller's display context.
         }
     }
 
-    private SmartisanShadowButton actionButton(CharSequence text, boolean positive) {
-        SmartisanShadowButton button = new SmartisanShadowButton(context, null, 0,
-                R.style.Widget_SmartisanUi_ShadowButton_Shrink);
-        button.setText(text); button.setVisibility(text == null ? View.GONE : View.VISIBLE);
-        button.updateBackgroundStyle(positive ? positiveStyle : SmartisanShadowButton.LongButtonStyle.GRAY);
-        button.setOnClickListener(v -> {
-            View.OnClickListener listener = positive ? positiveListener : negativeListener;
-            if (listener != null) listener.onClick(v);
-            if (positive) dismiss();
-        });
-        return button;
+    @SuppressWarnings("deprecation")
+    private static boolean isExternalDisplay(Context context) {
+        WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = manager == null ? null : manager.getDefaultDisplay();
+        return display != null && display.getDisplayId() != Display.DEFAULT_DISPLAY;
     }
 
-    private int dp(float value) { return (int) (value * context.getResources().getDisplayMetrics().density + 0.5f); }
-    @Override public void setTitle(int resource) { setTitle(context.getText(resource)); }
-    @Override public void setTitle(CharSequence value) { title = value; if (titleBar != null) titleBar.setTitle(value); }
-    public void setTitleSingleLine(boolean value) { titleSingleLine = value; if (titleBar != null) titleBar.setTitleSingleLine(value); }
-    public void setAdapter(ListAdapter value) { setAdapter(value, null); }
-    public void setAdapter(ListAdapter value, AdapterView.OnItemClickListener listener) {
-        adapter = value; itemClickListener = listener;
-        if (listView != null) { listView.setAdapter(value); listView.setOnItemClickListener(listener); }
+    @Override public void setTitle(int titleId) { setTitle(context.getText(titleId)); }
+    @Override public void setTitle(CharSequence title) { titleBar.setTitle(title); }
+    public void setTitleSingleLine(boolean singleLine) { titleBar.setTitleSingleLine(singleLine); }
+    public void setTitleSinleLine(boolean singleLine) { titleBar.setTitleSingleLine(singleLine); }
+
+    public void setAdapter(SmartisanMenuDialogListAdapter adapter) {
+        listView.setVisibility(View.VISIBLE);
+        adjustLayoutParams();
+        listView.setAdapter(adapter);
+        listView.getLayoutParams().height = adapter.getCount() >= 5
+                ? context.getResources().getDimensionPixelOffset(
+                        R.dimen.smartisan_rom_menu_dialog_long_list_height)
+                : ViewGroup.LayoutParams.WRAP_CONTENT;
+        adapter.setDialog(this);
     }
+
+    /** Additive public-SDK convenience API; the original path uses the typed adapter overload. */
+    @Deprecated public void setAdapter(ListAdapter adapter) { setAdapter(adapter, null); }
+
+    /** Additive public-SDK convenience API; the original path uses the typed adapter overload. */
+    @Deprecated public void setAdapter(ListAdapter adapter,
+            AdapterView.OnItemClickListener listener) {
+        listView.setVisibility(View.VISIBLE);
+        adjustLayoutParams();
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(listener);
+        listView.getLayoutParams().height = adapter != null && adapter.getCount() >= 5
+                ? context.getResources().getDimensionPixelOffset(
+                        R.dimen.smartisan_rom_menu_dialog_long_list_height)
+                : ViewGroup.LayoutParams.WRAP_CONTENT;
+    }
+
+    /** Original misspelled API retained. This is a legacy row style, not multi-selection. */
+    public void setAdaper(SmartisanMenuDialogMultiAdapter adapter,
+            AdapterView.OnItemClickListener listener) {
+        listView.setVisibility(View.VISIBLE);
+        adjustLayoutParams();
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(listener);
+        listView.getLayoutParams().height = context.getResources().getDimensionPixelOffset(
+                R.dimen.smartisan_rom_menu_dialog_legacy_list_height);
+        listView.setBackgroundResource(R.drawable.smartisan_rom_menu_dialog_multi_list_bg);
+    }
+
     public ListView getListView() { return listView; }
     public SmartisanDialogTitleBar getTitleBar() { return titleBar; }
+
     public void setNegativeButton(View.OnClickListener listener) {
-        negativeText = null;
-        negativeListener = listener;
-        if (negativeButton != null) negativeButton.setVisibility(View.GONE);
+        titleBar.setOnRightButtonClickListener(listener);
+        titleBar.setOnLeftButtonClickListener(listener);
     }
-    public void setNegativeButton(int resource, View.OnClickListener listener) { setNegativeButton(context.getText(resource), listener); }
-    public void setNegativeButton(CharSequence text, View.OnClickListener listener) {
-        negativeText = text; negativeListener = listener;
-        if (negativeButton != null) { negativeButton.setText(text); negativeButton.setVisibility(text == null ? View.GONE : View.VISIBLE); }
+
+    @Deprecated public void setNegativeButton(int textId, View.OnClickListener listener) {
+        setNegativeButton(context.getText(textId), listener);
     }
-    public void setNegativeImage(int resource, View.OnClickListener listener) {
-        negativeImageResource = resource;
+
+    @Deprecated public void setNegativeButton(CharSequence text,
+            View.OnClickListener listener) {
+        titleBar.setRightButtonText(text);
+        titleBar.setLeftButtonText(text);
         setNegativeButton(listener);
-        if (titleBar != null) titleBar.setRightImageViewResource(resource);
     }
-    public void setPositiveButton(int resource, View.OnClickListener listener) { setPositiveButton(context.getText(resource), listener); }
-    public void setPositiveButton(CharSequence text, View.OnClickListener listener) {
-        positiveText = text; positiveListener = listener;
-        if (positiveButton != null) { positiveButton.setText(text); positiveButton.setVisibility(text == null ? View.GONE : View.VISIBLE); }
+
+    public void setNegativeImage(int resourceId, View.OnClickListener listener) {
+        titleBar.setRightImageRes(resourceId);
+        titleBar.setLeftImageViewRes(resourceId);
+        setNegativeButton(listener);
     }
-    public void setPositiveButtonGone() { setPositiveButton((CharSequence) null, null); }
-    public void setPositiveRedBackground(boolean red) { setPositiveBackgroundStyle(red ? SmartisanShadowButton.LongButtonStyle.RED : SmartisanShadowButton.LongButtonStyle.HIGH_LIGHT); }
+
+    public void setPositiveRedBg(boolean red) {
+        setPositiveBgStyle(red
+                ? SmartisanShadowButton.LongButtonStyle.RED
+                : SmartisanShadowButton.LongButtonStyle.GRAY);
+    }
+
+    public void setPositiveBgStyle(SmartisanShadowButton.LongButtonStyle style) {
+        positiveButton.updateBackgroundStyle(style);
+    }
+
+    public void setPositiveRedBackground(boolean red) { setPositiveRedBg(red); }
     public void setPositiveBackgroundStyle(SmartisanShadowButton.LongButtonStyle style) {
-        positiveStyle = style; if (positiveButton != null) positiveButton.updateBackgroundStyle(style);
+        setPositiveBgStyle(style);
     }
+
+    public void setPositiveButton(int textId, View.OnClickListener listener) {
+        setPositiveButton(context.getText(textId), listener);
+    }
+
+    public void setPositiveButton(CharSequence text, View.OnClickListener listener) {
+        positiveButton.setVisibility(View.VISIBLE);
+        adjustLayoutParams();
+        positiveButton.setText(text);
+        positiveButton.setOnClickListener(view -> DialogCallbackOrder.dismissThenRun(
+                this::dismiss, listener == null ? null : () -> listener.onClick(view)));
+    }
+
+    public void setPositiveButtonGone() {
+        positiveButton.setText(null);
+        positiveButton.setOnClickListener(null);
+        positiveButton.setVisibility(View.GONE);
+        adjustLayoutParams();
+    }
+
+    private void adjustLayoutParams() {
+        LinearLayout.LayoutParams buttonParams =
+                (LinearLayout.LayoutParams) positiveButton.getLayoutParams();
+        boolean bothVisible = listView.getVisibility() == View.VISIBLE
+                && positiveButton.getVisibility() == View.VISIBLE;
+        buttonParams.topMargin = bothVisible ? 0 : buttonMarginView;
+        positiveButton.setLayoutParams(buttonParams);
+        int listBottomPadding = bothVisible ? buttonMarginView : buttonMarginEdge;
+        listView.setPadding(listView.getPaddingLeft(), listView.getPaddingTop(),
+                listView.getPaddingRight(), listBottomPadding);
+    }
+
+    @Override public void onWindowFocusChanged(boolean hasFocus) {
+        if (hasFocus) initLeftRightHands();
+    }
+
+    protected View[] getButtons() {
+        return new View[]{positiveButton, titleBar.getLeftImageView(),
+                titleBar.getRightImageView()};
+    }
+
+    private boolean isButtonAvailable(View button) {
+        return button != null && button.isEnabled() && button.isFocusable()
+                && (button.isClickable() || button.isLongClickable())
+                && button.getVisibility() == View.VISIBLE;
+    }
+
+    private View getMostAvailableButton() {
+        for (View button : getButtons()) if (isButtonAvailable(button)) return button;
+        return null;
+    }
+
     @Override public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) { dismiss(); return true; }
+        if (event.getAction() == KeyEvent.ACTION_DOWN) return onKeyEventDown(keyCode, event);
+        if (event.getAction() == KeyEvent.ACTION_UP) return onKeyEventUp(keyCode, event);
         return false;
     }
 
-    public static ListAdapter singleChoiceAdapter(Context context, List<? extends CharSequence> items) {
-        return new TextAdapter(context, items, false);
+    private boolean onKeyEventDown(int keyCode, KeyEvent event) {
+        Window window = getWindow();
+        if ((window != null && window.getDecorView().hasFocus()) || !event.hasNoModifiers()
+                || (keyCode != KeyEvent.KEYCODE_ENTER
+                && keyCode != KeyEvent.KEYCODE_NUMPAD_ENTER)) return false;
+        View button = getMostAvailableButton();
+        return button != null && button.requestFocus() && button.onKeyDown(keyCode, event);
     }
-    public static ListAdapter multiChoiceAdapter(Context context, List<? extends CharSequence> items) {
-        return new TextAdapter(context, items, true);
+
+    private boolean onKeyEventUp(int keyCode, KeyEvent event) {
+        if (!event.hasNoModifiers() || (keyCode != KeyEvent.KEYCODE_ENTER
+                && keyCode != KeyEvent.KEYCODE_NUMPAD_ENTER)) return false;
+        for (View button : getButtons()) {
+            if (isButtonAvailable(button) && button.hasFocus() && button.isPressed()) {
+                return button.onKeyUp(keyCode, event);
+            }
+        }
+        return false;
     }
-    private static final class TextAdapter extends BaseAdapter {
-        private final Context context; private final List<? extends CharSequence> items; private final boolean multi;
-        TextAdapter(Context context, List<? extends CharSequence> items, boolean multi) { this.context = context; this.items = items; this.multi = multi; }
+
+    public void onApplyNavigationBarStatusChange(boolean shown) {
+        if (contentPanel == null) return;
+        int bottom = shown ? 0 : context.getResources().getDimensionPixelOffset(
+                R.dimen.smartisan_rom_menu_dialog_hidden_nav_space);
+        contentPanel.setPadding(contentPanel.getPaddingLeft(), contentPanel.getPaddingTop(),
+                contentPanel.getPaddingRight(), bottom);
+    }
+
+    public void onConfigurationChanged(Configuration newConfig) {
+        if (externalDisplay) return;
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            onApplyNavigationBarStatusChange(true);
+        }
+        int horizontal = context.getResources().getDimensionPixelOffset(
+                R.dimen.smartisan_rom_menu_dialog_horizontal_distance);
+        listView.setPadding(horizontal, listView.getPaddingTop(), horizontal,
+                listView.getPaddingBottom());
+        ViewGroup.MarginLayoutParams params =
+                (ViewGroup.MarginLayoutParams) positiveButton.getLayoutParams();
+        params.leftMargin = horizontal;
+        params.rightMargin = horizontal;
+        positiveButton.setLayoutParams(params);
+    }
+
+    /** Deprecated compatibility helpers. Choice lists belong to SmartisanAlertDialog. */
+    @Deprecated public static ListAdapter singleChoiceAdapter(Context context,
+            List<? extends CharSequence> items) {
+        return new ChoiceTextAdapter(context, items, false);
+    }
+
+    /** Deprecated compatibility helpers. Choice lists belong to SmartisanAlertDialog. */
+    @Deprecated public static ListAdapter multiChoiceAdapter(Context context,
+            List<? extends CharSequence> items) {
+        return new ChoiceTextAdapter(context, items, true);
+    }
+
+    private static final class ChoiceTextAdapter extends BaseAdapter {
+        private final Context context;
+        private final List<? extends CharSequence> items;
+        private final boolean multi;
+        ChoiceTextAdapter(Context context, List<? extends CharSequence> items, boolean multi) {
+            this.context = context;
+            this.items = items == null ? Collections.emptyList() : items;
+            this.multi = multi;
+        }
         @Override public int getCount() { return items.size(); }
         @Override public Object getItem(int position) { return items.get(position); }
         @Override public long getItemId(int position) { return position; }
         @Override public View getView(int position, View convertView, ViewGroup parent) {
-            TextView view = convertView instanceof TextView ? (TextView) convertView : new TextView(context);
-            view.setText(items.get(position)); view.setTextSize(17f); view.setTextColor(0xcc000000);
-            view.setGravity(Gravity.CENTER_VERTICAL); view.setPadding(dp(context, 18), 0, dp(context, 18), 0);
-            view.setMinHeight(dp(context, 48)); view.setCompoundDrawablePadding(dp(context, 8));
-            if (multi) view.setCompoundDrawablesWithIntrinsicBounds(0, 0, android.R.drawable.checkbox_on_background, 0);
-            return view;
+            CheckedTextView checked = convertView instanceof CheckedTextView
+                    ? (CheckedTextView) convertView : new CheckedTextView(context);
+            checked.setCheckMarkDrawable(multi
+                    ? R.drawable.smartisan_rom_selector_check_box
+                    : R.drawable.smartisan_rom_selector_radio_choice);
+            TextView text = checked;
+            text.setText(items.get(position));
+            text.setTextSize(17f);
+            text.setTextColor(0xcc000000);
+            text.setGravity(Gravity.CENTER_VERTICAL);
+            int padding = Math.round(18 * context.getResources().getDisplayMetrics().density);
+            text.setPaddingRelative(padding, 0, padding, 0);
+            text.setMinHeight(Math.round(48 * context.getResources().getDisplayMetrics().density));
+            text.setBackgroundResource(R.drawable.smartisan_rom_menu_dialog_item_selector);
+            return text;
         }
-        private static int dp(Context context, float value) { return (int) (value * context.getResources().getDisplayMetrics().density + 0.5f); }
     }
 }
