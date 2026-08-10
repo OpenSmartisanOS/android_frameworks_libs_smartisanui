@@ -33,12 +33,6 @@
       "platform_superclass": "android.widget.Spinner",
       "classification": "project-adaptation",
       "note": "Not a port of SmartisanSpinnerView"
-    },
-    {
-      "class": "org.opensmartisanos.ui.widget.SmartisanBottomSheetDialog",
-      "platform_superclass": "android.app.Dialog",
-      "classification": "project-adaptation",
-      "note": "Fixed, non-draggable bottom dialog; no Material behavior API"
     }
   ],
   "canonical_density_policy": {
@@ -699,35 +693,35 @@
     {
       "source_artifact": "framework-res.apk",
       "source": "res/drawable-xxhdpi-v4/dialog_bottom_pressed_left.9.png",
-      "destination": "drawable-xxhdpi/smartisan_alert_revone_button_left_pressed.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_button_left_pressed.9.png",
       "sha256": "e606a2efea452b4a3af9f4a68dfd5afdc1920d71b8eed8aebda23189e34c114d",
       "match": "decoded-nine-patch"
     },
     {
       "source_artifact": "framework-res.apk",
       "source": "res/drawable-xxhdpi-v4/dialog_bottom_pressed_middle.9.png",
-      "destination": "drawable-xxhdpi/smartisan_alert_revone_button_middle_pressed.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_button_middle_pressed.9.png",
       "sha256": "822863bbaa91fe5a843c4fa128448fb8a2e0eb934694aac6ba7d9390a6d3efb1",
       "match": "decoded-nine-patch"
     },
     {
       "source_artifact": "framework-res.apk",
       "source": "res/drawable-xxhdpi-v4/dialog_bottom_pressed_right.9.png",
-      "destination": "drawable-xxhdpi/smartisan_alert_revone_button_right_pressed.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_button_right_pressed.9.png",
       "sha256": "8e9ee7f11a63bcea7764361574e2ad6da3c89eaae6708131c83128b8ca3e4f0c",
       "match": "decoded-nine-patch"
     },
     {
       "source_artifact": "framework-res.apk",
       "source": "res/drawable-xxhdpi-v4/dialog_bottom_pressed_single.9.png",
-      "destination": "drawable-xxhdpi/smartisan_alert_revone_button_single_pressed.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_button_single_pressed.9.png",
       "sha256": "e5a1b26dc8eb7135bea308bf89f1e69943157c4d2842e4d23cfdacd040a6bed0",
       "match": "decoded-nine-patch"
     },
     {
       "source_artifact": "framework-res.apk",
       "source": "res/drawable-xxhdpi-v4/dialog_line_smartisanos.9.png",
-      "destination": "drawable-xxhdpi/smartisan_alert_revone_divider.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_button_divider.9.png",
       "sha256": "339048d5f9f4b990d10b9d057190e64b1dd1c80f500ff99739214b4c0f627542",
       "match": "decoded-nine-patch"
     },
@@ -1048,7 +1042,7 @@
     },
     {
       "source_artifact": "framework-res.apk",
-      "source": "res/drawable-xxhdpi-v4/thin_progress_track_disabled_smartisanos.9.png",
+      "source": "res/drawable-xxhdpi-v4/thin_secondary_progress_smartisanos.9.png",
       "destination": "drawable-xxhdpi/smartisan_rom_thin_secondary_progress.9.png",
       "sha256": "9a59a4bbfd36354902bbefd9fc6ba8e03ed643e2476bc58df88b0ff9e05f372d",
       "match": "decoded-nine-patch"

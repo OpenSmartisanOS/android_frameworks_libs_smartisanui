@@ -1,0 +1,826 @@
+{
+  "rom": "Smartisan OS 8.5.3 R2",
+  "decoder": "apktool 3.0.3 (decoded NinePatch files include restored stretch borders)",
+  "artifacts": {
+    "framework-res.apk": "9dd895fdcba12cf1983a014bab794a93200e7846c1bf6c9233c0c6d6830d0c31",
+    "framework-smartisanos-res.apk": "121a762867be00a65c3781e30c6d14f44ffe64f0f1281b75d90589a8289ebe42",
+    "smartisanos.jar": "73f75f1391d581ec0457562047bea99a61b75387b7782b6aba44f442987deaa7",
+    "SettingsSmartisan.apk": "52eca09083d0101865e3b245b61c205fc20354415e5044c93646f88059a4d424"
+  },
+  "decoded_source_files": {
+    "framework-smartisanos-res.apk:res/values/colors.xml": "a9df13e9f6e4ec1e9b0d29f661cc4199164b4e93c9ba5fe02615aa478ee76cdc",
+    "framework-smartisanos-res.apk:res/values/dimens.xml": "8823b3cf46f8738723aed3c07250e434f7bfb529ff5a3d3e4144d323a2e448d2",
+    "framework-smartisanos-res.apk:res/values/drawables.xml": "9cbde52c7d2f786cd366ab4ea457ba9a921d49cb69e6dc954be569798485197a",
+    "framework-smartisanos-res.apk:res/values/strings.xml": "c3e17673bd415a619ac9259434b5c5f26534986d28080fc3caaeab2c644629b3",
+    "framework-smartisanos-res.apk:res/values-zh-rCN/strings.xml": "9554eb078002b196e86d79b885b8bfc0b98e1a0aea4ff2cc7178716bdb0a8ee1",
+    "framework-smartisanos-res.apk:res/values-zh-rTW/strings.xml": "0525afc8867aecf0d83013bea6946cf38b74fdef0138f687e123b6ae37e40285",
+    "framework-smartisanos-res.apk:res/values/styles.xml": "31de9ce43875cc4d9be6eaff1f2b43df89a1a82c92f4a2712affed70ff077d91",
+    "framework-smartisanos-res.apk:res/values/attrs.xml": "f9dfad876f92689eee09e903b18eda53afc03f76e44bc96f57c7519b5b83746f",
+    "framework-smartisanos-res.apk:res/values/public.xml": "2f3cad8615815c4604a611f0c6b7b709d687b1babd4f8e29f643f10e26bf2c8e",
+    "framework-smartisanos-res.apk:res/values-land-xxhdpi/dimens.xml": "c2ae09a1a20f2b385bdc4c24815f529e8fa68b9393f40477316f03f1fac0175f",
+    "framework-smartisanos-res.apk:res/values-sw411dp/dimens.xml": "e20fbff0b739ff533e3678722c135d606bbae77adda0ab1f1d363cfb1cfaced7",
+    "framework-smartisanos-res.apk:res/values-sw432dp/dimens.xml": "c3e471129e6b185694d33731c9e91607e6e50e6a276f558936a47937b0818810",
+    "framework-smartisanos-res.apk:res/drawable/selector_radio_choice.xml": "467288bbb2f57a123a57c15521b08cd4151ca21a23a757f9cf10443fea704cc3",
+    "framework-res.apk:res/values/drawables.xml": "15a0384793093a7f3afb12ed14e725a3e7e748e58419906f8ba16c95ebab3ced",
+    "framework-res.apk:res/values/styles.xml": "4065e4fb32d3fd151a57a175c5a0835799a9c6407a15aa0d627b5b77c255ea4a",
+    "framework-res.apk:res/values-large/dimens.xml": "7caa579045c4df465d97181afb550ca74bb16e80b482a4182ec594bb201cd406",
+    "framework-res.apk:res/values-xlarge/dimens.xml": "4e4fa383ebaa5e97edacdf1fe09650170bab35e18be3ee96a1ab277b6db55b66",
+    "framework-res.apk:res/values-w780dp-land/dimens.xml": "bd7ff3abde3ad53929d0e9b93d799d4496d8537ca81f8c99996af945f731a04b",
+    "SettingsSmartisan.apk:res/values/styles.xml": "1472dadc18b3c1c2f91b5b087b2d605bf6c4f7a3bc1d88d0e3f75b04e1288e22",
+    "SettingsSmartisan.apk:res/values-xxhdpi/dimens.xml": "8347f6d901c5f66cb36087b107671b056915d332c85de63cedb09f2951e23457"
+  },
+  "transformation_recipes": {
+    "namespace-remap": {
+      "description": "Prefix package resources while preserving the original XML hierarchy",
+      "allow_reference_aliases": true
+    },
+    "value-remap": {
+      "description": "Extract exact named values into a prefixed SDK values file",
+      "allow_reference_aliases": true,
+      "literal_value_maps": [
+        ["color", "@color/bright_foreground_disabled_smartisanos_light", "#4c000000"],
+        ["color", "@color/bright_foreground_smartisanos_light", "#cc000000"],
+        ["color", "@color/bright_foreground_disabled_smartisanos_dark", "#4cffffff"],
+        ["color", "@color/bright_foreground_smartisanos_dark", "#c0ffffff"],
+        ["color", "@color/white", "#ffffffff"]
+      ]
+    },
+    "public-sdk-namespace-remap": {
+      "description": "Namespace remap with declared public-SDK class and attribute substitutions",
+      "allow_reference_aliases": true,
+      "removed_attributes": ["background", "layout_height", "layout_width", "style", "textColor"],
+      "added_attributes": ["id", "layout_height", "layout_width", "scaleType"],
+      "literal_value_maps": [["textSize", "@dimen/semi_small_text_size", "13.5sp"]]
+    },
+    "public-sdk-style-remap": {
+      "description": "Named style fragments with public-SDK parent and item substitutions"
+    },
+    "public-sdk-remap": {
+      "description": "Layout remap with declared public-SDK substitutions",
+      "allow_reference_aliases": true,
+      "removed_attributes": ["text", "textAppearance"],
+      "added_attributes": ["textSize"],
+      "literal_value_maps": [
+        ["minHeight", "?listPreferredItemHeight", "64dp"],
+        ["minHeight", "?listPreferredItemHeightSmall", "@dimen/smartisan_rom_alert_dialog_list_item_height"],
+        ["textColor", "?textColorAlertDialogListItem", "@color/smartisan_rom_alert_list_text"]
+      ]
+    },
+    "density-safe-value-remap": {
+      "description": "Named value remap with an entry-declared source density conversion"
+    },
+    "public-sdk-value-remap": {
+      "description": "Named value fragments merged with declared public-SDK substitutions",
+      "allow_fragment_count_mismatch": true
+    },
+    "public-sdk-pager-remap": {
+      "description": "Layout remap replacing the private pager and indicator with SDK classes",
+      "allow_reference_aliases": true,
+      "removed_attributes": ["radius"]
+    },
+    "public-sdk-theme-remap": {
+      "description": "List layout remap from a private theme reference to SDK-owned resources",
+      "allow_reference_aliases": true,
+      "tag_maps": [["view", "ListView"]],
+      "removed_attributes": ["class"],
+      "added_attributes": ["listSelector"],
+      "literal_value_maps": [["divider", "?listDividerAlertDialog", "@drawable/smartisan_rom_alert_list_divider"]]
+    },
+    "public-sdk-checkmark-tint-remap": {
+      "description": "List row remap with an explicit null checkMarkTint for host-theme isolation",
+      "allow_reference_aliases": true,
+      "removed_attributes": ["textAppearance"],
+      "added_attributes": ["checkMarkTint", "textSize"],
+      "literal_value_maps": [
+        ["minHeight", "?listPreferredItemHeight", "64dp"],
+        ["minHeight", "?listPreferredItemHeightSmall", "@dimen/smartisan_rom_alert_dialog_list_item_height"],
+        ["textColor", "?textColorAlertDialogListItem", "@color/smartisan_rom_alert_list_text"]
+      ]
+    },
+    "public-sdk-alert-button-remap": {
+      "description": "Alert layout remap with explicit public TextView and untinted legacy button substitutions",
+      "allow_reference_aliases": true,
+      "removed_attributes": ["dividerPadding", "showDividers", "style"],
+      "added_attributes": ["style", "textAllCaps", "textColor", "textSize", "textStyle"],
+      "literal_value_maps": [
+        ["gravity", "left|center", "start|center_vertical"],
+        ["textColor", "#9a000000", "@color/smartisan_rom_dialog_secondary_text"]
+      ]
+    },
+    "public-sdk-framework-reference-remap": {
+      "description": "Framework animation with public references and exact resolved duration integers",
+      "allow_reference_aliases": true,
+      "literal_value_maps": [
+        ["duration", "@integer/config_activityDefaultDur", "220"],
+        ["duration", "@integer/config_activityShortDur", "150"]
+      ]
+    },
+    "framework-id-resolved-namespace-remap": {
+      "description": "Namespace remap after resolving private framework drawable IDs",
+      "allow_reference_aliases": true
+    },
+    "prefixed-attribute-remap": {
+      "description": "Exact named attribute fragments renamed into the SDK-prefixed namespace",
+      "allow_fragment_count_mismatch": true
+    },
+    "prefixed-id-remap": {
+      "description": "Exact public R2 ID fragment renamed into the SDK-prefixed namespace"
+    }
+  },
+  "complete_fragment_destinations": [
+    "values/smartisan_rom_popup_menus.xml",
+    "values-zh-rTW/smartisan_rom_popup_menus.xml",
+    "values/smartisan_rom_menu_dialog.xml",
+    "values-land-xxhdpi/smartisan_rom_menu_dialog.xml",
+    "values-sw411dp/smartisan_rom_menu_dialog.xml",
+    "values-sw432dp/smartisan_rom_picker.xml",
+    "values/smartisan_rom_alert_drawables.xml",
+    "values/smartisan_rom_dialog_patterns.xml",
+    "values/smartisan_rom_dialog_pattern_input.xml",
+    "values/smartisan_rom_popup_menu_items.xml",
+    "values-zh-rCN/smartisan_rom_popup_menu_items.xml",
+    "values-zh-rTW/smartisan_rom_popup_menu_items.xml",
+    "values/smartisan_rom_spinner_view.xml",
+    "values-large/smartisan_rom_dialog.xml",
+    "values-xlarge/smartisan_rom_dialog.xml",
+    "values-w780dp-land/smartisan_rom_dialog.xml"
+  ],
+  "tracked_aggregate_resources": [
+    {
+      "destination": "values-night/colors.xml",
+      "sha256": "1af9c4f3e80fe6f3567dd0e6ee36b879809823f9854326602f23b045e261b4a6",
+      "reason": "SDK aggregate containing the verified dark Alert color mappings"
+    },
+    {
+      "destination": "values/colors.xml",
+      "sha256": "b3df656b50978f23e8695f9ea4bc97a18242ab4856ff2c6c9dbc9ff6e41d42cf",
+      "reason": "SDK aggregate containing the verified dialog and picker color mappings"
+    },
+    {
+      "destination": "values/dimens.xml",
+      "sha256": "a58cc7d36bcae2578cdbc0b7a1b8eec829d7a2d0cc7f777fdb441a526f447bc6",
+      "reason": "SDK aggregate containing the verified dialog and picker dimensions"
+    },
+    {
+      "destination": "values/ids.xml",
+      "sha256": "c28a671c0738f040e7b802ca35f9fb3791409af690352069fc3eb15e7bc98558",
+      "reason": "SDK aggregate containing prefixed IDs required by the remapped layouts"
+    },
+    {
+      "destination": "values/styles.xml",
+      "sha256": "8a6f47da3befa392c08afc7ac05cad46edad9a2719f39bdcd2cd110f4f7124cf",
+      "reason": "SDK aggregate containing verified dialog and picker style mappings, including host-theme isolation for Alert action buttons"
+    }
+  ],
+  "project_adaptations": [
+    "AlertController framework plumbing is mapped to public Dialog APIs; its layouts and visual resources are direct ROM remaps",
+    "The private SMTUIScaleHelper used by Alert action buttons is mapped to the bundled public-SDK spring animation implementation with the original root-view target and parameters",
+    "Private vibration is mapped to View.performHapticFeedback",
+    "Private locale and 24-hour settings are mapped to DateFormat public APIs",
+    "Smartisan ViewPager is mapped to a public-SDK paged container",
+    "SmartisanSpinnerView attributes are namespace-prefixed and its wheel style is supplied through the public defStyleRes constructor",
+    "Private display/navigation-bar helpers use WindowInsets and a safe default"
+  ],
+  "project_adaptation_resources": [],
+  "resources": [
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/menu_dialog_multi_item_bg_normal.png","destination":"drawable-xxhdpi/smartisan_rom_menu_dialog_multi_item_bg_normal.png","sha256":"21e9b7938445d8f0fa77a8080e4e20514e4586a3cadba6a5119c14de82b462ad","match":"exact"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/menu_dialog_multi_item_bg_down.png","destination":"drawable-xxhdpi/smartisan_rom_menu_dialog_multi_item_bg_down.png","sha256":"0bdde431e0ed69b7a3dec7e0489a580dede41063557f2e3ff20abd37539b8372","match":"exact"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/item_bg_without_line_normal.png","destination":"drawable-xxhdpi/smartisan_rom_item_bg_without_line_normal.png","sha256":"806cce2acb908ddbc59bcbf4c60f05d5dc4d42264d39cf3c76b027e6a1590836","match":"exact"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/item_bg_without_line_down.png","destination":"drawable-xxhdpi/smartisan_rom_item_bg_without_line_down.png","sha256":"f6cbcf549d1c858a06e6e0a2ddd59207c9a791a8d7eefe548555bb9b66ffa143","match":"exact"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/recent_call_button_gray_normal.9.png","destination":"drawable-xxhdpi/smartisan_rom_recent_call_button_gray_normal.9.png","sha256":"f77abc81626fbba3544fa43cde25917aa86f711c8eca194377f15c4f8e5986db","match":"decoded-nine-patch"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/recent_call_button_gray_pressed.9.png","destination":"drawable-xxhdpi/smartisan_rom_recent_call_button_gray_pressed.9.png","sha256":"21a6efc54096c8dce3ecd53883d58a5a128300c6eab9b92756b436713518e97d","match":"decoded-nine-patch"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-560dpi/recent_call_button_gray_normal.9.png","destination":"drawable-560dpi/smartisan_rom_recent_call_button_gray_normal.9.png","sha256":"a323fb45d0f5406411455ec6d978c85aae88f8dd63338eba267edbd8a37e2edf","match":"decoded-nine-patch"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-560dpi/recent_call_button_gray_pressed.9.png","destination":"drawable-560dpi/smartisan_rom_recent_call_button_gray_pressed.9.png","sha256":"40039c1e38d7a9db8aaf2b301b41eb83438575d81b436ac7d5fe913b91c2ecab","match":"decoded-nine-patch"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/recent_call_multi_item_bg_normal.9.png","destination":"drawable-xxhdpi/smartisan_rom_recent_call_multi_item_bg_normal.9.png","sha256":"deb14454f710e3f84d054d976c790e3ced7116a0c06f185922ace0ea12ffa9b1","match":"decoded-nine-patch"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/recent_call_multi_item_bg_pressed.9.png","destination":"drawable-xxhdpi/smartisan_rom_recent_call_multi_item_bg_pressed.9.png","sha256":"936eef5663461a3a8aa9ed1a33d105f39fa4e3b6fc9165fb5fc20eb31bc3e6d6","match":"decoded-nine-patch"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/revone_dialog_bg_main.9.png","destination":"drawable-xxhdpi/smartisan_rom_revone_dialog_bg_main.9.png","sha256":"2eaba1a602b9454e95340e09de7f1431f9c734991b728c52aba341e29fe9bfda","match":"decoded-nine-patch"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/revone_dialog_bg_title.9.png","destination":"drawable-xxhdpi/smartisan_rom_revone_dialog_bg_title.9.png","sha256":"bc8b25eaf261f1e646c58c4a895f0e0f67872851518b93c0a2d7bb08150f0b0b","match":"decoded-nine-patch"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-xxhdpi/revone_dialog_bottom_bg.9.png","destination":"drawable-xxhdpi/smartisan_rom_revone_dialog_bottom_bg.9.png","sha256":"f7a372683e3ed1593960d4541dc3b7d17954306fef197f5b411a4e82f25cad85","match":"decoded-nine-patch"},
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/edit_text_bg.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_pattern_edit_text_bg.9.png",
+      "sha256": "907d979a032490f3ab35acf1e7f9fc6a59e8af62a5153bb5bdf7a675eac2c1a0",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/dialog_top_smartisanos_light.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_top.9.png",
+      "sha256": "e89593160cdb8d35994da691e1128805d0ed685bcd05a39c36a20fd2f399f0df",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/dialog_top_smartisanos_light_no_divider.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_top_no_divider.9.png",
+      "sha256": "eaecbba750c52ce26dff479c338723cc9c313fbc5fbbfb4e2f7a339627b29bdf",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/dialog_middle_smartisanos_light.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_middle.9.png",
+      "sha256": "4eff2b41da727420761d3c3375dfefda57eec8714002b7ac1abca4ba372ef516",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/dialog_bottom_smartisanos_light.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_dialog_bottom.9.png",
+      "sha256": "f61c5197fd020eb026ffd867ed13082d528c53d877460ca68f212610d468f82d",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/dialog_top_smartisanos_dark.9.png",
+      "destination": "drawable-night-xhdpi/smartisan_rom_dialog_top.9.png",
+      "sha256": "b88e062abd857706c56c5091728f070faf58cba83a5a62bbba25ede82b5359bb",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/dialog_middle_smartisanos_dark.9.png",
+      "destination": "drawable-night-xhdpi/smartisan_rom_dialog_middle.9.png",
+      "sha256": "04e818408b68c50ee9ffb6c8d24c187be193a480ead82a05c250e6b9212ac89b",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/dialog_bottom_smartisanos_dark.9.png",
+      "destination": "drawable-night-xhdpi/smartisan_rom_dialog_bottom.9.png",
+      "sha256": "971b72e9c32a5361710ef0d13bc5de6e87d86abe0c066516ea55a67555eb7bbf",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/list_divider_smartisanos_light.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_list_divider.9.png",
+      "sha256": "fe889080f56d6e35f9d7fb80ca07182bf4123582598a1f98779342fdbeebabb2",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/list_divider_smartisanos_dark.9.png",
+      "destination": "drawable-night-xhdpi/smartisan_rom_alert_list_divider.9.png",
+      "sha256": "5ab1d4265b38b7959f60edaa8a252340adfe250b539b2c45ee0f91c5120646f4",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/btn_selected_on_smartisanos_light.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_choice_selected_on.png",
+      "sha256": "1cf125657025c295bef3db3637063dd90f981cafecf77bd442385a8a3ba306cd",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/btn_selected_on_pressed_smartisanos_light.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_choice_selected_on_pressed.png",
+      "sha256": "5dfe23a23fcde7344a234b628e4406ba7ca6bb3ff26f9a9ea933f1ce8bb7e30d",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/btn_selected_on_disabled_smartisanos_light.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_choice_selected_on_disabled.png",
+      "sha256": "88623e9cfdcdbc7b74e04039dbef2da8684af08929b4c0dedbed824780735ffb",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/check_box_on.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_check_box_on.png",
+      "sha256": "da1fa9abac38a6eec17e7bfe72351d2f2906815c121528ade9984daff75b1680",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/check_box_off.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_check_box_off.png",
+      "sha256": "e7915f7ff38f6101d5a6307ec14f0c9e49e19b7f7b192cfdc999b0ed2cfc06d4",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/check_box_on_pressed.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_check_box_on_pressed.png",
+      "sha256": "f8029256c339b07643f57bd6af7eaceadd1bb8ec21cd215d7c8aa8f4a3ad285c",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/check_box_on_disabled.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_check_box_on_disabled.png",
+      "sha256": "567dcc92838a173dfaa85b55579d966fe0e3fc522b64f3c4bcc24bdb3f344d97",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/check_box_off_disabled.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_check_box_off_disabled.png",
+      "sha256": "2affa104f23a17f542b1b03203b7db8bd1112b5912c84866e593d89f15da3a42",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/list_pressed_smartisanos_light_mid.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_alert_list_pressed.9.png",
+      "sha256": "43ad99640ee4f2ec12a2a8809fb9e9604d7675430c23331140a2357b46b207dd",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-mdpi/list_pressed_smartisanos_dark.9.png",
+      "destination": "drawable-night-mdpi/smartisan_rom_alert_list_pressed.9.png",
+      "sha256": "ba38359e2c0f481f7cf4d8530bc6a4200431bd26ee1dd1cd7817edf22cc255ce",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-hdpi/list_pressed_smartisanos_dark.9.png",
+      "destination": "drawable-night-hdpi/smartisan_rom_alert_list_pressed.9.png",
+      "sha256": "33e98cc4018be49c2c69a9c0b917dcffb128a987907563c95432afd71c1c0e87",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/list_pressed_smartisanos_dark.9.png",
+      "destination": "drawable-night-xhdpi/smartisan_rom_alert_list_pressed.9.png",
+      "sha256": "32d8fd83c3c1e81be9fd8293d88d13d05398745b59c38163a413adcbee1192f9",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xxhdpi/list_pressed_smartisanos_dark.9.png",
+      "destination": "drawable-night-xxhdpi/smartisan_rom_alert_list_pressed.9.png",
+      "sha256": "83fbf3a443bb75368c7d350a08dabe39bd3a189effaa7e35abe5f5db3db90b25",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-mdpi/list_selector_disabled_smartisanos_light.9.png",
+      "destination": "drawable-mdpi/smartisan_rom_alert_list_disabled.9.png",
+      "sha256": "dcd21ec5ef3c59efd8dd80874f616299fc93c6166047cf6e456a2c2fd0baf083",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-hdpi/list_selector_disabled_smartisanos_light.9.png",
+      "destination": "drawable-hdpi/smartisan_rom_alert_list_disabled.9.png",
+      "sha256": "97300796b20ac7fa4eeb901f39144a2f658758bc3244b4aa0b8587d58dee8528",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/list_selector_disabled_smartisanos_light.9.png",
+      "destination": "drawable-xhdpi/smartisan_rom_alert_list_disabled.9.png",
+      "sha256": "7a3d7c6bf56bf5a0d4e217ee5081d85e24ba7e6ef67af1845aec56cb1c161be8",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-mdpi/list_selector_disabled_smartisanos_dark.9.png",
+      "destination": "drawable-night-mdpi/smartisan_rom_alert_list_disabled.9.png",
+      "sha256": "dce81abe8de55f1ed1fcefa3dcfc6d36b07ec0d14cf3a4e6adb0e0e197cfadcb",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-hdpi/list_selector_disabled_smartisanos_dark.9.png",
+      "destination": "drawable-night-hdpi/smartisan_rom_alert_list_disabled.9.png",
+      "sha256": "e6cf65047bbe1f8df6a021dc51a8ef16b1c96ee5c0392d97987784c2981f1dc1",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/list_selector_disabled_smartisanos_dark.9.png",
+      "destination": "drawable-night-xhdpi/smartisan_rom_alert_list_disabled.9.png",
+      "sha256": "85bfce62845aaff6980e42127751ae7b10f40d7d262e395775a1693627197d33",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-mdpi/list_longpressed_smartisanos.9.png",
+      "destination": "drawable-mdpi/smartisan_rom_alert_list_longpressed.9.png",
+      "sha256": "ebbedd7744b427b3ec0513ab8c54ecff7f1e735b2461d53f5726dfcac1b5ae4a",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-hdpi/list_longpressed_smartisanos.9.png",
+      "destination": "drawable-hdpi/smartisan_rom_alert_list_longpressed.9.png",
+      "sha256": "f4f9960575f322021adba8a991a0386ab2aee8897b41cabf7d6f9735f15d1b43",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/list_longpressed_smartisanos.9.png",
+      "destination": "drawable-xhdpi/smartisan_rom_alert_list_longpressed.9.png",
+      "sha256": "784a987968a16528a7b616e734d4bc388b8b9386449711dfe51cffe6a2317047",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-mdpi/list_focused_smartisanos.9.png",
+      "destination": "drawable-mdpi/smartisan_rom_alert_list_focused.9.png",
+      "sha256": "aaa9d66adcab053eb5b0f214feb6498e312c2f3cb9aa7c1439514bc1df821f19",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-hdpi/list_focused_smartisanos.9.png",
+      "destination": "drawable-hdpi/smartisan_rom_alert_list_focused.9.png",
+      "sha256": "42ed58be6a90b85c5f81a09ec0a53ea88145064128149a1810e6b445e424af8a",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-res.apk",
+      "source": "res/drawable-xhdpi/list_focused_smartisanos.9.png",
+      "destination": "drawable-xhdpi/smartisan_rom_alert_list_focused.9.png",
+      "sha256": "43deebd9180fd5e349bfa2524e9fb2ac1906f02962283eb91f3d69fb0451d010",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/time_picker_widget_bg_ex_new.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_time_picker_widget_bg_ex_new.9.png",
+      "sha256": "e8f2daf0590acb59e839f0b4546eecff3a8ebe81dcf5899249bf9168d6ceec81",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/time_picker_widget_bottom.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_time_picker_widget_bottom.png",
+      "sha256": "5c8a3aaa22a6933e14051e94fc8d956e6a49bcc996ef0dc8af83e1def80a414d",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/time_picker_widget_lens.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_time_picker_widget_lens.9.png",
+      "sha256": "4ade3ac88eabbdd766d36dd7790fbc930a9adf9522c1f8a5777f03fd33272221",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_dialog_background.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_dialog_background.png",
+      "sha256": "7da510b10412ac779ce05743565e73631f6800d139f6f0c786a9fac3de81d589",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_dialog_item.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_dialog_item.9.png",
+      "sha256": "d20ce3920c8b3a16fc2f983d5c64924eafb6ef3b27432b89014c283656de24e1",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_dialog_item_disabled.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_dialog_item_disabled.9.png",
+      "sha256": "dbbfbd83a9e60ea09d647dda53b4a221e674d73b9a99566adf6ba7a585c24749",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_dialog_item_pressed.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_dialog_item_pressed.9.png",
+      "sha256": "d356d97238a95dc769906607be526aeeb8d8ea3add9e0a373266a95572972e1c",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_dialog_multi_list_bg.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_dialog_multi_list_bg.9.png",
+      "sha256": "06ca7763f194dec4d0ddc5978f269cd7acbf1b6f16ae124a8face3c741ff1cbf",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_dialog_title_bar_bg.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_dialog_title_bar_bg.9.png",
+      "sha256": "4cc1c817bf8cb2f9a20315307d67a56abb99190d414d69dbca1ea682b91aa7e2",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/time_picker_shadow.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_time_picker_shadow.png",
+      "sha256": "e110814177afa93f1b537e2b4209a8085225873d03dd251f134e06fa9c66225d",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/time_picker_widget_bg.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_time_picker_widget_bg.9.png",
+      "sha256": "bfcc9393ae6fcf699f5bbf510929f093b0f127b8f613aadc55991183f3d96ed3",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/time_picker_widget_bg_ex.9.png",
+      "destination": "drawable-xxhdpi/smartisan_rom_time_picker_widget_bg_ex.9.png",
+      "sha256": "4f91e62f2ddb4a5850253ffff5ac5deeacd9572e7dd3ecee813bb0156ab08819",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/raw/time_picker.ogg",
+      "destination": "raw/smartisan_rom_time_picker.ogg",
+      "sha256": "876bd237fcbeed0784121411cbe1ad47185a390d5d800f94b1ef4735b2514376",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/action_menu_grid_bg.9.png",
+      "source_sha256": "663c616aab16cb94087693d80aba39956fb3454f9270d0726908b97979b30cd1",
+      "destination": "drawable-xxhdpi/smartisan_rom_action_menu_grid_bg.9.png",
+      "sha256": "663c616aab16cb94087693d80aba39956fb3454f9270d0726908b97979b30cd1",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/action_menu_grid_bg_pressed.9.png",
+      "source_sha256": "34e2bc5b1ca27a49a1446ee716f2aa98faf8b585ffc5c97b2e1172f5c12a5743",
+      "destination": "drawable-xxhdpi/smartisan_rom_action_menu_grid_bg_pressed.9.png",
+      "sha256": "34e2bc5b1ca27a49a1446ee716f2aa98faf8b585ffc5c97b2e1172f5c12a5743",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/grid_wide_bg.png",
+      "source_sha256": "a1fc08ef7380928750d753aa5cc2c61db32493b70fe0733319dac19604ee513a",
+      "destination": "drawable-xxhdpi/smartisan_rom_grid_wide_bg.png",
+      "sha256": "a1fc08ef7380928750d753aa5cc2c61db32493b70fe0733319dac19604ee513a",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/grid_wide_bg_down.png",
+      "source_sha256": "8bc81dfb025ac14a061640f0fa59a8963aeebfd44dc7b421946d60282a899b83",
+      "destination": "drawable-xxhdpi/smartisan_rom_grid_wide_bg_down.png",
+      "sha256": "8bc81dfb025ac14a061640f0fa59a8963aeebfd44dc7b421946d60282a899b83",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_group_list_item_pressed.png",
+      "source_sha256": "53e9c516ec0fe8fdb7a8c3e277bb98785e7fc37214a04ed9667c7a0cd88d5f9b",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_group_list_item_pressed.png",
+      "sha256": "53e9c516ec0fe8fdb7a8c3e277bb98785e7fc37214a04ed9667c7a0cd88d5f9b",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_item_close_icon.png",
+      "source_sha256": "65d666d3bc48d7fe6e9d1bcb3339c1dfc7fd688e6bbd1e8110066ed5bc077475",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_item_close_icon.png",
+      "sha256": "65d666d3bc48d7fe6e9d1bcb3339c1dfc7fd688e6bbd1e8110066ed5bc077475",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/menu_item_close_icon_pressed.png",
+      "source_sha256": "84f9e3ee16ae82a4a75cd091eeed0b7df40ab8217892fe9486e7357783cae560",
+      "destination": "drawable-xxhdpi/smartisan_rom_menu_item_close_icon_pressed.png",
+      "sha256": "84f9e3ee16ae82a4a75cd091eeed0b7df40ab8217892fe9486e7357783cae560",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/popup_menu_item_divider.png",
+      "source_sha256": "3980c8c95888bd97287678df8d466003b752b8ceb8780f6d35a729bfe6363e1f",
+      "destination": "drawable-xxhdpi/smartisan_rom_popup_menu_item_divider.png",
+      "sha256": "3980c8c95888bd97287678df8d466003b752b8ceb8780f6d35a729bfe6363e1f",
+      "match": "exact"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/revone_smartisan_list_popup_menu_pressed.9.png",
+      "source_sha256": "2270adca93af3679158be0ff2368d76b27ac3680d39d2765a77f6de816db3744",
+      "destination": "drawable-xxhdpi/smartisan_rom_revone_list_popup_menu_pressed.9.png",
+      "sha256": "2270adca93af3679158be0ff2368d76b27ac3680d39d2765a77f6de816db3744",
+      "match": "decoded-nine-patch"
+    },
+    {
+      "source_artifact": "framework-smartisanos-res.apk",
+      "source": "res/drawable-xxhdpi/revone_smartisan_list_popup_menu_separator.png",
+      "source_sha256": "3980c8c95888bd97287678df8d466003b752b8ceb8780f6d35a729bfe6363e1f",
+      "destination": "drawable-xxhdpi/smartisan_rom_revone_list_popup_menu_separator.png",
+      "sha256": "3980c8c95888bd97287678df8d466003b752b8ceb8780f6d35a729bfe6363e1f",
+      "match": "exact"
+    },
+    {
+      "source_artifact":"framework-smartisanos-res.apk",
+      "source":"res/drawable-xxhdpi/drop_down_arrow.png",
+      "source_sha256":"9ea9a7700f772033b12d493e0232a5eece2e425eb90f204176e558edfe1fa124",
+      "destination":"drawable-xxhdpi/smartisan_rom_drop_down_arrow.png",
+      "sha256":"9ea9a7700f772033b12d493e0232a5eece2e425eb90f204176e558edfe1fa124",
+      "match":"exact"
+    },
+    {
+      "source_artifact":"framework-smartisanos-res.apk",
+      "source":"res/drawable-xxhdpi/drop_down_arrow_pressed.png",
+      "source_sha256":"644961411dd06e3a7072fcfc5f427b048b49fd2f0db7ab5667830819a8da1c35",
+      "destination":"drawable-xxhdpi/smartisan_rom_drop_down_arrow_pressed.png",
+      "sha256":"644961411dd06e3a7072fcfc5f427b048b49fd2f0db7ab5667830819a8da1c35",
+      "match":"exact"
+    },
+    {
+      "source_artifact":"framework-smartisanos-res.apk",
+      "source":"res/drawable-xxhdpi/pre_page_arrow.png",
+      "source_sha256":"9eaf43792b317ce2bd27a24b2f08880b7a8e4256da4c9067c0f5f8d3c3ebda23",
+      "destination":"drawable-xxhdpi/smartisan_rom_pre_page_arrow.png",
+      "sha256":"9eaf43792b317ce2bd27a24b2f08880b7a8e4256da4c9067c0f5f8d3c3ebda23",
+      "match":"exact"
+    },
+    {
+      "source_artifact":"framework-smartisanos-res.apk",
+      "source":"res/drawable-xxhdpi/pre_page_arrow_pressed.png",
+      "source_sha256":"7a964ed8393af07f3a29f6511857ebd724c59a876dbbedfac65e6861766a0f5b",
+      "destination":"drawable-xxhdpi/smartisan_rom_pre_page_arrow_pressed.png",
+      "sha256":"7a964ed8393af07f3a29f6511857ebd724c59a876dbbedfac65e6861766a0f5b",
+      "match":"exact"
+    },
+    {
+      "source_artifact":"framework-smartisanos-res.apk",
+      "source":"res/drawable-xxhdpi/next_page_arrow.png",
+      "source_sha256":"de36ec79be3974b3a8e847744c63a95255b1cb9410801c7b42fac8cb5e846740",
+      "destination":"drawable-xxhdpi/smartisan_rom_next_page_arrow.png",
+      "sha256":"de36ec79be3974b3a8e847744c63a95255b1cb9410801c7b42fac8cb5e846740",
+      "match":"exact"
+    },
+    {
+      "source_artifact":"framework-smartisanos-res.apk",
+      "source":"res/drawable-xxhdpi/next_page_arrow_pressed.png",
+      "source_sha256":"bfd541befd80ae097bdce2ad6934e63cf41382e1ef58c89704422dd36ae8a595",
+      "destination":"drawable-xxhdpi/smartisan_rom_next_page_arrow_pressed.png",
+      "sha256":"bfd541befd80ae097bdce2ad6934e63cf41382e1ef58c89704422dd36ae8a595",
+      "match":"exact"
+    }
+  ],
+  "transformed_resources": [
+    {"source_artifact":"framework-res.apk","source":"res/anim/grow_fade_in.xml","source_sha256":"77179207f6ddb9807573d350b24e98715149714b318e8f3bd625f4368212a066","destination":"anim/smartisan_rom_popup_grow_fade_in.xml","sha256":"d56b02405a0ce92a508bb2e3d88376923bebc7c5fddad7766ba59ccab1626627","match":"public-sdk-framework-reference-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/anim/shrink_fade_out.xml","source_sha256":"71017335f19bf9df877284dd51bd515079c3b7883e120a1bbb19a56837206dd2","destination":"anim/smartisan_rom_popup_shrink_fade_out.xml","sha256":"c8e5d7f4cdd931296530c8da7b3e5f16f9fcc5039c9510d10920635220e06ad5","match":"public-sdk-framework-reference-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/anim/grow_fade_in_from_bottom.xml","source_sha256":"8a2b276c5852771be8d5b2cbda4be1cbde9daea5c0dddf1ca958c6144e846201","destination":"anim/smartisan_rom_popup_grow_fade_in_from_bottom.xml","sha256":"e0cad94ca3e45473e4cd5256a4f3d475c2ff78d24a82944065ae2ef8d7cfad22","match":"public-sdk-framework-reference-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/anim/shrink_fade_out_from_bottom.xml","source_sha256":"bbbca07e96db85d85ac490f1632c57e7d12e7a5830b5c989ddd8bdbf377fdf67","destination":"anim/smartisan_rom_popup_shrink_fade_out_from_bottom.xml","sha256":"a5fe1391be1a8c70b968559266f19de6e60a3f27cdcfae33bfe5701734b20eba","match":"public-sdk-framework-reference-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/anim/dialog_enter.xml","source_sha256":"80b0e2c0051c341e25b870a0f0c9b6368fce0bf830ad58cb496468cf8a08ca51","destination":"anim/smartisan_rom_dialog_enter.xml","sha256":"f144edba686683e3ceee02fb1518546faa318ce7cb6dd974f199ca14f10e5675","match":"public-sdk-framework-reference-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/anim/dialog_exit.xml","source_sha256":"f564f846c2b471ef985e9d169bdc6a904920adfcde253cb08e11d69b1f3e5db1","destination":"anim/smartisan_rom_dialog_exit.xml","sha256":"29fc5a63a76963bfd820a17cc0d734810e42019038c525ba118c0b4f35053ff3","match":"public-sdk-framework-reference-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/dialog_bottom_btn_left_selector.xml","source_sha256":"cdb460b467412faa25aee5ec1d58b6755421458a82e08e02940cfe6ed14c0f52","destination":"drawable/smartisan_rom_dialog_button_left.xml","sha256":"e95f477b491c3e98e4815d49ddbab581356cf4b83d7a2752a693c59358a30992","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/dialog_bottom_btn_mid_selector.xml","source_sha256":"459c95b96fdaf5732f7f49c3b14edb76f4fce7adbec85b76cbbe041fa408462c","destination":"drawable/smartisan_rom_dialog_button_middle.xml","sha256":"627a7c67a0c6c712420e65d9af3968e166fd62959ce832915bf1b5aa7ea19800","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/dialog_bottom_btn_right_selector.xml","source_sha256":"c97a8679814b07caa46ff51b3219dc43ba4f80ba6fa1b1c0267969dcbb8c41cd","destination":"drawable/smartisan_rom_dialog_button_right.xml","sha256":"ca0f0fa9fb97b8452d759028e29c6ed3ac3fb4ec2eab3597b97e565e41b3b1d6","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/dialog_bottom_btn_single_selector.xml","source_sha256":"58a4350e37d1b94e111d5d83496f2e3d498ae4c9aff23aa06417f00c0eb06626","destination":"drawable/smartisan_rom_dialog_button_single.xml","sha256":"f7e5ff0e301eb47000128f46a4a9b5c27f51aaad471ddb71cbf8a4302209bdac","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/menu_resolver_layout.xml","source_sha256":"386c427e7400b8d962acb55ad2b08c9c8b68dab25ee19b41af7c8f2bcdf343a9","destination":"layout/smartisan_rom_bottom_menu.xml","sha256":"5a349e7fce35e6ad04ca2ea72e2389a48003613ab4c2a19ea8376a9597f793f9","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout-land/menu_resolver_layout.xml","source_sha256":"3485756271078b604348846204c47202ac69e5f230f0682a33e2bfdd76df466a","destination":"layout-land/smartisan_rom_bottom_menu.xml","sha256":"a945495d7568a63472b9c6fb507afc3d1efb3f45f69c891766d9412fb61ea065","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/menu_list_item.xml","source_sha256":"5abfd0c7e8ec74eeea19d19eee16ede3d49d9b22c5a24a8c5749b93e06a52cfe","destination":"layout/smartisan_rom_bottom_menu_item.xml","sha256":"72f481d8ea50a3831c2a76122331b78b515a01ef2e54f0bbbea54815b4dd9501","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout-land/menu_list_item.xml","source_sha256":"65925ac360477f6697936303280b4d6c832ef59c469c04096000be56a925946f","destination":"layout-land/smartisan_rom_bottom_menu_item.xml","sha256":"3ac25187e453d2371589e25825cc60418f001cffbda03fec125fb2eedb50a3da","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/grid_menu_layout.xml","source_sha256":"2ad5e354ed08d0e4f529dc1cd640c50de80a46a678b369468ee0a919ad6e4cc7","destination":"layout/smartisan_rom_grid_menu.xml","sha256":"07d32a1f3540702569b592c96dfcd074ef2f20ab6ba0b18054748ec727049472","match":"public-sdk-pager-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/icon_grid_menu_item.xml","source_sha256":"e2c88dc242c6d477a206a15b0922b10f410c4e6da93c8e9c81d450e46c6d1c1d","destination":"layout/smartisan_rom_grid_menu_item.xml","sha256":"91e4729a8574af25613df34306c9d59e2361ce3b68d2b29e68a0d4f49ad585a5","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/icons_gridview_layout.xml","source_sha256":"01313a10aefad9e804888b19575b66c3796bc9212fafdf3d47d5f157010d8e80","destination":"layout/smartisan_rom_grid_menu_page.xml","sha256":"c8babf986c98de8f8a61785a75f39c7f890c314ab267c57a3bca395ffa214ab7","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/menu_item_selector.xml","source_sha256":"0fa01467657537097b55707563cc916abde460d90db299df12241125880242e9","destination":"drawable/smartisan_rom_bottom_menu_item_selector.xml","sha256":"abe2c5e2edbc9f4e232a0179437e0b2b2e136a23477a70537922d8f97d47a291","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable-land/menu_item_selector.xml","source_sha256":"e3dca3f70ad450698dc1afd9d5e15061abd1a143bb8663ef216a629d6a363da8","destination":"drawable-land/smartisan_rom_bottom_menu_item_selector.xml","sha256":"c5294c21c1dfb537d7893855fdc847291be57ea62c704ce625b50d33bad3e7d5","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/anim/popup_enter.xml","source_sha256":"5eed40b5577da15122bfdf1eeb7e885f62f56f31a16a6d3eaabe71639eaffc23","destination":"anim/smartisan_bottom_menu_in.xml","sha256":"a3f48dc8cebf6cf0b95854bf13eb1830605c5145354839513283aa025cbc12fe","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/anim-land/popup_enter.xml","source_sha256":"527dcaf5ac054b07d537aa15b296146afb589ba352c21cc0c22edf4dda8bf5d9","destination":"anim-land/smartisan_bottom_menu_in.xml","sha256":"05298e3193d9e8851b1698d900c3caeae846eadbabb44e71bd3145fdd8545c42","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/anim/popup_exit.xml","source_sha256":"7b060d31f779f6b158bb293a5fa17bc2bcdfdd067a857f261f44bbab3689dc3b","destination":"anim/smartisan_bottom_menu_out.xml","sha256":"e526c54b337745d9e1f995befc30cabae2b02c6fcb9a0a153e98a96161f520cb","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/anim-land/popup_exit.xml","source_sha256":"71aa45e8e461fd889fce9d8cd88b2945aec27cb44aafa9beca0e8edd291863f9","destination":"anim-land/smartisan_bottom_menu_out.xml","sha256":"ee86db11cdc472a03d8a871bdf6e88d85c3a8ad6d2957af717e508aee28b87ce","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/colors.xml#BottomMenu+GridMenu","source_sha256":"a9df13e9f6e4ec1e9b0d29f661cc4199164b4e93c9ba5fe02615aa478ee76cdc","source_symbols":["color:add_nav_text_color","color:bottom_line","color:menu_text_color","color:list_divider_color","color:light_bar_color","color:default_circle_indicator_page_color","color:default_circle_indicator_fill_color"],"destination":"values/smartisan_rom_popup_menus.xml","sha256":"10e96e0b8ec0b0f9a62a883c82353b1c3d5a596f0ff1f95da3d09eebb8852ec3","target_symbols":["color:smartisan_rom_bottom_menu_scrim","color:smartisan_rom_bottom_menu_line","color:smartisan_rom_bottom_menu_text","color:smartisan_rom_bottom_menu_divider","color:smartisan_rom_bottom_menu_land_surface_color","color:smartisan_rom_grid_indicator_page","color:smartisan_rom_grid_indicator_fill"],"fragment_sha256":"69849ecff5842c7e4b2e0676592c9968df954db89def9aa1ea738b830300c97c","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/dimens.xml#GridMenu","source_sha256":"8823b3cf46f8738723aed3c07250e434f7bfb529ff5a3d3e4144d323a2e448d2","source_symbols":["dimen:popup_grid_menu_default_width","dimen:popup_grid_menu_margin","dimen:large_circle_indicator_radius"],"destination":"values/smartisan_rom_popup_menus.xml","sha256":"10e96e0b8ec0b0f9a62a883c82353b1c3d5a596f0ff1f95da3d09eebb8852ec3","target_symbols":["dimen:smartisan_rom_popup_grid_menu_default_width","dimen:smartisan_rom_popup_grid_menu_margin","dimen:smartisan_rom_grid_indicator_radius"],"fragment_sha256":"0941f5236ae8f43eb571d1c5393f708d4f7e5c97a9449966f1ebc71c04b7eae8","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/drawables.xml#share_bg","source_sha256":"9cbde52c7d2f786cd366ab4ea457ba9a921d49cb69e6dc954be569798485197a","source_symbols":["drawable:share_bg"],"destination":"values/smartisan_rom_popup_menus.xml","sha256":"10e96e0b8ec0b0f9a62a883c82353b1c3d5a596f0ff1f95da3d09eebb8852ec3","target_symbols":["drawable:smartisan_rom_bottom_menu_land_surface"],"fragment_sha256":"d96e0132c06b408f922729a33ef1da15f1168cc93d016d85eb6fd2f78f2c2ba0","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/strings.xml#indicator_content_des","source_sha256":"c3e17673bd415a619ac9259434b5c5f26534986d28080fc3caaeab2c644629b3","source_symbols":["string:indicator_content_des"],"destination":"values/rom_strings.xml","sha256":"76055f9fd5539a0c6f7694f43483d8e9169d8dcb65ed15a48782a0c3c110ebf3","target_symbols":["string:smartisan_rom_indicator_content_description"],"fragment_sha256":"1d3d560250484e121c6a729a7130b01a3e4e40789f91e54560e2dba48a42b26a","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values-zh-rCN/strings.xml#indicator_content_des","source_sha256":"9554eb078002b196e86d79b885b8bfc0b98e1a0aea4ff2cc7178716bdb0a8ee1","source_symbols":["string:indicator_content_des"],"destination":"values-zh-rCN/editor_values.xml","sha256":"da02806b5a6dd288f2fb048396a193e350b3c18ea1481f29120bdc14d3d8388d","target_symbols":["string:smartisan_rom_indicator_content_description"],"fragment_sha256":"9312e9bcb33ff8d62db9ff7bf689a5b2673e7951d3cf31abcc463447740bcf83","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values-zh-rTW/strings.xml#indicator_content_des","source_sha256":"0525afc8867aecf0d83013bea6946cf38b74fdef0138f687e123b6ae37e40285","source_symbols":["string:indicator_content_des"],"destination":"values-zh-rTW/smartisan_rom_popup_menus.xml","sha256":"eac003b1710bda6ec61fa6e682ecf141cf8bd7342c193d1356febc6ba61a75db","target_symbols":["string:smartisan_rom_indicator_content_description"],"fragment_sha256":"d843af1bd17b866e78ea9fb70f628b64a4f981618efd673482604fc8e2147935","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/menu_dialog.xml","source_sha256":"72f8665114d1732a86ad93a45e52ab5c44ff10c98e74b8c3845210f26ec7adbe","destination":"layout/smartisan_rom_menu_dialog.xml","sha256":"8306e072c93cfd28e90556ad74be637e0ac09047114e7f16ef9a88558301a54b","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/revone_menu_dialog.xml","source_sha256":"1b6a1834529dc7b799ce390ec5e89ff4edfefd03a2e420f8e7986af0ee40083e","destination":"layout/smartisan_rom_revone_menu_dialog.xml","sha256":"4d66dcf1a53f43c8c14c075c26543a4045127099f2acc77424294bcbaed5066a","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/menu_dialog_list_item.xml","source_sha256":"82a1bddaf3bcd77dcadfa25de500252caf7289bdab00f998b5060334a6ed397d","destination":"layout/smartisan_rom_menu_dialog_list_item.xml","sha256":"3ef3e015cbf5ea15d16b6099f131e2a8041eef1ea357544757879599da1c113f","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/menu_dialog_list_multi_item.xml","source_sha256":"4866acbcec969738c2a16ba1fcca701fcc3662f8572a69929e64a7c6755a89aa","destination":"layout/smartisan_rom_menu_dialog_list_multi_item.xml","sha256":"4dc41db036b3818a184aa7f5d2500077e4c96ad066a2808feeb9bc2ebe76be58","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/menu_dialog_title_bar.xml","source_sha256":"9e100324bd61c9c12967bfde7f41c89effaeb6e3ab8992577367bbbabf2409ca","destination":"layout/smartisan_rom_menu_dialog_title_bar.xml","sha256":"d514b05bf7d7587543a2edf63c358c2bca2cec444c9f1cadf737a257cfe3e464","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/menu_dialog_item_selector.xml","source_sha256":"de524e307f43bc98f6f79494a0c1370c8b12a38f4db7abc5748b15937751acd2","destination":"drawable/smartisan_rom_menu_dialog_item_selector.xml","sha256":"0b5730e315671ef285713d00b038483f7ca9bdfcdc82189e1093a89e9cf2c212","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/menu_dialog_multi_item_selector.xml","source_sha256":"5582da18bd0c55eb689b32ebb8502aeda2bfb5510637007fc078e08eef358508","destination":"drawable/smartisan_rom_menu_dialog_multi_item_selector.xml","sha256":"e14131c63eac6db85b63ac077fce51365c52df8060868b4ca1ee90b5de00be07","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/menu_dialog_last_item_selector.xml","source_sha256":"ddbc234fa6498400b99e86e7fbe58e4e7c3d3de7f1e239e792f47cc60acb223a","destination":"drawable/smartisan_rom_menu_dialog_last_item_selector.xml","sha256":"4628b6fbb31f0f0840df0e601c0ae299419f481dac641baa1acb5f6b97a2482f","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/recent_call_item_selector.xml","source_sha256":"497e5723f1288df1b98b8281d788ab4265e53fb2127c091437e1e5bb743600a9","destination":"drawable/smartisan_rom_recent_call_item_selector.xml","sha256":"d4762e61300caf9216fb48b359ec4b3fee1d962f3e1f0346b270fd5193eb7c3e","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/recent_call_multi_item_selector.xml","source_sha256":"b1753880908a3265730e9d6d1d0edbf175444a3cc07a75de049bbe1950b0915e","destination":"drawable/smartisan_rom_recent_call_multi_item_selector.xml","sha256":"dab9d5cd430785f1c43acec84bcbd097b909a8537ec17d481ae2fd86a6e16138","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/dimens.xml#MenuDialog","source_sha256":"8823b3cf46f8738723aed3c07250e434f7bfb529ff5a3d3e4144d323a2e448d2","source_symbols":["dimen:menu_dialog_horizontal_distance","dimen:menu_dialog_btn_margin_edge","dimen:menu_dialog_btn_margin_view","dimen:multi_menu_dialog_list_height","dimen:menu_dialog_multi_list_height","dimen:menu_dialog_item_text_size","dimen:menu_dialog_item_text_min_size","dimen:recent_call_padding","dimen:recent_call_padding_left","dimen:bar_and_bottom_sheet_extra_space"],"destination":"values/smartisan_rom_menu_dialog.xml","sha256":"246f041ba0c52447574c155cb71cdfb06a4f2e5dd7a66fd868d9167f519de704","target_symbols":["dimen:smartisan_rom_menu_dialog_horizontal_distance","dimen:smartisan_rom_menu_dialog_button_margin_edge","dimen:smartisan_rom_menu_dialog_button_margin_view","dimen:smartisan_rom_menu_dialog_long_list_height","dimen:smartisan_rom_menu_dialog_legacy_list_height","dimen:smartisan_rom_menu_dialog_item_text_size","dimen:smartisan_rom_menu_dialog_item_text_min_size","dimen:smartisan_rom_menu_dialog_recent_padding","dimen:smartisan_rom_menu_dialog_recent_padding_left","dimen:smartisan_rom_menu_dialog_hidden_nav_space"],"fragment_sha256":"c92d1784787a35da7e9666053793eba13228719e50edd5140f6a273412d47c41","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/styles.xml#MenuDialog+LongButton","source_sha256":"31de9ce43875cc4d9be6eaff1f2b43df89a1a82c92f4a2712affed70ff077d91","source_symbols":["style:LongButton.Shrink.Highlight.White","style:LongButton.Shrink.Highlight.Red"],"destination":"values/smartisan_rom_menu_dialog.xml","sha256":"246f041ba0c52447574c155cb71cdfb06a4f2e5dd7a66fd868d9167f519de704","target_symbols":["style:Widget.SmartisanUi.MenuDialog.Item","style:Widget.SmartisanUi.MenuDialog.Primary"],"fragment_sha256":"6d2c3cf7f05a7e27ac700d23073cad078502c872ce8cd5c273e2e30ee2e0508e","match":"public-sdk-style-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/colors.xml#MenuDialog","source_sha256":"a9df13e9f6e4ec1e9b0d29f661cc4199164b4e93c9ba5fe02615aa478ee76cdc","source_symbols":["color:menu_text_color","color:title_text_color"],"destination":"values/smartisan_rom_menu_dialog.xml","sha256":"246f041ba0c52447574c155cb71cdfb06a4f2e5dd7a66fd868d9167f519de704","target_symbols":["color:smartisan_rom_menu_dialog_item_text","color:smartisan_rom_menu_dialog_title_text"],"fragment_sha256":"3bc8b03813a4b907e572fd576f14f683dc5411743e64865eb6e71b2f8d8a51cb","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values-land-xxhdpi/dimens.xml#menu_dialog_horizontal_distance","source_sha256":"c2ae09a1a20f2b385bdc4c24815f529e8fa68b9393f40477316f03f1fac0175f","source_symbols":["dimen:menu_dialog_horizontal_distance"],"destination":"values-land-xxhdpi/smartisan_rom_menu_dialog.xml","sha256":"11048864f4c2987e88724f01d9bb2e20a4748f644dfe15caa66533dfb40cf478","target_symbols":["dimen:smartisan_rom_menu_dialog_horizontal_distance"],"fragment_sha256":"c60ae79a4b2f977ce024b8d0af537d8c94b42df790da290a5afe79e589669437","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values-sw411dp/dimens.xml#recent_call_padding","source_sha256":"e20fbff0b739ff533e3678722c135d606bbae77adda0ab1f1d363cfb1cfaced7","source_symbols":["dimen:recent_call_padding","dimen:recent_call_padding_left"],"destination":"values-sw411dp/smartisan_rom_menu_dialog.xml","sha256":"2c233b0ad02f40d7a65cfde7876d71b4fbea5ad19c527f14f0d17a3c305c8118","target_symbols":["dimen:smartisan_rom_menu_dialog_recent_padding","dimen:smartisan_rom_menu_dialog_recent_padding_left"],"fragment_sha256":"5a33062ab7f6193815d75e9734dc76f62088a7a82adfe7fd5bc6cc5f5ae6794e","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values-sw411dp/dimens.xml#time_picker_width","source_sha256":"e20fbff0b739ff533e3678722c135d606bbae77adda0ab1f1d363cfb1cfaced7","source_symbols":["dimen:time_picker_width"],"source_density_dpi":560,"destination":"values-sw411dp/smartisan_rom_menu_dialog.xml","sha256":"2c233b0ad02f40d7a65cfde7876d71b4fbea5ad19c527f14f0d17a3c305c8118","target_symbols":["dimen:smartisan_rom_time_picker_width"],"fragment_sha256":"d98d629c8402ba9c9892110bf1a55419d0fcfb2cd56d6d71504346a716c5f276","match":"density-safe-value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values-sw432dp/dimens.xml#time_picker_width","source_sha256":"c3e471129e6b185694d33731c9e91607e6e50e6a276f558936a47937b0818810","source_symbols":["dimen:time_picker_width"],"source_density_dpi":400,"destination":"values-sw432dp/smartisan_rom_picker.xml","sha256":"32ba248417ccda564ad94a7a30e47e07c33d2bf635a340c22d3a01520f8401a2","target_symbols":["dimen:smartisan_rom_time_picker_width"],"fragment_sha256":"3d8aca7cc4de7d0f528c0a9f5b1b2d80e1b1756cecdb31d1b92deb4a8a1aab58","match":"density-safe-value-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/layout/alert_dialog_smartisanos.xml","source_sha256":"ee78b967b75c5b8c71474dc7a8fd0b80aee008977f05c0be4e6e96dc5effe043","destination":"layout/smartisan_rom_alert_dialog.xml","sha256":"643239fb2e712a917cf5c40a4285ee5baa7071a3763ff2fa283c998dbfda4e0b","match":"public-sdk-alert-button-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/layout/select_dialog_smartisanos.xml","source_sha256":"c921b83d6118f749e233e428ed66ad26667477be9c8b45a76bea3a93927ea24e","destination":"layout/smartisan_rom_select_dialog.xml","sha256":"fc63b4f2cbc15d61607d18a82d516b167989775b4eddbbaf93fdaff3fdc9a9b4","match":"public-sdk-theme-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/layout/select_dialog_item_smartisanos.xml","source_sha256":"8b06d9a0f98d9a9aadb8d994cf69df3b194cdbf7f4b0a1c6bed433e510e63b75","destination":"layout/smartisan_rom_select_dialog_item.xml","sha256":"ac319ef705e560841f7a125fe913631fac5cb8213f593478005859044f19cbc6","match":"public-sdk-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/layout/select_dialog_singlechoice_smartisanos.xml","source_sha256":"2362fc65b15c3f96db831be827570685a39223959f8b392c569a93f5b5e58deb","destination":"layout/smartisan_rom_select_dialog_singlechoice.xml","sha256":"db7501affd065db807911932d877187153ec57b618a0876d7c45033b200a5475","match":"public-sdk-checkmark-tint-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/layout/select_dialog_multichoice_smartisanos.xml","source_sha256":"dfc7adb97420cb1f25a16c9948cd8d31cec471d788c0493716de2f8db3d900bd","destination":"layout/smartisan_rom_select_dialog_multichoice.xml","sha256":"284a2fd90732dcca35e68658eb15f0c08efe40b58d2b83c7b05e91e7492a7187","match":"public-sdk-checkmark-tint-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/layout-xlarge/select_dialog_item_smartisanos.xml","source_sha256":"ecf9497ff6b88adacedd32a0dcd1fd3c648c854bda2cf371515e22a74eb7cedf","destination":"layout-xlarge/smartisan_rom_select_dialog_item.xml","sha256":"675a633c5808f44fc5651b9edaf9a70cced4e0dd9ddfc674370da35709e8824d","match":"public-sdk-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/layout-xlarge/select_dialog_singlechoice_smartisanos.xml","source_sha256":"f266a2e928bbabf254f4403c94c2fc7794be222bac8b6f310dd60ccebb256694","destination":"layout-xlarge/smartisan_rom_select_dialog_singlechoice.xml","sha256":"bb1ede1c55ebcd8c653d1c0ed7e4e3e0bf45b59f9a0203316b79001a5a06134b","match":"public-sdk-checkmark-tint-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/layout-xlarge/select_dialog_multichoice_smartisanos.xml","source_sha256":"d2339ac4d830042cc03fecd45edac6533ab5239313b2e2ba7e4a76d3b28a7a63","destination":"layout-xlarge/smartisan_rom_select_dialog_multichoice.xml","sha256":"77f2059c1b99b9c26cdc69d06019dc168478807c2211ba9ff3355aaaa15aa479","match":"public-sdk-checkmark-tint-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/btn_select_smartisanos_light.xml","source_sha256":"76f27492d483f4aa004a141bff2d3d3a44b93b68db1fe8e883ef055133ce5e6e","destination":"drawable/smartisan_rom_alert_single_choice_selector.xml","sha256":"05e7b95abc69f2d34769ab8ec39271df541bddbd1642d73d618f564ec9ea8f48","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/selector_checkbox_smartisanos_light.xml","source_sha256":"5674a6a012958a97797ac243f2a345c2e14b8885e566766c51fd8c34841594db","destination":"drawable/smartisan_rom_alert_multi_choice_selector.xml","sha256":"f24557b9be58fc933d9da3a602473b42b442162feed79693fab48e51fc60ab54","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/list_selector_smartisanos_light.xml","source_sha256":"925bc123bd1118e09b631d4b4bc1bdf3d31c18de676a239f86d22f0395adc0db","destination":"drawable/smartisan_rom_alert_list_selector.xml","sha256":"35234031d988835bcb9dfb1a84e6d36cdba284c06751587d66a1b82018d90028","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/list_selector_smartisanos_dark.xml","source_sha256":"0373d3a9b3d737f6b610bdf15f258af2655091af2e1201908b6c24319939ae11","destination":"drawable-night/smartisan_rom_alert_list_selector.xml","sha256":"fa3fbed77ff7925775ecf0f7db3309cff489680da61f10ddc3cd58483b217272","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/list_selector_background_transition_smartisanos_light.xml","source_sha256":"a569acc493635adfe8678a3bdc618d49261d44fc835666c0d1a5c3c75cfc107d","destination":"drawable/smartisan_rom_alert_list_selector_transition.xml","sha256":"943fc23a98a58888a409777b4d2be35df6bd50c000715e20fdb120f19f29113c","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/drawable/list_selector_background_transition_smartisanos_dark.xml","source_sha256":"bd886857c7b14c2f9862a771228c12aa68b003344a0570aa4c86db99ee88a0fe","destination":"drawable-night/smartisan_rom_alert_list_selector_transition.xml","sha256":"af42329bc87017620a3f15c35bd1e5f4772b1510bb6fdf595d75bd9d6845cd95","match":"namespace-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/values/drawables.xml#drawable:btn_selected_off_smartisanos_light","source_sha256":"15a0384793093a7f3afb12ed14e725a3e7e748e58419906f8ba16c95ebab3ced","source_symbols":["drawable:btn_selected_off_smartisanos_light"],"destination":"values/smartisan_rom_alert_drawables.xml","sha256":"3d662c6e032364dc72931f6776949c350f135860b0b34865b93cdbff2bde9e73","target_symbols":["drawable:smartisan_rom_alert_choice_selected_off"],"fragment_sha256":"2aa00b64137b8349f1e76f0b807bb680da795f3a939b6968580dcd836596728f","match":"value-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/color/primary_text_smartisanos_light.xml","source_sha256":"706cef82e0ab5503965beac236d0bc8668606fa0e0cdd0ca727afdfb250e7fe8","destination":"color/smartisan_rom_alert_list_text.xml","sha256":"2187420bb3ec2cd9475ff722b6ee5f1125aa5343f34f28d1ca9449de3a5391c2","match":"value-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/color/primary_text_smartisanos_dark.xml","source_sha256":"b0f60b50a6a22ee02d6a8fdcce667afa6cccf8c0f6baf1bada1dd006b7fa42bb","destination":"color-night/smartisan_rom_alert_list_text.xml","sha256":"5ba5f381807d76bb93996ec2340ad2b602a8c504b1b066d2cff6b9ad9449ace5","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/date_picker.xml","source_sha256":"c25667773151d12c0520eec537730b5055ce70580fde6add212e13ff6e538240","destination":"layout/smartisan_rom_date_picker.xml","sha256":"3011068ed68dd71f851020112ca44d472e9f162c344f5ca9f9567f81fca574a4","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/date_picker_dialog.xml","source_sha256":"f91048f0a3e2883aec04006906e4bad60555dc3f41e85eaf874fb2fdef822f83","destination":"layout/smartisan_rom_date_picker_dialog.xml","sha256":"ac8279668748b7448bad55724e5b53cbc811c407460082fdd2dff50395890307","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/date_picker_ex.xml","source_sha256":"b0f6ab0cc174bc3a5836cb9a2eb15ef4b8d00836147dc827d7b4839b8a94ece7","destination":"layout/smartisan_rom_date_picker_ex.xml","sha256":"8ba7573e2ed90c6c0ceb61830f56ad6f1f204887037f65f30e8e2172ff75a1ad","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/date_picker_ex_dialog.xml","source_sha256":"c691758876a20b137e289d65b4abe169459e5b49eff8e8455e44113a747c126d","destination":"layout/smartisan_rom_date_picker_ex_dialog.xml","sha256":"d5951e07a6524aaa5d5d62aec50fb1579e36bf1207c0b3049556d89f182dd5d5","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/date_time_picker_divider_layout.xml","source_sha256":"4832ad1b4f85af738da0a823d168563f55ff46f9c883821b47ecfaad1e5c13a7","destination":"layout/smartisan_rom_date_time_picker_divider_layout.xml","sha256":"bab0795144da040708ba83a712312bf1eeb5427f7c524b1c8fa1c2820664e9df","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/date_time_picker_ex.xml","source_sha256":"a15f392d5687f21a97f5054b3e0068a7f97b2b76d2515498b99e82bcb76e728f","destination":"layout/smartisan_rom_date_time_picker_ex.xml","sha256":"394de481122374e2d91dac8aceb692268ab8307ac69b612a868c1e8ac7c91743","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/date_time_picker_dialog.xml","source_sha256":"0fd386e4df79a5a643136d377ebe9fbfc23ab4d90f16f802118ad5bdb9a78069","destination":"layout/smartisan_rom_date_time_picker_dialog.xml","sha256":"574de5a1b6177d734d66578647173f55929655a021cd0f72764f50205136e171","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/time_picker.xml","source_sha256":"3d4f51cf54d653564a61e3eb60f544149d3c5498d01c2b5cfc9d9a8bbd9cb951","destination":"layout/smartisan_rom_time_picker.xml","sha256":"04ccbfe750fa16f0cafb07e71aa0bfdb9c599eb23bbd30a2c1cac0ee23ab9bcf","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/time_picker_dialog.xml","source_sha256":"7cb7eaf562854f594b6312efd1a9a9e83e5155fb5ccf0b28dc09722c04a53830","destination":"layout/smartisan_rom_time_picker_dialog.xml","sha256":"df93f646735f6f7ace65f759f20106b2dd7aaa0e62e894dbc015f48f76a4661e","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/revone_time_picker_dialog.xml","source_sha256":"e06e7012eebe6d7acd13b65da8fb89dcd2ac4ba07cd62805584ad64e7b74080b","destination":"layout/smartisan_rom_revone_time_picker_dialog.xml","sha256":"bc1307996b1665edf146a35e3709373a74456ed786f0123c69b26443cbe535b9","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/time_picker_ex.xml","source_sha256":"bc5f7dcbc97951205acc184f8c8fefc20f255807e637bc7e8d45ed1fdab711ab","destination":"layout/smartisan_rom_time_picker_ex.xml","sha256":"3544e4cc2ba52a63bb2fe0a3f3f980eb85a35f9f0226028fdb95d468ae7e87e5","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/time_picker_ex_dialog.xml","source_sha256":"54e52c8199f4457965cfc18c47de72d43fbd90369692ec71292063ca1bace6a1","destination":"layout/smartisan_rom_time_picker_ex_dialog.xml","sha256":"6014bf56cb00461f1f5a2560dfc303bfb7b8c051e376152dba61b99672e05c1f","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/revone_time_picker.xml","source_sha256":"057ec24100f8bf4cb8961d453bf0353f14d275028b71c118745dd6fb3cece114","destination":"layout/smartisan_rom_revone_time_picker.xml","sha256":"db421955243af5e40d7428fa1929137f62889fc8483759732713a44a9e070f09","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/dlg_pattern_app_info_layout.xml","source_sha256":"c353ecf2ae353e0f9825e5c7d82994a8125ee95d98985857b69363c6e4cb457d","destination":"layout/smartisan_rom_dialog_pattern_app_info.xml","sha256":"d78d504248f434c19e300e7e3bb6e7cb9fde35aaa50e1ca208c8a1c3342f8204","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/dlg_pattern_section_group_layout.xml","source_sha256":"1b14cfa46c17774bc7fa4ad2db0674cf934a8361bc18dae226430da05fa02639","destination":"layout/smartisan_rom_dialog_pattern_section_group.xml","sha256":"b1b6070d71101f6203ec5d198cebb706b6e8668bb0dd9ad798647153a6fd90cc","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/dlg_pattern_two_line_single_choice_item.xml","source_sha256":"abdf6256988fd4a728bf62c4447cbc8da6ecc15a1717dd1c7e3e1cae399909f3","destination":"layout/smartisan_rom_dialog_pattern_two_line_single_choice.xml","sha256":"4f1b0f7505f3dd60695c758b39cfd6e4de80ee47922b4f51868335c6808de6ec","match":"public-sdk-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/selector_radio_choice.xml","source_sha256":"467288bbb2f57a123a57c15521b08cd4151ca21a23a757f9cf10443fea704cc3","destination":"drawable/smartisan_rom_dialog_pattern_choice_selected.xml","sha256":"2657be76a8ed3fccd5530c301ee35bdd9ceaa39784ba58115edb86d1285c1d36","match":"framework-id-resolved-namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/color/dlg_single_choice_summary_colorlist.xml","source_sha256":"46065884f5d3fe0592a3afa4d09d1fbb4583516a7eb0b6fb8fc9ae9fdbb80a66","destination":"color/smartisan_rom_dialog_single_choice_summary.xml","sha256":"c5acbd6c1118d98dce7778b5191bdf8c858dee5a5917c64ee94496919f2bae9a","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/styles.xml#DialogPattern","source_sha256":"31de9ce43875cc4d9be6eaff1f2b43df89a1a82c92f4a2712affed70ff077d91","source_symbols":["style:DialogPatternPrimaryText","style:DialogPatternSecondaryText","style:DialogPatternSectionPrimaryTitle","style:DialogPatternSectionSubtitle","style:DialogPatternSectionMessage"],"destination":"values/smartisan_rom_dialog_patterns.xml","sha256":"3f36c95c716ba1484e281e60bef66cd022bc5472c018cb2ed3ebefa368c70889","target_symbols":["style:Widget.SmartisanUi.DialogPattern.PrimaryText","style:Widget.SmartisanUi.DialogPattern.SecondaryText","style:Widget.SmartisanUi.DialogPattern.SectionTitle","style:Widget.SmartisanUi.DialogPattern.SectionSubtitle","style:Widget.SmartisanUi.DialogPattern.SectionMessage"],"fragment_sha256":"1550245b2a837486a8e0db3a0e18edc7c2f6d43213bf0246137a49d741e52e7f","match":"public-sdk-style-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/dimens.xml#DialogPattern","source_sha256":"8823b3cf46f8738723aed3c07250e434f7bfb529ff5a3d3e4144d323a2e448d2","source_symbols":["dimen:dlg_text_view_padding_left","dimen:dlg_text_view_padding_right","dimen:dlg_single_choice_height_has_summary"],"destination":"values/smartisan_rom_dialog_patterns.xml","sha256":"3f36c95c716ba1484e281e60bef66cd022bc5472c018cb2ed3ebefa368c70889","target_symbols":["dimen:smartisan_rom_dialog_pattern_padding_start","dimen:smartisan_rom_dialog_pattern_padding_end","dimen:smartisan_rom_dialog_single_choice_height"],"fragment_sha256":"829ac867596663b555e92b1f2092fd35ff930e1628ecbff0636d35947b092e42","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/colors.xml#DialogPattern","source_sha256":"a9df13e9f6e4ec1e9b0d29f661cc4199164b4e93c9ba5fe02615aa478ee76cdc","source_symbols":["color:dlg_content_secondary_text_color","color:dlg_single_choice_summary_pressed_text_color"],"destination":"values/smartisan_rom_dialog_patterns.xml","sha256":"3f36c95c716ba1484e281e60bef66cd022bc5472c018cb2ed3ebefa368c70889","target_symbols":["color:smartisan_rom_dialog_pattern_secondary_text","color:smartisan_rom_dialog_single_choice_summary_pressed_text"],"fragment_sha256":"e6b2bc6d966093d255106f5b7ca0ffbf5009048ae66e0fe66b9d96992700b06f","match":"value-remap"},
+    {"source_artifact":"SettingsSmartisan.apk","source":"res/layout/dlg_pattern_edittext_layout.xml","source_sha256":"b569ad9304c88163adbca3d649f2565f1932f22631a47947973c92312252e993","destination":"layout/smartisan_rom_dialog_pattern_edit_text.xml","sha256":"29ca2a3a1e324183aa7325cec0b9fdac9f69ab6e38b217778665af6f99c0e230","match":"public-sdk-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/styles.xml#DialogPatternEditText+EditTextStyle","source_sha256":"31de9ce43875cc4d9be6eaff1f2b43df89a1a82c92f4a2712affed70ff077d91","source_symbols":["style:EditTextStyle","style:DialogPatternEditText"],"destination":"values/smartisan_rom_dialog_pattern_input.xml","sha256":"bea8ce1d13d7d3a8452a5b860f51e17e98aecfd175db88d31ba9457aa41f8596","target_symbols":["style:Widget.SmartisanUi.DialogPattern.EditText"],"fragment_sha256":"fcd335cd1e20ef2306a83c2beaff0e79ff602dd3e3914e308cff3f7857788892","match":"public-sdk-value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/dimens.xml#DialogPatternEditText","source_sha256":"8823b3cf46f8738723aed3c07250e434f7bfb529ff5a3d3e4144d323a2e448d2","source_symbols":["dimen:dlg_section_vertical_space","dimen:dlg_no_text_view_padding_left","dimen:dlg_no_text_view_padding_right","dimen:edit_text_left_right_padding"],"destination":"values/smartisan_rom_dialog_pattern_input.xml","sha256":"bea8ce1d13d7d3a8452a5b860f51e17e98aecfd175db88d31ba9457aa41f8596","target_symbols":["dimen:smartisan_rom_dialog_pattern_section_vertical_space","dimen:smartisan_rom_dialog_pattern_edit_text_margin_horizontal","dimen:smartisan_rom_dialog_pattern_edit_text_padding_horizontal"],"fragment_sha256":"736d8abc24460615b4a410638028174efd2ad754d580e5dc9b2c8b62bef09b24","match":"public-sdk-value-remap"},
+    {"source_artifact":"SettingsSmartisan.apk","source":"res/values/styles.xml#SettingItemTipsStyle","source_sha256":"1472dadc18b3c1c2f91b5b087b2d605bf6c4f7a3bc1d88d0e3f75b04e1288e22","source_symbols":["style:SettingItemTipsStyle"],"destination":"values/smartisan_rom_dialog_pattern_input.xml","sha256":"bea8ce1d13d7d3a8452a5b860f51e17e98aecfd175db88d31ba9457aa41f8596","target_symbols":["style:Widget.SmartisanUi.DialogPattern.Tips"],"fragment_sha256":"bcb118562d6c8008d8b8112d1584738ded276cd0fa79e20dc7243a1b9bd80de8","match":"public-sdk-value-remap"},
+    {"source_artifact":"SettingsSmartisan.apk","source":"res/values-xxhdpi/dimens.xml#settings_item_tips_margin_top","source_sha256":"8347f6d901c5f66cb36087b107671b056915d332c85de63cedb09f2951e23457","source_symbols":["dimen:settings_item_tips_margin_top"],"destination":"values/smartisan_rom_dialog_pattern_input.xml","sha256":"bea8ce1d13d7d3a8452a5b860f51e17e98aecfd175db88d31ba9457aa41f8596","target_symbols":["dimen:smartisan_rom_dialog_pattern_tips_margin_top"],"fragment_sha256":"bbf6815fea37c9413b770bed9ab089a44ae7912c766dca72922460ef7b022518","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/popup_menu_standard_list_item.xml","source_sha256":"379e5a2510c8066e5e5db070a413f2e74367492b110681d7990288a206f3090a","destination":"layout/smartisan_rom_popup_menu_standard_list_item.xml","sha256":"4e625860a370fac076889c7dd70b7bc07b72af707143c24bd711dfb9d5298ce1","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/popup_menu_long_pressed_list_item.xml","source_sha256":"a07b6a36a528711268f4ad7b2547484a1d85d03fb7e1fd81d39a2898543a3fa1","destination":"layout/smartisan_rom_popup_menu_long_pressed_list_item.xml","sha256":"73d898cf7498510deb0571a67713eedf0d7d03b53f997a3d4b37f8c66719a889","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/layout/popup_menu_removable_list_item.xml","source_sha256":"8a13144b4b319b27965ab9b155cb61130a2fd9b30870ba61a6bd9b3195bd2169","destination":"layout/smartisan_rom_popup_menu_removable_list_item.xml","sha256":"d5d5184b66290c6a02a025a0ab6451a2acbe492acad91364ebb9e3fc40a0ee48","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/menu_item_close.xml","source_sha256":"6ad93c47368b8b7144494af56c19cf8afea97095a35b02e0948e5d4937ac38f7","destination":"drawable/smartisan_rom_menu_item_close.xml","sha256":"bb116e9139b97e1e42acb2c84343154b5ed58e12605ebdf85da0f0b5c9ae6904","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/menu_list_group_selector.xml","source_sha256":"9a418494937d3692cff3e461ac5e24714345d28be29a155e795dab1066b90393","destination":"drawable/smartisan_rom_menu_list_group_selector.xml","sha256":"f60f226a8e03b83864937d5cf67aa3f6b7f122382ac9161ee0dd5e8e91807a04","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/revone_menu_list_selector.xml","source_sha256":"a2c0bfc4d80f7382dce3a208975804862c8f02d7c71168aeb17af2a694129215","destination":"drawable/smartisan_rom_revone_menu_list_selector.xml","sha256":"ebdc2cc3d7a8db441f1f5de6a6eeb044534da03c24aa357edb997f8a5849f875","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/colors.xml#title_text_color","source_sha256":"a9df13e9f6e4ec1e9b0d29f661cc4199164b4e93c9ba5fe02615aa478ee76cdc","source_symbols":["color:title_text_color"],"destination":"values/smartisan_rom_popup_menu_items.xml","sha256":"fb059490552d8a1a79e15d85e0fddf2c19c1fc54c3a15abd653f16023d5126e8","target_symbols":["color:smartisan_rom_popup_menu_title_text_color"],"fragment_sha256":"f1504f7345deb1a301533ff2952d0b0675d235a4a4149ee2351c8e181bc78d9c","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/dimens.xml#revone_smartisan_list_popup_menu_top_bottom_margin","source_sha256":"8823b3cf46f8738723aed3c07250e434f7bfb529ff5a3d3e4144d323a2e448d2","source_symbols":["dimen:revone_smartisan_list_popup_menu_top_bottom_margin"],"destination":"values/smartisan_rom_popup_menu_items.xml","sha256":"fb059490552d8a1a79e15d85e0fddf2c19c1fc54c3a15abd653f16023d5126e8","target_symbols":["dimen:smartisan_rom_revone_list_popup_menu_vertical_margin"],"fragment_sha256":"9441d4f82b2bde4c4f3430eaf5a076fda5502ff855e84c7a72cdda96f83dedee","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/styles.xml#StandardIconStyle","source_sha256":"31de9ce43875cc4d9be6eaff1f2b43df89a1a82c92f4a2712affed70ff077d91","source_symbols":["style:StandardIconStyle"],"destination":"values/smartisan_rom_popup_menu_items.xml","sha256":"fb059490552d8a1a79e15d85e0fddf2c19c1fc54c3a15abd653f16023d5126e8","target_symbols":["style:smartisan_rom_StandardIconStyle"],"fragment_sha256":"c0b9b27fec6087349b343b11c6fb7d9fa289ba330389812ddb72764db3557a0c","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/strings.xml#delete_btn","source_sha256":"c3e17673bd415a619ac9259434b5c5f26534986d28080fc3caaeab2c644629b3","source_symbols":["string:delete_btn"],"destination":"values/smartisan_rom_popup_menu_items.xml","sha256":"fb059490552d8a1a79e15d85e0fddf2c19c1fc54c3a15abd653f16023d5126e8","target_symbols":["string:smartisan_rom_popup_menu_delete"],"fragment_sha256":"a7e0ec714a50507b02a62dcdfc76c3beaf222d776ec47ce0a5c52c1756e43e05","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values-zh-rCN/strings.xml#delete_btn","source_sha256":"9554eb078002b196e86d79b885b8bfc0b98e1a0aea4ff2cc7178716bdb0a8ee1","source_symbols":["string:delete_btn"],"destination":"values-zh-rCN/smartisan_rom_popup_menu_items.xml","sha256":"ef1532638e46cec8f84ac27f58cf42406a2b7b9917b8b704e1410c81562eb1c2","target_symbols":["string:smartisan_rom_popup_menu_delete"],"fragment_sha256":"f8f8f38a6a134c060f027126666a01426b17a3b26e17ea7c01d48f840935a536","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values-zh-rTW/strings.xml#delete_btn","source_sha256":"0525afc8867aecf0d83013bea6946cf38b74fdef0138f687e123b6ae37e40285","source_symbols":["string:delete_btn"],"destination":"values-zh-rTW/smartisan_rom_popup_menu_items.xml","sha256":"ef1532638e46cec8f84ac27f58cf42406a2b7b9917b8b704e1410c81562eb1c2","target_symbols":["string:smartisan_rom_popup_menu_delete"],"fragment_sha256":"f8f8f38a6a134c060f027126666a01426b17a3b26e17ea7c01d48f840935a536","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/selector_dropdown_arrow.xml","source_sha256":"6f10e1b4027f7116d23eaed813ce23f1b47c6937790887fb11fdb8a457e98126","destination":"drawable/smartisan_rom_selector_dropdown_arrow.xml","sha256":"23b612953db74a7766a05edf3d1f2ed9b51503eda8d3667cb98a9a8662fa9586","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/selector_previous_arrow.xml","source_sha256":"22bf9202e2adb64c0e007cc279e36623c95fbd4208024e4904530a88dd3965fc","destination":"drawable/smartisan_rom_selector_previous_arrow.xml","sha256":"d9f61a9f5c848d2befeb6c1ba5863211216f2c5e6fcca3c92b3d0753d5cc27c8","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/drawable/selector_next_arrow.xml","source_sha256":"017e251f98134ff3aa9af338a4e1d02e983740e268cab616e1aabf57ecb3f670","destination":"drawable/smartisan_rom_selector_next_arrow.xml","sha256":"486e09a8ac7f3515bce1d7d4e0053d6635e67782cd8188cccb2357815819dbfa","match":"namespace-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/styles.xml#TitleTextStyle","source_sha256":"31de9ce43875cc4d9be6eaff1f2b43df89a1a82c92f4a2712affed70ff077d91","source_symbols":["style:TitleTextStyle"],"destination":"values/smartisan_rom_spinner_view.xml","sha256":"f99fb43ef319d22486da1ec29e843d6a13a35870bea0cd5ab976fe0d1a18c0e3","target_symbols":["style:Widget.SmartisanUi.WheelTextView"],"fragment_sha256":"a855c9fac1df5d4113259c3fd16d8d03a497c086a535bb4dfcc37104d1ffb612","match":"public-sdk-style-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/dimens.xml#SmartisanSpinnerView","source_sha256":"8823b3cf46f8738723aed3c07250e434f7bfb529ff5a3d3e4144d323a2e448d2","source_symbols":["dimen:title_bar_title_text_size","dimen:extra_small_text_size","dimen:smartisan_small_blank_spacing_width","dimen:smartisan_spinner_small_icon_width","dimen:smartisan_spinner_view_text_width"],"destination":"values/smartisan_rom_spinner_view.xml","sha256":"f99fb43ef319d22486da1ec29e843d6a13a35870bea0cd5ab976fe0d1a18c0e3","target_symbols":["dimen:smartisan_rom_spinner_title_text_size","dimen:smartisan_rom_spinner_subtitle_text_size","dimen:smartisan_rom_spinner_small_blank_spacing_width","dimen:smartisan_rom_spinner_small_icon_width","dimen:smartisan_rom_spinner_view_text_width"],"fragment_sha256":"6fa0c52be58e5eb91d9cbfa839813cdb6d6a123bfdf004e65632d582dd883b90","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/colors.xml#SmartisanSpinnerView","source_sha256":"a9df13e9f6e4ec1e9b0d29f661cc4199164b4e93c9ba5fe02615aa478ee76cdc","source_symbols":["color:smartisan_button_normal_text_color","color:sub_title_text_color"],"destination":"values/smartisan_rom_spinner_view.xml","sha256":"f99fb43ef319d22486da1ec29e843d6a13a35870bea0cd5ab976fe0d1a18c0e3","target_symbols":["color:smartisan_rom_spinner_title_text","color:smartisan_rom_spinner_subtitle_text"],"fragment_sha256":"41364d67e2b9219ed7f6056ab1403f5cd80d8ec2acb00e3a60b67c48e52f512d","match":"value-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/attrs.xml#SmartisanSpinner","source_sha256":"f9dfad876f92689eee09e903b18eda53afc03f76e44bc96f57c7519b5b83746f","source_symbols":["attr:spinnerStyle","attr:spinnerText","attr:spinnerLeftIcon","attr:isVerticalScroll"],"destination":"values/attrs.xml","sha256":"2e1c0fe2e39e99c93c8e3ca090409d0f11ec57a210a77f43f174e2025de41171","target_symbols":["attr:smartisanSpinnerStyle","attr:smartisanSpinnerText","attr:smartisanSpinnerLeftIcon","attr:smartisanSpinnerVerticalScroll","declare-styleable:SmartisanSpinnerView"],"fragment_sha256":"54c04d97647c5e67a8269e5144c5356de95e11780da245f954971df4e204d2ba","match":"prefixed-attribute-remap"},
+    {"source_artifact":"framework-smartisanos-res.apk","source":"res/values/public.xml#public:id/shadow_divider","source_sha256":"2f3cad8615815c4604a611f0c6b7b709d687b1babd4f8e29f643f10e26bf2c8e","source_symbols":["public:shadow_divider"],"destination":"values/ids.xml","sha256":"c28a671c0738f040e7b802ca35f9fb3791409af690352069fc3eb15e7bc98558","target_symbols":["item:smartisan_rom_shadow_divider"],"fragment_sha256":"c2605ad22ae0e0de5c04a9c7fee883d120ccc0512cff1ba3f0ef61b9e7eb1451","match":"prefixed-id-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/values-large/dimens.xml#AlertDialogWidth","source_sha256":"7caa579045c4df465d97181afb550ca74bb16e80b482a4182ec594bb201cd406","source_symbols":["dimen:dialog_min_width_major","dimen:dialog_min_width_minor"],"destination":"values-large/smartisan_rom_dialog.xml","sha256":"65f97a5919ba3b6df5a2d6c4b9ead889f6cd7acd8ef2eb4fb992197e41900e43","target_symbols":["dimen:smartisan_rom_alert_dialog_min_width_major","dimen:smartisan_rom_alert_dialog_min_width_minor"],"fragment_sha256":"be84ea6c2aa601f37438d5bce3e6c6a796bc827676a4872cdd1c7b8ca5359b85","match":"value-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/values-xlarge/dimens.xml#AlertDialogWidth","source_sha256":"4e4fa383ebaa5e97edacdf1fe09650170bab35e18be3ee96a1ab277b6db55b66","source_symbols":["dimen:dialog_min_width_major","dimen:dialog_min_width_minor"],"destination":"values-xlarge/smartisan_rom_dialog.xml","sha256":"bbf4499e9642347010527d7d77e30927d665b7f48fc9e0f5c1b9029866a35130","target_symbols":["dimen:smartisan_rom_alert_dialog_min_width_major","dimen:smartisan_rom_alert_dialog_min_width_minor"],"fragment_sha256":"26add3b8ca4ce06f494f7eea4620f9a6fb82bf5cfb0ef10dcea99168fce62aea","match":"value-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/values-w780dp-land/dimens.xml#AlertDialogWidth","source_sha256":"bd7ff3abde3ad53929d0e9b93d799d4496d8537ca81f8c99996af945f731a04b","source_symbols":["dimen:dialog_min_width_major"],"destination":"values-w780dp-land/smartisan_rom_dialog.xml","sha256":"941acd055332a6c740686024f7ca8ca1f900b5e5c66f7a77e6ceb7d5d5dac47e","target_symbols":["dimen:smartisan_rom_alert_dialog_min_width_major"],"fragment_sha256":"dac53ae6737d0854bf6f7fcaadbe52470f04fdd1fa7376ff3619cecfa3e04d9f","match":"value-remap"},
+    {"source_artifact":"framework-res.apk","source":"res/values/styles.xml#Theme.Smartisanos","source_sha256":"4065e4fb32d3fd151a57a175c5a0835799a9c6407a15aa0d627b5b77c255ea4a","source_symbols":["style:Theme.Smartisanos"],"destination":"values-night/styles.xml","sha256":"0fe48d90cbcccc2d4eb566a7968a18cf25e4ae93339495c1e44ea294d574e056","target_symbols":["style:Theme.SmartisanUi.AlertDialog"],"fragment_sha256":"0cfb8f22ce8fc13dfb13a5c8ef1eff2348d38c55eb4dacc514ed8e286251cae4","required_value_maps":[["backgroundDimAmount","android:backgroundDimAmount","0.62"]],"match":"public-sdk-value-remap","adaptation_note":"Public-SDK Alert theme retaining the R2 backgroundDimAmount value 0.62"},
+    {"source_artifact":"framework-res.apk","source":"res/values/styles.xml#Theme.Smartisanos.Light.ExternalMenuDialog","source_sha256":"4065e4fb32d3fd151a57a175c5a0835799a9c6407a15aa0d627b5b77c255ea4a","source_symbols":["style:Theme.Smartisanos.Light"],"destination":"values/styles.xml","sha256":"8a6f47da3befa392c08afc7ac05cad46edad9a2719f39bdcd2cd110f4f7124cf","target_symbols":["style:Theme.SmartisanUi.ExternalMenuDialog"],"fragment_sha256":"a26dd9b0c686b4fef3dee4172650911363b23ea0bcbde9becb4d9226323a5967","required_value_maps":[["backgroundDimAmount","android:backgroundDimAmount","0.6"]],"match":"public-sdk-value-remap","adaptation_note":"Public-SDK external MenuDialog host theme retaining the R2 light backgroundDimAmount value 0.6"},
+    {"source_artifact":"framework-res.apk","source":"res/values/styles.xml#Theme.Smartisanos.Light.ProgressDialog","source_sha256":"4065e4fb32d3fd151a57a175c5a0835799a9c6407a15aa0d627b5b77c255ea4a","source_symbols":["style:Theme.Smartisanos.Light"],"destination":"values/styles.xml","sha256":"8a6f47da3befa392c08afc7ac05cad46edad9a2719f39bdcd2cd110f4f7124cf","target_symbols":["style:Theme.SmartisanUi.ProgressDialog"],"fragment_sha256":"92c3b2e3e9291a6c16192e58e9ebea09ded466b1d2de8294fca00f830dd8bed7","required_value_maps":[["backgroundDimAmount","android:backgroundDimAmount","0.6"]],"match":"public-sdk-value-remap","adaptation_note":"Public-SDK ProgressDialog host theme retaining the R2 light backgroundDimAmount value 0.6"},
+    {"source_artifact":"framework-res.apk","source":"res/values/styles.xml#Theme.Smartisanos.ProgressDialog","source_sha256":"4065e4fb32d3fd151a57a175c5a0835799a9c6407a15aa0d627b5b77c255ea4a","source_symbols":["style:Theme.Smartisanos"],"destination":"values-night/styles.xml","sha256":"0fe48d90cbcccc2d4eb566a7968a18cf25e4ae93339495c1e44ea294d574e056","target_symbols":["style:Theme.SmartisanUi.ProgressDialog"],"fragment_sha256":"bb8a69af0d43e25a46ffa839310fec9e38b769482c27d33c9951840ddd1f4a02","required_value_maps":[["backgroundDimAmount","android:backgroundDimAmount","0.62"]],"match":"public-sdk-value-remap","adaptation_note":"Public-SDK ProgressDialog host theme retaining the R2 dark backgroundDimAmount value 0.62"}
+  ],
+  "reverse_sources": {
+    "android/app/AlertDialog.java":"159a78a59d4e208902409393acdfdcb7081ab0acc965c9a858424d05afabe925",
+    "com/android/internal/app/AlertController.java":"de09c421c8ae85290ec2ec35603b336366bd417db9fa2969f068a720fdfda464",
+    "com/android/internal/app/AlertControllerSmtEx.java":"9bc5105d7cc24b790efefcb9055af5470555e76c2c21523037f6d8e144b404fb",
+    "com/android/internal/util/SMTUIScaleHelper.java":"ef04b7393c91099a2dd24393e1ca5a89529931ad14578cf4904c745ce9c659b7",
+    "smartisanos/widget/SmartisanNumberPicker.java":"e93c7fcae492dd8f84162f3c38cd5f2529cc6b07851e74eb7dbb97ec380d60cf",
+    "smartisanos/widget/SmartisanSpinnerView.java":"0960b77a1e0011e79a6746eccc2baad259e0d982f89e20f0bd5e640e04410c82",
+    "smartisanos/widget/SmartisanWheelTextView.java":"5e9b9cfaa00ffefa28258751ae18b90378950764fb75c144845ecf28a83d2553",
+    "smartisanos/widget/SmartisanNumberPickerEx.java":"86def6a7b2e6ea306ec34e87e47de199275cedf7820d549c42f80f0cebea3cc2",
+    "smartisanos/widget/SmartisanNumberPickerExtended.java":"33a221ae182074a45e45aaea1204feff0e53a669b2983ea9e3fdcc8748fa5e7b",
+    "smartisanos/widget/SmartisanDatePicker.java":"496cd361d9e3de8d696923b5db4480c74dbe64c07910a2684861a18c11e9e87e",
+    "smartisanos/widget/SmartisanDatePickerDialog.java":"fdf3e7c87c2a45773d7392d2f9879b098111a47b2cb9941754e6af2254589fd3",
+    "smartisanos/widget/SmartisanDatePickerEx.java":"32910caa2eea389b181cec516732573bc631cfb21705f07941d574c0a9ae101d",
+    "smartisanos/widget/SmartisanDatePickerExDialog.java":"0aa7cd9368f5ff0febb481749201aec6e396d5cc19cd5653962cb706566e1535",
+    "smartisanos/widget/SmartisanTimePicker.java":"476d89a61a60e5e0f8892e61b1f03313484de6c661d42aecd3b7dcbc1a2fae13",
+    "smartisanos/widget/SmartisanTimePickerDialog.java":"c855d2856ce4cff09c760340879bfa4e0e00d21ab6235aedb2bd57aec4385476",
+    "smartisanos/widget/SmartisanTimePickerEx.java":"50d1e727f4efdf9a4ab16d5845b30e735e1388fd0be714fca03fc5bfd22f1b08",
+    "smartisanos/widget/SmartisanTimePickerExDialog.java":"2dced0972a80723ecbeb7700fd1ca5d29eae55abec5bef0d4bd382d13032dfe1",
+    "smartisanos/widget/SmartisanDateTimePicker.java":"0dd3d585640c1da8f08c06c12dd0797dd273bae9b06eace4b7323a97c640718c",
+    "smartisanos/widget/SmartisanDateTimePickerDialog.java":"b611300fa8280263349abfb5bcee7cdfff0acd188b3145b0e9697b65b651e9d6",
+    "smartisanos/widget/DialogPatternAppInfoLayout.java":"5b2cb3f766658e26269c79a2a02b95ae46bf00b764b652dae03e138232fef897",
+    "smartisanos/widget/DialogPatternSectionGroup.java":"0cf70342cdd4a6f06180cb76e6ad24d337807d01f13e0f2635cc38cb1bbaa503",
+    "smartisanos/widget/DialogPatternTwoLineSingleChoice.java":"6782a6d2a88595461470b2fe48c9ac7bdff47f251c37a975d4c84ce309e69244",
+    "smartisanos/widget/CircleProgressPopup.java":"784d8b69763f45ef1205dee537cfe4f2a8536cdaa2070e134521b93748497bf6",
+    "smartisanos/widget/BottomMenuPopupWindow.java":"04ede35bc21315e7923a458ae57fa302fb071f5d9b8caf2f5ca48db9ff2bda78",
+    "smartisanos/widget/support/SmartisanPopupMenu.java":"34e689c983f63f895aae7cc4f091b8207689a242555e3734d8e1a664c1bf93e0",
+    "smartisanos/widget/support/SmartisanListPopupMenu.java":"e49a473dd9be30199575effce9092c8e98d9d977c2b69a07990791d6dcb41326",
+    "smartisanos/widget/support/SmartisanGridIconPopupMenu.java":"46133fbf2a6660c415849d2cee0d5b4c7815ca18feeaa8d30564d0907418c5c4",
+    "smartisanos/widget/support/PopupMenuStandardListItem.java":"81667516817af2b4c80e02d840f3045829f987ea5ef2430dc08f6e4993e1fb7d",
+    "smartisanos/widget/support/PopupMenuLongPressedListItem.java":"fd5d948562a1d8b9ce0e958e183e890b79562ae871e80dfef770b617fbf8c9fb",
+    "smartisanos/widget/support/PopupMenuRemovableListItem.java":"2ce67ea1db74a2df5a65834041a231fc1e807865be1c9d80653a07567f7c87d5",
+    "smartisanos/widget/support/ListPopMenuStandardAdapter.java":"12696a6c09cd3a3f9a6e8537ecfeef526c68f2d4b1f7dc444d0d7002d901ef08",
+    "smartisanos/widget/support/SmartisanMenuItem.java":"035cb9a5e1a7e660a86c8e05b6117686bc6c6bdf6f765b3a7352e0a45bcaca61",
+    "smartisanos/widget/support/AbsSmartisanMenuItem.java":"bcf2247e134ea2542bf3848aa65bcd1117a07f9df6a9ea136a52112e1424024f",
+    "smartisanos/widget/support/GroupMenuAdapter.java":"c105ba2e3f01bd0a74394a0bf5e44212128f3fc5487215edfe0e50d2af5d980e",
+    "smartisanos/app/MenuDialog.java":"27c9dd2165283038c7c10f2b57e575dd57617c04a1b6b22fc45404b174994926",
+    "smartisanos/app/MenuDialogListAdapter.java":"3c41c178ed2a1af6b9f70c9ea318057cdee800c5f139e145ac1b4ce1da248f1c",
+    "smartisanos/app/MenuDialogMultiAdapter.java":"408ebbe89cbfb040848bce5a553249ac659a54651a19fa57e82e838040372a71",
+    "smartisanos/widget/MenuDialogTitleBar.java":"1527d914425a3193728631f8008df50e524013b832a770e8c47f207ac1abbb03",
+    "smartisanos/app/SmartisanProgressDialog.java":"ff57228b63f2336c4c00938b8a41bbed0e07fb3a392d421733324ec77f74042b",
+    "SettingsSmartisan/com/android/settings/revone/CustomKeyBoardSettingsFragment.java":"58cca3ee60b80b2d392a83bbde0bf1899c482e82438582564193d08413d8bccc",
+    "SettingsSmartisan/com/android/settings/revone/StylusRenameFragment.java":"a826d2d9b258b69c826f4c734537b6ab8307b614f9b11963a5537beee1059667",
+    "SettingsSmartisan/com/android/settings/revone/SimulateDeferMotionEventSettingsFragment.java":"5dd134018f6497950066d9493b6caaf3d069b9fe328e0490936089d56f9d9e8a"
+  }
+}
