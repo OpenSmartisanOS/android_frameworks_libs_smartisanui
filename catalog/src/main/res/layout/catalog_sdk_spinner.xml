@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <org.opensmartisanos.ui.widget.SmartisanSpinner
+    <org.opensmartisanos.ui.widget.SmartisanSpinnerView
         android:id="@+id/catalog_sdk_spinner_dropdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dropdown" />
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:smartisanSpinnerText="@string/smartisan_catalog_item_one"
+        app:smartisanSpinnerViewStyle="drop" />
 </LinearLayout>

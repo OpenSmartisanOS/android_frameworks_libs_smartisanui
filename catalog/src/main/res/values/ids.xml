@@ -4,4 +4,5 @@
     <item name="catalog_java_radio_first" type="id" />
     <item name="catalog_java_radio_second" type="id" />
     <item name="catalog_java_spinner" type="id" />
+    <item name="catalog_java_spinner_range" type="id" />
 </resources>
